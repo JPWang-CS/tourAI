@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tourAI/schemas/meal.schema.json",
+  "title": "Meal",
+  "description": "餐食推荐",
+  "type": "object",
+  "required": ["name", "meal_type"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "餐厅名称"
+    },
+    "meal_type": {
+      "type": "string",
+      "enum": ["breakfast", "lunch", "dinner", "snack", "late_night"],
+      "description": "餐食类型"
+    },
+    "cuisine": {
+      "type": "string",
+      "description": "菜系/类型"
+    },
+    "price_per_person": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "人均价格（元）"
+    },
+    "price_text": {
+      "type": "string",
+      "description": "价格显示文本，如 '人均80元'"
+    },
+    "recommended_dishes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "推荐菜品"
+    },
+    "reason": {
+      "type": "string",
+      "description": "推荐理由"
+    },
+    "address": {
+      "type": "string",
+      "description": "地址"
+    },
+    "coordinates": {
+      "type": "object",
+      "properties": {
+        "lng": { "type": "number" },
+        "lat": { "type": "number" }
+      }
+    },
+    "opening_hours": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "description": "数据来源：xhs/mafengwo/dianping/websearch"
+    }
+  }
+}

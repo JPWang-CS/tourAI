@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tourAI/schemas/route.schema.json",
+  "title": "Route",
+  "description": "点对点路线信息",
+  "type": "object",
+  "required": ["from_name", "to_name", "distance_meters", "duration_seconds", "transport_mode"],
+  "properties": {
+    "from_name": {
+      "type": "string",
+      "description": "起点名称"
+    },
+    "to_name": {
+      "type": "string",
+      "description": "终点名称"
+    },
+    "transport_mode": {
+      "type": "string",
+      "enum": ["driving", "walking", "transit", "taxi", "cycling"],
+      "description": "交通方式"
+    },
+    "distance_meters": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "距离（米）"
+    },
+    "duration_seconds": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "用时（秒）"
+    },
+    "distance_text": {
+      "type": "string",
+      "description": "人类可读的距离，如 '8.5公里'"
+    },
+    "duration_text": {
+      "type": "string",
+      "description": "人类可读的用时，如 '20分钟'"
+    },
+    "computed_by": {
+      "type": "string",
+      "enum": ["amap", "estimated", "manual"],
+      "description": "数据来源",
+      "default": "estimated"
+    },
+    "emoji": {
+      "type": "string",
+      "description": "交通图标，如 🚗 🚶 🚇"
+    }
+  }
+}

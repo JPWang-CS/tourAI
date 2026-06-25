@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tourAI/schemas/budget.schema.json",
+  "title": "Budget",
+  "description": "旅行预算明细",
+  "type": "object",
+  "required": ["transport", "hotel", "food", "tickets", "total"],
+  "properties": {
+    "transport": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "交通费（城际+市内）"
+    },
+    "hotel": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "住宿费"
+    },
+    "food": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "餐饮费"
+    },
+    "tickets": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "门票/活动费"
+    },
+    "shopping": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "购物/其他",
+      "default": 0
+    },
+    "total": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "总计"
+    },
+    "per_person": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "人均费用"
+    },
+    "persons": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "人数",
+      "default": 2
+    },
+    "details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": { "type": "string" },
+          "item": { "type": "string" },
+          "amount": { "type": "integer" },
+          "note": { "type": "string" }
+        }
+      },
+      "description": "费用明细列表"
+    }
+  }
+}

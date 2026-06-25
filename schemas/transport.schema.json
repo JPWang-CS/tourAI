@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tourAI/schemas/transport.schema.json",
+  "title": "Transport",
+  "description": "城际交通信息",
+  "type": "object",
+  "required": ["mode", "from_city", "to_city"],
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": ["high_speed_rail", "train", "flight", "self_drive", "bus", "ferry"],
+      "description": "交通方式"
+    },
+    "from_city": {
+      "type": "string",
+      "description": "出发城市"
+    },
+    "to_city": {
+      "type": "string",
+      "description": "到达城市"
+    },
+    "duration_minutes": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "耗时（分钟）"
+    },
+    "duration_text": {
+      "type": "string",
+      "description": "耗时文本，如 '4小时30分钟'"
+    },
+    "price_min": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "最低票价"
+    },
+    "price_max": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "最高票价"
+    },
+    "departure_station": {
+      "type": "string",
+      "description": "出发站/机场"
+    },
+    "arrival_station": {
+      "type": "string",
+      "description": "到达站/机场"
+    },
+    "recommended_schedule": {
+      "type": "string",
+      "description": "推荐班次"
+    },
+    "notes": {
+      "type": "string",
+      "description": "备注"
+    },
+    "source": {
+      "type": "string",
+      "description": "数据来源：ctrip/websearch"
+    }
+  }
+}

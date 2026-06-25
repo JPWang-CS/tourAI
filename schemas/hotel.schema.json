@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tourAI/schemas/hotel.schema.json",
+  "title": "Hotel",
+  "description": "酒店/民宿住宿信息",
+  "type": "object",
+  "required": ["name", "area"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "酒店或区域名称"
+    },
+    "area": {
+      "type": "string",
+      "description": "所在区域，如 '威海公园附近'"
+    },
+    "price_min": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "最低价格（元/晚）"
+    },
+    "price_max": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "最高价格（元/晚）"
+    },
+    "price_range_text": {
+      "type": "string",
+      "description": "价格区间文本，如 '300-500元/晚'"
+    },
+    "recommendation_reason": {
+      "type": "string",
+      "description": "推荐理由"
+    },
+    "next_day_connection": {
+      "type": "string",
+      "description": "与次日行程的衔接说明"
+    },
+    "hotel_type": {
+      "type": "string",
+      "enum": ["hotel", "minsu", "resort", "apartment", "hostel"],
+      "description": "住宿类型"
+    },
+    "coordinates": {
+      "type": "object",
+      "properties": {
+        "lng": { "type": "number" },
+        "lat": { "type": "number" }
+      }
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "source": {
+      "type": "string",
+      "description": "数据来源"
+    }
+  }
+}

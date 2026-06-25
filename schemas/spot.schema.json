@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tourAI/schemas/spot.schema.json",
+  "title": "Spot",
+  "description": "景点/兴趣点",
+  "type": "object",
+  "required": ["name", "category", "description"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "景点名称"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["attraction", "park", "museum", "beach", "shopping", "landmark", "street", "temple", "viewpoint", "nature", "food_street", "other"],
+      "description": "景点类别"
+    },
+    "description": {
+      "type": "string",
+      "description": "景点描述"
+    },
+    "visit_duration_min": {
+      "type": "integer",
+      "minimum": 15,
+      "description": "建议游玩时间（分钟）"
+    },
+    "ticket_price": {
+      "type": "number",
+      "minimum": 0,
+      "description": "门票价格（元），0 表示免费"
+    },
+    "opening_hours": {
+      "type": "string",
+      "description": "开放时间，如 '08:00-17:30'"
+    },
+    "emoji": {
+      "type": "string",
+      "description": "景点图标 emoji"
+    },
+    "coordinates": {
+      "type": "object",
+      "properties": {
+        "lng": { "type": "number", "minimum": -180, "maximum": 180 },
+        "lat": { "type": "number", "minimum": -90, "maximum": 90 }
+      },
+      "description": "经纬度坐标"
+    },
+    "amap_poi_id": {
+      "type": "string",
+      "description": "高德 POI ID"
+    },
+    "transit_from_previous": {
+      "$ref": "route.schema.json",
+      "description": "从上一个地点到这里的交通信息（Day1首个景点为null）"
+    },
+    "photo_tip": {
+      "type": "string",
+      "description": "拍照建议"
+    },
+    "romantic_moment": {
+      "type": "string",
+      "description": "浪漫时刻提示"
+    },
+    "pitfall_warning": {
+      "type": "string",
+      "description": "避坑提醒"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5,
+      "description": "评分（0-5）"
+    },
+    "rating_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "评分数量"
+    },
+    "source": {
+      "type": "string",
+      "description": "数据来源：amap/xhs/mafengwo/ctrip/websearch"
+    }
+  }
+}
