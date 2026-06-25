@@ -1,15 +1,16 @@
 {
-  "name": "travel-guide-generator",
-  "version": "1.0.1",
-  "description": "旅游攻略生成器 - 一键生成精美旅游攻略HTML。支持：国内外城市（威海/青岛/大连/大理/厦门等）、情侣浪漫游、周末短途游、自驾游规划。自动搜索全网真实攻略、高德API计算路线距离用时、生成PC/移动端自适应精美HTML，包含每日详细行程、酒店推荐、美食推荐、避坑指南、预算估算。",
-  "author": "GMMG55",
-  "tags": ["travel", "旅游", "攻略", "行程规划", "guide", "html", "vacation", "romantic", "情侣", "周末", "自驾", "威海", "大理", "厦门", "青岛"],
+  "name": "tourAI",
+  "version": "2.0.0",
+  "description": "智能旅行规划助手 —— 多源数据驱动（小红书/马蜂窝/高德），结构化行程规划，Agent 流水线自动生成精美旅游攻略HTML。支持国内外城市、情侣浪漫游、周末短途游、自驾游、多城市联游。",
+  "author": "JPWang-CS",
+  "tags": ["travel", "旅游", "攻略", "行程规划", "tour", "guide", "html", "romantic", "情侣", "multi-source"],
   "dependencies": {
     "python": ">=3.8",
     "pip": ["requests"]
   },
   "env": {
-    "AMAP_KEY": "高德Web服务API Key（可选）"
+    "AMAP_KEY": "高德Web服务API Key（可选）",
+    "XHS_COOKIE": "小红书Cookie（可选）"
   },
-  "minQclawVersion": "1.0.0"
+  "minVersion": "2.0.0"
 }

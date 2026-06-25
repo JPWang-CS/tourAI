@@ -72,6 +72,48 @@ python scripts/mafengwo.py --destination "<城市>" --type food
   - 标记 source="websearch"
 ```
 
+#### 2e. 🅿️ 停车场数据（自驾必需）
+
+```
+对每个景点搜索停车场：
+
+方式一 —— Amap MCP:
+  poi_search(keyword="<景点名> 停车场", region="<城市>", type="停车场")
+  获取: name, address, coordinates, distance_to_spot
+
+方式二 —— WebSearch:
+  "<景点名> 停车攻略"
+  "<景点名> 附近停车场 收费"
+  "<城市> 景区停车 2026"
+
+提取字段:
+  - name, address, distance_to_spot_meters, distance_text
+  - price_per_hour, price_text, capacity, tips
+  - ev_charging (是否有充电桩), ev_charging_detail
+```
+
+#### 2f. 🔌 充电桩数据（电动车适用）
+
+```
+如果用户是电动车（默认）：
+  对城市间长途路段和主要活动区域搜索充电桩：
+
+方式一 —— Amap MCP:
+  poi_search(keyword="充电站", region="<城市>", type="充电站")
+  或: around_search(location="<坐标>", keywords="充电桩", radius=5000)
+
+方式二 —— WebSearch:
+  "<城市> 充电桩分布"
+  "<路线> 沿途充电站"
+  "<高速名> 服务区充电桩"
+
+提取字段:
+  - name, brand, charger_type (fast/slow/super)
+  - power_kw, stall_count, available_count
+  - price_per_kwh, coordinates
+  - 沿途位置: at_km_mark
+```
+
 ### Step 3: 合并去重 + 写入缓存
 
 将多源数据合并到统一结构中，写入 `data/cache/<city_pinyin>/`:
@@ -79,11 +121,13 @@ python scripts/mafengwo.py --destination "<城市>" --type food
 ```
 data/cache/<city_pinyin>/
 ├── destination.json    # 城市概览：简介、最佳季节、区域划分、交通概况
-├── spots.json          # 景点列表：[{name, category, coordinates, rating, description, ticket_price, opening_hours, photo_tip, pitfall_warning, source}]
-├── restaurants.json    # 美食列表：[{name, cuisine, price_per_person, recommended_dishes, address, source}]
-├── hotels.json         # 酒店区域：[{area, price_range, hotel_names, recommendation_reason}]
+├── spots.json          # 景点列表：[{..., parking: {...}, source}]
+├── restaurants.json    # 美食列表：[{..., source}]
+├── hotels.json         # 酒店区域：[{..., source}]
 ├── itineraries.json    # 经典行程模板：[{duration, title, day_plans[]}]
-├── guides.json         # 攻略摘要：[{title, content, source, url}]
+├── guides.json         # 攻略摘要：[{..., source, url}]
+├── parking.json        # 停车场汇总：[{name, spot_name, coordinates, price, ev_charging}]
+├── charging.json       # 充电桩汇总：[{name, brand, type, coordinates, power_kw}]
 └── .cache_meta.json    # {cached_at, ttl_days, sources[], city, version}
 ```
 

@@ -65,6 +65,29 @@
       "type": "string",
       "description": "避坑提醒"
     },
+    "parking": {
+      "type": "object",
+      "description": "景点附近停车场信息",
+      "properties": {
+        "name": { "type": "string", "description": "停车场名称" },
+        "address": { "type": "string", "description": "停车场地址" },
+        "distance_to_spot_meters": { "type": "integer", "description": "到景点步行距离（米）" },
+        "distance_text": { "type": "string", "description": "如 '步行3分钟'" },
+        "price_per_hour": { "type": "number", "description": "每小时停车费" },
+        "price_text": { "type": "string", "description": "停车费文本，如 '4元/小时' 或 '免费'" },
+        "capacity": { "type": "string", "description": "容量描述：充足/紧张/很少" },
+        "tips": { "type": "string", "description": "停车小贴士，如 '周末需早到，10点后基本没位'" },
+        "ev_charging": { "type": "boolean", "description": "是否有充电桩" },
+        "ev_charging_detail": { "type": "string", "description": "充电桩详情：快充X个/慢充Y个" },
+        "coordinates": {
+          "type": "object",
+          "properties": {
+            "lng": { "type": "number" },
+            "lat": { "type": "number" }
+          }
+        }
+      }
+    },
     "rating": {
       "type": "number",
       "minimum": 0,

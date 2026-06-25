@@ -1,0 +1,22 @@
+<!--
+  Food Summary Component
+  Grid of all recommended restaurants across the trip
+  Data from: trip.food_summary[]
+-->
+<div class="food-section collapsible" data-nav="🍜 美食推荐">
+  <h2>🍜 美食推荐汇总 <span class="collapse-icon">▼</span></h2>
+  <div class="collapse-content">
+    <div class="food-grid">
+      {{#each food_summary}}
+      <div class="food-item">
+        <div class="f-name">{{emoji}} {{name}}</div>
+        <div class="f-shop">{{cuisine}} · {{source_label}}</div>
+        <div class="f-price">人均 ¥{{price_per_person}}</div>
+        {{#if recommended_dishes}}
+        <div class="f-note">推荐：{{#join recommended_dishes}}{{/join}}</div>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

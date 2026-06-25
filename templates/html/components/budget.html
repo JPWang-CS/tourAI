@@ -1,0 +1,25 @@
+<!--
+  Budget Card Component
+  Cost breakdown with category subtotals and grand total
+  Data from: trip.budget
+-->
+<div class="budget-card" data-nav="💰 预算估算">
+  <h2>💰 预算估算（{{persons}}人）</h2>
+  <div class="budget-row"><span>🚗 交通</span><span>¥{{budget.transport}}</span></div>
+  <div class="budget-row"><span>🏨 住宿</span><span>¥{{budget.hotel}}</span></div>
+  <div class="budget-row"><span>🍜 餐饮</span><span>¥{{budget.food}}</span></div>
+  <div class="budget-row"><span>🎫 门票/活动</span><span>¥{{budget.tickets}}</span></div>
+  {{#if budget.shopping}}
+  <div class="budget-row"><span>🛍️ 购物/其他</span><span>¥{{budget.shopping}}</span></div>
+  {{/if}}
+  <div class="budget-total">总计 ¥{{budget.total}} · 人均 ¥{{budget.per_person}}</div>
+  {{#if budget.details}}
+  <div style="margin-top:12px; font-size:.8em; opacity:.85;">
+    {{#each budget.details}}
+    <div style="display:flex; justify-content:space-between; padding:2px 0;">
+      <span>{{item}}</span><span>¥{{amount}}</span>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>

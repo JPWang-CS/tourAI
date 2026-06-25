@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "defaults": {
+    "pace": "moderate",
+    "style": ["romantic"],
+    "persons": 2,
+    "budget_level": "moderate",
+    "transport_preference": "self_drive",
+    "transport_rules": {
+      "self_drive_threshold_km": 500,
+      "self_drive_threshold_hours": 5,
+      "description": "500km/5小时内自驾优先；超出则高铁/飞机+当地租车"
+    },
+    "ev_vehicle": true,
+    "ev_charging_preference": "fast",
+    "departure_city": "深圳",
+    "meal_budget_per_person": 100,
+    "hotel_budget_per_night": 400,
+    "require_amap_routes": true,
+    "output_format": "html",
+    "language": "zh-CN"
+  },
+  "dietary_restrictions": [],
+  "avoid_categories": ["overpriced_tourist_traps", "aggressive_vendors"],
+  "favorite_activities": [],
+  "notes": ""
+}

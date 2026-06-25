@@ -1,0 +1,21 @@
+<!--
+  Avoid List Component
+  "Pitfall avoidance" checklist — wrong vs right practices
+  Data from: trip.avoid_list[]
+-->
+<div class="avoid-section collapsible" data-nav="⚠️ 避坑清单">
+  <h2>⚠️ 避坑清单 <span class="collapse-icon">▼</span></h2>
+  <div class="collapse-content">
+    <div class="avoid-list">
+      {{#each avoid_list}}
+      <div class="avoid-item">
+        <div class="a-num">{{@index_1}}</div>
+        <div style="flex:1;">
+          <span class="a-wrong">❌ {{wrong}}</span><br>
+          <span class="a-right">✅ {{right}}</span>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

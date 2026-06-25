@@ -1,0 +1,136 @@
+<!--
+  Day Card Component — The most important module
+  One card per day, contains: route bars, spots, meals, hotel rec
+  Data from: trip.itinerary[day_index]
+-->
+{{#each itinerary}}
+<div class="day-card" data-nav="Day {{day_number}}">
+  <!-- Day Header (click to collapse) -->
+  <div class="day-header d{{day_number_mod_5}}">
+    <div class="day-num">Day {{day_number}} · {{theme}}</div>
+    <div class="day-title">{{route_summary_title}}</div>
+    <div class="day-route">{{route_summary}}</div>
+  </div>
+
+  <div class="spots-wrapper">
+
+    <!-- Hotel→First Spot Route (Day 2+ only) -->
+    {{#if hotel_to_first_route}}
+    <div class="hotel-route-bar">
+      <span class="hdot"></span>
+      <span class="hroute-item">🏨 {{hotel_to_first_route.from_name}}</span>
+      <span>→ {{transport_emoji}} {{distance_text}}/{{duration_text}} →</span>
+      <span class="hroute-item">📍 {{spots[0].name}}</span>
+      {{#if computed_by_amap}}<span class="amap-tag">高德API</span>{{/if}}
+    </div>
+    {{/if}}
+
+    <!-- Spot-to-Spot Route -->
+    <div class="route-bar">
+      <span class="dot"></span>
+      {{#each spots}}
+      <span class="r-item">{{emoji}} {{name}}</span>
+      {{#unless @last}}<span>→ {{transit_icon}} {{transit_distance}}/{{transit_duration}} →</span>{{/unless}}
+      {{/each}}
+    </div>
+
+    <!-- Spot Details -->
+    {{#each spots}}
+    <div class="spot">
+      <div class="spot-head">
+        <div class="spot-icon">{{emoji}}</div>
+        <div>
+          <div class="spot-name">
+            {{name}}
+            <span class="spot-price">{{ticket_label}}</span>
+            {{#if transit_from_previous}}
+            <span class="spot-transit">
+              <span class="transit-icon">{{transit_emoji}}</span>
+              从 {{transit_from_previous.from_name}} · {{transit_from_previous.transport_mode_label}}
+              <span class="transit-time">{{transit_from_previous.distance_text}}/{{transit_from_previous.duration_text}}</span>
+            </span>
+            {{#if transit_from_previous.amap}}<span class="amap-tag">高德API</span>{{/if}}
+            {{/if}}
+          </div>
+          <div class="spot-desc">{{description}}</div>
+        </div>
+      </div>
+      {{#if parking}}
+      <div class="parking-info">
+        🅿️ {{parking.name}} · {{parking.distance_text}} ·
+        <span class="pk-price">{{parking.price_text}}</span>
+        {{#if parking.ev_charging}}🔌 有充电桩{{/if}}
+        {{#if parking.tips}}<span class="pk-tip">💡 {{parking.tips}}</span>{{/if}}
+      </div>
+      {{/if}}
+      {{#if transit_from_previous.charging_stations}}
+      {{#each transit_from_previous.charging_stations}}
+      <div class="charging-info">
+        🔌 {{name}}（{{brand}}）· 约{{at_km_mark}}处 ·
+        <span class="ch-type">{{charger_type_label}}</span>
+        <span class="ch-power">{{power_kw}}kW</span> · {{stall_count}}桩
+        {{#if tips}}· {{tips}}{{/if}}
+      </div>
+      {{/each}}
+      {{/if}}
+      {{#if romantic_moment}}
+      <div class="spot-romance">💕 浪漫时刻：{{romantic_moment}}</div>
+      {{/if}}
+      {{#if pitfall_warning}}
+      <div class="pitfall">⚠️ 避坑：{{pitfall_warning}}</div>
+      {{/if}}
+    </div>
+    {{/each}}
+
+    <!-- Highway Waypoints (long-distance segments only) -->
+    {{#each spot_routes}}
+    {{#if waypoints}}
+    {{#each waypoints}}
+    <div class="waypoint-bar">
+      🛣️ {{name}}（约{{at_distance_km}}km处）·
+      <span class="wp-facilities">{{facilities}}</span>
+      {{#if tips}}· 💡 {{tips}}{{/if}}
+    </div>
+    {{/each}}
+    {{/if}}
+    {{/each}}
+
+    <!-- Meal Recommendations -->
+    {{#if meals}}
+    <div class="food-section" style="margin: 16px 24px; padding: 16px 20px;">
+      <h2>🍽️ 餐饮推荐</h2>
+      <div class="food-grid">
+        {{#each meals}}
+        <div class="food-item">
+          <div class="f-name">{{meal_type_icon}} {{meal_type_label}}</div>
+          <div class="f-shop">{{name}}</div>
+          <div class="f-price">人均 ¥{{price_per_person}}</div>
+          <div class="f-note">{{reason}}</div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+
+    <!-- In-Day Hotel Recommendation -->
+    {{#if hotel}}
+    <div class="hotel-rec-section">
+      <div class="hr-title">🏨 推荐酒店住宿地</div>
+      {{#each hotel_options}}
+      <div class="hr-grid" style="margin-bottom: 8px;">
+        <div class="hr-item">
+          <div class="hr-name">{{area}}</div>
+          <div class="hr-price">💰 {{price_range_text}}</div>
+          <div class="hr-desc">{{recommendation_reason}}</div>
+        </div>
+      </div>
+      {{/each}}
+      {{#if hotel.next_day_connection}}
+      <div class="hr-tip">💡 衔接说明：{{hotel.next_day_connection}}</div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+  </div><!-- /spots-wrapper -->
+</div><!-- /day-card -->
+{{/each}}

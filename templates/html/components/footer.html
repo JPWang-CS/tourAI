@@ -1,0 +1,15 @@
+<!--
+  Footer Component
+  Generation metadata, data source attribution, disclaimer
+  Data from: trip.metadata
+-->
+<footer class="footer">
+  <p>由 <strong>tourAI</strong> 生成 · {{metadata.generated_at}}</p>
+  <p>数据来源：{{#join metadata.sources}}{{/join}}</p>
+  {{#if metadata.amap_used}}
+  <p>路线数据由 <strong>高德地图</strong> 提供</p>
+  {{/if}}
+  <p style="margin-top:8px; font-size:.75em; color:#ccc;">
+    信息仅供参考，出行前请核实最新价格和开放时间
+  </p>
+</footer>

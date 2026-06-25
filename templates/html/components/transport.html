@@ -1,0 +1,20 @@
+<!--
+  Transport Component
+  Shows inter-city transport options (high-speed rail, flight, self-drive)
+  Data from: trip.transport_to_dest[]
+-->
+<div class="transport-card collapsible" data-nav="🚄 交通信息">
+  <h2>🚄 交通信息 <span class="collapse-icon">▼</span></h2>
+  <div class="collapse-content">
+    <div class="transport-grid">
+      {{#each transport_to_dest}}
+      <div class="t-item {{#if recommended}}recommend{{/if}}">
+        {{#if recommended}}<div class="badge">推荐</div>{{/if}}
+        <div class="t-title">{{mode_icon}} {{mode_label}} · {{from_city}} → {{to_city}}</div>
+        <div class="t-detail">{{departure_station}} · {{duration_text}} · {{recommended_schedule}}</div>
+        <div class="t-price">¥{{price_min}} - ¥{{price_max}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

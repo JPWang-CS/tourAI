@@ -1,0 +1,84 @@
+# {{ trip.title }}
+
+*{{ trip.subtitle }}*
+
+**目的地**: {{ trip.destination.city }} | **天数**: {{ trip.duration_days }}天 | **风格**: {{ trip.style | join(', ') }} | **节奏**: {{ trip.pace }}
+
+---
+
+{% if trip.transport_to_dest %}
+## 🚄 交通信息
+
+{% for t in trip.transport_to_dest %}
+- **{{ t.mode }}** {{ t.from_city }} → {{ t.to_city }}
+  - 耗时: {{ t.duration_text }}
+  - 票价: ¥{{ t.price_min }} - ¥{{ t.price_max }}
+{% endfor %}
+{% endif %}
+
+---
+
+## 📅 每日行程
+
+{% for day in trip.itinerary %}
+### Day {{ day.day_number }} · {{ day.theme }}
+
+**路线**: {{ day.route_summary }}
+
+{% for spot in day.spots %}
+#### {{ spot.emoji }} {{ spot.name }} *{% if spot.ticket_price == 0 %}免费{% else %}¥{{ spot.ticket_price }}{% endif %}*
+
+{{ spot.description }}
+
+- ⏱️ 建议游玩: {{ spot.visit_duration_min }}分钟
+{% if spot.transit_from_previous %}
+- {{ spot.transit_from_previous.emoji or '🚗' }} 从 {{ spot.transit_from_previous.from_name }} · {{ spot.transit_from_previous.distance_text }}/{{ spot.transit_from_previous.duration_text }}
+{% endif %}
+{% if spot.romantic_moment %}
+- 💕 {{ spot.romantic_moment }}
+{% endif %}
+{% if spot.pitfall_warning %}
+- ⚠️ {{ spot.pitfall_warning }}
+{% endif %}
+
+{% endfor %}
+**🍽️ 餐饮**
+{% for meal_type, meal in day.meals.items() %}{% if meal %}
+- {{ meal.meal_type_label }}: {{ meal.name }} (人均 ¥{{ meal.price_per_person }})
+{% endif %}{% endfor %}
+
+{% if day.hotel %}
+**🏨 住宿**: {{ day.hotel.area }} · {{ day.hotel.price_range_text }}
+{% endif %}
+
+---
+{% endfor %}
+
+## ⚠️ 避坑清单
+
+{% for item in trip.avoid_list %}
+{{ loop.index }}. ❌ ~~{{ item.wrong }}~~
+   ✅ {{ item.right }}
+{% endfor %}
+
+## 💰 预算估算
+
+| 类别 | 费用 |
+|------|------|
+| 🚗 交通 | ¥{{ trip.budget.transport }} |
+| 🏨 住宿 | ¥{{ trip.budget.hotel }} |
+| 🍜 餐饮 | ¥{{ trip.budget.food }} |
+| 🎫 门票 | ¥{{ trip.budget.tickets }} |
+| **总计** | **¥{{ trip.budget.total }}** |
+| **人均** | **¥{{ trip.budget.per_person }}** |
+
+## 💡 出行提示
+
+{% for tip in trip.tips %}
+- {{ tip }}
+{% endfor %}
+
+---
+
+*由 tourAI v2.0.0 生成 · {{ trip.metadata.generated_at }}*
+*数据来源: {{ trip.metadata.sources | join(', ') }}*

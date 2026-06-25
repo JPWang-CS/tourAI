@@ -1,0 +1,16 @@
+<!--
+  Tips Card Component
+  Romantic/seasonal travel tips
+  Data from: trip.tips[], trip.weather
+-->
+<div class="tips-card" data-nav="💕 出行Tips">
+  <h2>💕 {{style_label}}出行Tips</h2>
+  {{#if weather}}
+  <div style="margin-bottom:12px; font-size:.88em; color:#666;">
+    🌤️ {{weather.season}} · {{weather.temp_range}} · {{weather.clothing}}
+  </div>
+  {{/if}}
+  {{#each tips}}
+  <div class="tip-item">✨ {{this}}</div>
+  {{/each}}
+</div>

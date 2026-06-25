@@ -46,6 +46,44 @@
     "emoji": {
       "type": "string",
       "description": "交通图标，如 🚗 🚶 🚇"
+    },
+    "charging_stations": {
+      "type": "array",
+      "description": "沿途充电桩（自驾/电动车适用）",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "充电站名称" },
+          "brand": { "type": "string", "description": "品牌：特来电/国家电网/星星充电/特斯拉超充等" },
+          "address": { "type": "string" },
+          "charger_type": { "type": "string", "enum": ["fast", "slow", "super"], "description": "快充/慢充/超充" },
+          "power_kw": { "type": "integer", "description": "充电功率(kW)" },
+          "stall_count": { "type": "integer", "description": "充电桩数量" },
+          "available_count": { "type": "string", "description": "通常空闲数量" },
+          "price_per_kwh": { "type": "number", "description": "每度电价格（元）" },
+          "distance_from_start_km": { "type": "number", "description": "距离路段起点的公里数" },
+          "at_km_mark": { "type": "string", "description": "在路段约X公里处" },
+          "coordinates": {
+            "type": "object",
+            "properties": { "lng": { "type": "number" }, "lat": { "type": "number" } }
+          },
+          "tips": { "type": "string", "description": "充电提示" }
+        }
+      }
+    },
+    "waypoints": {
+      "type": "array",
+      "description": "沿途停靠点（观景台/服务区/休息站）",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string", "enum": ["service_area", "viewpoint", "rest_stop", "gas_station"] },
+          "at_distance_km": { "type": "number" },
+          "facilities": { "type": "string", "description": "设施：卫生间/餐饮/加油/充电" },
+          "tips": { "type": "string" }
+        }
+      }
     }
   }
 }
