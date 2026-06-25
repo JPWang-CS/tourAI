@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>深圳出发 · 汕头两天一晚自驾美食游 | 6.19-6.20</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;background:#f5f5f5;color:#333;line-height:1.7}
+
+.quick-nav{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:8px;opacity:.65;transition:opacity .3s}
+.quick-nav:hover{opacity:1}
+.quick-nav .nav-item{display:flex;align-items:center;gap:6px;cursor:pointer;padding:2px 0}
+.quick-nav .nav-dot{width:6px;height:6px;border-radius:50%;background:#888;flex-shrink:0}
+.quick-nav .nav-item.active .nav-dot{background:#7c6ef0}
+.quick-nav .nav-label{font-size:11px;color:#666;white-space:nowrap}
+
+.day-card .day-header{cursor:pointer}
+.day-card .day-header::after{content:'▼';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:.7em;opacity:.5;transition:transform .3s}
+.day-card.collapsed .day-header::after{transform:translateY(-50%) rotate(-90deg)}
+.day-card .spots-wrapper{transition:max-height .4s ease-out;max-height:10000px;overflow:hidden}
+.day-card.collapsed .spots-wrapper{max-height:0}
+
+.timeline-card .timeline-header{cursor:pointer;position:relative}
+.timeline-card .timeline-header::after{content:'▼';position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:.7em;opacity:.5;transition:transform .3s}
+.timeline-card.collapsed .timeline-header::after{transform:translateY(-50%) rotate(-90deg)}
+.timeline-card .timeline-content{transition:max-height .4s ease-out;max-height:5000px;overflow:hidden}
+.timeline-card.collapsed .timeline-content{max-height:0}
+
+.collapsible{cursor:pointer;user-select:none}
+.collapsible .collapse-icon{display:inline-block;margin-left:8px;font-size:.7em;transition:transform .3s;opacity:.5}
+.collapsible.collapsed .collapse-icon{transform:rotate(-90deg)}
+.collapse-content{max-height:5000px;overflow:hidden;transition:max-height .4s ease-out}
+.collapse-content.collapsed{max-height:0}
+
+.hero{position:relative;height:400px;background:linear-gradient(135deg,#1a3a4a 0%,#2d5a6e 30%,#e8875b 70%,#f4a460 100%);overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero::before{content:'';position:absolute;bottom:-1px;left:0;width:100%;height:60px;background:#f5f5f5;clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-inner{position:relative;z-index:1;padding:0 16px}
+.hero h1{font-size:2.2em;font-weight:700;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.2);margin-bottom:6px}
+.hero .subtitle{font-size:1.05em;color:rgba(255,255,255,.9);font-weight:300}
+.hero .tag-row{margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hero .tag{background:rgba(255,255,255,.2);backdrop-filter:blur(6px);color:#fff;padding:4px 14px;border-radius:20px;font-size:.82em}
+.hero .emojis{font-size:2.8em;margin-bottom:10px}
+
+.container{max-width:780px;margin:0 auto;padding:20px 16px 60px}
+
+.highlights{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.highlights h2{font-size:1.2em;margin-bottom:16px}
+.hl-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.hl-item{background:linear-gradient(135deg,#f8f9ff,#f0f4ff);border-radius:12px;padding:14px;text-align:center;border:1px solid #e8ecff}
+.hl-item .hl-icon{font-size:1.6em;margin-bottom:4px}
+.hl-item .hl-title{font-weight:700;font-size:.88em;color:#333}
+.hl-item .hl-desc{font-size:.75em;color:#888;margin-top:2px}
+
+.transport-card{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.transport-card h2{font-size:1.2em;margin-bottom:16px}
+.transport-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.t-item{background:#f8f9ff;border-radius:12px;padding:14px;position:relative}
+.t-item.recommend{background:linear-gradient(135deg,#e8f0ff,#f0e6ff);border:2px solid #7c6ef0}
+.t-item .badge{position:absolute;top:-8px;right:10px;background:#7c6ef0;color:#fff;font-size:.7em;padding:2px 10px;border-radius:10px}
+.t-item .t-title{font-weight:700;font-size:.95em;margin-bottom:4px}
+.t-item .t-detail{font-size:.82em;color:#888}
+.t-item .t-price{font-size:1.1em;font-weight:700;color:#e05a3a;margin-top:6px}
+
+.hotel-section{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.hotel-section h2{font-size:1.2em;margin-bottom:16px}
+.hotel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hotel-item{background:linear-gradient(135deg,#f8f9ff,#f0f4ff);border-radius:12px;padding:16px;border:1px solid #e8ecff}
+.hotel-item .h-name{font-weight:700;font-size:.95em;margin-bottom:6px;color:#333}
+.hotel-item .h-price{font-size:.82em;color:#e05a3a;font-weight:600;margin-bottom:6px}
+.hotel-item .h-desc{font-size:.8em;color:#666;line-height:1.5}
+.hotel-item .h-rec{font-size:.78em;color:#5b7fdb;margin-top:8px;padding-top:8px;border-top:1px dashed #d0d8ff}
+.hotel-tip{background:linear-gradient(90deg,#fff8f0,#fff5f0);border-radius:12px;padding:14px 18px;margin:16px 0;border-left:4px solid #f2719c;font-size:.88em;color:#666;line-height:1.6}
+.hotel-tip .ht-title{font-weight:700;color:#f2719c;font-size:1.05em;margin-bottom:4px}
+
+.day-card{background:#fff;border-radius:16px;overflow:hidden;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.day-header{padding:20px 24px 16px;color:#fff;position:relative}
+.day-header.d1{background:linear-gradient(135deg,#e8875b,#d4684a)}
+.day-header.d2{background:linear-gradient(135deg,#4facfe,#3d8fd9)}
+.day-header .day-num{font-size:1.6em;font-weight:700}
+.day-header .day-title{font-size:1.1em;font-weight:500;margin-top:2px}
+.day-header .day-route{font-size:.82em;opacity:.85;margin-top:6px;line-height:1.5}
+
+.journey-flow{padding:0}
+.drive-leg{display:flex;align-items:flex-start;gap:12px;padding:14px 24px;background:linear-gradient(90deg,#f0f4ff,#e8f0ff);border-bottom:1px solid #e0e6f0}
+.drive-leg .drive-icon{width:40px;height:40px;border-radius:10px;background:#7c6ef0;display:flex;align-items:center;justify-content:center;font-size:1.2em;flex-shrink:0;color:#fff}
+.drive-leg .drive-info{flex:1}
+.drive-leg .drive-label{font-weight:700;font-size:.9em;color:#333}
+.drive-leg .drive-detail{font-size:.8em;color:#5b7fdb;margin-top:2px}
+
+.spot-leg{padding:18px 24px;border-bottom:1px solid #f0f0f0}
+.spot-leg:last-child{border-bottom:none}
+.spot-leg .spot-transit-bar{display:flex;align-items:center;gap:6px;margin-bottom:12px;padding:6px 12px;background:linear-gradient(90deg,#f8f4ff,#fef5ff);border-radius:8px;font-size:.78em;color:#7c6ef0;font-weight:500}
+.spot-leg .spot-body{display:flex;align-items:flex-start;gap:12px}
+.spot-leg .spot-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4em;flex-shrink:0;background:#fff0f0}
+.spot-leg .spot-icon.food{background:#fff8e1}
+.spot-leg .spot-icon.view{background:#e8f8e8}
+.spot-leg .spot-icon.ride{background:#e0f0ff}
+.spot-leg .spot-name{font-weight:700;font-size:1.05em}
+.spot-leg .spot-price{display:inline-block;background:#fff3e0;color:#e65100;font-size:.75em;padding:1px 8px;border-radius:8px;margin-left:6px;font-weight:500}
+.spot-leg .spot-desc{font-size:.88em;color:#666;margin-top:6px;line-height:1.6}
+.spot-leg .spot-play{margin-top:6px;font-size:.8em;color:#888}
+.spot-leg .spot-romance{margin-top:8px;padding:8px 12px;background:linear-gradient(90deg,#fff5f5,#fff0fb);border-radius:10px;font-size:.84em;color:#c06;border-left:3px solid #f2719c}
+.spot-leg .pitfall{margin-top:8px;padding:8px 12px;background:#fffbe6;border-radius:10px;font-size:.82em;color:#ad6800;border-left:3px solid #faad14}
+
+.stay-leg{padding:16px 24px;background:linear-gradient(90deg,#fff8f0,#fff5f0);border-left:4px solid #f2719c;margin:4px 0}
+.stay-leg .stay-label{font-weight:700;color:#f2719c;font-size:.95em;margin-bottom:4px}
+.stay-leg .stay-desc{font-size:.84em;color:#666;line-height:1.6}
+
+.food-leg{padding:16px 24px;background:#fefdf6;border-bottom:1px solid #f0eed8}
+.food-leg .food-label{font-weight:700;font-size:.95em;color:#d4684a;margin-bottom:8px}
+.food-leg .food-inner{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.food-leg .fi-item{background:#fff;border-radius:10px;padding:10px 12px;border:1px solid #f0e8d8}
+.food-leg .fi-item .fi-name{font-weight:700;font-size:.88em}
+.food-leg .fi-item .fi-detail{font-size:.75em;color:#999;margin-top:2px}
+.food-leg .fi-item .fi-price{color:#e05a3a;font-weight:600;font-size:.8em;margin-top:2px}
+
+.food-section{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.food-section h2{font-size:1.2em;margin-bottom:16px}
+.food-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.food-item{background:#fef9f0;border-radius:12px;padding:14px}
+.food-item .f-name{font-weight:700;font-size:.92em}
+.food-item .f-shop{font-size:.78em;color:#999;margin-top:2px}
+.food-item .f-price{color:#e05a3a;font-weight:700;font-size:.9em;margin-top:4px}
+.food-item .f-note{font-size:.78em;color:#666;margin-top:2px}
+
+.souvenir-section{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.souvenir-section h2{font-size:1.2em;margin-bottom:16px}
+.souvenir-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.souvenir-item{background:linear-gradient(135deg,#fff8f0,#fff0e6);border-radius:12px;padding:14px;border:1px solid #ffe0d0}
+.souvenir-item .s-name{font-weight:700;font-size:.92em;color:#d4684a}
+.souvenir-item .s-shop{font-size:.78em;color:#999;margin-top:2px}
+.souvenir-item .s-price{color:#e05a3a;font-weight:600;font-size:.85em;margin-top:4px}
+.souvenir-item .s-note{font-size:.78em;color:#666;margin-top:4px;line-height:1.5}
+.souvenir-tip{background:linear-gradient(90deg,#fff8f0,#fff5f0);border-radius:12px;padding:14px 18px;margin-top:14px;border-left:4px solid #e8875b;font-size:.86em;color:#8b4513;line-height:1.6}
+
+.avoid-section{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.avoid-section h2{font-size:1.2em;margin-bottom:16px}
+.avoid-list{display:grid;grid-template-columns:1fr;gap:8px}
+.avoid-item{display:flex;gap:10px;padding:10px 14px;border-radius:10px;background:#fff5f5;font-size:.86em}
+.avoid-item .a-num{background:#ff4d4f;color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75em;font-weight:700;flex-shrink:0}
+.avoid-item .a-wrong{color:#ff4d4f;font-weight:700;text-decoration:line-through}
+.avoid-item .a-right{color:#52c41a;font-weight:500}
+
+.budget-card{background:linear-gradient(135deg,#1a3a4a,#2d5a6e);border-radius:16px;padding:24px;margin-bottom:20px;color:#fff}
+.budget-card h2{font-size:1.2em;margin-bottom:16px}
+.budget-row{display:flex;justify-content:space-between;padding:6px 0;font-size:.9em;border-bottom:1px solid rgba(255,255,255,.15)}
+.budget-total{text-align:center;margin-top:14px;padding-top:14px;border-top:2px solid rgba(255,255,255,.3);font-size:1.3em;font-weight:700}
+
+.tips-card{background:linear-gradient(135deg,#fff0f5,#fff5f0);border-radius:16px;padding:24px;margin-bottom:20px}
+.tips-card h2{font-size:1.2em;margin-bottom:14px}
+.tips-card .tip-item{padding:8px 0;font-size:.9em;display:flex;gap:8px}
+
+.footer{text-align:center;padding:30px 0 20px;color:#bbb;font-size:.82em}
+
+.timeline-card{background:#fff;border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.timeline-card h2{font-size:1.2em;margin-bottom:16px}
+.tl-item{display:flex;gap:12px;padding:10px 0;border-left:2px solid #e8ecff;margin-left:6px;padding-left:16px;font-size:.88em}
+.tl-item .tl-time{color:#7c6ef0;font-weight:700;font-size:.85em;white-space:nowrap;min-width:60px}
+.tl-item .tl-act{color:#333}
+
+.local-tip-box{background:linear-gradient(135deg,#e8f8e8,#f0fff0);border-radius:12px;padding:14px 18px;margin:14px 0;border-left:4px solid #52c41a;font-size:.84em;color:#2e7d32;line-height:1.6}
+
+@media(max-width:768px){
+  .hero{height:auto;min-height:260px;padding:36px 16px 60px}
+  .hero h1{font-size:1.4em}.hero .subtitle{font-size:.82em}.hero .emojis{font-size:2em}.hero .tag{font-size:.7em}
+  .container{padding:16px 12px 40px}.hl-grid{grid-template-columns:1fr 1fr}.transport-grid{grid-template-columns:1fr}
+  .spot-leg{padding:14px 16px}.drive-leg{padding:12px 16px}.spot-leg .spot-icon{width:38px;height:38px;font-size:1.2em}
+  .food-leg .food-inner{grid-template-columns:1fr}.food-grid{grid-template-columns:1fr}.souvenir-grid{grid-template-columns:1fr}
+  .hotel-grid{grid-template-columns:1fr}
+}
+@media(max-width:375px){.hero h1{font-size:1.2em}.hl-grid{grid-template-columns:1fr}}
+@media(max-width:1024px){.quick-nav{display:none}}
+*{-webkit-tap-highlight-color:transparent}
+html{-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="emojis">🏮🌊🦐</div>
+    <h1>汕头 · 两天一晚自驾美食游</h1>
+    <div class="subtitle">6.19 住一晚 · 6.20 吃完晚饭回深圳</div>
+    <div class="tag-row">
+      <span class="tag">📍 深圳出发</span>
+      <span class="tag">🚗 自驾往返</span>
+      <span class="tag">📅 2天1晚</span>
+      <span class="tag">🏨 海滨戴斯温德姆</span>
+      <span class="tag">🍜 10+站美食</span>
+      <span class="tag">🎁 手信采买</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- 亮点 -->
+<div class="highlights" id="highlights">
+  <h2>✨ 行程亮点</h2>
+  <div class="hl-grid">
+    <div class="hl-item"><div class="hl-icon">🚗</div><div class="hl-title">深圳自驾出发</div><div class="hl-desc">G15沈海高速330km·约4小时</div></div>
+    <div class="hl-item"><div class="hl-icon">🏛️</div><div class="hl-title">百年骑楼漫步</div><div class="hl-desc">小公园开埠区·全国最大骑楼群</div></div>
+    <div class="hl-item"><div class="hl-icon">🌅</div><div class="hl-title">西堤公园落日</div><div class="hl-desc">礐石大桥×入海口·绝美黄昏</div></div>
+    <div class="hl-item"><div class="hl-icon">🚢</div><div class="hl-title">1元广场轮渡</div><div class="hl-desc">海上看汕头·2块钱的浪漫</div></div>
+    <div class="hl-item"><div class="hl-icon">🍜</div><div class="hl-title">10+站美食扫街</div><div class="hl-desc">蚝烙→牛肉火锅→生腌→小吃→甜汤</div></div>
+    <div class="hl-item"><div class="hl-icon">🎁</div><div class="hl-title">菜市场淘手信</div><div class="hl-desc">手打牛肉丸·卤鹅·粿品带回家</div></div>
+  </div>
+</div>
+
+<!-- 交通 -->
+<div class="transport-card" id="transport">
+  <h2>🚗 深圳 ⇋ 汕头 · 自驾</h2>
+  <div class="transport-grid">
+    <div class="t-item recommend"><div class="badge">去程</div><div class="t-title">深圳→汕头 G15沈海高速</div><div class="t-detail">深圳→水官高速(S28)→G15沈海高速→汕头中阳大道出口</div><div class="t-detail" style="margin-top:6px">🗺️ <strong>330km</strong> · ⏱️ <strong>约4-4.5h</strong></div><div class="t-detail">⛽ 油费约¥170 · 🛣️ 过路费约¥150</div></div>
+    <div class="t-item recommend"><div class="badge">回程</div><div class="t-title">汕头→深圳 G15沈海高速</div><div class="t-detail">汕头中阳大道入口→G15沈海高速→深圳</div><div class="t-detail" style="margin-top:6px">🗺️ <strong>330km</strong> · ⏱️ <strong>约4-4.5h</strong></div><div class="t-detail">⛽ 油费约¥170 · 🛣️ 过路费约¥150</div></div>
+  </div>
+  <div style="margin-top:14px;padding:12px 16px;background:linear-gradient(90deg,#fff8f0,#fff5f0);border-radius:10px;border-left:4px solid #e8875b;font-size:.86em;color:#8b4513;line-height:1.8">
+    <strong>⏰ 时间线：</strong>6.19 早7点出发→约11:30到→玩+吃→住一晚→6.20 全天吃+逛+买→<strong>约20:00晚餐后回程→凌晨0:30到家</strong><br>
+    <strong>⚠️ 回程提示：</strong>晚餐后出发前喝杯浓茶提神，鲘门服务区一定休息。两人换着开更安全。往返共660km。
+  </div>
+</div>
+
+<!-- 酒店 -->
+<div class="hotel-section" id="hotel">
+  <h2>🏨 6.19 住宿</h2>
+  <div class="hotel-grid">
+    <div class="hotel-item" style="grid-column:1/-1;background:linear-gradient(135deg,#f0f4ff,#e8ecff);border:2px solid #7c6ef0">
+      <div class="h-name">🏨 汕头海滨戴斯温德姆酒店（小公园店）</div>
+      <div class="h-price">💰 约¥400-600/晚 · ⭐ 温德姆品质</div>
+      <div class="h-desc">📍 金平区海滨路16号 · 推窗见海 · 自带免费停车场 · 步行5分钟到观海长廊 · 驾车10分钟到小公园</div>
+      <div class="h-rec">💡 选择理由：海景房+免费停车+品牌保障+位置绝佳。逛完老城开车10分钟就到，第二天去轮渡步行即达。</div>
+    </div>
+  </div>
+  <div class="hotel-tip"><div class="ht-title">💡 入住贴士</div>Day1中午到汕头先吃蚝烙逛老城，下午3点左右去酒店办入住休整，避开正午热浪。傍晚出发西堤公园。</div>
+</div>
+
+
+<!-- ==================== Day 1 ==================== -->
+<div class="day-card" id="day1">
+  <div class="day-header d1">
+    <div class="day-num">Day 1 · 6月19日（周五）</div>
+    <div class="day-title">深圳出发 → 老城烟火 → 骑楼漫步 → 日落晚餐</div>
+    <div class="day-route">深圳 → 蚝烙午餐 → 小公园骑楼 → 甜汤 → 酒店入住 → 西堤日落 → 龙眼南路扫街 → 回酒店</div>
+  </div>
+  <div class="journey-flow">
+
+    <div class="drive-leg"><div class="drive-icon">🚗</div><div class="drive-info"><div class="drive-label">📍 深圳出发 → G15沈海高速 → 汕头</div><div class="drive-detail">全程 <strong>330km</strong> · 约 <strong>4-4.5h</strong> · 惠来服务区休息一次 · 中阳大道出口下高速</div></div></div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚗 下高速 → 导航「<strong>升平路与同平路交叉口</strong>」约15分钟 · 🅿️ <strong>升平停车场</strong>（升平路中段/4元4h/首选）或<strong>同平停车场</strong>（同平路北端/4元4h/有充电桩）</div>
+      <div class="spot-body"><div class="spot-icon food">🍜</div><div><div class="spot-name">西天巷蚝烙 <span class="spot-price">人均25-35元</span></div><div class="spot-desc"><strong>📍 升平路87号之一</strong>（升平路与同平路交界，南生百货大楼后面）。几十年老店猪油煎制外酥里嫩。🍜 <strong>周边加餐：</strong>福合埕市场炒糕粿阿婆、跃进菜市场老王胡椒鸡（28元/斤）。<br>🔍 <strong>怎么找：</strong>巷子里没大招牌，看本地人排队就是，问老街坊"西天巷蚝烙"都知道。</div><div class="spot-play">⏱️ 约11:30到 · 午餐40分钟 · 停好车全天步行</div></div></div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚶 步行 → 小公园中山纪念亭 <strong>约300m/5分钟</strong>（车不动）</div>
+      <div class="spot-body"><div class="spot-icon">🏛️</div><div><div class="spot-name">小公园骑楼历史文化区 <span class="spot-price">免费</span></div><div class="spot-desc">全国保存最完好的开埠区，放射状骑楼街如同时光隧道。南生百货、永平酒楼、国平路骑楼——每栋都在诉说百年商埠繁华。🅿️ 车停升平/同平不动（4元/4h），老城内全程步行。备选<strong>南粤大厦停车场</strong>（外马路与国平路交界/8元4h/停车楼通道窄新手慎入）。</div><div class="spot-play">⏱️ 1.5h | 📸 升平路×国平路交叉口俯拍 | 👟 石板路别穿高跟鞋</div></div></div>
+      <div class="spot-romance">💕 牵着手在骑楼廊道里漫步，阳光从拱廊斜斜打下来，影子拉得很长。中山纪念亭前拍张合照，背景是百年时光。</div>
+      <div class="pitfall">⚠️ 主街商铺价格虚高，真正地道手信去巷子老字号。</div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚶 步行 → <strong>约300m/5分钟</strong></div>
+      <div class="spot-body"><div class="spot-icon">📮</div><div><div class="spot-name">汕头邮政总局大楼 <span class="spot-price">免费</span></div><div class="spot-desc">广东保存最完整的欧陆式邮局，1922年建至今营业。可买老城明信片盖邮戳寄回家。</div><div class="spot-play">⏱️ 30分钟 | ⏰ 9:00-17:00（周一闭馆，6.19周五正常）</div></div></div>
+      <div class="spot-romance">💕 各写一张明信片给对方，盖上老邮戳。回家后收到，是旅行的延续。</div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚶 步行 → <strong>约200m/3分钟</strong></div>
+      <div class="spot-body"><div class="spot-icon">📸</div><div><div class="spot-name">汕头旅社 · "汕头"大字墙 <span class="spot-price">免费</span></div><div class="spot-desc">老城最具辨识度打卡点，斑驳"汕头"二字浓缩年代感。穿浅色衣服对比度更好。</div><div class="spot-play">⏱️ 20分钟 | 📸 广角更出片</div></div></div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚶 步行 → <strong>约200m/3分钟</strong></div>
+      <div class="spot-body"><div class="spot-icon">🏫</div><div><div class="spot-name">汕头开埠文化陈列馆 <span class="spot-price">免费</span></div><div class="spot-desc">欧陆风格建筑，馆内陈列1860年开埠以来珍贵史料，读懂汕头从渔村变商埠的钥匙。</div><div class="spot-play">⏱️ 30分钟 | ⏰ 9:00-16:30 | 周一闭馆（6.19周五正常）</div></div></div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚶 步行 → 广场附近 <strong>约400m/6分钟</strong></div>
+      <div class="spot-body"><div class="spot-icon food">🍧</div><div><div class="spot-name">广场老牌豆花甜汤 <span class="spot-price">人均10-20元</span></div><div class="spot-desc"><strong>📍 人民广场附近。</strong>逛半天坐下歇脚，豆花嫩滑，姜薯汤、五果汤、绿豆爽各来一碗。潮汕人下午吃甜汤是几百年习惯。</div><div class="spot-play">⏱️ 20分钟 | 🚗 喝完取车10分钟到酒店</div></div></div>
+      <div class="spot-romance">💕 分一碗豆花你一勺我一勺。甜汤的细腻甜润，像这趟旅程——慢一点，甜一点。</div>
+    </div>
+
+    <div class="stay-leg"><div class="stay-label">🏨 驾车10分钟 → 酒店入住+休整</div><div class="stay-desc">约15:00办入住，冲凉小憩避正午热浪。酒店自带免费停车场。观海长廊散步吹海风。</div></div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚗 从酒店 → 导航「<strong>西堤停车场</strong>」约2km/8分钟 · 🅿️ <strong>西堤停车场</strong>（镇邦路与西堤路交界/800+车位/4元4h）步行300m到公园</div>
+      <div class="spot-body"><div class="spot-icon view">🌅</div><div><div class="spot-name">西堤公园 · 海上日落 <span class="spot-price">免费</span></div><div class="spot-desc">礐石大桥横跨金色海面，渔船点点。6月日落约18:50，提前半小时到，找长椅坐下看完整场日落。</div><div class="spot-play">⏱️ 17:30到达 · 停留1.5h</div></div></div>
+      <div class="spot-romance">💕 并肩坐海堤上，看太阳从大桥钢索间沉入海面，天空从橙色渐变粉紫。</div>
+      <div class="pitfall">⚠️ 傍晚蚊子极凶！务必带驱蚊水。海堤无护栏注意安全。</div>
+    </div>
+
+    <div class="food-leg">
+      <div class="food-label">🍽️ 驾车12分钟 → 龙眼南路 · 扫街晚餐</div>
+      <div class="local-tip-box" style="margin-bottom:10px">🅿️ <strong>停车：</strong>停在<strong>金新路/东方街/长平路</strong>路边划线位，步行5分钟进入龙眼南路。<br>🚶 <strong>扫街顺序：</strong>楼下鸡翅开胃→牛肉火锅主餐→生腌尝鲜→糖葱薄饼→甘草水果消食→东兴甜汤收尾</div>
+      <div class="food-inner">
+        <div class="fi-item"><div class="fi-name">🥩 天山牛肉火锅</div><div class="fi-detail">📍练江路29号·本地人常去</div><div class="fi-price">💰 人均70-90元</div></div>
+        <div class="fi-item"><div class="fi-name">🥩 金新牛肉火锅</div><div class="fi-detail">📍金新路65号·每天一头牛</div><div class="fi-price">💰 人均70-90元</div></div>
+        <div class="fi-item"><div class="fi-name">🍗 楼下鸡翅</div><div class="fi-detail">腐乳鸡翅·边走边啃</div><div class="fi-price">💰 约13元/只</div></div>
+        <div class="fi-item"><div class="fi-name">🦀 金二顺·非遗生腌</div><div class="fi-detail">膏蟹虾蛄·先喝白粥打底</div><div class="fi-price">💰 人均50-80元</div></div>
+        <div class="fi-item"><div class="fi-name">🫓 糖葱薄饼</div><div class="fi-detail">上过舌尖·街边摊</div><div class="fi-price">💰 约5元/个</div></div>
+        <div class="fi-item"><div class="fi-name">🍉 甘草水果</div><div class="fi-detail">青芒芭乐蘸甘草汁消食</div><div class="fi-price">💰 约30元/份</div></div>
+        <div class="fi-item"><div class="fi-name">🍧 东兴甜汤</div><div class="fi-detail">非网红宝藏小店</div><div class="fi-price">💰 人均10-15元</div></div>
+        <div class="fi-item"><div class="fi-name">🍲 富苑饮食（备选）</div><div class="fi-detail">长平路·潮汕打冷百科全书</div><div class="fi-price">💰 人均60-100元</div></div>
+      </div>
+    </div>
+
+    <div class="stay-leg"><div class="stay-label">🏨 驾车10分钟 → 回酒店休息</div><div class="stay-desc">明早自然醒，不用赶路。酒店→Day2轮渡码头步行仅10分钟。</div></div>
+
+  </div>
+</div>
+
+
+<!-- ==================== Day 2 ==================== -->
+<div class="day-card" id="day2">
+  <div class="day-header d2">
+    <div class="day-num">Day 2 · 6月20日（周六）</div>
+    <div class="day-title">自然醒 → 轮渡看海 → 手信采买 → 扫街晚餐 → 回深圳</div>
+    <div class="day-route">酒店 → 小吴肠粉 → 观海长廊 → 广场轮渡 → 草莓冰 → 春梅里鹅肉 → 平原市场 → 老潮兴 → 反沙 → 晚餐 → 回深圳</div>
+  </div>
+  <div class="journey-flow">
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚗 从酒店驾车 → 龙眼南路外围停车 <strong>约3km/10分钟</strong> · 🅿️ 停在金新路/东方街路边</div>
+      <div class="spot-body"><div class="spot-icon food">🥢</div><div><div class="spot-name">小吴肠粉 · 本地早餐 <span class="spot-price">人均10-14元</span></div><div class="spot-desc"><strong>📍 龙眼南路。</strong>皮薄馅大酱汁鲜甜，牛肉肠粉和全家福是招牌。早上8点就排队但翻台快。（不想出门就吃酒店早餐）</div><div class="spot-play">⏱️ 8:30起床 · 9:00早餐</div></div></div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚶 回酒店 → 步行 → 观海长廊 <strong>5分钟</strong>（车留酒店）</div>
+      <div class="spot-body"><div class="spot-icon view">🌊</div><div><div class="spot-name">观海长廊散步 <span class="spot-price">免费</span></div><div class="spot-desc">海滨路沿海步道，海风拂面看渔船出海、海鸥掠过。悠闲早晨才是度假的正确打开方式。</div><div class="spot-play">⏱️ 9:30-10:00</div></div></div>
+      <div class="spot-romance">💕 清晨海滨路人少安静，牵着手沿海岸线走。不用赶时间的感觉真好。</div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚶 步行 → 人民广场轮渡码头 <strong>约10分钟</strong></div>
+      <div class="spot-body"><div class="spot-icon ride">🚢</div><div><div class="spot-name">人民广场轮渡 <span class="spot-price">单程1元/人</span></div><div class="spot-desc">汕头人的日常交通，却是最浪漫的体验。10分钟航程海上看汕头——左手老城骑楼，右手东海岸新城。坐到对岸再坐回来，来回才2元。<br>🅿️ <strong>如开车过来：</strong>停「人民广场西地下停车场」（博爱路）或「人民体育场停车场」（跃进路），步行5分钟到码头。码头不提供日游停车位。</div><div class="spot-play">⏱️ 10:00-10:40 | 📸 船上拍海湾大桥+老城天际线</div></div></div>
+      <div class="spot-romance">💕 站在甲板上，海风吹起头发，两个人靠栏杆看汕头在眼前缓缓展开。2块钱的浪漫，比什么都甜。</div>
+      <div class="pitfall">⚠️ 别买几十块的"海上观光游船"票！1元市民轮渡风景一模一样。</div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚶 从轮渡码头步行 → 十二中附近 <strong>约800m/12分钟</strong>（或开车顺路3分钟）· 🅿️ 路边临时停</div>
+      <div class="spot-body"><div class="spot-icon food">🍓</div><div><div class="spot-name">十二中草莓冰 <span class="spot-price">人均10-20元</span></div><div class="spot-desc"><strong>📍 汕头市第十二中学附近</strong>（外马路与三牧楼巷交叉口一带）。汕头学生界传奇饮品，新鲜草莓+冰沙+炼奶，夏天来一杯透心凉。开了十几年，本地人从小喝到大。</div><div class="spot-play">⏱️ 15分钟 · 排队快</div></div></div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚗 驾车 → 导航「<strong>春梅里鹅肉东厦店</strong>」约3km/12分钟 · 🅿️ 店门口路边划线位/卜蜂中心停车场</div>
+      <div class="spot-body"><div class="spot-icon food">🦆</div><div><div class="spot-name">春梅里鹅肉店 · 午餐+打包 <span class="spot-price">人均50-80元</span></div><div class="spot-desc"><strong>📍 东厦北路春兰园1幢</strong>（东厦北路与天山北路交叉口附近，临街红底金字招牌）。45年老店，粉肝绵密入口即化。吃完<strong>真空打包</strong>粉肝、鹅翅、鹅掌带回家。</div><div class="spot-play">⏱️ 11:30 · 40分钟 | 📦 真空保鲜2-3天</div></div></div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚗 → 导航「<strong>平原市场</strong>」约3km/12分钟 · 🅿️ 市场周边路面划线位（挤的话一人买一人绕圈等）</div>
+      <div class="spot-body"><div class="spot-icon">🎁</div><div><div class="spot-name">阿娟牛肉店 · 手打牛肉丸 <span class="spot-price">约60-80元/斤</span></div><div class="spot-desc"><strong>📍 平西三街6号-1，平原市场大门口斜对面</strong>（临街档口不在市场里面）。🏅 <strong>强推牛筋丸！</strong>比牛肉丸更有嚼劲。顺手买沙茶酱+蒜头油。真空+泡沫箱+冰袋，车载空调回深圳没问题。</div><div class="spot-play">⏱️ 12:15 · 20分钟 | ⏰ 6:30-20:00</div></div></div>
+      <div class="pitfall">⚠️ 正宗手打牛肉含量≥90%、零淀粉。机器搅拌的便宜货别买。</div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚗 → 老潮兴 <strong>约4km/15分钟</strong>（小公园附近，可选）· 🅿️ 同平停车场</div>
+      <div class="spot-body"><div class="spot-icon">🧁</div><div><div class="spot-name">老潮兴·做粿人家（可选） <span class="spot-price">粿品20-35元/盒</span></div><div class="spot-desc"><strong>📍 小公园附近。</strong>非遗传承，鼠壳粿、红桃粿造型精致好看又好吃，送长辈最合适。时间紧可跳过。</div><div class="spot-play">⏱️ 20分钟</div></div></div>
+    </div>
+
+    <div class="spot-leg">
+      <div class="spot-transit-bar">🚗 → 伟顺反沙 <strong>约2km/8分钟</strong>（福平路一带，顺路）· 🅿️ 同平停车场</div>
+      <div class="spot-body"><div class="spot-icon food">🍠</div><div><div class="spot-name">伟顺反沙 <span class="spot-price">约20-40元</span></div><div class="spot-desc"><strong>📍 福平路一带（近小公园）。</strong>反沙芋头/花生——潮汕独有甜品！芋头红薯裹糖霜，外甜内糯。买一盒路上当零食，回程4小时有得吃。</div><div class="spot-play">⏱️ 15分钟</div></div></div>
+      <div class="spot-romance">💕 回程路上你开车TA喂你一块反沙芋头，甜味从嘴里到心里。汕头之旅最后一口，是甜的。</div>
+    </div>
+
+    <!-- Day2 下午自由时光 -->
+    <div class="stay-leg"><div class="stay-label">🕐 下午自由时光 · 约13:30-17:30</div><div class="stay-desc">手信全部装车，接下来有4小时自由时间。可以：① 回酒店休息/游泳 ② 再去老城逛逛拍拍照 ③ 找家工夫茶馆喝凤凰单丛 ④ 去万象城商圈逛街吹空调 ⑤ 回龙眼南路把昨晚没吃到的小吃补上。傍晚出发去吃第二顿大餐。</div></div>
+
+    <!-- Day2 晚餐 -->
+    <div class="food-leg">
+      <div class="food-label">🍽️ Day 2 晚餐（18:00）· 最后一顿潮汕大餐</div>
+      <div class="local-tip-box" style="margin-bottom:10px">🅿️ 同样停在龙眼南路外围（金新路/东方街）。<strong>⚠️ 今天是周六！龙眼南路20:00起限行！</strong>务必在20:00前吃完或停好车。</div>
+      <div class="food-inner">
+        <div class="fi-item"><div class="fi-name">🥩 换一家牛肉火锅</div><div class="fi-detail">Day1吃天山，Day2试金新</div><div class="fi-price">💰 人均70-90元</div><div class="fi-detail" style="color:#666">对比哪家更好吃</div></div>
+        <div class="fi-item"><div class="fi-name">🍲 富苑饮食</div><div class="fi-detail">长平路·潮汕打冷百科全书</div><div class="fi-price">💰 人均60-100元</div><div class="fi-detail" style="color:#666">隆江猪脚+卤味+鱼饭+生腌全有</div></div>
+        <div class="fi-item"><div class="fi-name">🍲 创新土鸡火锅</div><div class="fi-detail">药膳鸡炉·大表哥同款</div><div class="fi-price">💰 人均60元</div><div class="fi-detail" style="color:#666">不吃牛肉的绝佳替代</div></div>
+        <div class="fi-item"><div class="fi-name">🦪 百年银屏蚝烙</div><div class="fi-detail">123年老字号·非遗·刘嘉玲打卡</div><div class="fi-price">💰 人均30元</div><div class="fi-detail" style="color:#666">和昨天的西天巷对比一下</div></div>
+        <div class="fi-item"><div class="fi-name">🍜 爱西干面</div><div class="fi-detail">80年+中华名小吃</div><div class="fi-price">💰 人均20-25元</div><div class="fi-detail" style="color:#666">干拌面配汤，简单但惊艳</div></div>
+        <div class="fi-item"><div class="fi-name">🍧 屋里甜汤</div><div class="fi-detail">龙眼南路·手工低糖</div><div class="fi-price">💰 人均15-25元</div><div class="fi-detail" style="color:#666">三色花草粿，最后一碗甜</div></div>
+      </div>
+    </div>
+
+    <div class="drive-leg"><div class="drive-icon">🛣️</div><div class="drive-info"><div class="drive-label">🚗 吃完回家！汕头 → G15沈海高速 → 深圳</div><div class="drive-detail">全程 <strong>330km</strong> · 约 <strong>4-4.5h</strong> · 预计<strong>凌晨0:30</strong>到家</div><div class="drive-detail" style="margin-top:4px;color:#888">⛽ 出发前加满油 · 🅿️ 鲘门服务区休息+咖啡 · 🚫 杜绝疲劳驾驶，两人换着开</div></div></div>
+
+  </div>
+</div>
+
+
+<!-- 时间表 -->
+<div class="timeline-card" id="timeline">
+  <h2 class="timeline-header">⏱️ 全程时间表</h2>
+  <div class="timeline-content">
+    <h3 style="font-size:1em;color:#d4684a;margin:16px 0 8px">📅 6月19日（周五）· Day 1</h3>
+    <div class="tl-item"><span class="tl-time">07:00</span><span class="tl-act">📍 <strong>深圳出发！</strong>加满油上G15沈海高速</span></div>
+    <div class="tl-item"><span class="tl-time">09:00</span><span class="tl-act">🅿️ 惠来服务区休息15分钟</span></div>
+    <div class="tl-item"><span class="tl-time">11:30</span><span class="tl-act">🍜 到汕头！直奔<strong>西天巷蚝烙</strong>午餐 · 停升平/同平</span></div>
+    <div class="tl-item"><span class="tl-time">12:15</span><span class="tl-act">🏛️ 小公园骑楼区 · 中山纪念亭 · 南生百货</span></div>
+    <div class="tl-item"><span class="tl-time">12:45</span><span class="tl-act">📮 邮政总局寄明信片</span></div>
+    <div class="tl-item"><span class="tl-time">13:15</span><span class="tl-act">📸 汕头旅社大字墙</span></div>
+    <div class="tl-item"><span class="tl-time">13:35</span><span class="tl-act">🏫 开埠文化陈列馆</span></div>
+    <div class="tl-item"><span class="tl-time">14:10</span><span class="tl-act">🍧 广场老牌豆花甜汤歇脚</span></div>
+    <div class="tl-item"><span class="tl-time">14:40</span><span class="tl-act">🚗 取车 → 🏨 <strong>酒店入住+休整</strong></span></div>
+    <div class="tl-item"><span class="tl-time">17:00</span><span class="tl-act">🚗 → 西堤停车场</span></div>
+    <div class="tl-item"><span class="tl-time">17:40</span><span class="tl-act">🌅 <strong>西堤公园看日落</strong>（6月约18:50）</span></div>
+    <div class="tl-item"><span class="tl-time">19:10</span><span class="tl-act">🚗 → 龙眼南路外围停车</span></div>
+    <div class="tl-item"><span class="tl-time">19:30</span><span class="tl-act">🍽️ <strong>龙眼南路扫街：</strong>鸡翅→火锅→生腌→糖葱→水果→甜汤</span></div>
+    <div class="tl-item"><span class="tl-time">22:00</span><span class="tl-act">🏨 回酒店休息</span></div>
+
+    <h3 style="font-size:1em;color:#3d8fd9;margin:20px 0 8px">📅 6月20日（周六）· Day 2</h3>
+    <div class="tl-item"><span class="tl-time">08:30</span><span class="tl-act">🌅 自然醒！小吴肠粉 或 酒店早餐</span></div>
+    <div class="tl-item"><span class="tl-time">09:30</span><span class="tl-act">🌊 观海长廊散步</span></div>
+    <div class="tl-item"><span class="tl-time">10:00</span><span class="tl-act">🚢 <strong>1元轮渡</strong>来回看海</span></div>
+    <div class="tl-item"><span class="tl-time">10:50</span><span class="tl-act">🍓 十二中草莓冰</span></div>
+    <div class="tl-item"><span class="tl-time">11:30</span><span class="tl-act">🦆 春梅里鹅肉午餐+真空打包</span></div>
+    <div class="tl-item"><span class="tl-time">12:30</span><span class="tl-act">🛒 平原市场阿娟牛肉丸</span></div>
+    <div class="tl-item"><span class="tl-time">13:00</span><span class="tl-act">🧁 老潮兴粿品（可选）</span></div>
+    <div class="tl-item"><span class="tl-time">13:30</span><span class="tl-act">🍠 伟顺反沙买盒路上吃</span></div>
+    <div class="tl-item"><span class="tl-time">14:00</span><span class="tl-act">🕐 <strong>下午自由时光</strong>（酒店休息/喝茶/逛街/补小吃）</span></div>
+    <div class="tl-item"><span class="tl-time">17:30</span><span class="tl-act">🚗 → 龙眼南路外围停车（⚠️ 20:00起限行）</span></div>
+    <div class="tl-item"><span class="tl-time">18:00</span><span class="tl-act">🍽️ <strong>Day2晚餐：</strong>金新牛肉火锅/富苑打冷/土鸡火锅</span></div>
+    <div class="tl-item"><span class="tl-time">19:30</span><span class="tl-act">🍧 最后一碗甜汤</span></div>
+    <div class="tl-item"><span class="tl-time">20:00</span><span class="tl-act">⛽ 加满油，<strong>出发回深圳！</strong></span></div>
+    <div class="tl-item"><span class="tl-time">22:00</span><span class="tl-act">🅿️ 鲘门服务区休息+咖啡提神</span></div>
+    <div class="tl-item"><span class="tl-time">00:30</span><span class="tl-act">🏠 <strong>到家！</strong>周日还能睡懒觉 🎉</span></div>
+  </div>
+</div>
+
+
+<!-- 美食总览 -->
+<div class="food-section" id="food">
+  <h2>🍜 两天 10+ 站美食全清单</h2>
+  <div class="local-tip-box" style="margin-bottom:16px">🧭 <strong>铁律：</strong>远离网红招牌→钻进菜市场旁巷子→本地人排队就跟着排</div>
+
+  <h3 style="font-size:1em;color:#d4684a;margin:16px 0 8px">🥩 牛肉火锅</h3>
+  <div class="food-grid">
+    <div class="food-item"><div class="f-name">天山牛肉火锅</div><div class="f-shop">📍练江路29号·本地人常去不排队</div><div class="f-price">💰 人均70-90元</div></div>
+    <div class="food-item"><div class="f-name">金新牛肉火锅</div><div class="f-shop">📍金新路65号·每天只卖一头牛</div><div class="f-price">💰 人均70-90元</div></div>
+  </div>
+
+  <h3 style="font-size:1em;color:#d4684a;margin:16px 0 8px">🦪 蚝烙·卤鹅·生腌·打冷</h3>
+  <div class="food-grid">
+    <div class="food-item"><div class="f-name">西天巷蚝烙</div><div class="f-shop">📍升平路87号之一</div><div class="f-price">💰 25-35元</div></div>
+    <div class="food-item"><div class="f-name">百年银屏蚝烙</div><div class="f-shop">📍123年老字号·非遗</div><div class="f-price">💰 约30元</div></div>
+    <div class="food-item"><div class="f-name">春梅里鹅肉</div><div class="f-shop">📍东厦北路春兰园1幢·45年</div><div class="f-price">💰 50-80元</div></div>
+    <div class="food-item"><div class="f-name">金二顺·非遗生腌</div><div class="f-shop">📍龙眼南路·先喝白粥！</div><div class="f-price">💰 50-80元</div></div>
+    <div class="food-item"><div class="f-name">富苑饮食</div><div class="f-shop">📍长平路·潮汕打冷百科全书</div><div class="f-price">💰 60-100元</div></div>
+    <div class="food-item"><div class="f-name">创新土鸡火锅</div><div class="f-shop">药膳鸡炉·不吃牛的替代</div><div class="f-price">💰 约60元</div></div>
+  </div>
+
+  <h3 style="font-size:1em;color:#d4684a;margin:16px 0 8px">🍗 街头小吃·甜汤·饮品</h3>
+  <div class="food-grid">
+    <div class="food-item"><div class="f-name">小吴肠粉</div><div class="f-shop">📍龙眼南路</div><div class="f-price">💰 10-14元</div></div>
+    <div class="food-item"><div class="f-name">楼下鸡翅</div><div class="f-shop">📍龙眼南路·腐乳鸡翅</div><div class="f-price">💰 约13元/只</div></div>
+    <div class="food-item"><div class="f-name">糖葱薄饼</div><div class="f-shop">📍龙眼南路街边摊·上过舌尖</div><div class="f-price">💰 约5元/个</div></div>
+    <div class="food-item"><div class="f-name">甘草水果</div><div class="f-shop">📍龙眼南路水果后宫</div><div class="f-price">💰 约30元/份</div></div>
+    <div class="food-item"><div class="f-name">广场老牌豆花甜汤</div><div class="f-shop">📍人民广场附近</div><div class="f-price">💰 10-20元</div></div>
+    <div class="food-item"><div class="f-name">东兴甜汤</div><div class="f-shop">📍非网红宝藏小店</div><div class="f-price">💰 10-15元</div></div>
+    <div class="food-item"><div class="f-name">屋里甜汤</div><div class="f-shop">📍龙眼南路·手工低糖</div><div class="f-price">💰 15-25元</div></div>
+    <div class="food-item"><div class="f-name">十二中草莓冰</div><div class="f-shop">📍十二中附近·学生界传奇</div><div class="f-price">💰 10-20元</div></div>
+    <div class="food-item"><div class="f-name">伟顺反沙</div><div class="f-shop">📍福平路一带</div><div class="f-price">💰 20-40元</div></div>
+    <div class="food-item"><div class="f-name">爱西干面</div><div class="f-shop">📍80年+中华名小吃</div><div class="f-price">💰 20-25元</div></div>
+  </div>
+</div>
+
+
+<!-- 手信 -->
+<div class="souvenir-section" id="souvenir">
+  <h2>🎁 手信采买（Day2 下午搞定）</h2>
+  <div class="souvenir-grid">
+    <div class="souvenir-item"><div class="s-name">🥩 阿娟牛肉店·手打牛肉丸</div><div class="s-shop">📍平西三街6号-1（平原市场门口斜对面）⏰6:30-20:00</div><div class="s-price">💰 60-80元/斤·真空+冰袋</div><div class="s-note">🏅 <strong>强推牛筋丸！</strong>配沙茶酱+蒜头油。车载空调4h回深圳没问题。</div></div>
+    <div class="souvenir-item"><div class="s-name">🦆 春梅里鹅肉·卤鹅真空装</div><div class="s-shop">📍东厦北路春兰园1幢</div><div class="s-price">💰 粉肝/鹅翅/鹅掌按斤称</div><div class="s-note">45年老店。粉肝最珍贵。真空保鲜2-3天。</div></div>
+    <div class="souvenir-item"><div class="s-name">🧁 老潮兴·潮汕粿品</div><div class="s-shop">📍小公园附近·非遗传承</div><div class="s-price">💰 20-35元/盒</div><div class="s-note">鼠壳粿红桃粿造型精致，送长辈最合适。</div></div>
+    <div class="souvenir-item"><div class="s-name">🍠 伟顺反沙</div><div class="s-shop">📍福平路一带</div><div class="s-price">💰 20-40元</div><div class="s-note">反沙芋头/花生，路上当零食。</div></div>
+  </div>
+  <div class="souvenir-tip"><strong>🛍️ Day2采购路线（11:30-14:00）：</strong>春梅里（吃+打包）→平原市场阿娟牛肉丸→老潮兴粿品→伟顺反沙→全部装车<br><strong>📦 储存：</strong>真空+冰袋放后备箱，4h回深圳完全没问题。到家冷冻可存3个月。</div>
+</div>
+
+
+<!-- 避坑 -->
+<div class="avoid-section" id="avoid">
+  <h2>⚠️ 避坑清单</h2>
+  <div class="avoid-list">
+    <div class="avoid-item"><span class="a-num">1</span><div><span class="a-wrong">去杏花吴记排2小时队</span> → <span class="a-right">去天山/金新，本地人常去不排队品质一样好</span></div></div>
+    <div class="avoid-item"><span class="a-num">2</span><div><span class="a-wrong">小公园主街买特产手信</span> → <span class="a-right">平原市场阿娟牛肉丸+春梅里真空打包</span></div></div>
+    <div class="avoid-item"><span class="a-num">3</span><div><span class="a-wrong">空腹吃生腌一口气吃很多</span> → <span class="a-right">先喝半碗白粥打底，浅尝即止</span></div></div>
+    <div class="avoid-item"><span class="a-num">4</span><div><span class="a-wrong">龙眼南路开车进去找车位</span> → <span class="a-right">停金新路/东方街/长平路外围步行5分钟进入</span></div></div>
+    <div class="avoid-item"><span class="a-num">5</span><div><span class="a-wrong">只看大众点评/小红书选餐厅</span> → <span class="a-right">钻进菜市场旁巷子，本地人排队就跟着排</span></div></div>
+    <div class="avoid-item"><span class="a-num">6</span><div><span class="a-wrong">疲劳驾驶硬撑开全程</span> → <span class="a-right">Day2回程660km两人换着开，鲘门服务区一定休息喝咖啡</span></div></div>
+    <div class="avoid-item"><span class="a-num">7</span><div><span class="a-wrong">西堤公园看日落不带驱蚊水</span> → <span class="a-right">傍晚海边蚊子极凶，务必带驱蚊水穿长裤</span></div></div>
+    <div class="avoid-item"><span class="a-num">8</span><div><span class="a-wrong">买牛肉丸不看成分表</span> → <span class="a-right">牛肉含量≥90%零淀粉才是正宗手打。真空+冰袋</span></div></div>
+    <div class="avoid-item"><span class="a-num">9</span><div><span class="a-wrong">花几十块买"海上观光游船"</span> → <span class="a-right">1元市民轮渡风景一模一样，来回才2元</span></div></div>
+    <div class="avoid-item"><span class="a-num">10</span><div><span class="a-wrong">周六龙眼南路20:00后开车进去</span> → <span class="a-right">周末晚8点起限行！Day2晚餐务必20:00前出来或停外面</span></div></div>
+  </div>
+</div>
+
+
+<!-- 预算 -->
+<div class="budget-card" id="budget">
+  <h2>💰 预算（2人）</h2>
+  <div class="budget-row"><span>🚗 深圳⇋汕头往返</span><span>油费+过路费 660km</span><span>¥620-680</span></div>
+  <div class="budget-row"><span>🏨 住宿1晚</span><span>汕头海滨戴斯温德姆酒店</span><span>¥400-600</span></div>
+  <div class="budget-row"><span>🍜 Day1 午餐+甜汤</span><span>蚝烙+炒糕粿+豆花甜汤</span><span>¥80-120</span></div>
+  <div class="budget-row"><span>🍽️ Day1 扫街晚餐</span><span>火锅+生腌+鸡翅+小吃+甜汤</span><span>¥250-350</span></div>
+  <div class="budget-row"><span>🥢 Day2 早餐</span><span>小吴肠粉</span><span>¥20-30</span></div>
+  <div class="budget-row"><span>🍓 Day2 饮品</span><span>十二中草莓冰</span><span>¥20-40</span></div>
+  <div class="budget-row"><span>🦆 Day2 午餐</span><span>春梅里鹅肉（2人）</span><span>¥100-150</span></div>
+  <div class="budget-row"><span>🍽️ Day2 晚餐</span><span>第二顿大餐</span><span>¥150-250</span></div>
+  <div class="budget-row"><span>🎁 手信</span><span>牛肉丸+卤鹅+粿品+反沙</span><span>¥200-350</span></div>
+  <div class="budget-row"><span>🅿️ 停车+轮渡</span><span>各停车场+2元轮渡</span><span>¥30-50</span></div>
+  <div class="budget-total">💰 合计约 ¥1,870 — 2,620（2人）</div>
+  <div style="text-align:center;font-size:.8em;margin-top:8px;opacity:.7">手信丰俭由人 · 吃方面往高了估，实际花不了这么多</div>
+</div>
+
+
+<!-- Tips -->
+<div class="tips-card" id="tips">
+  <h2>💕 出行 Tips</h2>
+  <div class="tip-item">🛣️ <span><strong>安全驾驶：</strong>往返660km，两个人换着开。Day2回程在鲘门服务区一定休息+喝咖啡。犯困就靠边睡10分钟，别硬撑。</span></div>
+  <div class="tip-item">📸 <span><strong>穿搭：</strong>浅色系和骑楼暖色调对比更出片。带草帽防晒又上镜。两天都在走路，穿最舒服的鞋。</span></div>
+  <div class="tip-item">🌂 <span><strong>6月必备：</strong>防晒霜、遮阳伞、墨镜、驱蚊水（西堤必备！）、薄外套（车里酒店冷气足）。</span></div>
+  <div class="tip-item">💊 <span><strong>药品：</strong>肠胃药（生腌必备）、藿香正气水、驱蚊液、晕车药。别等不舒服了才后悔。</span></div>
+  <div class="tip-item">🎵 <span><strong>歌单：</strong>去程闽南语老歌营造氛围，回程提神节奏。充电宝带两个，导航+拍照扛不住一天。</span></div>
+  <div class="tip-item">🍵 <span><strong>回程前提神：</strong>Day2晚餐后喝杯浓茶/咖啡再上路。老城区工夫茶馆打包凤凰单丛带着喝。</span></div>
+  <div class="tip-item">🅿️ <span><strong>导航：</strong>老城路窄单行多，严格跟导航别抄近路。所有停车场高德/百度直接搜名称。</span></div>
+  <div class="tip-item">📱 <span><strong>龙眼南路限行：</strong>6.20周六20:00-24:00禁止机动车驶入！Day2晚餐务必20:00前搞定或停外围步行进入。</span></div>
+</div>
+
+<div class="footer">
+  🚗 深圳出发 · 汕头两天一晚 · 6.19-6.20<br>
+  19号住一晚 · 20号吃完晚饭回 · 10+站美食 · 满载而归<br>
+  周六玩到尽兴，周日睡到自然醒 🏠
+</div>
+
+</div>
+
+<div class="quick-nav" id="quickNav"></div>
+
+<script>
+(function(){
+  const s=[];
+  document.querySelectorAll('.highlights,.transport-card,.timeline-card,.day-card,.avoid-section,.budget-card,.tips-card,.hotel-section,.food-section,.souvenir-section').forEach((el,i)=>{
+    const id=el.id||('s'+i);el.id=id;let l='';
+    if(el.classList.contains('highlights'))l='亮点';
+    else if(el.classList.contains('transport-card'))l='交通';
+    else if(el.classList.contains('timeline-card'))l='时间表';
+    else if(el.classList.contains('day-card')){const dn=el.querySelector('.day-num');l=dn?dn.textContent.split('·')[0].trim():'行程'}
+    else if(el.classList.contains('avoid-section'))l='避坑';
+    else if(el.classList.contains('budget-card'))l='预算';
+    else if(el.classList.contains('tips-card'))l='Tips';
+    else if(el.classList.contains('hotel-section'))l='酒店';
+    else if(el.classList.contains('food-section'))l='美食';
+    else if(el.classList.contains('souvenir-section'))l='手信';
+    s.push({id,l,el});
+  });
+  const nav=document.getElementById('quickNav');
+  s.forEach(x=>{const d=document.createElement('div');d.className='nav-item';d.innerHTML='<span class="nav-dot"></span><span class="nav-label">'+x.l+'</span>';d.onclick=()=>x.el.scrollIntoView({behavior:'smooth',block:'start'});nav.appendChild(d)});
+  const items=nav.querySelectorAll('.nav-item');
+  window.addEventListener('scroll',()=>{let c=0;s.forEach((x,i)=>{if(x.el.getBoundingClientRect().top<window.innerHeight/2)c=i});items.forEach((it,i)=>it.classList.toggle('active',i===c))});
+})();
+
+(function(){
+  document.querySelectorAll('.day-card').forEach(c=>{const h=c.querySelector('.day-header'),w=document.createElement('div');w.className='spots-wrapper';let s=h.nextElementSibling;while(s){const n=s.nextElementSibling;w.appendChild(s);s=n}c.appendChild(w)});
+  document.querySelectorAll('.day-card .day-header').forEach(h=>h.addEventListener('click',()=>h.closest('.day-card').classList.toggle('collapsed')));
+  document.querySelectorAll('.timeline-card').forEach(c=>{const h=c.querySelector('h2');if(!h)return;h.classList.add('timeline-header');const w=document.createElement('div');w.className='timeline-content';let s=h.nextElementSibling;while(s){const n=s.nextElementSibling;w.appendChild(s);s=n}c.appendChild(w)});
+  document.querySelectorAll('.timeline-card .timeline-header').forEach(h=>h.addEventListener('click',()=>h.closest('.timeline-card').classList.toggle('collapsed')));
+  document.querySelectorAll('.avoid-section h2,.budget-card h2,.tips-card h2,.food-section h2,.souvenir-section h2').forEach(h2=>{h2.classList.add('collapsible');h2.innerHTML+='<span class="collapse-icon">▼</span>';h2.addEventListener('click',function(){const c=this.nextElementSibling;if(c){c.classList.toggle('collapsed');this.classList.toggle('collapsed')}})});
+})();
+</script>
+</body>
+</html>
