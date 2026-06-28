@@ -3,1787 +3,956 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>川甘穿越 · 成都至西宁 — tourAI</title>
+<title>川甘穿越 · 成都至西宁 | 9天自然风光之旅</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
-/* ===== Reset & Base ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
-body{
-  font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;
-  background:#f5f5f5;
-  color:#333;
-  line-height:1.7;
-  overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;background:#f5f5f5;color:#333;line-height:1.6;overflow-x:hidden}
 
-/* ===== Container ===== */
-.container{
-  max-width:780px;
-  margin:0 auto;
-  padding:0 16px 60px;
-}
+.hero{position:relative;background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f2719c 100%);color:#fff;padding:80px 24px 60px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+.hero h1{font-size:clamp(28px,5vw,48px);font-weight:900;margin-bottom:8px;letter-spacing:2px}
+.hero .subtitle{font-size:clamp(16px,2.5vw,22px);font-weight:300;opacity:.9;margin-bottom:20px}
+.hero .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.hero .tags span{background:rgba(255,255,255,.2);backdrop-filter:blur(8px);padding:6px 16px;border-radius:20px;font-size:14px;font-weight:500;border:1px solid rgba(255,255,255,.3)}
+.hero .meta{margin-top:24px;font-size:14px;opacity:.7}
+.hero .meta span{margin:0 12px}
 
-/* ===== Hero ===== */
-.hero{
-  position:relative;
-  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-  color:#fff;
-  text-align:center;
-  padding:60px 24px 100px;
-  clip-path:ellipse(120% 100% at 50% 0%);
-  margin-bottom:-40px;
-}
-.hero h1{
-  font-size:2.2em;
-  font-weight:700;
-  letter-spacing:.04em;
-  margin-bottom:8px;
-}
-.hero .subtitle{
-  font-size:1.15em;
-  font-weight:300;
-  opacity:.88;
-  margin-bottom:20px;
-}
-.hero .tags{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-}
-.hero .tag{
-  background:rgba(255,255,255,.2);
-  backdrop-filter:blur(6px);
-  color:#fff;
-  padding:4px 14px;
-  border-radius:20px;
-  font-size:.82em;
-  white-space:nowrap;
-}
+.wrapper{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;gap:32px}
+.main-content{flex:1;min-width:0;padding-bottom:60px}
 
-/* ===== Quick Nav ===== */
-.quick-nav{
-  position:fixed;
-  right:16px;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(10px);
-  border-radius:16px;
-  box-shadow:0 2px 16px rgba(0,0,0,.08);
-  padding:16px 14px;
-  z-index:1000;
-  max-height:80vh;
-  overflow-y:auto;
-  font-size:.78em;
-  display:none;
-  min-width:150px;
-}
-@media(min-width:1025px){
-  .quick-nav{display:block}
-}
-.quick-nav h4{
-  font-size:.88em;
-  margin-bottom:10px;
-  color:#667eea;
-  padding-bottom:6px;
-  border-bottom:1px solid #eee;
-}
-.quick-nav a{
-  display:block;
-  padding:4px 8px;
-  border-radius:6px;
-  color:#666;
-  transition:all .2s;
-  margin-bottom:2px;
-  white-space:nowrap;
-}
-.quick-nav a:hover,
-.quick-nav a.active{
-  background:linear-gradient(135deg,#667eea,#764ba2);
-  color:#fff;
-}
-.quick-nav .nav-divider{
-  margin:8px 0 4px;
-  font-size:.75em;
-  color:#999;
-  font-weight:500;
-}
+.section-title{font-size:28px;font-weight:700;color:#333;margin:48px 0 24px;padding-bottom:12px;border-bottom:3px solid transparent;border-image:linear-gradient(135deg,#667eea,#f2719c) 1;display:flex;align-items:center;gap:10px}
+.section-title .icon{font-size:30px}
 
-/* ===== Section Title ===== */
-.section-title{
-  font-size:1.3em;
-  font-weight:700;
-  color:#333;
-  margin:32px 0 16px;
-  padding-left:12px;
-  border-left:4px solid #667eea;
-}
-.section-title.collapsible{
-  cursor:pointer;
-  user-select:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.section-title.collapsible::after{
-  content:'▾';
-  font-size:.7em;
-  transition:transform .3s;
-  color:#999;
-  margin-left:8px;
-}
-.section-title.collapsible.collapsed::after{
-  transform:rotate(-90deg);
-}
+.day-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:32px;transition:transform .2s,box-shadow .2s}
+.day-card:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.day-card-header{padding:20px 28px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;cursor:pointer;user-select:none}
+.day-card-header .day-num{font-size:32px;font-weight:900;line-height:1}
+.day-card-header .day-info{flex:1;min-width:200px}
+.day-card-header .day-title{font-size:18px;font-weight:700;margin-bottom:2px}
+.day-card-header .day-summary{font-size:13px;opacity:.9;font-weight:300}
+.day-card-header .day-toggle{font-size:34px;line-height:1;opacity:.8;transition:transform .3s}
+.day-card-header.collapsed .day-toggle{transform:rotate(-90deg)}
+.day-card-body{padding:24px 28px;display:block}
+.day-card-body.collapsed{display:none}
 
-/* ===== Card ===== */
-.card{
-  background:#fff;
-  border-radius:16px;
-  box-shadow:0 2px 12px rgba(0,0,0,.06);
-  margin-bottom:24px;
-  overflow:hidden;
-  animation:fadeIn .5s ease both;
-}
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(12px)}
-  to{opacity:1;transform:translateY(0)}
-}
-.card-header{
-  padding:20px 24px;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.card-header.day1{background:linear-gradient(135deg,#f6a085,#f2719c)}
-.card-header.day2{background:linear-gradient(135deg,#4facfe,#00f2fe)}
-.card-header.day3{background:linear-gradient(135deg,#a18cd1,#fbc2eb)}
-.card-header.day4{background:linear-gradient(135deg,#fddb92,#d1fdff);color:#5a4e2f}
-.card-header.day5{background:linear-gradient(135deg,#43e97b,#38f9d7);color:#1a4a2e}
-.card-header.day6{background:linear-gradient(135deg,#f7971e,#ffd200)}
-.card-header.day7{background:linear-gradient(135deg,#2193b0,#6dd5ed)}
-.card-header.day8{background:linear-gradient(135deg,#8e2de2,#4a00e0)}
-.card-header .day-num{
-  font-size:1.8em;
-  font-weight:700;
-  line-height:1;
-  opacity:.9;
-}
-.card-header .day-info h3{
-  font-size:1.15em;
-  font-weight:600;
-  margin-bottom:2px;
-}
-.card-header .day-info .theme{
-  font-size:.82em;
-  opacity:.85;
-}
-.card-body{padding:20px 24px}
+.day-d1 .day-card-header{background:linear-gradient(135deg,#f2719c,#f0932b)}
+.day-d2 .day-card-header{background:linear-gradient(135deg,#667eea,#22c9d0)}
+.day-d3 .day-card-header{background:linear-gradient(135deg,#764ba2,#f2719c)}
+.day-d4 .day-card-header{background:linear-gradient(135deg,#f0932b,#22c9d0)}
+.day-d5 .day-card-header{background:linear-gradient(135deg,#10ac84,#1dd1a1)}
+.day-d6 .day-card-header{background:linear-gradient(135deg,#f0932b,#e67e22)}
+.day-d7 .day-card-header{background:linear-gradient(135deg,#1e3799,#3867d6)}
+.day-d8 .day-card-header{background:linear-gradient(135deg,#6c5ce7,#0984e3)}
+.day-d9 .day-card-header{background:linear-gradient(135deg,#0984e3,#00cec9)}
 
-/* ===== Route Summary Bar ===== */
-.route-summary-bar{
-  background:#f8f9fa;
-  border-radius:10px;
-  padding:12px 16px;
-  margin-bottom:16px;
-  font-size:.88em;
-  color:#555;
-  line-height:1.6;
-}
+.spot-card{background:#fafafa;border-radius:12px;padding:20px;margin-bottom:16px;border-left:4px solid #667eea;position:relative}
+.spot-card .spot-name{font-size:17px;font-weight:700;color:#333;margin-bottom:4px}
+.spot-card .spot-meta{font-size:13px;color:#888;margin-bottom:8px}
+.spot-card .spot-meta span{margin-right:16px}
+.spot-card .spot-desc{font-size:14px;color:#555;line-height:1.7;margin-bottom:12px}
+.spot-card .romantic-moment{background:linear-gradient(135deg,rgba(242,113,156,.08),rgba(118,75,162,.08));border-radius:8px;padding:12px 16px;font-size:13px;color:#764ba2;font-style:italic;line-height:1.6;border-left:3px solid #f2719c}
+.spot-card .romantic-moment::before{content:'💕 ';font-style:normal}
 
-/* ===== Spot Detail ===== */
-.spot-block{
-  border:1px solid #f0f0f0;
-  border-radius:12px;
-  padding:16px;
-  margin-bottom:14px;
-  transition:box-shadow .2s;
-}
-.spot-block:hover{box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.spot-header{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-bottom:6px;
-}
-.spot-header h4{
-  font-size:1.05em;
-  font-weight:600;
-  color:#333;
-}
-.spot-meta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-.spot-meta span{
-  font-size:.75em;
-  padding:2px 10px;
-  border-radius:10px;
-  white-space:nowrap;
-}
-.meta-ticket{background:#fff3e0;color:#e65100}
-.meta-duration{background:#e8f5e9;color:#2e7d32}
-.spot-desc{
-  font-size:.88em;
-  color:#666;
-  margin:8px 0;
-  line-height:1.7;
-}
+.route-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(102,126,234,.06),rgba(118,75,162,.06));border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:13px;color:#666}
+.route-bar .route-emoji{font-size:20px}
+.route-bar .route-line{flex:1;height:2px;background:linear-gradient(90deg,#667eea,#764ba2);min-width:30px;border-radius:1px}
+.route-bar .route-from,.route-bar .route-to{font-weight:600;color:#444}
+.route-bar .route-dist{color:#888}
 
-/* ===== Route Line ===== */
-.route-line{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin:10px 0;
-  padding:8px 12px;
-  background:linear-gradient(90deg,#f0f4ff,#faf5ff);
-  border-radius:8px;
-  font-size:.82em;
-  color:#556;
-  flex-wrap:wrap;
-}
-.route-line .r-icon{font-size:1.2em}
-.route-line .r-info{
-  background:linear-gradient(135deg,#667eea,#764ba2);
-  color:#fff;
-  padding:2px 10px;
-  border-radius:8px;
-  font-size:.78em;
-  font-weight:500;
-  white-space:nowrap;
-}
+.waypoint-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.waypoint{background:#fff;border:1px dashed #ddd;border-radius:8px;padding:6px 12px;font-size:12px;color:#888}
 
-/* ===== Romantic Moment ===== */
-.romantic{
-  background:linear-gradient(90deg,#fff5f5,#fff0fb);
-  border-radius:10px;
-  border-left:3px solid #f2719c;
-  padding:10px 14px;
-  margin-top:10px;
-  color:#c06;
-  font-size:.85em;
-  line-height:1.65;
-}
-.romantic::before{content:'💕 ';font-size:.9em}
+.meals-section{margin-top:16px}
+.meal-group{margin-bottom:12px}
+.meal-group .meal-type{font-size:12px;font-weight:700;text-transform:uppercase;color:#667eea;margin-bottom:6px;letter-spacing:1px}
+.restaurant-card{background:#fff;border-radius:10px;padding:14px 16px;border:1px solid #eee;margin-bottom:8px}
+.restaurant-card .res-name{font-size:15px;font-weight:600;color:#333}
+.restaurant-card .res-addr{font-size:12px;color:#999;margin-bottom:4px}
+.restaurant-card .res-signatures{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.restaurant-card .res-sig{background:#fef6f9;color:#f2719c;font-size:12px;padding:3px 10px;border-radius:12px}
+.restaurant-card .res-price{font-size:13px;color:#10ac84;font-weight:600}
+.restaurant-card .res-note{font-size:12px;color:#999;margin-top:4px;line-height:1.5}
 
-/* ===== Pitfall Tip ===== */
-.tip-pitfall{
-  background:#fffbe6;
-  border-radius:10px;
-  border-left:3px solid #faad14;
-  padding:8px 14px;
-  margin-top:10px;
-  font-size:.82em;
-  color:#ad6800;
-  line-height:1.6;
-}
-.tip-pitfall::before{content:'⚠️ '}
+.hotel-section{margin-top:16px}
+.hotel-card{background:linear-gradient(135deg,rgba(102,126,234,.04),rgba(118,75,162,.04));border-radius:10px;padding:14px 16px;border:1px solid rgba(102,126,234,.15)}
+.hotel-card .hotel-name{font-size:15px;font-weight:600;color:#333}
+.hotel-card .hotel-area{font-size:12px;color:#888;margin-bottom:4px}
+.hotel-card .hotel-price{font-size:13px;color:#f2719c;font-weight:600}
+.hotel-card .hotel-hl{font-size:12px;color:#666;margin-top:4px;line-height:1.5}
 
-/* ===== Meals Section ===== */
-.meals-block{
-  margin-top:16px;
-  padding-top:14px;
-  border-top:1px dashed #eee;
-}
-.meals-block h5{
-  font-size:.9em;
-  font-weight:600;
-  color:#555;
-  margin-bottom:8px;
-}
-.meal-item{
-  background:#fafafa;
-  border-radius:10px;
-  padding:10px 14px;
-  margin-bottom:8px;
-  font-size:.84em;
-}
-.meal-item .meal-name{
-  font-weight:600;
-  color:#333;
-}
-.meal-item .meal-addr{
-  color:#888;
-  font-size:.9em;
-}
-.meal-item .meal-price{
-  display:inline-block;
-  background:#fff3e0;
-  color:#e65100;
-  font-size:.78em;
-  padding:1px 8px;
-  border-radius:8px;
-  margin-left:6px;
-}
-.meal-item .meal-sig{
-  color:#666;
-  margin-top:4px;
-  font-size:.92em;
-}
-.meal-item .meal-note{
-  color:#999;
-  font-size:.88em;
-  margin-top:3px;
-  font-style:italic;
-}
+.food-group{margin-bottom:20px}
+.food-group .city-name{font-size:18px;font-weight:700;color:#667eea;margin-bottom:8px;padding-bottom:4px;border-bottom:2px solid rgba(102,126,234,.2)}
+.food-group .food-item{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:10px;padding:8px 14px;margin:4px 6px 4px 0;font-size:13px;color:#555;border:1px solid #eee}
+.food-group .food-item .fi-name{font-weight:600}
+.food-group .food-item .fi-price{color:#10ac84;font-size:12px}
 
-/* ===== Hotel Block ===== */
-.hotel-block{
-  margin-top:16px;
-  padding-top:14px;
-  border-top:1px dashed #eee;
-}
-.hotel-block h5{font-size:.9em;font-weight:600;color:#555;margin-bottom:8px}
-.hotel-info{
-  background:linear-gradient(90deg,#f8f4ff,#f4f8ff);
-  border-radius:10px;
-  padding:12px 16px;
-  font-size:.84em;
-  line-height:1.7;
-}
-.hotel-info strong{color:#667eea}
+.avoid-item{display:flex;align-items:flex-start;gap:12px;background:#fff;border-radius:12px;padding:16px 20px;margin-bottom:12px;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+.avoid-item .av-num{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#667eea,#f2719c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.avoid-item .av-content{flex:1}
+.avoid-item .av-error{color:#e74c3c;text-decoration:line-through;font-size:14px;margin-bottom:4px}
+.avoid-item .av-error::before{content:'❌ ';text-decoration:none}
+.avoid-item .av-correct{color:#10ac84;font-size:14px;line-height:1.5}
+.avoid-item .av-correct::before{content:'✅ '}
 
-/* ===== Transport Card ===== */
-.trans-card{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-@media(max-width:600px){.trans-card{grid-template-columns:1fr}}
-.trans-item{
-  background:#fff;
-  border-radius:12px;
-  padding:14px 16px;
-  box-shadow:0 1px 6px rgba(0,0,0,.04);
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  font-size:.85em;
-  line-height:1.6;
-}
-.trans-item .t-emoji{font-size:1.6em;flex-shrink:0}
-.trans-item .t-price{
-  display:inline-block;
-  background:#fff3e0;
-  color:#e65100;
-  font-size:.78em;
-  padding:1px 8px;
-  border-radius:8px;
-  margin-top:4px;
-}
+.budget-table{width:100%;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.budget-table table{width:100%;border-collapse:collapse}
+.budget-table th{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:14px 20px;text-align:left;font-weight:600;font-size:14px}
+.budget-table td{padding:12px 20px;font-size:14px;border-bottom:1px solid #f0f0f0}
+.budget-table tr:last-child td{border-bottom:none;font-weight:700;background:#fef6f9;color:#764ba2;font-size:16px}
+.budget-table .amt{text-align:right;font-weight:500;white-space:nowrap}
+.budget-table .note{font-size:12px;color:#999;margin-top:2px}
 
-/* ===== Budget Table ===== */
-.budget-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:.88em;
-}
-.budget-table th,.budget-table td{
-  padding:10px 14px;
-  text-align:left;
-  border-bottom:1px solid #f0f0f0;
-}
-.budget-table th{
-  background:#f8f9fa;
-  font-weight:600;
-  color:#555;
-  font-size:.82em;
-}
-.budget-table .b-cat{font-weight:500}
-.budget-table .b-amt{color:#667eea;font-weight:600}
-.budget-table .b-total-row td{
-  background:linear-gradient(90deg,#f0f4ff,#faf5ff);
-  font-weight:700;
-  font-size:1.05em;
-  color:#667eea;
-}
+.tip-item{display:flex;align-items:flex-start;gap:12px;background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:0 1px 6px rgba(0,0,0,.04);font-size:14px;line-height:1.6;color:#555}
+.tip-item .tip-icon{flex-shrink:0;font-size:20px;width:28px;text-align:center}
 
-/* ===== Avoid List ===== */
-.avoid-list{list-style:none}
-.avoid-list li{
-  background:#fff;
-  border-radius:12px;
-  padding:14px 18px;
-  margin-bottom:10px;
-  box-shadow:0 1px 4px rgba(0,0,0,.03);
-  font-size:.88em;
-  line-height:1.7;
-}
-.avoid-list .avoid-bad{
-  color:#ff4d4f;
-  text-decoration:line-through;
-  margin-bottom:4px;
-}
-.avoid-list .avoid-good{
-  color:#52c41a;
-  font-weight:500;
-}
-.avoid-list .avoid-bad::before{content:'❌ '}
-.avoid-list .avoid-good::before{content:'✅ '}
+.sidebar{width:240px;flex-shrink:0;position:sticky;top:20px;align-self:flex-start;max-height:calc(100vh - 40px);overflow-y:auto;padding-bottom:20px}
+.sidebar-inner{background:#fff;border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.sidebar h4{font-size:15px;font-weight:700;color:#333;margin-bottom:12px}
+.sidebar a{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;font-size:13px;color:#666;text-decoration:none;transition:all .2s;margin-bottom:2px}
+.sidebar a:hover,.sidebar a.active{background:linear-gradient(135deg,rgba(102,126,234,.1),rgba(118,75,162,.1));color:#667eea;font-weight:600}
+.sidebar .nav-section{margin-bottom:16px}
+.sidebar .nav-days{display:flex;flex-wrap:wrap;gap:4px}
+.sidebar .nav-days a{width:32px;height:32px;display:flex;align-items:center;justify-content:center;padding:0;border-radius:8px;font-weight:600;font-size:13px}
 
-/* ===== Tips ===== */
-.tips-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-@media(max-width:600px){.tips-grid{grid-template-columns:1fr}}
-.tip-item{
-  background:#fff;
-  border-radius:10px;
-  padding:12px 14px;
-  box-shadow:0 1px 4px rgba(0,0,0,.03);
-  font-size:.84em;
-  line-height:1.6;
-}
-.tip-item .tip-icon{font-size:1.2em;margin-right:4px}
-
-/* ===== Food Summary ===== */
-.city-food-group{margin-bottom:18px}
-.city-food-group h4{
-  font-size:1em;
-  font-weight:600;
-  color:#667eea;
-  margin-bottom:8px;
-  padding-bottom:4px;
-  border-bottom:2px solid #f0f0f0;
-}
-.food-summary-item{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  align-items:baseline;
-  padding:8px 12px;
-  background:#fafafa;
-  border-radius:8px;
-  margin-bottom:6px;
-  font-size:.84em;
-  line-height:1.6;
-}
-.food-summary-item .fs-name{font-weight:600;color:#333}
-.food-summary-item .fs-addr{color:#888;font-size:.9em}
-.food-summary-item .fs-price{
-  background:#fff3e0;color:#e65100;
-  font-size:.75em;padding:1px 6px;border-radius:6px;
-}
-.food-summary-item .fs-sig{color:#666;width:100%}
-.food-summary-item .fs-src{
-  font-size:.7em;color:#aaa;background:#f0f0f0;
-  padding:1px 6px;border-radius:4px;white-space:nowrap
-}
-
-/* ===== Footer ===== */
-.footer{
-  text-align:center;
-  padding:30px 20px;
-  color:#999;
-  font-size:.78em;
-  line-height:1.8;
-  border-top:1px solid #eee;
-  margin-top:20px;
-}
-.footer .src-tags{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:6px}
-.footer .src-tags span{
-  background:#f0f0f0;color:#888;
-  font-size:.75em;padding:2px 8px;border-radius:4px;
-}
-
-/* ===== Responsive ===== */
 @media(max-width:768px){
-  .hero{padding:40px 16px 70px}
-  .hero h1{font-size:1.5em}
-  .hero .subtitle{font-size:1em}
-  .card-header{padding:14px 16px}
-  .card-body{padding:14px 16px}
-  .container{padding:0 12px 40px}
-  .section-title{font-size:1.1em;margin:24px 0 12px}
+  .wrapper{flex-direction:column;padding:0 16px}
+  .sidebar{position:static;width:100%;max-height:none;order:-1;margin-bottom:16px}
+  .sidebar-inner{border-radius:12px}
+  .sidebar .nav-days{justify-content:center}
+  .day-card-header{padding:16px 20px}
+  .day-card-body{padding:16px 20px}
+  .spot-card{padding:16px}
+  .hero{padding:50px 16px 40px}
+  .hero h1{font-size:26px}
+  .section-title{font-size:22px}
+  .route-bar{font-size:12px}
 }
 @media(max-width:375px){
-  .hero h1{font-size:1.3em}
-  .hero .tag{font-size:.68em;padding:3px 10px}
-  .container{padding:0 8px 32px}
-  .card-header .day-num{font-size:1.4em}
+  .hero h1{font-size:22px}
+  .hero .tags span{font-size:12px;padding:4px 10px}
+  .day-card-header .day-num{font-size:24px}
+  .day-card-header .day-title{font-size:15px}
+  .day-card-body{padding:12px 14px}
+  .spot-card{padding:12px}
+  .spot-card .spot-desc{font-size:13px}
+  .restaurant-card .res-sig{font-size:11px}
+  .section-title{font-size:19px}
 }
-
-/* ===== Scrollbar ===== */
-.quick-nav::-webkit-scrollbar{width:4px}
-.quick-nav::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px}
-
-/* ===== Collapsible content ===== */
-.collapsible-content{transition:max-height .4s ease;overflow:hidden}
-.collapsible-content.hidden{max-height:0!important}
 </style>
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
-<header class="hero">
-  <h1>川甘穿越 · 成都至西宁</h1>
-  <p class="subtitle">8天自然美食之旅</p>
-  <div class="tags">
-    <span class="tag">🏔️ 自然风景</span>
-    <span class="tag">🍜 美食老店</span>
-    <span class="tag">🚗 自驾穿越</span>
-    <span class="tag">👫 2人出行</span>
+<header class="hero" id="top">
+  <div class="hero-content">
+    <h1>川甘穿越 · 成都至西宁</h1>
+    <p class="subtitle">9天自然风光之旅</p>
+    <div class="tags">
+      <span>🏔️ 自然风光</span>
+      <span>🍜 美食老店</span>
+      <span>🚗 自驾穿越</span>
+      <span>🌊 青海湖</span>
+      <span>👫 2人出行</span>
+    </div>
+    <div class="meta">
+      <span>📅 9天8晚</span>
+      <span>📍 成都 → 西宁</span>
+      <span>💴 ¥13,000-17,000</span>
+      <span>🚗 自驾4天</span>
+    </div>
   </div>
 </header>
 
-<!-- ===== QUICK NAV ===== -->
-<nav class="quick-nav" id="quickNav">
-  <h4>📋 快速导航</h4>
-  <a href="#day1">Day1 · 抵达蓉城</a>
-  <a href="#day2">Day2 · 熊猫慢生活</a>
-  <a href="#day3">Day3 · 都江堰奇迹</a>
-  <a href="#day4">Day4 · 奔赴九寨沟</a>
-  <a href="#day5">Day5 · 九寨沟深度</a>
-  <a href="#day6">Day6 · 草原天路</a>
-  <a href="#day7">Day7 · 信仰之路</a>
-  <a href="#day8">Day8 · 归途美食</a>
-  <div class="nav-divider">── 汇总 ──</div>
-  <a href="#food-summary">🍽️ 美食汇总</a>
-  <a href="#avoid-list">⚠️ 避坑清单</a>
-  <a href="#budget">💰 预算估算</a>
-  <a href="#tips-section">📝 出行Tips</a>
-</nav>
+<div class="wrapper">
 
-<div class="container">
+<main class="main-content">
 
-<!-- ===== TRANSPORT OVERVIEW ===== -->
-<section id="transport">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">🚗 交通总览</h2>
-  <div class="collapsible-content" style="max-height:800px">
-    <div class="trans-card">
-      <div class="trans-item">
-        <span class="t-emoji">✈️</span>
-        <div>
-          <strong>珠三角 → 成都</strong><br>
-          广州/深圳/珠海出发，飞行约2.5-3h<br>
-          <span class="t-price">¥400-700/人</span>
-          <div style="color:#888;font-size:.9em">优选双流机场，离市区更近</div>
-        </div>
-      </div>
-      <div class="trans-item">
-        <span class="t-emoji">✈️</span>
-        <div>
-          <strong>西宁 → 珠三角</strong><br>
-          西宁曹家堡机场（XNN）出发，飞行约3-3.5h<br>
-          <span class="t-price">¥600-1300/人</span>
-          <div style="color:#888;font-size:.9em">广深有直飞，珠海需经停</div>
-        </div>
-      </div>
-      <div class="trans-item">
-        <span class="t-emoji">🚄</span>
-        <div>
-          <strong>成都 → 都江堰</strong><br>
-          地铁2号线至犀浦站，换乘城际列车至离堆公园站<br>
-          <span class="t-price">¥10/人 · 18分钟</span>
-        </div>
-      </div>
-      <div class="trans-item">
-        <span class="t-emoji">🚄</span>
-        <div>
-          <strong>成都东 → 黄龙九寨</strong><br>
-          川青铁路高铁直达，出站换乘景区直通大巴至沟口<br>
-          <span class="t-price">¥135-149/人 · 约2小时</span>
-        </div>
-      </div>
-      <div class="trans-item">
-        <span class="t-emoji">🚗</span>
-        <div>
-          <strong>一嗨租车 · 川主寺 → 西宁</strong><br>
-          自驾3天（D6-D8），穿越若尔盖草原、甘南<br>
-          <span class="t-price">¥1200-1800 总价（含基础险）</span>
-          <div style="color:#52c41a;font-size:.88em">一嗨全国免异地还车费</div>
-        </div>
-      </div>
-      <div class="trans-item">
-        <span class="t-emoji">🚌</span>
-        <div>
-          <strong>景区接驳交通</strong><br>
-          黄龙九寨站→沟口直通车 ¥51/人<br>
-          沟口→川主寺大巴 ¥20-30/人<br>
-          九寨沟内观光车（含在门票内）
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="overview">
+  <h2 class="section-title"><span class="icon">🗺️</span> 行程概览</h2>
+  <p style="background:#fff;border-radius:12px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,0,0,.06);font-size:15px;color:#555;line-height:1.8">
+    从成都的苍蝇馆子烟火气，到九寨沟的斑斓海子；从若尔盖的金色草原与黄河落日，到甘南尕海湖的候鸟湿地；
+    穿越甘加秘境的白石崖与坎布拉的丹山碧水，最终抵达青藏高原的蓝宝石——青海湖。
+    <strong>9天8晚，自驾685公里</strong>，一路汇聚川西、甘南、青海最精华的自然风光与地道美食。
+  </p>
 </section>
 
-<!-- ===== DAY 1 ===== -->
-<section id="day1">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">Day 1 · 抵达蓉城</h2>
-  <div class="collapsible-content" style="max-height:5000px">
-  <div class="card">
-    <div class="card-header day1">
-      <span class="day-num">D1</span>
+<section id="days">
+  <h2 class="section-title"><span class="icon">📅</span> 每日行程</h2>
+
+  <!-- DAY 1 -->
+  <div class="day-card day-d1" id="day-card-1">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D1</div>
       <div class="day-info">
-        <h3>🐼 抵达蓉城 · 苍蝇馆子初体验</h3>
-        <span class="theme">傍晚飞抵成都，入住春熙路附近酒店，直奔地道苍蝇馆子</span>
+        <div class="day-title">抵达蓉城 · 苍蝇馆子初体验</div>
+        <div class="day-summary">傍晚飞抵成都，入住春熙路，直奔地道苍蝇馆子，饭后漫步春熙路</div>
       </div>
+      <div class="day-toggle">▾</div>
     </div>
-    <div class="card-body">
-      <div class="route-summary-bar">
-        ✈️ 珠三角飞抵成都双流/天府机场 → 🚗 机场至春熙路酒店 → 🚶 步行至苍蝇馆子晚餐 → 🚶 饭后漫步春熙路
+    <div class="day-card-body">
+
+      <div class="spot-card">
+        <div class="spot-name">春熙路步行街</div>
+        <div class="spot-meta"><span>🕐 60分钟</span><span>🎫 免费</span><span>📡 websearch</span></div>
+        <div class="spot-desc">成都最繁华的商业步行街，入夜后霓虹璀璨、人流如织。街头艺人弹唱、随处可见的熊猫元素装置，是感受成都烟火气的第一站。紧邻太古里、IFS，可远眺爬墙大熊猫夜景。</div>
+        <div class="romantic-moment">夜幕下牵手漫步春熙路，路灯把两人的影子拉得长长的，街头传来吉他弹唱的民谣声，成都的慢生活从这一刻开始。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚶</span><span class="route-from">嘉立精选酒店</span><span class="route-line"></span><span class="route-to">春熙路步行街</span><span class="route-dist">500米 / 7分钟</span>
+        </div>
       </div>
 
-      <!-- Spot -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🏙️ 春熙路步行街</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 免费</span>
-            <span class="meta-duration">⏱️ 约1小时</span>
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🍽️ 晚餐</div>
+          <div class="restaurant-card">
+            <div class="res-name">雨田饭店</div>
+            <div class="res-addr">成都市锦江区红星路二段20号1层附9号（华兴东街路口）</div>
+            <div class="res-signatures"><span class="res-sig">荷叶粉蒸肉</span><span class="res-sig">藕汤</span><span class="res-sig">蒸蛋</span><span class="res-sig">雨田肺片</span><span class="res-sig">火爆肥肠</span></div>
+            <div class="res-price">人均 ¥45</div>
+            <div class="res-note">成都资历最老的私营餐馆之一，1985年创立近40年，BBC拍过纪录片。半开放式门面，苍蝇馆子风格，米饭仅¥1/人不限量。服务员多为热情大爷大妈。</div>
           </div>
         </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从酒店出发
-          <span class="r-info">500米 · 7分钟步行</span>
-        </div>
-        <p class="spot-desc">成都最繁华的商业步行街，入夜后霓虹璀璨、人流如织。街头艺人弹唱、随处可见的熊猫元素装置，是感受成都烟火气的第一站。紧邻太古里、IFS，可远眺爬墙大熊猫夜景。</p>
-        <div class="romantic">夜幕下牵手漫步春熙路，路灯把两人的影子拉得长长的，街头传来吉他弹唱的民谣声，成都的慢生活从这一刻开始。</div>
       </div>
 
-      <!-- Meals -->
-      <div class="meals-block">
-        <h5>🍽️ 晚餐推荐</h5>
-        <div class="meal-item">
-          <span class="meal-name">雨田饭店</span>
-          <span class="meal-price">人均 ¥45</span>
-          <div class="meal-addr">📍 成都市锦江区红星路二段20号1层附9号（华兴东街路口）</div>
-          <div class="meal-sig">🔥 荷叶粉蒸肉 · 藕汤 · 蒸蛋 · 雨田肺片 · 火爆肥肠</div>
-          <div class="meal-note">成都资历最老的私营餐馆之一，1985年创立近40年，BBC拍过纪录片。半开放式门面，苍蝇馆子风格，米饭仅¥1/人不限量。</div>
+      <div class="hotel-section">
+        <div class="hotel-card">
+          <div class="hotel-name">🏨 嘉立精选酒店(成都春熙路太古里店)</div>
+          <div class="hotel-area">春熙路/太古里商圈</div>
+          <div class="hotel-price">¥250-380/晚</div>
+          <div class="hotel-hl">中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务，楼下美食街丰富，旺中带静</div>
         </div>
       </div>
 
-      <!-- Hotel -->
-      <div class="hotel-block">
-        <h5>🏨 住宿推荐</h5>
-        <div class="hotel-info">
-          <strong>嘉立精选酒店（成都春熙路太古里店）</strong> · 春熙路/太古里商圈<br>
-          💰 ¥250-380/晚 · 中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务，楼下美食街丰富，旺中带静
-        </div>
-      </div>
     </div>
   </div>
-  </div>
-</section>
 
-<!-- ===== DAY 2 ===== -->
-<section id="day2">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">Day 2 · 熊猫萌宠 · 老成都慢生活</h2>
-  <div class="collapsible-content" style="max-height:8000px">
-  <div class="card">
-    <div class="card-header day2">
-      <span class="day-num">D2</span>
+  <!-- DAY 2 -->
+  <div class="day-card day-d2" id="day-card-2">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D2</div>
       <div class="day-info">
-        <h3>🐼 熊猫萌宠 · 老成都慢生活</h3>
-        <span class="theme">清晨看滚滚，中午老牌川菜，下午百年茶社喝茶掏耳朵，傍晚太古里网红打卡</span>
+        <div class="day-title">熊猫萌宠 · 老成都慢生活</div>
+        <div class="day-summary">清晨赶熊猫基地看滚滚，中午老牌川菜，下午人民公园喝茶掏耳朵，傍晚太古里</div>
       </div>
+      <div class="day-toggle">▾</div>
     </div>
-    <div class="card-body">
-      <div class="route-summary-bar">
-        🐼 大熊猫基地（7:30到） → 🍵 鹤鸣茶社 → 🏬 太古里 · 大慈寺
-      </div>
+    <div class="day-card-body">
 
-      <!-- Spot 1 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🐼 成都大熊猫繁育研究基地</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 ¥55</span>
-            <span class="meta-duration">⏱️ 约3小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚗</span> 从酒店出发
-          <span class="r-info">18公里 · 约40分钟</span>
-        </div>
-        <p class="spot-desc">全球最大的大熊猫繁育研究机构，可近距离观察大熊猫进食、玩耍、爬树。早晨7:30-10:00是大熊猫最活跃的时段，它们抱着竹子憨态可掬地啃食，幼年熊猫在树上打闹嬉戏。建议从南大门进，坐观光车（¥30）到月亮产房和太阳产房。6号别墅每周一闭馆。</p>
-        <div class="romantic">清晨第一缕阳光洒在熊猫别墅，看着大熊猫抱着竹子憨态可掬地啃食，TA在你身边笑得像个孩子，两人相视一笑，仿佛整个世界都变慢了。</div>
-        <div class="tip-pitfall">熊猫基地10点以后才到？大熊猫9点前最活跃（进食+玩耍），10点后多数开始睡觉，下午只能看到熊猫屁股。7:30开门就冲进去！</div>
-      </div>
-
-      <!-- Spot 2 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🍵 人民公园鹤鸣茶社</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 免费入场</span>
-            <span class="meta-duration">⏱️ 约1.5小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚗</span> 从大熊猫基地出发
-          <span class="r-info">16公里 · 约35分钟</span>
-        </div>
-        <p class="spot-desc">始建于1923年的百年老茶馆，成都茶馆文化的活化石。竹椅、盖碗茶、掏耳朵、川剧变脸——最地道的成都慢生活在此浓缩。点一杯鹤鸣贡竹（¥28）或手工毛峰（¥18），每桌配一壶开水无限续杯，可以自带零食棋牌。湖边观景位最抢手，周末需10点前到。</p>
-        <div class="romantic">百年茶馆里，两杯盖碗茶氤氲着茉莉花香，一壶开水无限续杯。你们坐在湖边，看鹤发老人悠闲地掏耳朵，阳光透过梧桐叶洒在茶桌上，时光仿佛凝固在1930年代的成都。</div>
-      </div>
-
-      <!-- Spot 3 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🏬 太古里 & 大慈寺</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 免费</span>
-            <span class="meta-duration">⏱️ 约2.5小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从鹤鸣茶社出发
-          <span class="r-info">1.2公里 · 步行15分钟</span>
-        </div>
-        <p class="spot-desc">成都最潮商圈，千年古刹大慈寺与现代建筑群的魔幻碰撞。必打卡：IFS七楼天台拍爬墙大熊猫正面合影、3D裸眼大屏看巨型动画、大慈寺红墙拍古风大片、方所书店洞穴式旋转楼梯。傍晚至夜间灯光亮起后氛围感最佳。大慈寺免费参观并提供免费香火。</p>
-        <div class="romantic">夜幕降临，牵手漫步在太古里灯光璀璨的街区。在IFS爬墙大熊猫前拍下两人的合影，在方所书店的旋转楼梯上留下身影，在大慈寺红墙前许下心愿——千年古刹见证此刻的你们。</div>
-      </div>
-
-      <!-- Meals -->
-      <div class="meals-block">
-        <h5>🍽️ 餐饮推荐</h5>
-        <div class="meal-item">
-          <span class="meal-name">🥐 早餐：酒店或周边面馆</span>
-          <span class="meal-price">人均 ¥15</span>
-          <div class="meal-sig">担担面 · 红油抄手 · 钟水饺</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍚 午餐：永乐饭店</span>
-          <span class="meal-price">人均 ¥70</span>
-          <div class="meal-addr">📍 成都市高新区肖家河中街32-36号</div>
-          <div class="meal-sig">🔥 肝腰合炒 · 糯米排骨 · 宫保鸡丁 · 圆子汤 · 藿香茄子烧鳝鱼</div>
-          <div class="meal-note">1985年开业近40年，米其林必比登推荐，被誉为成都家常菜天花板。免费续加自制泡菜。</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🌶️ 晚餐：明园饭店</span>
-          <span class="meal-price">人均 ¥55</span>
-          <div class="meal-addr">📍 成都市金牛区福德路6号</div>
-          <div class="meal-sig">🔥 大蒜白油肚条 · 鱼香茄饼 · 肝腰合炒 · 蒜苗回锅肉 · 凉拌白肉</div>
-          <div class="meal-note">开了几十年的老牌川菜馆，主厨年过七旬。没有固定菜单，直接到厨房选食材。门口常坐满食客，市井烟火气浓。</div>
+      <div class="spot-card">
+        <div class="spot-name">🐼 成都大熊猫繁育研究基地</div>
+        <div class="spot-meta"><span>🕐 180分钟</span><span>🎫 ¥55</span><span>📡 websearch</span></div>
+        <div class="spot-desc">全球最大的大熊猫繁育研究机构，可近距离观察大熊猫进食、玩耍、爬树。早晨7:30-10:00是大熊猫最活跃的时段，它们抱着竹子憨态可掬地啃食，幼年熊猫在树上打闹嬉戏。建议从南大门进，坐观光车（¥30）到月亮产房和太阳产房。6号别墅每周一闭馆。</div>
+        <div class="romantic-moment">清晨第一缕阳光洒在熊猫别墅，看着大熊猫抱着竹子憨态可掬地啃食，TA在你身边笑得像个孩子，两人相视一笑，仿佛整个世界都变慢了。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">嘉立精选酒店</span><span class="route-line"></span><span class="route-to">熊猫基地</span><span class="route-dist">18公里 / 40分钟</span>
         </div>
       </div>
 
-      <!-- Hotel -->
-      <div class="hotel-block">
-        <h5>🏨 住宿（续住）</h5>
-        <div class="hotel-info">
-          <strong>嘉立精选酒店（成都春熙路太古里店）</strong> · ¥250-380/晚<br>
-          续住，中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务
+      <div class="spot-card">
+        <div class="spot-name">🍵 人民公园鹤鸣茶社</div>
+        <div class="spot-meta"><span>🕐 90分钟</span><span>🎫 免费</span><span>📡 websearch</span></div>
+        <div class="spot-desc">始建于1923年的百年老茶馆，成都茶馆文化的活化石。竹椅、盖碗茶、掏耳朵、川剧变脸——最地道的成都慢生活在此浓缩。点一杯鹤鸣贡竹（¥28）或手工毛峰（¥18），每桌配一壶开水无限续杯，可以自带零食棋牌。湖边观景位最抢手，周末需10点前到。</div>
+        <div class="romantic-moment">百年茶馆里，两杯盖碗茶氤氲着茉莉花香，一壶开水无限续杯。你们坐在湖边，看鹤发老人悠闲地掏耳朵，阳光透过梧桐叶洒在茶桌上，时光仿佛凝固在1930年代的成都。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">熊猫基地</span><span class="route-line"></span><span class="route-to">鹤鸣茶社</span><span class="route-dist">16公里 / 35分钟</span>
         </div>
       </div>
+
+      <div class="spot-card">
+        <div class="spot-name">🏙️ 太古里</div>
+        <div class="spot-meta"><span>🕐 150分钟</span><span>🎫 免费</span><span>📡 websearch</span></div>
+        <div class="spot-desc">成都最潮商圈，千年古刹大慈寺与现代建筑群的魔幻碰撞。必打卡：IFS七楼天台拍爬墙大熊猫正面合影、3D裸眼大屏看巨型动画、大慈寺红墙拍古风大片、方所书店洞穴式旋转楼梯。傍晚至夜间灯光亮起后氛围感最佳。大慈寺免费参观并提供免费香火。</div>
+        <div class="romantic-moment">夜幕降临，牵手漫步在太古里灯光璀璨的街区。在IFS爬墙大熊猫前拍下两人的合影，在方所书店的旋转楼梯上留下身影，在大慈寺红墙前许下心愿——千年古刹见证此刻的你们。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚶</span><span class="route-from">鹤鸣茶社</span><span class="route-line"></span><span class="route-to">太古里</span><span class="route-dist">1.2公里 / 15分钟</span>
+        </div>
+      </div>
+
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🌅 早餐</div>
+          <div class="restaurant-card"><div class="res-name">酒店早餐或周边面馆</div><div class="res-addr">春熙路周边</div><div class="res-signatures"><span class="res-sig">担担面</span><span class="res-sig">红油抄手</span><span class="res-sig">钟水饺</span></div><div class="res-price">人均 ¥15</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">☀️ 午餐</div>
+          <div class="restaurant-card"><div class="res-name">永乐饭店</div><div class="res-addr">成都市高新区肖家河中街32-36号</div><div class="res-signatures"><span class="res-sig">肝腰合炒</span><span class="res-sig">糯米排骨</span><span class="res-sig">宫保鸡丁</span><span class="res-sig">圆子汤</span><span class="res-sig">藿香茄子烧鳝鱼</span></div><div class="res-price">人均 ¥70</div><div class="res-note">1985年开业近40年，米其林必比登推荐，被誉为成都家常菜天花板。免费续加自制泡菜。11:00-14:00午市。</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">🌙 晚餐</div>
+          <div class="restaurant-card"><div class="res-name">明园饭店</div><div class="res-addr">成都市金牛区福德路6号</div><div class="res-signatures"><span class="res-sig">大蒜白油肚条</span><span class="res-sig">鱼香茄饼</span><span class="res-sig">肝腰合炒</span><span class="res-sig">蒜苗回锅肉</span><span class="res-sig">火爆肥肠</span><span class="res-sig">凉拌白肉</span></div><div class="res-price">人均 ¥55</div><div class="res-note">开了几十年的老牌川菜馆，主厨年过七旬。没有固定菜单，直接到厨房选食材，老板娘负责凉拌菜（甜辣味拿手）。门口常坐满食客，市井烟火气浓。</div></div>
+        </div>
+      </div>
+
+      <div class="hotel-section">
+        <div class="hotel-card"><div class="hotel-name">🏨 嘉立精选酒店(成都春熙路太古里店) — 续住</div><div class="hotel-price">¥250-380/晚</div></div>
+      </div>
+
     </div>
   </div>
-  </div>
-</section>
 
-<!-- ===== DAY 3 ===== -->
-<section id="day3">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">Day 3 · 千年水利 · 都江堰奇迹</h2>
-  <div class="collapsible-content" style="max-height:8000px">
-  <div class="card">
-    <div class="card-header day3">
-      <span class="day-num">D3</span>
+  <!-- DAY 3 -->
+  <div class="day-card day-d3" id="day-card-3">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D3</div>
       <div class="day-info">
-        <h3>🌊 千年水利 · 都江堰奇迹一日游</h3>
-        <span class="theme">城际列车18分钟到离堆公园，省体力下坡路线游都江堰，南桥蓝眼泪夜景</span>
+        <div class="day-title">千年水利 · 都江堰奇迹一日游</div>
+        <div class="day-summary">城际列车往返都江堰，省体力下坡路线游览，古城非遗小吃，南桥蓝眼泪夜景</div>
       </div>
+      <div class="day-toggle">▾</div>
     </div>
-    <div class="card-body">
-      <div class="route-summary-bar">
-        🚇 春熙路站 → 犀浦站（地铁2号线30分钟） → 🚄 犀浦→离堆公园（城际列车18分钟 ¥10） → 🚶 步行至秦堰楼入口 → 🌊 都江堰景区（省体力下坡路线） → 🏘️ 灌县古城 → 🌉 南桥蓝眼泪夜景 → 🚄 返回成都
-      </div>
+    <div class="day-card-body">
 
-      <!-- Spot 1 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🌊 都江堰景区</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 ¥80</span>
-            <span class="meta-duration">⏱️ 约3.5小时</span>
-          </div>
+      <div class="spot-card">
+        <div class="spot-name">🌊 都江堰景区</div>
+        <div class="spot-meta"><span>🕐 210分钟</span><span>🎫 ¥80</span><span>📡 websearch</span></div>
+        <div class="spot-desc">世界文化遗产，两千多年前李冰父子修建的水利工程至今仍灌溉成都平原。推荐省体力下坡路线（不走回头路）：秦堰楼6号门进入→二王庙→安澜索桥（天下第一爱情桥）→鱼嘴（岷江分水沙洲，最壮观处）→飞沙堰→宝瓶口→离堆公园出。全程下坡，体力消耗最小。</div>
+        <div class="romantic-moment">牵手走过安澜索桥——这座被称为「天下第一爱情桥」的百年悬索桥横跨岷江，脚下江水奔涌，桥身悠悠摇晃。传说走过此桥的情侣会白头偕老，你们在桥中央停下，看远处玉垒山云雾缭绕，千年水利奇迹见证了这一刻。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚇🚄</span><span class="route-from">嘉立精选酒店</span><span class="route-line"></span><span class="route-to">都江堰景区</span><span class="route-dist">65公里 / 1小时30分钟</span>
         </div>
-        <div class="route-line">
-          <span class="r-icon">🚇🚄</span> 从酒店出发
-          <span class="r-info">65公里 · 约1.5小时（地铁+城际列车+步行）</span>
-        </div>
-        <p class="spot-desc">世界文化遗产，两千多年前李冰父子修建的水利工程至今仍灌溉成都平原。推荐省体力下坡路线（不走回头路）：秦堰楼6号门进入→二王庙（祭祀李冰父子）→安澜索桥（天下第一爱情桥）→鱼嘴（岷江分水沙洲，最壮观处）→飞沙堰（泄洪排沙）→宝瓶口（伏龙观顶层俯瞰最佳）→离堆公园出。全程下坡，体力消耗最小。</p>
-        <div class="romantic">牵手走过安澜索桥——这座被称为「天下第一爱情桥」的百年悬索桥横跨岷江，脚下江水奔涌，桥身悠悠摇晃。传说走过此桥的情侣会白头偕老，你们在桥中央停下，看远处玉垒山云雾缭绕，千年水利奇迹见证了这一刻。</div>
-        <div class="tip-pitfall">不要走常规上坡路线！走省体力下坡路线：秦堰楼6号门进→离堆公园出，全程下坡不走回头路。也不要请野导游，官方公众号「青城山都江堰」可预约正规讲解或租¥20语音导览器。</div>
-      </div>
-
-      <!-- Spot 2 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🏘️ 灌县古城 & 南桥蓝眼泪</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 免费</span>
-            <span class="meta-duration">⏱️ 约1.5小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从都江堰景区离堆公园出口出发
-          <span class="r-info">500米 · 步行7分钟</span>
-        </div>
-        <p class="spot-desc">都江堰景区出口即进入灌县古城，青石板街道、明清风格建筑、沿街小吃摊和小店。必体验：幸福路老街漫步、杨柳河畔喝茶、寻找地道小吃。西街是古城最有味道的一条街，店铺小而美。傍晚南桥亮灯后，江水呈现蒂芙尼蓝色（蓝眼泪），免费观赏，19:30后效果最佳。</p>
-        <div class="romantic">在南桥边找一家小店坐下，一碗热气腾腾的红糖醪糟粉子蛋端上来，醪糟的酒香混着红糖的甜蜜。夜幕降临，南桥蓝眼泪亮起，碧蓝的江水映着古城灯火，你们并肩坐在河边，这一刻甜蜜入心。</div>
-      </div>
-
-      <!-- Meals -->
-      <div class="meals-block">
-        <h5>🍽️ 餐饮推荐</h5>
-        <div class="meal-item">
-          <span class="meal-name">🥐 早餐：酒店或犀浦站周边</span>
-          <span class="meal-price">人均 ¥15</span>
-          <div class="meal-sig">豆浆油条 · 包子</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🐰 午餐：老号尤兔头（幸福店/总店）</span>
-          <span class="meal-price">人均 ¥55</span>
-          <div class="meal-addr">📍 都江堰市都江堰大道14号附1号（中国电信对面）</div>
-          <div class="meal-sig">🔥 麻辣兔头（¥11/个） · 五香兔头 · 鲜锅兔 · 清波水饺 · 油拌串串</div>
-          <div class="meal-note">1990年代以街边三轮车售卖起家，二十多年老店。本地人常说「来都江堰不吃尤兔头等于白来」。麻辣兔头软糯脱骨，裹满香辣酱料花生碎白芝麻。</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍡 午茶：太平张醪糟（灌县古城西街店）</span>
-          <span class="meal-price">人均 ¥15</span>
-          <div class="meal-addr">📍 都江堰市灌县古城西街120号</div>
-          <div class="meal-sig">🔥 红糖醪糟粉子蛋（¥13） · 红糖糍粑 · 冰醪糟 · 开口笑饺子</div>
-          <div class="meal-note">百年老店，非物质文化遗产。手工现搓粉子软糯Q弹，醪糟自酿浓郁，溏心蛋是灵魂。</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🦞 晚餐（返回成都）：三哥田螺</span>
-          <span class="meal-price">人均 ¥115</span>
-          <div class="meal-addr">📍 成都市锦江区北书院街与育婴堂街交叉口东行100米路北</div>
-          <div class="meal-sig">🔥 香辣大田螺 · 火爆黄喉 · 鱼香虾仁 · 爆炒花甲 · 干烧鲫鱼</div>
-          <div class="meal-note">1989年从街边大排档起家，30多年历史，成都最早一批冷淡杯（宵夜档）代表。承包两条街路边桌椅，烟火气十足。营业至凌晨4点。</div>
+        <div class="waypoint-list">
+          <div class="waypoint">📍 犀浦站 — 地铁2号线换乘城际列车，约30分钟</div>
+          <div class="waypoint">📍 离堆公园站 — 城际列车18分钟，¥10，出站步行800米至景区</div>
         </div>
       </div>
 
-      <!-- Hotel -->
-      <div class="hotel-block">
-        <h5>🏨 住宿（续住第三晚）</h5>
-        <div class="hotel-info">
-          <strong>嘉立精选酒店（成都春熙路太古里店）</strong> · ¥250-380/晚<br>
-          续住第三晚，交通便利，地铁直达犀浦站换乘城际列车
+      <div class="spot-card">
+        <div class="spot-name">🏘️ 灌县古城</div>
+        <div class="spot-meta"><span>🕐 90分钟</span><span>🎫 免费</span><span>📡 websearch</span></div>
+        <div class="spot-desc">都江堰景区出口即进入灌县古城，青石板街道、明清风格建筑、沿街小吃摊和小店。必体验：幸福路老街漫步、杨柳河畔喝茶、寻找地道小吃。西街是古城最有味道的一条街，店铺小而美。傍晚南桥亮灯后，江水呈现蒂芙尼蓝色（蓝眼泪），免费观赏，19:30后效果最佳。</div>
+        <div class="romantic-moment">在南桥边找一家小店坐下，一碗热气腾腾的红糖醪糟粉子蛋端上来，醪糟的酒香混着红糖的甜蜜。夜幕降临，南桥蓝眼泪亮起，碧蓝的江水映着古城灯火，你们并肩坐在河边，这一刻甜蜜入心。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚶</span><span class="route-from">都江堰景区</span><span class="route-line"></span><span class="route-to">灌县古城</span><span class="route-dist">500米 / 7分钟</span>
         </div>
       </div>
+
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🌅 早餐</div>
+          <div class="restaurant-card"><div class="res-name">酒店早餐或犀浦站周边</div><div class="res-signatures"><span class="res-sig">豆浆油条</span><span class="res-sig">包子</span></div><div class="res-price">人均 ¥15</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">☀️ 午餐</div>
+          <div class="restaurant-card"><div class="res-name">老号尤兔头（幸福店/总店）</div><div class="res-addr">都江堰市都江堰大道14号附1号（中国电信对面）</div><div class="res-signatures"><span class="res-sig">麻辣兔头 ¥11/个</span><span class="res-sig">五香兔头</span><span class="res-sig">鲜锅兔</span><span class="res-sig">清波水饺</span><span class="res-sig">油拌串串</span></div><div class="res-price">人均 ¥55</div><div class="res-note">1990年代以街边三轮车售卖起家，二十多年老店。本地人常说「来都江堰不吃尤兔头等于白来」。麻辣兔头软糯脱骨，裹满香辣酱料花生碎白芝麻。</div></div>
+          <div class="restaurant-card"><div class="res-name">太平张醪糟（灌县古城西街店）</div><div class="res-addr">都江堰市灌县古城西街120号</div><div class="res-signatures"><span class="res-sig">红糖醪糟粉子蛋 ¥13</span><span class="res-sig">红糖糍粑</span><span class="res-sig">冰醪糟</span><span class="res-sig">开口笑饺子</span></div><div class="res-price">人均 ¥15</div><div class="res-note">百年老店，非物质文化遗产。手工现搓粉子软糯Q弹，醪糟自酿浓郁，溏心蛋是灵魂。西街店环境复古雅致。</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">🌙 晚餐</div>
+          <div class="restaurant-card"><div class="res-name">三哥田螺</div><div class="res-addr">成都市锦江区北书院街与育婴堂街交叉口东行100米路北</div><div class="res-signatures"><span class="res-sig">香辣大田螺</span><span class="res-sig">火爆黄喉</span><span class="res-sig">鱼香虾仁</span><span class="res-sig">爆炒花甲</span><span class="res-sig">干烧鲫鱼</span></div><div class="res-price">人均 ¥115</div><div class="res-note">1989年从街边大排档起家，30多年历史，成都最早一批冷淡杯（宵夜档）代表。重油重麻辣典型川式爆炒，承包两条街路边桌椅，烟火气十足。营业至凌晨4点。</div></div>
+        </div>
+      </div>
+
+      <div class="hotel-section">
+        <div class="hotel-card"><div class="hotel-name">🏨 嘉立精选酒店(成都春熙路太古里店) — 续住第三晚</div><div class="hotel-price">¥250-380/晚</div><div class="hotel-hl">交通便利，地铁直达犀浦站换乘城际列车</div></div>
+      </div>
+
     </div>
   </div>
-  </div>
-</section>
 
-<!-- ===== DAY 4 ===== -->
-<section id="day4">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">Day 4 · 穿越川西 · 高铁奔赴九寨沟</h2>
-  <div class="collapsible-content" style="max-height:5000px">
-  <div class="card">
-    <div class="card-header day4">
-      <span class="day-num">D4</span>
+  <!-- DAY 4 -->
+  <div class="day-card day-d4" id="day-card-4">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D4</div>
       <div class="day-info">
-        <h3>🏔️ 穿越川西 · 高铁奔赴九寨沟</h3>
-        <span class="theme">川青铁路高铁2小时至黄龙九寨，下午入住藏族民宿，傍晚漳扎镇适应高原</span>
+        <div class="day-title">穿越川西 · 高铁奔赴九寨沟</div>
+        <div class="day-summary">川青铁路高铁至黄龙九寨站，换乘大巴至沟口，入住藏式民宿，傍晚漳扎镇适应高原</div>
       </div>
+      <div class="day-toggle">▾</div>
     </div>
-    <div class="card-body">
-      <div class="route-summary-bar">
-        🚇 春熙路 → 成都东站（地铁25分钟） → 🚄 成都东→黄龙九寨（高铁2h ¥135-149） → 🚌 景区直通大巴→沟口（1.5-2h ¥51） → 🏡 入住藏族民宿 → 🚶 漳扎镇高原漫步
-      </div>
+    <div class="day-card-body">
 
-      <!-- Spot -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🏘️ 漳扎镇高原漫步</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 免费</span>
-            <span class="meta-duration">⏱️ 约1小时</span>
-          </div>
+      <div class="spot-card">
+        <div class="spot-name">🏔️ 漳扎镇高原漫步</div>
+        <div class="spot-meta"><span>🕐 60分钟</span><span>🎫 免费</span><span>📡 websearch</span></div>
+        <div class="spot-desc">九寨沟景区门户小镇，海拔约2000米。镇上有藏式民居、转经筒、经幡点缀，空气中飘着酥油茶和牦牛肉的香气。傍晚时分远山被夕阳染金，是适应高原气候的最佳方式——放慢脚步，深呼吸，感受藏地风情的第一眼。可以提前熟悉沟口位置，为第二天入园做准备。</div>
+        <div class="romantic-moment">傍晚和TA在漳扎镇的街道上慢慢走，高原的风微凉，远处雪山若隐若现。路边藏民家门口的格桑花在夕阳下摇曳，你们在一座白塔前停下，学着当地人的样子顺时针转了三圈——不为信仰，只为此刻安静相伴。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚇🚄🚌</span><span class="route-from">嘉立精选酒店</span><span class="route-line"></span><span class="route-to">漳扎镇(九寨沟沟口)</span><span class="route-dist">450公里 / 4小时30分钟</span>
         </div>
-        <div class="route-line">
-          <span class="r-icon">🚇🚄🚌</span> 从酒店出发
-          <span class="r-info">450公里 · 约4.5小时（地铁+高铁+大巴）</span>
-          <div style="font-size:.8em;color:#888;margin-top:4px">
-            ⚠️ 关键节点：春熙路→成都东站（地铁25分）| 成都东→黄龙九寨（高铁2h ¥135-149）| 黄龙九寨站→沟口（直通车1.5-2h ¥51/人）<br>
-            ⚠️ 旺季建议提前15天在12306购票
-          </div>
-        </div>
-        <p class="spot-desc">九寨沟景区门户小镇，海拔约2000米。镇上有藏式民居、转经筒、经幡点缀，空气中飘着酥油茶和牦牛肉的香气。傍晚时分远山被夕阳染金，是适应高原气候的最佳方式——放慢脚步，深呼吸，感受藏地风情的第一眼。可以提前熟悉沟口位置，为第二天入园做准备。</p>
-        <div class="romantic">傍晚和TA在漳扎镇的街道上慢慢走，高原的风微凉，远处雪山若隐若现。路边藏民家门口的格桑花在夕阳下摇曳，你们在一座白塔前停下，学着当地人的样子顺时针转了三圈——不为信仰，只为此刻安静相伴。</div>
-      </div>
-
-      <!-- Meals -->
-      <div class="meals-block">
-        <h5>🍽️ 餐饮推荐</h5>
-        <div class="meal-item">
-          <span class="meal-name">🥐 早餐：酒店或成都东站便利店</span>
-          <span class="meal-price">人均 ¥20</span>
-          <div class="meal-sig">面包 · 牛奶 · 咖啡</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍱 午餐：高铁上简餐</span>
-          <span class="meal-price">人均 ¥30</span>
-          <div class="meal-sig">方便食品 · 饼干 · 水果</div>
-          <div class="meal-note">建议成都提前买好带上车，高铁餐食选择有限</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🥘 晚餐：扎西藏餐</span>
-          <span class="meal-price">人均 ¥65</span>
-          <div class="meal-addr">📍 九寨沟县漳扎镇301省道格桑宾馆对面</div>
-          <div class="meal-sig">🔥 牦牛肉火锅（小锅¥188/2-3人） · 手抓牦牛肉（¥98/斤） · 糌粑（¥15/份） · 酥油茶（¥25/壶） · 牦牛酸奶（¥15/碗）</div>
-          <div class="meal-note">典型藏式家庭餐馆，矮长条凳，藏式花纹装饰，接地气性价比高。铜锅奶白汤底配红枣枸杞和藏地香料。评分4.5分。</div>
+        <div class="waypoint-list">
+          <div class="waypoint">📍 成都东站 — 地铁2号线可达，约25分钟</div>
+          <div class="waypoint">📍 黄龙九寨站 — 川青铁路高铁约2小时，¥135-149</div>
         </div>
       </div>
 
-      <!-- Hotel -->
-      <div class="hotel-block">
-        <h5>🏨 住宿推荐</h5>
-        <div class="hotel-info">
-          <strong>阿布藏家客栈</strong> · 九寨沟漳扎镇，距沟口步行可达<br>
-          💰 ¥400-600/晚（旺季）<br>
-          本地藏族老板经营的藏式小楼，含藏服体验，可以听老板讲藏族风俗和九寨故事。地暖比空调重要，提前确认热水和隔音。
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🌅 早餐</div>
+          <div class="restaurant-card"><div class="res-name">酒店早餐或成都东站便利店</div><div class="res-signatures"><span class="res-sig">面包</span><span class="res-sig">牛奶</span><span class="res-sig">咖啡</span></div><div class="res-price">人均 ¥20</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">☀️ 午餐</div>
+          <div class="restaurant-card"><div class="res-name">高铁上简餐或黄龙九寨站小吃</div><div class="res-signatures"><span class="res-sig">方便食品</span><span class="res-sig">饼干</span><span class="res-sig">水果</span></div><div class="res-price">人均 ¥30</div><div class="res-note">建议成都提前买好带上车，高铁餐食选择有限。</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">🌙 晚餐</div>
+          <div class="restaurant-card"><div class="res-name">扎西藏餐</div><div class="res-addr">九寨沟县漳扎镇301省道格桑宾馆对面</div><div class="res-signatures"><span class="res-sig">牦牛肉火锅 ¥188/小锅</span><span class="res-sig">手抓牦牛肉 ¥98/斤</span><span class="res-sig">糌粑 ¥15</span><span class="res-sig">酥油茶 ¥25/壶</span><span class="res-sig">牦牛酸奶 ¥15</span></div><div class="res-price">人均 ¥65</div><div class="res-note">典型藏式家庭餐馆，矮长条凳，藏式花纹装饰，接地气性价比高。铜锅奶白汤底配红枣枸杞和藏地香料。自己动手用青稞粉+酥油+酥油茶揉捏糌粑。评分4.5分。</div></div>
         </div>
       </div>
+
+      <div class="hotel-section">
+        <div class="hotel-card"><div class="hotel-name">🏨 阿布藏家客栈</div><div class="hotel-area">九寨沟漳扎镇，距沟口步行可达</div><div class="hotel-price">¥400-600/晚（旺季）</div><div class="hotel-hl">本地藏族老板经营的藏式小楼，含藏服体验，可以听老板讲藏族风俗和九寨故事。地暖比空调重要，提前确认热水和隔音。</div></div>
+      </div>
+
     </div>
   </div>
-  </div>
-</section>
 
-<!-- ===== DAY 5 ===== -->
-<section id="day5">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">Day 5 · 人间仙境 · 九寨沟全天深度游</h2>
-  <div class="collapsible-content" style="max-height:12000px">
-  <div class="card">
-    <div class="card-header day5">
-      <span class="day-num">D5</span>
+  <!-- DAY 5 -->
+  <div class="day-card day-d5" id="day-card-5">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D5</div>
       <div class="day-info">
-        <h3>💎 人间仙境 · 九寨沟全天深度游</h3>
-        <span class="theme">7:30第一班入园，Y字路线：日则沟精华→诺日朗休整→则查洼沟→树正沟出沟</span>
+        <div class="day-title">人间仙境 · 九寨沟全天深度游</div>
+        <div class="day-summary">7:30入园按Y字路线：日则沟精华→诺日朗休整→则查洼沟→树正沟一路向下出沟</div>
       </div>
+      <div class="day-toggle">▾</div>
     </div>
-    <div class="card-body">
-      <div class="route-summary-bar">
-        🚌 沟口乘观光车 → 💎 五花海（老虎嘴俯瞰） → 🚶 珍珠滩瀑布（赤足踏水） → 🚌 诺日朗瀑布（彩虹） → 🚌 长海（3100米雪山湖） → 🚶 五彩池（人间瑶池） → 🚌 树正群海（梯田海子+藏寨炊烟） → 🚌 出沟
-      </div>
-      <div class="tip-pitfall" style="margin-bottom:16px">九寨沟旺季严格执行实名预约制，无线下售票窗口！提前在微信公众号「九寨沟」或阿坝旅游网小程序预约购票（¥280/人含观光车），旺季限量需尽早抢票。</div>
+    <div class="day-card-body">
 
-      <!-- Spot 1 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>💎 五花海</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 含在门票内</span>
-            <span class="meta-duration">⏱️ 约1小时</span>
-          </div>
+      <div class="spot-card">
+        <div class="spot-name">🎨 五花海</div>
+        <div class="spot-meta"><span>🕐 60分钟</span><span>🎫 含在门票内</span><span>📡 websearch</span></div>
+        <div class="spot-desc">九寨沟色彩精华所在，被誉为「上帝打翻的调色盘」。湖水因钙华沉积、藻类分布与阳光折射呈现鹅黄、宝蓝、墨绿、藏青、翠绿等斑斓色块，水极浅清澈见底，湖底枯木因碳酸钙包裹形成钙华外壳千年不腐（永生树）。必去老虎嘴观景台俯瞰全貌。</div>
+        <div class="romantic-moment">站在老虎嘴俯瞰五花海，湖水如上帝打翻的调色盘倾倒在山谷间。你牵着TA的手，眼前是世间最美的蓝绿色块——鹅黄、宝蓝、墨绿交织，这一刻你们拥有了九寨沟最浓烈的一抹色彩。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚌</span><span class="route-from">阿布藏家客栈</span><span class="route-line"></span><span class="route-to">五花海</span><span class="route-dist">15公里 / 30分钟</span>
         </div>
-        <div class="route-line">
-          <span class="r-icon">🚌</span> 从沟口出发
-          <span class="r-info">15公里 · 约30分钟（景区观光车）</span>
-        </div>
-        <p class="spot-desc">九寨沟色彩精华所在，被誉为「上帝打翻的调色盘」。湖水因钙华沉积、藻类分布与阳光折射呈现鹅黄、宝蓝、墨绿、藏青、翠绿等斑斓色块，水极浅清澈见底，湖底枯木因碳酸钙包裹形成钙华外壳千年不腐（永生树）。必去老虎嘴观景台俯瞰全貌。</p>
-        <div class="romantic">站在老虎嘴俯瞰五花海，湖水如上帝打翻的调色盘倾倒在山谷间。你牵着TA的手，眼前是世间最美的蓝绿色块——鹅黄、宝蓝、墨绿交织，这一刻你们拥有了九寨沟最浓烈的一抹色彩。</div>
+        <div class="waypoint-list"><div class="waypoint">📍 九寨沟景区入口 — 7:30第一班入园，门票¥280/人</div></div>
       </div>
 
-      <!-- Spot 2 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🌊 珍珠滩瀑布</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 含在门票内</span>
-            <span class="meta-duration">⏱️ 约45分钟</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从五花海出发
-          <span class="r-info">1.5公里 · 步行约25分钟</span>
-        </div>
-        <p class="spot-desc">九寨沟跨度最宽的瀑布（高约21米、宽约162米）。瀑布上方约20度倾角的钙华滩面，薄水层在阳光下如万颗明珠闪烁（珍珠滩）。瀑面呈新月形，吼声如雷。86版《西游记》片头唐僧师徒牵马涉水即取景于此。游客可赤足在滩上行走。</p>
-        <div class="romantic">和TA一起脱掉鞋子，赤足走在珍珠滩上，薄薄的水层从脚面流过，身后是86版《西游记》的经典取景——孙悟空牵着白龙马走过的画面。此刻你们不是在看风景，你们是彼此的风景。</div>
-      </div>
-
-      <!-- Spot 3 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🌈 诺日朗瀑布</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 含在门票内</span>
-            <span class="meta-duration">⏱️ 约30分钟</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚌</span> 从珍珠滩瀑布出发
-          <span class="r-info">5公里 · 约15分钟（观光车）</span>
-        </div>
-        <p class="spot-desc">中国最宽的高山钙华瀑布（宽约270-320米，高约24.5米），九寨沟的标志和象征。「诺日朗」藏语意为「伟岸高大」。滔滔水流从诺日朗群海汇集，经瀑布顶端密林倾泻而下如银河飞泻，早晨常见彩虹横挂。86版《西游记》片尾取景地。</p>
-        <div class="romantic">站在诺日朗瀑布前，水雾扑面而来，涛声如雷。如果运气好，阳光穿过水雾在你们面前画出一道彩虹。你拿出手机想拍照，却发现镜头里TA的笑容比彩虹更灿烂。</div>
-      </div>
-
-      <!-- Spot 4 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🏔️ 长海</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 含在门票内</span>
-            <span class="meta-duration">⏱️ 约30分钟</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚌</span> 从诺日朗中心站换乘则查洼沟方向
-          <span class="r-info">18公里 · 约30分钟（观光车）</span>
-        </div>
-        <p class="spot-desc">九寨沟海拔最高（3100米）、面积最大的海子，长约5公里，极限水深100米。湖面宽阔，远端为岷山雪峰，四周原始森林环抱。藏民称其为「装不满、漏不干」的宝葫芦，完全依靠融雪和雨水补给，无出水口却终年不涸不溢。</p>
-        <div class="romantic">海拔3100米的雪山湖泊前，四周原始森林环抱，世界寂静得只剩两人的呼吸声。TA靠在你肩上，你看着远处的岷山雪峰倒映在如镜的湖面——这一瞬间，你觉得翻山越岭来到这里，一切都值得。</div>
-        <div class="tip-pitfall">海拔3100米，走路放慢节奏，避免剧烈运动和奔跑，多喝热水。</div>
-      </div>
-
-      <!-- Spot 5 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🎨 五彩池</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 含在门票内</span>
-            <span class="meta-duration">⏱️ 约30分钟</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从长海出发
-          <span class="r-info">1公里 · 步行约15分钟</span>
-        </div>
-        <p class="spot-desc">九寨沟最小的海子（面积约5000平方米），却拥有最艳丽的色彩。池底钙华沉积、藻类及矿物质丰富，阳光折射下呈现蓝、绿、黄、紫等多色渐变。透明度极高可清晰见底。水源由长海渗漏而来，四季不冻。被誉为「人间瑶池」「九寨之眼」。中午阳光直射时拍摄最佳。</p>
-        <div class="romantic">午后阳光直射池底，五彩斑斓的池水映着TA的侧脸——这是九寨最迷你却最浓烈的一抹色彩。你们在池边蹲下，伸出手仿佛能触到池底的宝石蓝。这一刻，人间瑶池有了最美的倒影。</div>
-      </div>
-
-      <!-- Spot 6 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🌲 树正群海</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 含在门票内</span>
-            <span class="meta-duration">⏱️ 约1小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚌</span> 从五彩池返回诺日朗，换乘树正沟方向
-          <span class="r-info">25公里 · 约40分钟（含换乘）</span>
-        </div>
-        <p class="spot-desc">九寨沟湖泊最密集区域，由19-40多个大小海子梯田状群集，绵延约5公里，总高差近100米。海子通过绿树与瀑布互相勾连形成「树在水中生，水在林间流」奇观。栈桥旁有藏族磨坊和转经房，激流推动木轮旋转经筒。下午4点逆光拍摄海子呈琥珀色层次感最佳。</p>
-        <div class="romantic">夕阳逆光下，梯田般的海子呈现琥珀色的光泽。你们坐在栈桥边，看藏寨炊烟袅袅升起，水流转经筒吱呀吱呀地转着。你转过头想说什么，发现TA已经靠在你肩上，嘴角带着微笑——这一天走了很多路，但最美的风景在身旁。</div>
-      </div>
-
-      <!-- Meals -->
-      <div class="meals-block">
-        <h5>🍽️ 餐饮推荐</h5>
-        <div class="meal-item">
-          <span class="meal-name">🥐 早餐：客栈藏式早餐</span>
-          <span class="meal-price">人均 ¥20</span>
-          <div class="meal-sig">青稞饼 · 酥油茶 · 鸡蛋</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍱 午餐：自带干粮（景区内野餐）</span>
-          <span class="meal-price">人均 ¥30</span>
-          <div class="meal-sig">自热米饭 · 面包 · 火腿肠 · 水果 · 巧克力</div>
-          <div class="meal-note">⚠️ 强烈不建议在诺日朗餐厅吃午饭——又贵又难吃，一份盒饭¥60-80还难以下咽。成都出发前超市采购好自热米饭和零食。</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🥩 晚餐：阿布氇孜藏餐厅</span>
-          <span class="meal-price">人均 ¥107</span>
-          <div class="meal-addr">📍 九寨沟县漳扎镇上四寨村二组22号（彭丰村九寨磨坊旁）</div>
-          <div class="meal-sig">🔥 阿玛拉做土豆（获奖名菜） · 安多手抓羊肉 · 藏香猪排 · 锡纸牦牛肉 · 自制牦牛酸奶 · 自家酿5度青稞酒</div>
-          <div class="meal-note">评分4.7-4.9分，藏式小资风格，装饰精致，有藏式歌舞表演，结账时献哈达。九寨沟土豆一绝。</div>
+      <div class="spot-card">
+        <div class="spot-name">💎 珍珠滩瀑布</div>
+        <div class="spot-meta"><span>🕐 45分钟</span><span>🎫 含在门票内</span><span>📡 websearch</span></div>
+        <div class="spot-desc">九寨沟跨度最宽的瀑布（高约21米、宽约162米）。瀑布上方约20度倾角的钙华滩面，薄水层在阳光下如万颗明珠闪烁（珍珠滩）。瀑面呈新月形，吼声如雷。86版《西游记》片头唐僧师徒牵马涉水即取景于此。游客可赤足在滩上行走。</div>
+        <div class="romantic-moment">和TA一起脱掉鞋子，赤足走在珍珠滩上，薄薄的水层从脚面流过，身后是86版《西游记》的经典取景——孙悟空牵着白龙马走过的画面。此刻你们不是在看风景，你们是彼此的风景。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚶</span><span class="route-from">五花海</span><span class="route-line"></span><span class="route-to">珍珠滩瀑布</span><span class="route-dist">1.5公里 / 25分钟</span>
         </div>
       </div>
 
-      <!-- Hotel -->
-      <div class="hotel-block">
-        <h5>🏨 住宿（续住）</h5>
-        <div class="hotel-info">
-          <strong>阿布藏家客栈</strong> · 九寨沟漳扎镇 · ¥400-600/晚<br>
-          续住，藏式小楼含藏服体验，一天疲惫后在藏家小院喝茶聊天
+      <div class="spot-card">
+        <div class="spot-name">🌊 诺日朗瀑布</div>
+        <div class="spot-meta"><span>🕐 30分钟</span><span>🎫 含在门票内</span><span>📡 websearch</span></div>
+        <div class="spot-desc">中国最宽的高山钙华瀑布（宽约270-320米，高约24.5米），九寨沟的标志和象征。「诺日朗」藏语意为「伟岸高大」。滔滔水流从诺日朗群海汇集，经瀑布顶端密林倾泻而下如银河飞泻，早晨常见彩虹横挂。86版《西游记》片尾取景地。位于三条沟交汇的诺日朗中心站旁。</div>
+        <div class="romantic-moment">站在诺日朗瀑布前，水雾扑面而来，涛声如雷。如果运气好，阳光穿过水雾在你们面前画出一道彩虹。你拿出手机想拍照，却发现镜头里TA的笑容比彩虹更灿烂。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚌</span><span class="route-from">珍珠滩瀑布</span><span class="route-line"></span><span class="route-to">诺日朗瀑布</span><span class="route-dist">5公里 / 15分钟</span>
         </div>
       </div>
+
+      <div class="spot-card">
+        <div class="spot-name">🏔️ 长海</div>
+        <div class="spot-meta"><span>🕐 30分钟</span><span>🎫 含在门票内</span><span>📡 websearch</span></div>
+        <div class="spot-desc">九寨沟海拔最高（3100米）、面积最大的海子，长约5公里，极限水深100米。湖面宽阔，远端为岷山雪峰，四周原始森林环抱。藏民称其为「装不满、漏不干」的宝葫芦，完全依靠融雪和雨水补给，无出水口却终年不涸不溢。</div>
+        <div class="romantic-moment">海拔3100米的雪山湖泊前，四周原始森林环抱，世界寂静得只剩两人的呼吸声。TA靠在你肩上，你看着远处的岷山雪峰倒映在如镜的湖面——这一瞬间，你觉得翻山越岭来到这里，一切都值得。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚌</span><span class="route-from">诺日朗瀑布</span><span class="route-line"></span><span class="route-to">长海</span><span class="route-dist">18公里 / 30分钟</span>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-name">🌈 五彩池</div>
+        <div class="spot-meta"><span>🕐 30分钟</span><span>🎫 含在门票内</span><span>📡 websearch</span></div>
+        <div class="spot-desc">九寨沟最小的海子（面积约5000平方米），却拥有最艳丽的色彩。池底钙华沉积、藻类及矿物质丰富，阳光折射下呈现蓝、绿、黄、紫等多色渐变。透明度极高可清晰见底。水源由长海渗漏而来，四季不冻。被誉为「人间瑶池」「九寨之眼」。中午阳光直射时拍摄最佳。</div>
+        <div class="romantic-moment">午后阳光直射池底，五彩斑斓的池水映着TA的侧脸——这是九寨最迷你却最浓烈的一抹色彩。你们在池边蹲下，伸出手仿佛能触到池底的宝石蓝。这一刻，人间瑶池有了最美的倒影。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚶</span><span class="route-from">长海</span><span class="route-line"></span><span class="route-to">五彩池</span><span class="route-dist">1公里 / 15分钟</span>
+        </div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-name">🌿 树正群海</div>
+        <div class="spot-meta"><span>🕐 60分钟</span><span>🎫 含在门票内</span><span>📡 websearch</span></div>
+        <div class="spot-desc">九寨沟湖泊最密集区域，由19-40多个大小海子梯田状群集，绵延约5公里，总高差近100米。海子通过绿树与瀑布互相勾连形成「树在水中生，水在林间流」奇观。栈桥旁有藏族磨坊和转经房，激流推动木轮旋转经筒。下午4点逆光拍摄海子呈琥珀色层次感最佳。</div>
+        <div class="romantic-moment">夕阳逆光下，梯田般的海子呈现琥珀色的光泽。你们坐在栈桥边，看藏寨炊烟袅袅升起，水流转经筒吱呀吱呀地转着。你转过头想说什么，发现TA已经靠在你肩上，嘴角带着微笑——这一天走了很多路，但最美的风景在身旁。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚌</span><span class="route-from">五彩池</span><span class="route-line"></span><span class="route-to">树正群海</span><span class="route-dist">25公里 / 40分钟</span>
+        </div>
+      </div>
+
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🌅 早餐</div>
+          <div class="restaurant-card"><div class="res-name">客栈藏式早餐</div><div class="res-signatures"><span class="res-sig">青稞饼</span><span class="res-sig">酥油茶</span><span class="res-sig">鸡蛋</span></div><div class="res-price">人均 ¥20</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">☀️ 午餐</div>
+          <div class="restaurant-card"><div class="res-name">自带干粮（景区内野餐）</div><div class="res-signatures"><span class="res-sig">自热米饭</span><span class="res-sig">面包</span><span class="res-sig">火腿肠</span><span class="res-sig">水果</span><span class="res-sig">巧克力</span></div><div class="res-price">人均 ¥30</div><div class="res-note">诺日朗餐厅价格偏高且评价差，强烈建议自带。成都出发前在超市买好自热米饭和零食。</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">🌙 晚餐</div>
+          <div class="restaurant-card"><div class="res-name">阿布氇孜藏餐厅</div><div class="res-addr">九寨沟县漳扎镇上四寨村二组22号（漳扎镇彭丰村九寨磨坊旁）</div><div class="res-signatures"><span class="res-sig">阿玛拉做土豆（获奖）</span><span class="res-sig">安多手抓羊肉</span><span class="res-sig">藏香猪排</span><span class="res-sig">锡纸牦牛肉</span><span class="res-sig">自制牦牛酸奶</span><span class="res-sig">自酿5度青稞酒</span></div><div class="res-price">人均 ¥107</div><div class="res-note">评分4.7-4.9分，藏式小资风格，装饰精致，有藏式歌舞表演，结账时献哈达。九寨沟土豆一绝，自制酸奶后味带酿造酒味。</div></div>
+        </div>
+      </div>
+
+      <div class="hotel-section">
+        <div class="hotel-card"><div class="hotel-name">🏨 阿布藏家客栈 — 续住</div><div class="hotel-price">¥400-600/晚（旺季）</div><div class="hotel-hl">一天疲惫后在藏家小院喝茶聊天</div></div>
+      </div>
+
     </div>
   </div>
-  </div>
-</section>
 
-<!-- ===== DAY 6 ===== -->
-<section id="day6">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">Day 6 · 草原天路 · 花湖湿地与黄河落日</h2>
-  <div class="collapsible-content" style="max-height:8000px">
-  <div class="card">
-    <div class="card-header day6">
-      <span class="day-num">D6</span>
+  <!-- DAY 6 -->
+  <div class="day-card day-d6" id="day-card-6">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D6</div>
       <div class="day-info">
-        <h3>🌾 草原天路 · 花湖湿地与黄河落日</h3>
-        <span class="theme">晨赴川主寺取车，穿越尕力台垭口驰骋若尔盖，花湖湿地漫步，黄河九曲第一湾日落</span>
+        <div class="day-title">草原天路 · 花湖湿地与黄河落日</div>
+        <div class="day-summary">沟口乘大巴至川主寺，一嗨取车开启自驾，穿越尕力台垭口，花湖漫步，唐克天边云梯登顶等黄河日落</div>
       </div>
+      <div class="day-toggle">▾</div>
     </div>
-    <div class="card-body">
-      <div class="route-summary-bar">
-        🚌 沟口大巴→川主寺（1.5h） → 🚗 一嗨取车 → 🏔️ 九若路穿越尕力台垭口(3800m) → 🏙️ 若尔盖县城加油午餐 → 🌾 花湖湿地 → 🚗 驱车唐克 → 🌅 黄河九曲第一湾日落
-      </div>
+    <div class="day-card-body">
 
-      <!-- Spot 1 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🌾 花湖</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 ¥110</span>
-            <span class="meta-duration">⏱️ 约3小时</span>
-          </div>
+      <div class="spot-card">
+        <div class="spot-name">🌾 花湖</div>
+        <div class="spot-meta"><span>🕐 180分钟</span><span>🎫 ¥110（含观光车）</span><span>📡 websearch</span></div>
+        <div class="spot-desc">国家AAAA级景区，《国家地理杂志》评选的中国最美湿地，海拔3468米。观光车（往返7公里必乘）后沿3.6公里木质栈道徒步游览。9月底草原由翠绿转为金黄偏红，湖面倒映秋色与蓝天，水天同画效果极佳。可观测黑颈鹤等珍稀鸟类。相比暑期人潮明显减少，适合静享高原秘境。游览约3-5小时。</div>
+        <div class="romantic-moment">9月的花湖褪去盛夏繁花，换上金色秋装。木质栈道无限延伸至天边，你们并肩漫步，云朵从头顶飘过在湖面投下流动的阴影。远处黑颈鹤成双成对地飞过——它们一生只有一个伴侣，就像此刻的你们。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">川主寺镇</span><span class="route-line"></span><span class="route-to">花湖</span><span class="route-dist">242公里 / 4小时30分钟</span>
         </div>
-        <div class="route-line">
-          <span class="r-icon">🚗</span> 从川主寺镇出发
-          <span class="r-info">242公里 · 约4.5小时</span>
-          <div style="font-size:.8em;color:#888;margin-top:4px">
-            🏔️ 途经：尕力台垭口（九若路最高点，海拔3800m，弯道密集）| 若尔盖县城（加油+午餐，之后加油站间距大）
-          </div>
-        </div>
-        <p class="spot-desc">国家AAAA级景区，《国家地理杂志》评选的中国最美湿地，海拔3468米。观光车（往返7公里必乘）后沿3.6公里木质栈道徒步游览。9月底草原由翠绿转为金黄偏红，湖面倒映秋色与蓝天，水天同画效果极佳。可观测黑颈鹤等珍稀鸟类。相比暑期人潮明显减少，适合静享高原秘境。游览约3-5小时。</p>
-        <div class="romantic">9月的花湖褪去盛夏繁花，换上金色秋装。木质栈道无限延伸至天边，你们并肩漫步，云朵从头顶飘过在湖面投下流动的阴影。远处黑颈鹤成双成对地飞过——它们一生只有一个伴侣，就像此刻的你们。</div>
-      </div>
-
-      <!-- Spot 2 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🌅 黄河九曲第一湾</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 ¥105（含天边云梯）</span>
-            <span class="meta-duration">⏱️ 约2.5小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚗</span> 从花湖出发
-          <span class="r-info">90公里 · 约1.5小时</span>
-        </div>
-        <p class="spot-desc">黄河在若尔盖草原画出最美的S形曲线，海拔约3500米（观景台近4000米）。推荐购买门票+扶梯联票¥105：乘「天边云梯」自动扶梯上行（约700级台阶15-20分钟），登顶后俯瞰九曲黄河如金色绸带蜿蜒于草原。日落时间约18:30-19:30，建议17:30前到达。扶梯只有上行没有下行，下山步行栈道约30-40分钟。</p>
-        <div class="romantic">乘天边云梯缓缓上升，视野豁然开朗——黄河在金色草原上画出九道弯，夕阳把河水染成金红色绸带。你和TA并肩站在近4000米的观景台上，看中国最美日落之一缓缓沉入草原尽头。这一刻，世界很大，但你们的距离只有零。</div>
-        <div class="tip-pitfall">不要自己爬山登顶！花¥60坐天边云梯扶梯上去。海拔3500-4000米，爬700多级台阶极易引发高反，很多游客爬到一半就喘不上气。下山步行即可（30-40分钟）。</div>
-      </div>
-
-      <!-- Meals -->
-      <div class="meals-block">
-        <h5>🍽️ 餐饮推荐</h5>
-        <div class="meal-item">
-          <span class="meal-name">🥐 早餐：客栈早餐或沟口简餐</span>
-          <span class="meal-price">人均 ¥20</span>
-          <div class="meal-sig">包子 · 粥 · 鸡蛋</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍜 午餐：川主寺或沿途简餐</span>
-          <span class="meal-price">人均 ¥40</span>
-          <div class="meal-sig">牦牛肉面 · 炒菜 · 面片</div>
-          <div class="meal-note">川主寺是重要交通中转站，有餐馆和加油站。建议在此加满油，之后加油站间距大。</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍲 晚餐：民宿藏式晚餐或唐克镇餐馆</span>
-          <span class="meal-price">人均 ¥70</span>
-          <div class="meal-sig">牦牛肉汤锅 · 藏式烤饼 · 手抓羊肉 · 酥油茶</div>
-          <div class="meal-note">唐克镇海拔约3500米，建议吃热乎的汤锅暖身。部分民宿可提前预约晚餐。</div>
+        <div class="waypoint-list">
+          <div class="waypoint">🏔️ 尕力台垭口 — 九若路最高点，海拔约3800m，可远眺岷山雪峰</div>
+          <div class="waypoint">⛽ 若尔盖县城 — 在此加油并用午餐。之后加油站间距大，务必加满油</div>
         </div>
       </div>
 
-      <!-- Hotel -->
-      <div class="hotel-block">
-        <h5>🏨 住宿推荐</h5>
-        <div class="hotel-info">
-          <strong>吉祥自在·落霞庭民宿</strong> · 若尔盖县唐克镇俄色村92号<br>
-          💰 ¥350-500/晚 · 2026年新开业评5.0分<br>
-          藏式穹顶·蒙古包草原全景房，落地大窗直对草原日落，供氧充足，干湿分离卫生间。六塔环列、九曲黄河观景长廊、骑马点近在咫尺。<br>
-          <span style="color:#faad14">⚠️ 唐克镇全镇目前修路尘土较多，提前联系民宿确认最新路况。</span>
+      <div class="spot-card">
+        <div class="spot-name">🌅 黄河九曲第一湾</div>
+        <div class="spot-meta"><span>🕐 150分钟</span><span>🎫 ¥105（含天边云梯）</span><span>📡 websearch</span></div>
+        <div class="spot-desc">黄河在若尔盖草原画出最美的S形曲线，海拔约3500米（观景台近4000米）。推荐购买门票+扶梯联票¥105：乘「天边云梯」自动扶梯上行（约700级台阶15-20分钟），登顶后俯瞰九曲黄河如金色绸带蜿蜒于草原。日落时间约18:30-19:30，建议17:30前到达。扶梯只有上行没有下行，下山步行栈道约30-40分钟。</div>
+        <div class="romantic-moment">乘天边云梯缓缓上升，视野豁然开朗——黄河在金色草原上画出九道弯，夕阳把河水染成金红色绸带。你和TA并肩站在近4000米的观景台上，看中国最美日落之一缓缓沉入草原尽头。这一刻，世界很大，但你们的距离只有零。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">花湖</span><span class="route-line"></span><span class="route-to">黄河九曲第一湾</span><span class="route-dist">90公里 / 1小时30分钟</span>
         </div>
       </div>
+
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🌅 早餐</div>
+          <div class="restaurant-card"><div class="res-name">客栈早餐或沟口简餐</div><div class="res-addr">九寨沟沟口</div><div class="res-signatures"><span class="res-sig">包子</span><span class="res-sig">粥</span><span class="res-sig">鸡蛋</span></div><div class="res-price">人均 ¥20</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">☀️ 午餐</div>
+          <div class="restaurant-card"><div class="res-name">川主寺或沿途简餐</div><div class="res-signatures"><span class="res-sig">牦牛肉面</span><span class="res-sig">炒菜</span><span class="res-sig">面片</span></div><div class="res-price">人均 ¥40</div><div class="res-note">川主寺是重要交通中转站，有餐馆和加油站。建议在此加满油，之后加油站间距大。</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">🌙 晚餐</div>
+          <div class="restaurant-card"><div class="res-name">民宿藏式晚餐或唐克镇餐馆</div><div class="res-addr">唐克镇</div><div class="res-signatures"><span class="res-sig">牦牛肉汤锅</span><span class="res-sig">藏式烤饼</span><span class="res-sig">手抓羊肉</span><span class="res-sig">酥油茶</span></div><div class="res-price">人均 ¥70</div><div class="res-note">唐克镇海拔约3500米，建议吃热乎的汤锅暖身。部分民宿可提前预约晚餐。</div></div>
+        </div>
+      </div>
+
+      <div class="hotel-section">
+        <div class="hotel-card"><div class="hotel-name">🏨 吉祥自在·落霞庭民宿</div><div class="hotel-area">若尔盖县唐克镇俄色村92号，距黄河九曲第一湾最近</div><div class="hotel-price">¥350-500/晚</div><div class="hotel-hl">2026年新开业评5.0分，藏式穹顶·蒙古包草原全景房，落地大窗直对草原日落，供氧充足，干湿分离卫生间，藏家风味早餐（¥15/人）。六塔环列、九曲黄河观景长廊、骑马点近在咫尺。唐克镇全镇目前修路尘土较多，提前联系民宿确认最新路况。</div></div>
+      </div>
+
     </div>
   </div>
-  </div>
-</section>
 
-<!-- ===== DAY 7 ===== -->
-<section id="day7">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">Day 7 · 信仰之路 · 从郎木寺到拉卜楞寺</h2>
-  <div class="collapsible-content" style="max-height:10000px">
-  <div class="card">
-    <div class="card-header day7">
-      <span class="day-num">D7</span>
+  <!-- DAY 7 -->
+  <div class="day-card day-d7" id="day-card-7">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D7</div>
       <div class="day-info">
-        <h3>🙏 信仰之路 · 从郎木寺到拉卜楞寺</h3>
-        <span class="theme">赛赤寺金顶日出+格尔底寺肉身灵塔+纳摩大峡谷，穿越尕海桑科草原至夏河</span>
+        <div class="day-title">高原湿地 · 尕海候鸟与桑科草原</div>
+        <div class="day-summary">唐克出发至尕海湖，高原湿地木栈道观候鸟，下午穿越桑科草原骑马漫步，傍晚抵达夏河入住</div>
       </div>
+      <div class="day-toggle">▾</div>
     </div>
-    <div class="card-body">
-      <div class="route-summary-bar">
-        🚗 唐克→郎木寺（87km 1.5h 弯道多） → 🏔️ 赛赤寺金顶日出 → 🚶 格尔底寺+纳摩大峡谷 → 🍎 丽莎餐厅苹果派 → 🚗 郎木寺→夏河（184km 3h 经尕海+桑科草原） → 🏛️ 拉卜楞寺 → 🌀 世界最长转经廊
+    <div class="day-card-body">
+
+      <div class="spot-card">
+        <div class="spot-name">🦆 尕海湖</div>
+        <div class="spot-meta"><span>🕐 90分钟</span><span>🎫 ¥50</span><span>📡 websearch</span></div>
+        <div class="spot-desc">甘南最大高原湖泊，海拔3480m，候鸟南迁中转站。9月底可见黑颈鹤、斑头雁。木栈道深入湿地1.5km，金色芦苇+远山倒影。游客稀少，是甘南最宁静的高原秘境之一。</div>
+        <div class="romantic-moment">栈道尽头两人并肩看候鸟在金色湿地上空盘旋，世界安静得只剩风声和鸟鸣。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">落霞庭民宿(唐克镇)</span><span class="route-line"></span><span class="route-to">尕海湖</span><span class="route-dist">140公里 / 2小时30分钟</span>
+        </div>
+        <div class="waypoint-list"><div class="waypoint">⛽ 碌曲县城 — 唐克至尕海湖段部分路段无手机信号，出发前下载离线地图。可在碌曲加油并用午餐。</div></div>
       </div>
 
-      <!-- Spot 1 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🏔️ 赛赤寺（甘肃寺）· 金顶日出</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 ¥30</span>
-            <span class="meta-duration">⏱️ 约1小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚗</span> 从唐克镇出发
-          <span class="r-info">87公里 · 约1.5小时</span>
-          <div style="font-size:.8em;color:#888;margin-top:4px">⚠️ U13县道-兰磨线段弯道较多，部分路段无手机信号，出发前下载离线地图</div>
-        </div>
-        <p class="spot-desc">位于郎木寺镇北岸甘肃省境内，金顶建筑群在晨光中熠熠生辉。可登上后山俯瞰郎木寺镇全景——白龙江如一条银线将小镇分为甘肃和四川两半。天葬台可远观。清晨可观日出金顶与晨雾，日落机位也绝佳。</p>
-        <div class="romantic">清晨站在赛赤寺后山，看第一缕阳光点亮金顶，晨雾在脚下游走，整个郎木寺镇如仙境般从雾中浮现。你们安静地坐着，听远处传来僧人早课的诵经声——没有言语，但此刻的宁静就是最好的对话。</div>
-      </div>
-
-      <!-- Spot 2 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🏛️ 格尔底寺（四川寺）+ 纳摩大峡谷</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 ¥30</span>
-            <span class="meta-duration">⏱️ 约2小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从赛赤寺出发
-          <span class="r-info">1公里 · 步行约15分钟</span>
-        </div>
-        <p class="spot-desc">位于郎木寺镇南岸四川省境内，门票含纳摩大峡谷入口。银顶建筑群内供奉五世活佛肉身灵塔——全藏区保存最完好的活佛肉身（300余年历史），不定期开放看缘分。从后门进入纳摩大峡谷短线徒步：仙女洞+白龙江源头，往返约1-2公里，1-1.5小时。峡谷内无商店无卫生间，需自带水粮，穿防滑鞋。</p>
-        <div class="romantic">和TA牵手穿过白龙江源头的溪流，水花溅在鞋面上凉凉的。在峡谷深处的草甸上坐下，四周只有风声和流水声，一只土拨鼠从洞里探出头来张望。你说「这里好像时间停止了」，TA点点头，把一颗石头放进你的手心——是刚才在溪边捡的，圆润光滑，像一个承诺。</div>
-      </div>
-
-      <!-- Spot 3 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🏛️ 拉卜楞寺</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🎫 ¥40</span>
-            <span class="meta-duration">⏱️ 约1.5小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚗</span> 从郎木寺出发
-          <span class="r-info">184公里 · 约3小时</span>
-          <div style="font-size:.8em;color:#888;margin-top:4px">
-            🏞️ 途经：尕海湖（路边远眺）| 合作市（加油休整）| 桑科草原（9月金黄，可停车拍照）<br>
-            ⚠️ 阿木去乎—尕海约22公里信号盲区，务必提前下载离线地图
-          </div>
-        </div>
-        <p class="spot-desc">藏传佛教格鲁派六大寺院之一，被世界誉为「世界藏学府」。门票含免费僧人引领讲解（2026年起实行预约制+实名核验）。殿内禁拍照、脱帽、不踩门槛、转经顺时针。外围游览不进殿免费。贡唐宝塔另付¥20可登塔俯瞰全景。</p>
-        <div class="romantic">傍晚时分，和TA一起走完拉卜楞寺3.5公里的世界最长转经廊。1700个经筒在掌心一一顺时针转动，发出吱呀的声响，阳光穿过经廊为两人镀上一层金边。走完一圈回到起点，你问她许了什么愿——她说：「希望下一次旅行，你还在我身边。」</div>
-        <div class="tip-pitfall">拉卜楞寺门口不要买黄牛票或高价导游！官方门票仅¥40（含僧人讲解），警惕旅行社报价¥110的加价兜售。2026年6月起实行预约制，提前在「拉卜楞寺」公众号预约。</div>
-      </div>
-
-      <!-- Spot 4 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🌀 世界最长转经廊</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 免费（不进殿）</span>
-            <span class="meta-duration">⏱️ 约1小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从拉卜楞寺出发
-          <span class="r-info">300米 · 步行约5分钟</span>
-        </div>
-        <p class="spot-desc">全世界最长的转经长廊，长约3.5公里，约1700-2000个转经筒。大的转经筒一人多高需两三人合围，小的周长约1米。完整走一圈约1-1.5小时（仅转动经筒不停留）。必须顺时针行走，用右手顺时针转动经筒，不可逆行。每转一圈经筒相当于念诵一遍经文。</p>
-      </div>
-
-      <!-- Meals -->
-      <div class="meals-block">
-        <h5>🍽️ 餐饮推荐</h5>
-        <div class="meal-item">
-          <span class="meal-name">🥐 早餐：民宿藏式早餐</span>
-          <span class="meal-price">人均 ¥15</span>
-          <div class="meal-sig">藏式饼 · 酥油茶 · 鸡蛋</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍎 午餐：丽莎餐厅（郎木寺）</span>
-          <span class="meal-price">人均 ¥55</span>
-          <div class="meal-addr">📍 甘南藏族自治州碌曲县S313，郎木寺镇核心街区主街上</div>
-          <div class="meal-sig">🔥 苹果派（¥15 招牌必点） · 牦牛肉汉堡 · 酸奶（¥6） · 奶茶 · 蘑菇炒牦牛肉 · 羊肉泡馍（¥30/碗）</div>
-          <div class="meal-note">清真餐厅+改良西餐+藏餐融合。老板娘丽莎是回族人，会汉/藏/蒙/英/法多语交流。墙上贴满各国背包客留言条。苹果派外皮酥脆内馅酸甜，配奶茶一绝。</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍲 晚餐：雪人宫藏餐（夏河）</span>
-          <span class="meal-price">人均 ¥65</span>
-          <div class="meal-addr">📍 甘肃省甘南藏族自治州夏河县滨河西路253号</div>
-          <div class="meal-sig">🔥 藏饭（牦牛肉末粉条炒制拌饭 每桌必点） · 牦牛肉盖被 · 蕨麻米饭 · 藏式酸奶 · 藏包/牛肉包（¥18/份）</div>
-          <div class="meal-note">藏族老板热情实诚，藏饭其貌不扬但口感惊艳。入口较隐蔽，到了可打电话让老板接应。格桑花茶老板有时免费赠送，可缓解高反。</div>
+      <div class="spot-card">
+        <div class="spot-name">🐴 桑科草原</div>
+        <div class="spot-meta"><span>🕐 120分钟</span><span>🎫 免费（骑马¥50-80/人）</span><span>📡 websearch</span></div>
+        <div class="spot-desc">免费开放，可骑马(¥50-80/人)。与若尔盖不同，桑科更开阔平坦，有骑马和藏家乐。9月底草原金黄，远山连绵起伏，牦牛群慢悠悠地穿过公路。沿路可随时停车拍照，是甘南最经典的草原景观大道。</div>
+        <div class="romantic-moment">不用赶路的一下午——躺在草地上看云，看牦牛慢悠悠走过，或者骑马并肩在草原上小跑一段。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">尕海湖</span><span class="route-line"></span><span class="route-to">桑科草原</span><span class="route-dist">90公里 / 1小时30分钟</span>
         </div>
       </div>
 
-      <!-- Hotel -->
-      <div class="hotel-block">
-        <h5>🏨 住宿推荐</h5>
-        <div class="hotel-info">
-          <strong>山禾悦Meeting·度假民宿</strong> · 夏河县城，近拉卜楞寺<br>
-          💰 ¥310-420/晚 · 2025年新开业<br>
-          藏式装修，含早餐，评分高，安静舒适。自驾有停车位。
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🌅 早餐</div>
+          <div class="restaurant-card"><div class="res-name">民宿藏式早餐</div><div class="res-signatures"><span class="res-sig">藏式饼</span><span class="res-sig">酥油茶</span><span class="res-sig">鸡蛋</span></div><div class="res-price">人均 ¥15</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">☀️ 午餐</div>
+          <div class="restaurant-card"><div class="res-name">碌曲县城或尕海湖附近简餐</div><div class="res-signatures"><span class="res-sig">牦牛肉面</span><span class="res-sig">藏式面片</span><span class="res-sig">炒菜</span></div><div class="res-price">人均 ¥35</div><div class="res-note">碌曲县城是甘南重要中转站，有清真餐馆和藏餐馆。简餐为主，价格实惠。</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">🌙 晚餐</div>
+          <div class="restaurant-card"><div class="res-name">雪人宫藏餐</div><div class="res-addr">甘肃省甘南藏族自治州夏河县滨河西路253号（近摩尼宝唐卡展览中心）</div><div class="res-signatures"><span class="res-sig">牦牛肉盖被</span><span class="res-sig">藏饭（每桌必点）</span><span class="res-sig">蕨麻米饭</span><span class="res-sig">藏式酸奶</span><span class="res-sig">酥油茶</span><span class="res-sig">糌粑</span><span class="res-sig">藏包 ¥18</span></div><div class="res-price">人均 ¥65</div><div class="res-note">藏族老板热情实诚，藏饭其貌不扬但口感惊艳。入口较隐蔽，到了可打电话让老板接应。格桑花茶老板有时免费赠送，可缓解高反。牦牛肉盖被是招牌之一，蕨麻米饭是甘南特色。</div></div>
         </div>
       </div>
+
+      <div class="hotel-section">
+        <div class="hotel-card"><div class="hotel-name">🏨 夏河诺贝林卡酒店</div><div class="hotel-area">夏河县城，近桑科草原入口</div><div class="hotel-price">¥350-500/晚</div><div class="hotel-hl">藏式风格酒店，设施完善，供暖充足，自驾有停车位，位置便利。9月底甘南夜间温度低，提前确认暖气开放。</div></div>
+      </div>
+
     </div>
   </div>
-  </div>
-</section>
 
-<!-- ===== DAY 8 ===== -->
-<section id="day8">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">Day 8 · 归途美食 · 西宁味蕾告别之旅</h2>
-  <div class="collapsible-content" style="max-height:8000px">
-  <div class="card">
-    <div class="card-header day8">
-      <span class="day-num">D8</span>
+  <!-- DAY 8 -->
+  <div class="day-card day-d8" id="day-card-8">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D8</div>
       <div class="day-info">
-        <h3>🍖 归途美食 · 西宁味蕾告别之旅</h3>
-        <span class="theme">驱车穿越隆务峡+坎布拉至西宁，益鑫手抓黄焖羊肉，德禄酸奶解腻，莫家街采购</span>
+        <div class="day-title">秘境穿越 · 甘加秘境与坎布拉丹霞</div>
+        <div class="day-summary">甘加秘境探白石崖八角古城，穿越隆务峡谷看碧绿黄河，坎布拉丹山碧水，傍晚抵达西宁</div>
       </div>
+      <div class="day-toggle">▾</div>
     </div>
-    <div class="card-body">
-      <div class="route-summary-bar">
-        🚗 夏河→西宁（260km 4.5h） → 🏞️ 隆务峡（碧绿黄河峡谷） → 🏜️ 坎布拉丹霞（远眺） → 🚗 机场还车 → 🍖 益鑫手抓羊肉 → 🥛 德禄酸奶 → 🛍️ 莫家街 → ✈️ 西宁飞回珠三角
-      </div>
+    <div class="day-card-body">
 
-      <!-- Spot 1 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🍖 益鑫手抓羊肉（花园北街店）</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 进店消费</span>
-            <span class="meta-duration">⏱️ 约1小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚗</span> 从夏河出发
-          <span class="r-info">260公里 · 约4.5小时</span>
-          <div style="font-size:.8em;color:#888;margin-top:4px">
-            🏞️ 途经：同仁市隆务峡（碧绿黄河峡谷）| 坎布拉丹霞（远眺红色山体）| 尖扎县（加油休整）<br>
-            🛣️ 夏河→西宁段有G0611张汶高速，过路费约¥60-100<br>
-            🔑 先到机场附近一嗨还车点还车，再打车进城用餐
-          </div>
-        </div>
-        <p class="spot-desc">西宁最知名手抓馆之一，曾登上《舌尖上的中国2》。招牌黄焖手抓羊肉（¥93/斤）大锅黄焖炖制，去前台现挑现称现切，配辣椒面蘸料，肉质酥烂软嫩不膻不腻带奶香。两人点半斤约¥50刚好。免费砖茶微咸解腻。牦牛酸奶（¥6）表面浇黄油搭奶皮强烈推荐。</p>
-        <div class="romantic">两人对坐在老店里，一盘黄焖手抓羊肉冒着热气端上来。你学着当地人的样子用手抓起一块蘸上辣椒面，TA看着你的吃相笑出声来。旅途最后一顿大餐，没有精致的摆盘，只有最朴素的满足——这就是西北的味道。</div>
-      </div>
-
-      <!-- Spot 2 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🥛 德禄酸奶（莫家街店）</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 进店消费</span>
-            <span class="meta-duration">⏱️ 约20分钟</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从益鑫手抓出发
-          <span class="r-info">1公里 · 步行约15分钟</span>
-        </div>
-        <p class="spot-desc">西宁最出名的酸奶店，莫家街总店。原味酸奶（¥6）表面一层黄灿灿奶皮，用勺子挖着吃又香又醇，酸甜适中。牦牛酸奶（¥15）更浓郁。怕酸可让店家多加白砂糖。现买现喝保质期短，瓶装可外带（¥12-15）。</p>
-      </div>
-
-      <!-- Spot 3 -->
-      <div class="spot-block">
-        <div class="spot-header">
-          <h4>🛍️ 莫家街</h4>
-          <div class="spot-meta">
-            <span class="meta-ticket">🆓 免费</span>
-            <span class="meta-duration">⏱️ 约1.5小时</span>
-          </div>
-        </div>
-        <div class="route-line">
-          <span class="r-icon">🚶</span> 从德禄酸奶出发
-          <span class="r-info">200米 · 步行约3分钟</span>
-        </div>
-        <p class="spot-desc">西宁最具代表性的美食地标，六百余年历史，24小时免费开放。必吃铁三角：手抓羊肉+老酸奶+酿皮。其他推荐：甜醅（青稞甜酒酿）、炕锅羊肉、牛奶鸡蛋醪糟、尕面片、狗浇尿油饼。清镇街区请勿外带非清真食品。部分摊位只收现金需备零钱。下午5点后最热闹。</p>
-        <div class="romantic">在莫家街的人潮中，你们一人端着一碗德禄酸奶，一人举着一份酿皮，在路边找了个台阶坐下。六百年的老街在身后喧嚣，你们却在食物中找到了只属于两人的安静角落。「下次还来吗？」「来，带爸妈一起。」</div>
-      </div>
-
-      <!-- Meals -->
-      <div class="meals-block">
-        <h5>🍽️ 餐饮推荐</h5>
-        <div class="meal-item">
-          <span class="meal-name">🥐 早餐：民宿早餐或夏河街边面馆</span>
-          <span class="meal-price">人均 ¥20</span>
-          <div class="meal-sig">牛肉面 · 藏式饼 · 酥油茶</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍖 午餐：清真·益鑫羊肉手抓馆（花园北街店）</span>
-          <span class="meal-price">人均 ¥75</span>
-          <div class="meal-addr">📍 西宁市城中区湟光花园北街白玉巷5号</div>
-          <div class="meal-sig">🔥 黄焖手抓羊肉（¥93/斤 点半斤¥50） · 牦牛酸奶（¥6） · 炸土豆块（¥22） · 甜醅（¥10） · 旗花面（¥7）</div>
-          <div class="meal-note">《舌尖上的中国2》推荐。09:00-21:30营业。名气大，旺季可能排队。</div>
-        </div>
-        <div class="meal-item">
-          <span class="meal-name">🍢 下午：莫家街小吃（少量多样）</span>
-          <span class="meal-price">人均 ¥40</span>
-          <div class="meal-addr">📍 西宁市城中区莫家街</div>
-          <div class="meal-sig">🔥 拜家酿皮（¥10-15） · 德禄酸奶（¥6） · 甜醅（¥6） · 马忠食府羊肠面 · 牛奶鸡蛋醪糟</div>
-          <div class="meal-note">莫家街小吃现切现做、少量多样更不踩雷。如时间充裕可在莫家街多尝几家再前往机场。</div>
+      <div class="spot-card">
+        <div class="spot-name">🏰 甘加秘境</div>
+        <div class="spot-meta"><span>🕐 120分钟</span><span>🎫 ¥80</span><span>📡 websearch</span></div>
+        <div class="spot-desc">白石崖（巨大白色石灰岩峭壁，绵延数公里如天然城墙）+八角古城（汉代古城遗址，空中俯瞰呈八角形，航拍震撼）+白石崖寺外观（远观不进入，白塔金顶映衬白石崖）。海拔约3000米，游览约2小时。</div>
+        <div class="romantic-moment">站在八角古城遗址上，白色石崖在阳光下发光，脚下是两千年前的汉代城墙，风把TA的头发吹乱。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">夏河诺贝林卡酒店</span><span class="route-line"></span><span class="route-to">甘加秘境</span><span class="route-dist">30公里 / 40分钟</span>
         </div>
       </div>
 
-      <!-- No hotel needed (last day flight home) -->
-      <div class="hotel-block">
-        <h5>🏨 住宿</h5>
-        <div class="hotel-info" style="background:linear-gradient(90deg,#fff8f0,#fff5f5)">
-          ✈️ 当晚乘飞机返回珠三角，无需住宿。傍晚前往西宁曹家堡机场（XNN），飞行约3-3.5小时到家。
+      <div class="spot-card">
+        <div class="spot-name">🏞️ 隆务峡谷（尖扎段·途经）</div>
+        <div class="spot-meta"><span>🕐 20分钟</span><span>🎫 免费</span><span>📡 websearch</span></div>
+        <div class="spot-desc">黄河在尖扎段清澈碧绿，两岸丹霞红山夹峙，一改黄河浑浊的刻板印象。免费停车拍照15min，是自驾途中最惊艳的路边风景。同仁是热贡艺术之乡，沿途可见藏式佛塔和经幡。</div>
+        <div class="romantic-moment">路边停车，发现黄河在这里不是黄的——碧绿的水面映着两岸丹霞红山。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">甘加秘境</span><span class="route-line"></span><span class="route-to">隆务峡谷（尖扎段）</span><span class="route-dist">130公里 / 2小时30分钟</span>
+        </div>
+        <div class="waypoint-list"><div class="waypoint">📍 同仁市 — 热贡艺术之乡，可短暂停车拍照。途径G0611张汶高速，过路费约¥60-100</div></div>
+      </div>
+
+      <div class="spot-card">
+        <div class="spot-name">⛰️ 坎布拉国家森林公园</div>
+        <div class="spot-meta"><span>🕐 120分钟</span><span>🎫 ¥50（观光车¥40/人）</span><span>📡 websearch</span></div>
+        <div class="spot-desc">丹霞地貌+李家峡水库（碧水丹山），红色砂岩峰林倒映在碧绿水库中，形成「丹山碧水」奇观。观光车¥40/人推荐乘坐，游览约2小时。下午光线最佳，丹霞呈金红色。</div>
+        <div class="romantic-moment">站在坎布拉观景台，丹霞红山环抱碧绿的李家峡水库，阳光把山峰染成金红色。你们并肩看着这幅天然的「碧水丹山」画卷——甘南最后的自然礼物，美得不真实。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">隆务峡谷</span><span class="route-line"></span><span class="route-to">坎布拉国家森林公园</span><span class="route-dist">30公里 / 40分钟</span>
         </div>
       </div>
+
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🌅 早餐</div>
+          <div class="restaurant-card"><div class="res-name">酒店早餐或夏河街边面馆</div><div class="res-signatures"><span class="res-sig">牛肉面</span><span class="res-sig">藏式饼</span><span class="res-sig">酥油茶</span></div><div class="res-price">人均 ¥20</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">☀️ 午餐</div>
+          <div class="restaurant-card"><div class="res-name">黄河鱼庄（尖扎县城）或沿途简餐</div><div class="res-signatures"><span class="res-sig">黄河鲤鱼</span><span class="res-sig">红烧鱼块</span><span class="res-sig">炒菜</span><span class="res-sig">面片</span></div><div class="res-price">人均 ¥45</div><div class="res-note">尖扎位于黄河沿岸，黄河鲤鱼是当地特色。如赶路也可沿途简餐解决。</div></div>
+        </div>
+        <div class="meal-group"><div class="meal-type">🌙 晚餐</div>
+          <div class="restaurant-card"><div class="res-name">清真·益鑫羊肉手抓馆（花园北街店）</div><div class="res-addr">西宁市城中区湟光花园北街白玉巷5号</div><div class="res-signatures"><span class="res-sig">黄焖手抓羊肉 ¥93/斤</span><span class="res-sig">牦牛酸奶 ¥6</span><span class="res-sig">炸土豆块 ¥22</span><span class="res-sig">甜醅 ¥10</span><span class="res-sig">旗花面 ¥7</span></div><div class="res-price">人均 ¥75</div><div class="res-note">《舌尖上的中国2》推荐。09:00-21:30营业。黄焖手抓羊肉大锅炖制，去前台现挑现称现切，配辣椒面蘸料，肉质酥烂不膻不腻带奶香。免费砖茶微咸解腻。饭后步行至德禄酸奶吃甜品。</div></div>
+          <div class="restaurant-card"><div class="res-name">🍨 德禄酸奶（莫家街店）</div><div class="res-addr">西宁市城中区莫家街</div><div class="res-signatures"><span class="res-sig">原味酸奶 ¥6</span><span class="res-sig">牦牛酸奶 ¥15</span><span class="res-sig">瓶装外带 ¥12-15</span></div><div class="res-price">人均 ¥10</div><div class="res-note">西宁最出名酸奶店，表面一层黄灿灿奶皮，用勺子挖着吃又香又醇。怕酸可让店家多加白砂糖。饭后甜品首选。</div></div>
+        </div>
+      </div>
+
+      <div class="hotel-section">
+        <div class="hotel-card"><div class="hotel-name">🏨 全季酒店（西宁大什字店）</div><div class="hotel-area">西宁市中心大什字商圈</div><div class="hotel-price">¥250-350/晚</div><div class="hotel-hl">连锁品质酒店，位置便利，近莫家街和益鑫手抓羊肉，干净舒适，性价比高。自驾有停车位。</div></div>
+      </div>
+
     </div>
   </div>
-  </div>
-</section>
 
-<!-- ===== FOOD SUMMARY ===== -->
-<section id="food-summary">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">🍽️ 美食汇总 · 按城市</h2>
-  <div class="collapsible-content" style="max-height:10000px">
-  <div class="card">
-    <div class="card-body">
+  <!-- DAY 9 -->
+  <div class="day-card day-d9" id="day-card-9">
+    <div class="day-card-header" onclick="toggleDay(this)">
+      <div class="day-num">D9</div>
+      <div class="day-info">
+        <div class="day-title">高原蓝宝石 · 青海湖环湖告别之旅</div>
+        <div class="day-summary">西宁出发至青海湖，环湖东路全景公路看青藏高原蓝宝石，二郎剑景区亲湖，下午返回西宁飞回家</div>
+      </div>
+      <div class="day-toggle">▾</div>
+    </div>
+    <div class="day-card-body">
 
-      <div class="city-food-group">
-        <h4>🐼 成都（5家）</h4>
-        <div class="food-summary-item">
-          <span class="fs-name">雨田饭店</span>
-          <span class="fs-addr">锦江区红星路二段20号</span>
-          <span class="fs-price">¥45/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 荷叶粉蒸肉 · 藕汤 · 蒸蛋 · 雨田肺片 · 火爆肥肠</span>
+      <div class="spot-card">
+        <div class="spot-name">🌊 青海湖（环湖东路+二郎剑）</div>
+        <div class="spot-meta"><span>🕐 180分钟</span><span>🎫 ¥90</span><span>📡 websearch</span></div>
+        <div class="spot-desc">中国最大内陆咸水湖，海拔约3200米。二郎剑景区门票¥90，是青海湖最成熟的观湖点，有栈道深入湖面、藏族经幡、游船码头。9月底油菜花虽谢但湖面壮阔，青海湖的蓝在秋天最为深邃。环湖东路是全景公路，沿途可见雪山、草原、沙漠与湖水同框的绝景。</div>
+        <div class="romantic-moment">沿着环湖东路开，车窗摇下来，风吹得睁不开眼。青藏高原的蓝宝石铺满整个视野——没有油菜花，但这份辽阔本身就是最好的抵达。</div>
+        <div class="route-bar" style="margin-top:12px">
+          <span class="route-emoji">🚗</span><span class="route-from">全季酒店（西宁大什字）</span><span class="route-line"></span><span class="route-to">青海湖（环湖东路+二郎剑）</span><span class="route-dist">150公里 / 2小时30分钟</span>
         </div>
-        <div class="food-summary-item">
-          <span class="fs-name">永乐饭店</span>
-          <span class="fs-addr">高新区肖家河中街32-36号</span>
-          <span class="fs-price">¥70/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 肝腰合炒 · 糯米排骨 · 宫保鸡丁 · 圆子汤 · 藿香茄子烧鳝鱼 — 米其林必比登推荐</span>
+        <div class="waypoint-list"><div class="waypoint">⚠️ 时间提醒：最晚15:00从青海湖出发 → 180km约2.5h → 18:00前到达曹家堡机场</div></div>
+      </div>
+
+      <div class="meals-section">
+        <div class="meal-group"><div class="meal-type">🌅 早餐</div>
+          <div class="restaurant-card"><div class="res-name">酒店自助早餐</div><div class="res-addr">全季酒店（西宁大什字店）</div><div class="res-signatures"><span class="res-sig">自助早餐</span><span class="res-sig">粥</span><span class="res-sig">鸡蛋</span><span class="res-sig">面包</span></div><div class="res-price">人均 ¥25</div></div>
         </div>
-        <div class="food-summary-item">
-          <span class="fs-name">明园饭店</span>
-          <span class="fs-addr">金牛区福德路6号</span>
-          <span class="fs-price">¥55/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 大蒜白油肚条 · 鱼香茄饼 · 肝腰合炒 · 蒜苗回锅肉 · 凉拌白肉 — 没有固定菜单 自选食材</span>
+        <div class="meal-group"><div class="meal-type">☀️ 午餐</div>
+          <div class="restaurant-card"><div class="res-name">湖边藏家乐或返回西宁莫家街</div><div class="res-signatures"><span class="res-sig">酿皮 ¥10-15</span><span class="res-sig">甜醅 ¥6</span><span class="res-sig">牦牛酸奶</span><span class="res-sig">藏式简餐</span></div><div class="res-price">人均 ¥35</div><div class="res-note">青海湖边有藏家乐提供简餐，价格稍高但体验地道。如赶时间可返回西宁莫家街吃小吃，顺便采购伴手礼。</div></div>
         </div>
-        <div class="food-summary-item">
-          <span class="fs-name">三哥田螺</span>
-          <span class="fs-addr">锦江区北书院街与育婴堂街交叉口</span>
-          <span class="fs-price">¥115/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 香辣大田螺 · 火爆黄喉 · 鱼香虾仁 · 爆炒花甲 · 干烧鲫鱼 — 宵夜至凌晨4点</span>
-        </div>
-        <div class="food-summary-item">
-          <span class="fs-name">鹤鸣茶社</span>
-          <span class="fs-addr">青羊区人民公园内</span>
-          <span class="fs-price">¥18-28/杯</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🍵 鹤鸣贡竹（¥28） · 手工毛峰（¥18） — 百年茶馆 开水无限续杯</span>
+        <div class="meal-group"><div class="meal-type">✈️ 返程</div>
+          <div class="restaurant-card">
+            <div class="res-name"><span style="color:#f2719c;font-weight:700;">西宁曹家堡机场（XNN）→ 珠三角</span> <span style="font-size:12px;color:#888;margin-left:12px;">3-3.5小时 | ¥600-1,300/人</span></div>
+            <div class="res-note">D9晚班18:00后起飞。广州/深圳有直飞，珠海需经停。飞深圳约3h20min ¥900-1300，飞广州约3h ¥600-1500。最晚15:00从青海湖出发，务必预留充足时间。</div>
+          </div>
         </div>
       </div>
 
-      <div class="city-food-group">
-        <h4>🌊 都江堰（2家）</h4>
-        <div class="food-summary-item">
-          <span class="fs-name">老号尤兔头</span>
-          <span class="fs-addr">都江堰市都江堰大道14号</span>
-          <span class="fs-price">¥55/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 麻辣兔头（¥11/个） · 五香兔头 · 鲜锅兔 · 清波水饺 · 油拌串串</span>
-        </div>
-        <div class="food-summary-item">
-          <span class="fs-name">太平张醪糟</span>
-          <span class="fs-addr">灌县古城西街120号</span>
-          <span class="fs-price">¥15/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 红糖醪糟粉子蛋（¥13） · 红糖糍粑 · 冰醪糟 · 开口笑饺子 — 百年非遗</span>
-        </div>
-      </div>
-
-      <div class="city-food-group">
-        <h4>🏔️ 九寨沟（2家）</h4>
-        <div class="food-summary-item">
-          <span class="fs-name">扎西藏餐</span>
-          <span class="fs-addr">漳扎镇301省道格桑宾馆对面</span>
-          <span class="fs-price">¥65/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 牦牛肉火锅（小锅¥188） · 手抓牦牛肉 · 糌粑 · 酥油茶 · 牦牛酸奶 — 评分4.5</span>
-        </div>
-        <div class="food-summary-item">
-          <span class="fs-name">阿布氇孜藏餐厅</span>
-          <span class="fs-addr">漳扎镇上四寨村二组22号</span>
-          <span class="fs-price">¥107/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 阿玛拉做土豆（获奖） · 安多手抓羊肉 · 藏香猪排 · 锡纸牦牛肉 · 青稞酒 — 评分4.7-4.9 献哈达</span>
-        </div>
-      </div>
-
-      <div class="city-food-group">
-        <h4>🌾 甘南（2家）</h4>
-        <div class="food-summary-item">
-          <span class="fs-name">丽莎餐厅</span>
-          <span class="fs-addr">碌曲县S313 郎木寺镇主街</span>
-          <span class="fs-price">¥55/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 苹果派（¥15 招牌） · 牦牛肉汉堡 · 酸奶（¥6） · 羊肉泡馍（¥30） — 背包客圣地</span>
-        </div>
-        <div class="food-summary-item">
-          <span class="fs-name">雪人宫藏餐</span>
-          <span class="fs-addr">夏河县滨河西路253号</span>
-          <span class="fs-price">¥65/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 藏饭（每桌必点） · 牦牛肉盖被 · 蕨麻米饭 · 藏包（¥18/份） — 格桑花茶免费</span>
-        </div>
-      </div>
-
-      <div class="city-food-group">
-        <h4>🍖 西宁（3家）</h4>
-        <div class="food-summary-item">
-          <span class="fs-name">清真·益鑫羊肉手抓馆</span>
-          <span class="fs-addr">城中区湟光花园北街白玉巷5号</span>
-          <span class="fs-price">¥75/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 黄焖手抓羊肉（¥93/斤） · 牦牛酸奶（¥6） · 炸土豆块 · 甜醅 — 《舌尖2》推荐</span>
-        </div>
-        <div class="food-summary-item">
-          <span class="fs-name">德禄酸奶（莫家街店）</span>
-          <span class="fs-addr">城中区莫家街</span>
-          <span class="fs-price">¥6-15</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 原味酸奶（¥6） · 牦牛酸奶（¥15） · 瓶装外带（¥12-15） — 西宁酸奶代名词</span>
-        </div>
-        <div class="food-summary-item">
-          <span class="fs-name">莫家街小吃</span>
-          <span class="fs-addr">城中区莫家街</span>
-          <span class="fs-price">¥40/人</span>
-          <span class="fs-src">websearch</span>
-          <span class="fs-sig">🔥 拜家酿皮（¥10-15） · 甜醅（¥6） · 马忠食府羊肠面 · 牛奶鸡蛋醪糟 — 六百年老街</span>
+      <div class="hotel-section">
+        <div class="hotel-card" style="background:linear-gradient(135deg,rgba(9,132,227,.04),rgba(0,206,201,.04));border-color:rgba(9,132,227,.2);">
+          <div class="hotel-name">✈️ 当晚飞回家 — 无需住宿</div>
+          <div class="hotel-hl">一嗨租车西宁曹家堡机场还车（全国免异地还车费），晚班飞机返回珠三角，9天旅程圆满结束。</div>
         </div>
       </div>
 
     </div>
   </div>
+
+</section>
+
+<section id="food">
+  <h2 class="section-title"><span class="icon">🍜</span> 美食推荐汇总</h2>
+
+  <div class="food-group">
+    <div class="city-name">🏙️ 成都</div>
+    <div class="food-item"><span class="fi-name">雨田饭店</span> <span class="fi-price">¥45/人</span> — 荷叶粉蒸肉、藕汤、火爆肥肠（1985年创立，BBC纪录片）</div>
+    <div class="food-item"><span class="fi-name">永乐饭店</span> <span class="fi-price">¥70/人</span> — 肝腰合炒、糯米排骨（米其林必比登推荐）</div>
+    <div class="food-item"><span class="fi-name">明园饭店</span> <span class="fi-price">¥55/人</span> — 大蒜白油肚条、鱼香茄饼（40年老店，主厨年过七旬）</div>
+    <div class="food-item"><span class="fi-name">三哥田螺</span> <span class="fi-price">¥115/人</span> — 香辣大田螺、火爆黄喉（宵夜至凌晨4点）</div>
+  </div>
+
+  <div class="food-group">
+    <div class="city-name">🌊 都江堰</div>
+    <div class="food-item"><span class="fi-name">老号尤兔头</span> <span class="fi-price">¥55/人</span> — 麻辣兔头¥11/个、鲜锅兔（20+年老店）</div>
+    <div class="food-item"><span class="fi-name">太平张醪糟</span> <span class="fi-price">¥15/人</span> — 红糖醪糟粉子蛋（百年非遗）</div>
+  </div>
+
+  <div class="food-group">
+    <div class="city-name">🏔️ 九寨沟</div>
+    <div class="food-item"><span class="fi-name">扎西藏餐</span> <span class="fi-price">¥65/人</span> — 牦牛肉火锅¥188/小锅、手抓牦牛肉¥98/斤</div>
+    <div class="food-item"><span class="fi-name">阿布氇孜藏餐厅</span> <span class="fi-price">¥107/人</span> — 阿玛拉做土豆、安多手抓羊肉（评分4.7-4.9）</div>
+  </div>
+
+  <div class="food-group">
+    <div class="city-name">🌾 若尔盖 · 唐克</div>
+    <div class="food-item"><span class="fi-name">民宿藏式晚餐</span> <span class="fi-price">¥70/人</span> — 牦牛肉汤锅、藏式烤饼、手抓羊肉</div>
+  </div>
+
+  <div class="food-group">
+    <div class="city-name">🐴 夏河（甘南）</div>
+    <div class="food-item"><span class="fi-name">雪人宫藏餐</span> <span class="fi-price">¥65/人</span> — 牦牛肉盖被、藏饭（每桌必点）、蕨麻米饭</div>
+  </div>
+
+  <div class="food-group">
+    <div class="city-name">🕌 西宁</div>
+    <div class="food-item"><span class="fi-name">益鑫羊肉手抓馆</span> <span class="fi-price">¥75/人</span> — 黄焖手抓羊肉¥93/斤（《舌尖2》推荐）</div>
+    <div class="food-item"><span class="fi-name">德禄酸奶</span> <span class="fi-price">¥10/人</span> — 原味酸奶¥6、牦牛酸奶¥15（莫家街）</div>
+  </div>
+
+  <div class="food-group">
+    <div class="city-name">🌊 青海湖</div>
+    <div class="food-item"><span class="fi-name">湖边藏家乐</span> <span class="fi-price">¥35/人</span> — 酿皮¥10-15、甜醅¥6、牦牛酸奶</div>
   </div>
 </section>
 
-<!-- ===== AVOID LIST ===== -->
-<section id="avoid-list">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">⚠️ 避坑清单（12条）</h2>
-  <div class="collapsible-content" style="max-height:5000px">
-  <ul class="avoid-list">
-    <li>
-      <div class="avoid-bad">宽窄巷子/锦里购物和吃饭</div>
-      <div class="avoid-good">只逛不消费，拍照打卡即可。吃饭去真正的苍蝇馆子（明园饭店、雨田饭店等），价格只有景区一半，味道好十倍。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">熊猫基地10点以后才到</div>
-      <div class="avoid-good">7:30开门就进！大熊猫9点前最活跃（进食+玩耍），10点后多数开始睡觉，下午只能看到熊猫屁股。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">诺日朗餐厅吃午饭（九寨沟内）</div>
-      <div class="avoid-good">自带干粮（自热米饭+面包+水果）。诺日朗餐厅又贵又难吃，一份盒饭¥60-80还难以下咽。成都出发前超市采购好。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">黄河九曲第一湾自己爬山登顶</div>
-      <div class="avoid-good">花¥60坐天边云梯扶梯上去。海拔3500-4000米，爬700多级台阶极易引发高反，很多游客爬到一半就喘不上气。下山步行即可（30-40分钟）。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">租神州租车跨省还车</div>
-      <div class="avoid-good">用一嗨租车。一嗨全国免异地还车费覆盖500+城市10000+网点。神州跨省异地还车费约1元/公里+跨省附加费300元，川主寺到西宁约800-900公里会多花1100-1200元。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">九寨沟旺季现场买票</div>
-      <div class="avoid-good">旺季严格执行实名预约制，无线下售票窗口！提前在微信公众号「九寨沟」或阿坝旅游网小程序预约购票，旺季限量需尽早抢票。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">高原上剧烈运动和奔跑</div>
-      <div class="avoid-good">放慢节奏，走路比平时慢一半。若尔盖、郎木寺海拔3300-3600米，剧烈运动极易引发高反。多喝热水，备好红景天/氧气瓶。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">草原路段夜间开车</div>
-      <div class="avoid-good">弯道多、海拔高、有牦牛马匹出没、部分路段无手机信号（尕海附近约22公里盲区）。务必天黑前到达目的地，只白天驾驶。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">都江堰景区请野导游</div>
-      <div class="avoid-good">官方公众号「青城山都江堰」可预约正规讲解，或租¥20语音导览器。景区门口野导报价虚高且讲解质量差。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">都江堰景区走常规路线上坡</div>
-      <div class="avoid-good">走省体力下坡路线：秦堰楼6号门进→二王庙→安澜索桥→鱼嘴→飞沙堰→宝瓶口→离堆公园出。全程下坡不走回头路，体力消耗最小。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">郎木寺到夏河段不提前下载离线地图</div>
-      <div class="avoid-good">阿木去乎—尕海之间约22公里信号盲区，郎木寺—合作段山区也经常没信号。务必出发前在高德/百度地图下载该区域离线地图。</div>
-    </li>
-    <li>
-      <div class="avoid-bad">拉卜楞寺门口买黄牛票或高价导游</div>
-      <div class="avoid-good">官方门票仅¥40（含僧人讲解），警惕旅行社报价¥110的加价兜售。2026年6月起实行预约制，提前在「拉卜楞寺」公众号预约讲解。不进殿免费逛外围+转经廊。</div>
-    </li>
-  </ul>
+<section id="avoid">
+  <h2 class="section-title"><span class="icon">⚠️</span> 避坑清单 <span style="font-size:14px;font-weight:400;color:#999;">14条 · 前人踩过的坑不要再踩</span></h2>
+
+  <div class="avoid-item">
+    <div class="av-num">1</div>
+    <div class="av-content">
+      <div class="av-error">宽窄巷子/锦里购物和吃饭</div>
+      <div class="av-correct">只逛不消费，拍照打卡即可。吃饭去真正的苍蝇馆子（明园饭店、雨田饭店等），价格只有景区一半，味道好十倍。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">2</div>
+    <div class="av-content">
+      <div class="av-error">熊猫基地10点以后才到</div>
+      <div class="av-correct">7:30开门就进！大熊猫9点前最活跃（进食+玩耍），10点后多数开始睡觉，下午只能看到熊猫屁股。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">3</div>
+    <div class="av-content">
+      <div class="av-error">诺日朗餐厅吃午饭（九寨沟内）</div>
+      <div class="av-correct">自带干粮（自热米饭+面包+水果）。诺日朗餐厅又贵又难吃，一份盒饭¥60-80还难以下咽。成都出发前超市采购好。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">4</div>
+    <div class="av-content">
+      <div class="av-error">黄河九曲第一湾自己爬山登顶</div>
+      <div class="av-correct">花¥60坐天边云梯扶梯上去。海拔3500-4000米，爬700多级台阶极易引发高反，很多游客爬到一半就喘不上气。下山步行即可（30-40分钟）。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">5</div>
+    <div class="av-content">
+      <div class="av-error">租神州租车跨省还车</div>
+      <div class="av-correct">用一嗨租车。一嗨全国免异地还车费覆盖500+城市10000+网点。神州跨省异地还车费约1元/公里+跨省附加费300元，川主寺到西宁约800-900公里会多花1100-1200元。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">6</div>
+    <div class="av-content">
+      <div class="av-error">九寨沟旺季现场买票</div>
+      <div class="av-correct">旺季严格执行实名预约制，无线下售票窗口！提前在微信公众号「九寨沟」或阿坝旅游网小程序预约购票，旺季限量需尽早抢票。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">7</div>
+    <div class="av-content">
+      <div class="av-error">高原上剧烈运动和奔跑</div>
+      <div class="av-correct">放慢节奏，走路比平时慢一半。若尔盖、尕海湖、青海湖海拔3200-3600米，剧烈运动极易引发高反。多喝热水，备好红景天/氧气瓶。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">8</div>
+    <div class="av-content">
+      <div class="av-error">草原路段夜间开车</div>
+      <div class="av-correct">弯道多、海拔高、有牦牛马匹出没、部分路段无手机信号。务必天黑前到达目的地，只白天驾驶。唐克→尕海湖→桑科草原段和甘加秘境→同仁段尤其注意。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">9</div>
+    <div class="av-content">
+      <div class="av-error">都江堰景区请野导游</div>
+      <div class="av-correct">官方公众号「青城山都江堰」可预约正规讲解，或租¥20语音导览器。景区门口野导报价虚高且讲解质量差。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">10</div>
+    <div class="av-content">
+      <div class="av-error">都江堰景区走常规路线上坡</div>
+      <div class="av-correct">走省体力下坡路线：秦堰楼6号门进→二王庙→安澜索桥→鱼嘴→飞沙堰→宝瓶口→离堆公园出。全程下坡不走回头路，体力消耗最小。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">11</div>
+    <div class="av-content">
+      <div class="av-error">甘南草原路段不提前下载离线地图</div>
+      <div class="av-correct">唐克→尕海湖→桑科草原段和甘加秘境→同仁段多处无手机信号。务必出发前在高德/百度地图下载甘南+海东离线地图包。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">12</div>
+    <div class="av-content">
+      <div class="av-error">青海湖路边随意停车拍照</div>
+      <div class="av-correct">环湖东路有正规停车观景台，不要在牧民围栏边随意停车。部分湖边区域为牧民私有草场，进入需付费¥5-20/人，提前询问清楚。二郎剑景区有正规停车场。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">13</div>
+    <div class="av-content">
+      <div class="av-error">青海湖骑马/骑牦牛不砍价</div>
+      <div class="av-correct">湖边骑马和骑牦牛拍照为牧民私人经营，开价¥50-100，可砍价至¥30-50。骑牦牛一般¥20-30/次拍照。提前问清价格再上马/上牛，避免纠纷。</div>
+    </div>
+  </div>
+  <div class="avoid-item">
+    <div class="av-num">14</div>
+    <div class="av-content">
+      <div class="av-error">坎布拉景区错过观光车末班</div>
+      <div class="av-correct">坎布拉景区观光车有末班时间（通常16:00-17:00），入园时确认末班车时刻。错过末班只能步行下山（距离远且费时），务必合理安排游览时间。</div>
+    </div>
   </div>
 </section>
 
-<!-- ===== BUDGET ===== -->
 <section id="budget">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">💰 预算估算</h2>
-  <div class="collapsible-content" style="max-height:3000px">
-  <div class="card">
-    <div class="card-body" style="overflow-x:auto">
-      <table class="budget-table">
-        <thead>
-          <tr><th>项目</th><th>总价（2人）</th><th>人均</th><th>明细</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="b-cat">✈️ 往返机票</td>
-            <td class="b-amt">¥2,000-4,000</td>
-            <td>¥1,000-2,000</td>
-            <td style="font-size:.82em;color:#888">去程珠三角→成都 ¥400-700/人，回程西宁→珠三角 ¥600-1,300/人</td>
-          </tr>
-          <tr>
-            <td class="b-cat">🚄 高铁/城际</td>
-            <td class="b-amt">¥310-340</td>
-            <td>¥155-170</td>
-            <td style="font-size:.82em;color:#888">犀浦↔离堆公园 ¥10×2×2人=¥40，成都东→黄龙九寨 ¥135-149×2人≈¥270-300</td>
-          </tr>
-          <tr>
-            <td class="b-cat">🚌 大巴/直通车</td>
-            <td class="b-amt">¥102</td>
-            <td>¥51</td>
-            <td style="font-size:.82em;color:#888">黄龙九寨站→沟口 ¥51/人，沟口→川主寺 ¥20-30/人</td>
-          </tr>
-          <tr>
-            <td class="b-cat">🚗 租车（3天）</td>
-            <td class="b-amt">¥1,800-2,400</td>
-            <td>¥900-1,200</td>
-            <td style="font-size:.82em;color:#888">一嗨紧凑型SUV ¥400-600/天含基础险。油费¥400-500 + 过路费¥60-100。一嗨全国免异地还车费。</td>
-          </tr>
-          <tr>
-            <td class="b-cat">🏨 住宿（7晚）</td>
-            <td class="b-amt">¥2,750-4,100</td>
-            <td>¥1,375-2,050</td>
-            <td style="font-size:.82em;color:#888">成都3晚 ¥250-380×3，九寨沟2晚 ¥400-600×2，唐克1晚 ¥350-500，夏河1晚 ¥310-420</td>
-          </tr>
-          <tr>
-            <td class="b-cat">🎫 门票</td>
-            <td class="b-amt">¥1,460</td>
-            <td>¥730</td>
-            <td style="font-size:.82em;color:#888">熊猫基地¥55+都江堰¥80+九寨沟¥280+花湖¥110+黄河九曲¥105+赛赤寺¥30+格尔底寺¥30+拉卜楞寺¥40</td>
-          </tr>
-          <tr>
-            <td class="b-cat">🍽️ 餐饮（8天）</td>
-            <td class="b-amt">¥2,400-2,800</td>
-            <td>¥1,200-1,400</td>
-            <td style="font-size:.82em;color:#888">正餐人均¥40-115，早餐人均¥15-20。不含零食饮料。</td>
-          </tr>
-          <tr class="b-total-row">
-            <td>📊 总计</td>
-            <td>¥12,000-16,000</td>
-            <td>¥6,000-8,000</td>
-            <td style="font-size:.82em">不含购物和个人消费。旺季机票和酒店可能上浮20-30%。</td>
-          </tr>
-        </tbody>
-      </table>
+  <h2 class="section-title"><span class="icon">💰</span> 预算估算</h2>
+  <div class="budget-table">
+    <table>
+      <thead><tr><th>项目</th><th>2人合计</th><th>人均</th><th>明细</th></tr></thead>
+      <tbody>
+        <tr><td>✈️ 往返机票</td><td class="amt">¥2,000-4,000</td><td class="amt">¥1,000-2,000</td><td>去程珠三角→成都 ¥400-700/人，回程西宁→珠三角 ¥600-1,300/人</td></tr>
+        <tr><td>🚄 高铁/城际</td><td class="amt">¥340</td><td class="amt">¥170</td><td>犀浦↔离堆公园 ¥10×2×2=¥40，成都东→黄龙九寨 ¥135-149×2≈¥270-300</td></tr>
+        <tr><td>🚌 大巴</td><td class="amt">¥102</td><td class="amt">¥51</td><td>黄龙九寨站→沟口 ¥51/人，沟口→川主寺 ¥20-30/人</td></tr>
+        <tr><td>🚗 租车（4天）</td><td class="amt">¥2,200-3,200</td><td class="amt">¥1,100-1,600</td><td>一嗨租车D6-D9，紧凑型SUV ¥400-600/天含基础险，含油费¥500-600+过路费¥100-150</td></tr>
+        <tr><td>🏨 住宿（8晚）</td><td class="amt">¥3,000-4,450</td><td class="amt">¥1,500-2,225</td><td>成都3晚+九寨沟2晚+唐克1晚+夏河1晚+西宁1晚，2人一间</td></tr>
+        <tr><td>🎫 门票</td><td class="amt">¥1,880</td><td class="amt">¥940</td><td>熊猫基地¥55+都江堰¥80+九寨沟¥280+花湖¥110+黄河九曲¥105+尕海湖¥50+甘加秘境¥80+坎布拉¥50+青海湖¥90</td></tr>
+        <tr><td>🍽️ 餐饮</td><td class="amt">¥2,700-3,100</td><td class="amt">¥1,350-1,550</td><td>9天×2人，正餐人均¥35-115，早餐人均¥15-25</td></tr>
+        <tr><td>💴 总计</td><td class="amt">¥13,000-17,000</td><td class="amt">¥6,500-8,500</td><td style="font-size:12px;font-weight:400;color:#888;">不含购物和个人消费。旺季（暑期/国庆）机票和酒店可能上浮20-30%。D9为新增青海湖一日游，整体比原8天行程多约¥1,500-2,000。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="tips-section">
+  <h2 class="section-title"><span class="icon">💡</span> 出行 Tips <span style="font-size:14px;font-weight:400;color:#999;">9天长途穿越必备指南</span></h2>
+
+  <div class="tip-item"><span class="tip-icon">🧥</span><span>衣物：洋葱式叠穿——长袖速干T恤+抓绒衣+三合一冲锋衣/轻薄羽绒服。若尔盖、尕海湖、青海湖夜间可能降至0°C，薄羽绒服必备。</span></div>
+  <div class="tip-item"><span class="tip-icon">👟</span><span>鞋子：带两双——防水徒步鞋（九寨沟栈道湿滑）+一双舒适的日常鞋。严禁凉鞋/洞洞鞋走九寨沟。甘加秘境和坎布拉有少量碎石路，徒步鞋更安全。</span></div>
+  <div class="tip-item"><span class="tip-icon">☀️</span><span>防晒三件套：墨镜+遮阳帽+SPF50+防晒霜。高原紫外线超强，即使阴天也要涂防晒，否则半天就晒伤。青海湖湖面反射紫外线加倍，务必做好防护。</span></div>
+  <div class="tip-item"><span class="tip-icon">💊</span><span>抗高反：提前一周吃红景天，备好便携氧气瓶（成都药店买比景区便宜）。海拔超过3000米后放慢节奏，多喝热水，少洗澡。尕海湖3480m和青海湖3200m需特别注意。</span></div>
+  <div class="tip-item"><span class="tip-icon">🚗</span><span>晕车药必备：九寨沟盘山路多（九若路尕力台垭口弯道密集）、甘南山区弯道多，容易晕车的务必提前半小时吃晕车药。</span></div>
+  <div class="tip-item"><span class="tip-icon">📱</span><span>下载离线地图：草原和山区路段多处无手机信号（唐克→尕海湖段、甘加秘境→同仁段约22公里盲区、九若路约1小时无信号），出发前在高德/百度地图下载甘南+海东+海北离线地图包。</span></div>
+  <div class="tip-item"><span class="tip-icon">⛽</span><span>加油站规划：若尔盖—尕海湖—夏河—尖扎之间加油站间距最大可达180公里，见油站就加满。部分加油站只收现金，备¥500-1000现金。</span></div>
+  <div class="tip-item"><span class="tip-icon">📋</span><span>预订提醒：九寨沟门票旺季需提前7-15天网上实名预约（无线下窗口）；一嗨租车提前APP预订确保车型；热门酒店提前1-2周预订。</span></div>
+  <div class="tip-item"><span class="tip-icon">💵</span><span>现金准备：草原路段部分加油站和路边小店只收现金，建议备¥1000-2000零钱。青海湖边牧民收费只收现金。</span></div>
+  <div class="tip-item"><span class="tip-icon">💊</span><span>肠胃药+保湿：高原饮食偏牛羊肉和麻辣，备好肠胃药（黄连素/蒙脱石散）。高原极度干燥，带润唇膏+保湿霜+护手霜。</span></div>
+  <div class="tip-item"><span class="tip-icon">🚙</span><span>一嗨取车确认：川主寺门店待确认（目前未明确显示），出发前在一嗨APP搜索「阿坝」「松潘」「九寨沟」查看最近网点，或拨打客服400-888-6608确认。如川主寺无网点，备选方案为九寨沟县城或松潘县城取车。</span></div>
+  <div class="tip-item"><span class="tip-icon">🚫</span><span>景区无人机禁令：九寨沟、坎布拉、青海湖二郎剑等景区禁止飞无人机，不要携带以免被没收或罚款。</span></div>
+  <div class="tip-item"><span class="tip-icon">📸</span><span>拍照穿搭建议：穿亮色系（橙色、黄色、红色、白色）在九寨沟、草原和青海湖拍照最出片，避免蓝黑色与海子/湖面融合。青海湖边风大，长发建议扎起来。</span></div>
+  <div class="tip-item"><span class="tip-icon">🕒</span><span>青海湖注意事项：环湖东路限速80，有流动测速。湖边风大温差大，下车拍照时穿好防风外套。D9晚班飞机需18:00前到达曹家堡机场，青海湖→机场180km约2.5h，最晚15:00从青海湖出发。</span></div>
+</section>
+
+</main>
+
+<aside class="sidebar" id="sidebar-nav">
+  <div class="sidebar-inner">
+    <div class="nav-section">
+      <h4>📅 9天行程</h4>
+      <div class="nav-days">
+        <a href="#day-card-1" title="D1 抵达蓉城">D1</a>
+        <a href="#day-card-2" title="D2 熊猫萌宠">D2</a>
+        <a href="#day-card-3" title="D3 都江堰">D3</a>
+        <a href="#day-card-4" title="D4 奔赴九寨沟">D4</a>
+        <a href="#day-card-5" title="D5 九寨沟深度游">D5</a>
+        <a href="#day-card-6" title="D6 花湖黄河">D6</a>
+        <a href="#day-card-7" title="D7 尕海桑科">D7</a>
+        <a href="#day-card-8" title="D8 甘加密境">D8</a>
+        <a href="#day-card-9" title="D9 青海湖">D9</a>
+      </div>
+    </div>
+    <div class="nav-section">
+      <a href="#food">🍜 美食汇总</a>
+      <a href="#avoid">⚠️ 避坑清单</a>
+      <a href="#budget">💰 预算估算</a>
+      <a href="#tips-section">💡 出行Tips</a>
+    </div>
+    <div class="nav-section" style="font-size:11px;color:#aaa;text-align:center;padding-top:8px;border-top:1px solid #f0f0f0;">
+      全程自驾约685公里<br>海拔跨度 500m → 4000m<br>9天8晚 · 2人出行
     </div>
   </div>
-  </div>
-</section>
+</aside>
 
-<!-- ===== TIPS ===== -->
-<section id="tips-section">
-  <h2 class="section-title collapsible" onclick="toggleSection(this)">📝 出行 Tips</h2>
-  <div class="collapsible-content" style="max-height:5000px">
-  <div class="tips-grid">
-    <div class="tip-item"><span class="tip-icon">🧥</span><strong>衣物穿搭：</strong>洋葱式叠穿——长袖速干T恤+抓绒衣+三合一冲锋衣/轻薄羽绒服。若尔盖和郎木寺夜间可能降至0°C，薄羽绒服必备。拍照穿亮色系（橙、黄、红、白）最出片。</div>
-    <div class="tip-item"><span class="tip-icon">👟</span><strong>鞋子：</strong>带两双——防水徒步鞋（九寨沟栈道湿滑、纳摩大峡谷溪边岩石滑）+一双舒适的日常鞋。严禁凉鞋/洞洞鞋走九寨沟。</div>
-    <div class="tip-item"><span class="tip-icon">☀️</span><strong>防晒三件套：</strong>墨镜+遮阳帽+SPF50+防晒霜。高原紫外线超强，即使阴天也要涂防晒，否则半天就晒伤。</div>
-    <div class="tip-item"><span class="tip-icon">🏔️</span><strong>抗高反：</strong>提前一周吃红景天，备好便携氧气瓶（成都药店买比景区便宜）。海拔超过3000米后放慢节奏，多喝热水，少洗澡。</div>
-    <div class="tip-item"><span class="tip-icon">💊</span><strong>晕车药必备：</strong>九寨沟盘山路多（九若路尕力台垭口弯道密集）、郎木寺至夏河山区弯道多，容易晕车的务必提前半小时吃晕车药。</div>
-    <div class="tip-item"><span class="tip-icon">🗺️</span><strong>下载离线地图：</strong>草原和山区路段多处无手机信号（阿木去乎—尕海约22公里盲区、九若路约1小时无信号），出发前下载甘南+阿坝离线地图包。</div>
-    <div class="tip-item"><span class="tip-icon">⛽</span><strong>加油站规划：</strong>若尔盖—郎木寺—夏河之间加油站间距最大可达180公里，见油站就加满。部分加油站只收现金，备¥500-1000现金。</div>
-    <div class="tip-item"><span class="tip-icon">📱</span><strong>预订提醒：</strong>九寨沟门票旺季需提前7-15天网上实名预约；拉卜楞寺2026年起实行预约制；一嗨租车提前APP预订；热门酒店提前1-2周预订。</div>
-    <div class="tip-item"><span class="tip-icon">💰</span><strong>现金准备：</strong>草原路段部分加油站和路边小店只收现金，建议备¥1000-2000零钱。莫家街部分摊位只收现金。</div>
-    <div class="tip-item"><span class="tip-icon">💊</span><strong>肠胃药+保湿：</strong>高原饮食偏牛羊肉和麻辣，备好肠胃药（黄连素/蒙脱石散）。高原极度干燥，带润唇膏+保湿霜+护手霜。</div>
-    <div class="tip-item"><span class="tip-icon">🚗</span><strong>一嗨取车确认：</strong>川主寺门店待确认，出发前在一嗨APP搜索「阿坝」「松潘」「九寨沟」查看最近网点，或拨打客服400-888-6608确认。</div>
-    <div class="tip-item"><span class="tip-icon">🚫</span><strong>无人机禁令：</strong>九寨沟、拉卜楞寺等景区禁止飞无人机，不要携带以免被没收或罚款。</div>
-  </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="src-tags">
-    <span>数据来源：websearch</span>
-    <span>高德地图</span>
-    <span>小红书</span>
-    <span>马蜂窝</span>
-  </div>
-  <p>生成时间：2026-06-28 · tourAI v2.0.0</p>
-  <p style="font-size:.88em;margin-top:6px">⚠️ 免责声明：本攻略由 AI 基于公开数据生成，仅供参考。实际价格、班次、路况等信息请以官方渠道最新发布为准。出行前请确认所有预订及实时路况。</p>
-</footer>
-
-</div><!-- /container -->
+</div>
 
 <script>
-/* ===== Collapsible Sections ===== */
-function toggleSection(el){
-  const content = el.nextElementSibling;
-  if(!content || !content.classList.contains('collapsible-content')) return;
-  const isHidden = content.classList.toggle('hidden');
-  el.classList.toggle('collapsed', isHidden);
+function toggleDay(header){
+  header.classList.toggle('collapsed');
+  var body = header.nextElementSibling;
+  body.classList.toggle('collapsed');
 }
 
-/* ===== Quick Nav Scroll Spy ===== */
 (function(){
-  const nav = document.getElementById('quickNav');
+  var nav = document.getElementById('sidebar-nav');
   if(!nav) return;
-  const links = nav.querySelectorAll('a[href^="#"]');
-  const sections = [];
-  links.forEach(a => {
-    const id = a.getAttribute('href').substring(1);
-    const el = document.getElementById(id);
-    if(el) sections.push({el, link: a});
+  var links = nav.querySelectorAll('a');
+  var sections = [];
+  links.forEach(function(a){
+    var href = a.getAttribute('href');
+    if(!href || !href.startsWith('#')) return;
+    var el = document.getElementById(href.substring(1));
+    if(el) sections.push({link:a, el:el});
   });
 
-  function updateActive(){
-    const scrollY = window.scrollY + 120;
-    let active = null;
-    for(let i = sections.length - 1; i >= 0; i--){
-      if(sections[i].el.offsetTop <= scrollY){
-        active = sections[i];
-        break;
-      }
-    }
-    links.forEach(a => a.classList.remove('active'));
+  function onScroll(){
+    var scrollY = window.scrollY + 120;
+    var active = null;
+    sections.forEach(function(s){
+      if(s.el.offsetTop <= scrollY) active = s;
+    });
+    links.forEach(function(a){ a.classList.remove('active'); });
     if(active) active.link.classList.add('active');
   }
 
-  window.addEventListener('scroll', updateActive, {passive: true});
-  updateActive();
-
-  /* Smooth scroll for nav links */
-  nav.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      const target = document.getElementById(this.getAttribute('href').substring(1));
-      if(target){
-        target.scrollIntoView({behavior:'smooth', block:'start'});
-      }
-    });
-  });
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
 })();
-
-/* ===== Lazy animation stagger ===== */
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((card, i) => {
-    card.style.animationDelay = (i * 0.06) + 's';
-  });
-});
 </script>
 
 </body>
