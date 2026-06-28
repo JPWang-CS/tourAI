@@ -1,0 +1,202 @@
+{
+  "destination": "郎木寺",
+  "search_date": "2026-06-28",
+  "sources": ["websearch"],
+  "overview": {
+    "description": "郎木寺是一个地名，横跨甘肃、四川两省。白龙江（小溪）穿镇而过，将镇子分为甘肃（北岸）和四川（南岸）两部分。两寺相距不足500米，步行过桥即达。",
+    "altitude": "约3300米",
+    "best_season": "6-8月格桑花盛开，9-10月秋色金黄",
+    "source": "websearch"
+  },
+  "sai_chi_temple": {
+    "name": "赛赤寺（达仓郎木赛赤寺/甘肃寺）",
+    "location": "郎木寺镇北岸，甘肃省甘南州碌曲县境内",
+    "tickets": {
+      "price": 30,
+      "unit": "元/人",
+      "note": "两寺无联票，需分别购票"
+    },
+    "discounts": {
+      "free": "1.2米以下儿童、70岁以上老人、现役军人、残疾人",
+      "half": "持学生证约15元",
+      "free_period": "3月份可能免费（待确认）"
+    },
+    "highlights": [
+      "金顶建筑群，清晨可观日出金顶与晨雾",
+      "天葬台（可远观）",
+      "俯瞰郎木寺镇全景",
+      "日落机位绝佳"
+    ],
+    "opening_hours": {
+      "normal": "08:00-17:00",
+      "peak_season": "部分季节延至19:30",
+      "winter": "冬季可能无人售票，可免费进入"
+    },
+    "parking": "约5元/车（部分信息显示不另收费）",
+    "source": "websearch"
+  },
+  "geerdi_temple": {
+    "name": "格尔底寺（达仓郎木格尔底寺/四川寺）",
+    "location": "郎木寺镇南岸，四川省阿坝州若尔盖县境内",
+    "tickets": {
+      "price": 30,
+      "unit": "元/人",
+      "includes": "含纳摩大峡谷入口，无需二次购票"
+    },
+    "highlights": [
+      "五世活佛肉身灵塔：全藏区保存最完好的活佛肉身（300余年历史），不定期开放，看缘分",
+      "银顶建筑群",
+      "白龙江源头：峡谷深处的湿地泉眼，泉水清澈",
+      "纳摩大峡谷（白龙江峡谷）：从后门进入可轻徒步"
+    ],
+    "opening_hours": "08:00-17:00",
+    "winter_note": "冬季（约11月-次年3月）可能无人售票",
+    "source": "websearch"
+  },
+  "nama_gorge": {
+    "name": "纳摩大峡谷（白龙江峡谷）",
+    "location": "格尔底寺后门进入",
+    "trails": [
+      {
+        "level": "短线",
+        "destination": "仙女洞（纳摩洞）",
+        "round_trip_distance": "约1公里",
+        "duration": "1-1.5小时",
+        "suitable_for": "带小孩、高反初适应者"
+      },
+      {
+        "level": "中线",
+        "destination": "白龙江源头 + 第一草甸",
+        "round_trip_distance": "3-4公里",
+        "duration": "2.5-3.5小时",
+        "suitable_for": "普通游客，可看土拨鼠"
+      },
+      {
+        "level": "长线",
+        "destination": "第二草甸或垭口",
+        "round_trip_distance": "5-6公里",
+        "duration": "4.5小时以上",
+        "suitable_for": "有户外经验者"
+      }
+    ],
+    "tips": [
+      "峡谷内无补给：无商店、无卫生间，需自带水粮",
+      "穿防滑徒步鞋：溪边岩石湿滑，普通运动鞋易打滑",
+      "建议上午10点后进峡谷，下午3点前结束",
+      "垃圾必须带出：峡谷为原始状态，无垃圾桶"
+    ],
+    "source": "websearch"
+  },
+  "recommended_itinerary": {
+    "morning": "参观格尔底寺佛殿 + 肉身灵塔",
+    "afternoon": "纳摩大峡谷徒步（光线柔和）",
+    "evening": "登红石崖或赛赤寺后山看日落",
+    "night": "镇上川菜馆或藏餐馆用餐",
+    "half_day_priority": "优先选四川格尔底寺——可寺可谷，动线紧凑，体验更丰富",
+    "source": "websearch"
+  },
+  "lisa_restaurant": {
+    "name": "丽莎餐厅",
+    "type": "清真餐厅，改良西餐 + 藏餐融合",
+    "location": "甘南藏族自治州碌曲县S313，阳光宾馆东北侧约50米（035县道与313省道交叉口西60米），郎木寺镇核心街区主街上",
+    "phone": "18919417143",
+    "hours": "07:00-00:00",
+    "average_cost": {
+      "price": 55,
+      "unit": "元/人",
+      "range": "50-61元/人"
+    },
+    "signature_dishes": [
+      {
+        "name": "苹果派",
+        "price": 15,
+        "unit": "元",
+        "note": "招牌必点，外皮酥脆、内馅酸甜，配合奶茶食用更佳",
+        "price_history": "早期约10元，近期约15元"
+      },
+      {
+        "name": "牦牛肉汉堡",
+        "price": null,
+        "note": "中英文菜单招牌之一，别处难见，藏西食材融合"
+      },
+      {
+        "name": "酸奶",
+        "price": 6,
+        "unit": "元",
+        "note": "加水果约10元，酸爽纯正"
+      }
+    ],
+    "other_dishes": [
+      {"name": "奶茶/酥油茶", "note": "经典藏区饮品"},
+      {"name": "蘑菇炒牦牛肉", "note": "本地特色"},
+      {"name": "蛋炒饭", "note": "家常热销"},
+      {"name": "手抓牦牛肉", "note": "肉质扎实"},
+      {"name": "意大利面", "note": "改良西餐"},
+      {"name": "炮仗面", "note": "西北面食"},
+      {"name": "羊肉泡馍", "price": 30, "unit": "元/碗"},
+      {"name": "烤鸡翅", "price": 20, "unit": "元/对"},
+      {"name": "烫菜", "price": 40, "unit": "元"}
+    ],
+    "rating": "携程3.5-3.6分（23条点评）",
+    "special": "老板娘丽莎是回族人，会汉/藏/蒙/英/法多语交流；墙上贴满各国背包客留言条和户外俱乐部旗帜",
+    "downside": "饭点人多拥挤、上菜慢、口味偏咸、牦牛肉偶有咬不动",
+    "source": "websearch"
+  },
+  "route_langmusi_to_xiahe": {
+    "from": "郎木寺镇",
+    "to": "夏河县（拉卜楞寺所在地）",
+    "distance_km": 185,
+    "distance_range": "184-190公里",
+    "driving_time_hours": 3.2,
+    "driving_time_range": "3-3.5小时",
+    "route": "郎木寺镇 → S313（约3.4公里）→ G213兰磨线（约117.9公里向北，经碌曲、尕海、合作）→ 桑阿段（约48.3公里）→ S312（约11.2公里）→ 桑曲西路 → 扎西奇街 → 夏河县城",
+    "traffic_lights": "极少，仅约1个",
+    "road_condition": "全程柏油路/国道，路况良好",
+    "altitude_range": "3000-3600米",
+    "scenery_along_way": [
+      "尕海湖（距郎木寺约40公里）",
+      "合作米拉日巴佛阁（可顺路游览）",
+      "桑科草原（靠近夏河）"
+    ],
+    "cautions": [
+      "山区弯道多，牲畜穿行频繁，控制车速",
+      "草原路段常有牦牛、羊群过马路，减速让行，勿鸣喇叭",
+      "部分路段信号较弱，建议提前下载离线地图",
+      "加油站：郎木寺、合作、碌曲均有加油站；见油站建议加满"
+    ],
+    "source": "websearch"
+  },
+  "overall_routes": {
+    "ruoergai_to_langmusi": {
+      "distance_km": 85,
+      "distance_range": "76-90公里",
+      "driving_time_hours": 1.5,
+      "driving_time_range": "1.5-2小时",
+      "route": "若尔盖县城 → G213（向北/西北）→ 花湖景区 → 继续G213 → 转S313 → 郎木寺镇",
+      "road": "G213国道，平原微丘二级公路标准，全程柏油路面，路况良好",
+      "altitude": "3400-3700米",
+      "source": "websearch"
+    },
+    "langmusi_to_xiahe": {
+      "distance_km": 185,
+      "driving_time_hours": 3.2,
+      "driving_time_range": "3-3.5小时",
+      "source": "websearch"
+    },
+    "xiahe_to_xining": {
+      "distance_km": 245,
+      "distance_range": "233-252公里",
+      "driving_time_hours": 3.8,
+      "driving_time_range": "3.5-4小时",
+      "source": "websearch"
+    },
+    "total": {
+      "description": "若尔盖 → 郎木寺 → 夏河 → 西宁 全程",
+      "total_distance_km": 515,
+      "total_distance_range": "500-530公里",
+      "total_driving_time_hours": 8.5,
+      "total_driving_time_range": "8-10小时",
+      "source": "websearch"
+    }
+  }
+}

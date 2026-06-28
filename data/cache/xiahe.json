@@ -1,0 +1,289 @@
+{
+  "destination": "夏河",
+  "search_date": "2026-06-28",
+  "sources": ["websearch"],
+  "labrang_monastery": {
+    "name": "拉卜楞寺",
+    "location": "甘肃省甘南藏族自治州夏河县城西",
+    "title": "世界藏学府",
+    "description": "藏传佛教格鲁派六大寺院之一，被世界誉为\"世界藏学府\"",
+    "tickets": {
+      "price": 40,
+      "unit": "元/人",
+      "includes": "含免费僧人引领讲解",
+      "student_elder": "约20元/人（半价优惠）",
+      "gongtang_pagoda": {
+        "price": 20,
+        "unit": "元/人",
+        "note": "另付，可登塔俯瞰全景"
+      },
+      "outer_area": "外围游览免费，不进殿无需购票",
+      "scam_warning": "网上旅行社报价110元/人属加价兜售，官方门票即为40元"
+    },
+    "guide_service_2026": {
+      "note": "2026年6月起实行预约制+实名核验双轨管理",
+      "types": [
+        {
+          "name": "基础路线",
+          "duration": "约1小时",
+          "price_range": "40-60元/人（拼团）",
+          "suitable_for": "首次到访、时间紧张"
+        },
+        {
+          "name": "深度路线",
+          "duration": "约2小时",
+          "price_range": "80-100元/人（拼团）",
+          "suitable_for": "文化爱好者、摄影需求"
+        },
+        {
+          "name": "半日定制",
+          "duration": "3小时+",
+          "price_range": "300-500元/团（上限6人）",
+          "suitable_for": "研学团体、专业考察"
+        }
+      ],
+      "booking": {
+        "method": "关注「拉卜楞寺」官方微信公众号 → 游客服务 → 讲解预约",
+        "advance": "需提前1天预约，旺季建议提前3-7天",
+        "on_site": "当日8:30前到游客中心东侧\"讲解调度室\"排队取号"
+      },
+      "audio_guide": {
+        "deposit": 100,
+        "rental": 20,
+        "duration": "2小时",
+        "unit": "元"
+      }
+    },
+    "opening_hours": {
+      "peak": {"period": "5.1-10.7", "hours": "08:00-18:00", "note": "大殿15:30后禁入"},
+      "off_peak": {"period": "10.8-4.30", "hours": "09:15-16:30", "note": "部分殿堂关闭较早"}
+    },
+    "phone": "0941-7121095 / 0941-7182666",
+    "tips": [
+      "警惕野导：正规僧人讲解员身着绛红僧袍+黄色法衣，胸前佩戴寺院工作证，全程不推销香火法器",
+      "旺季（暑期/国庆/春节）僧人资源紧张，务必提前预约",
+      "不进殿免费逛：如果只想拍外景、转经长廊，可从贡唐宝塔旁入口免费进入",
+      "尊重礼仪：殿内禁拍照、脱帽、不踩门槛、转经顺时针"
+    ],
+    "source": "websearch"
+  },
+  "prayer_wheel_corridor": {
+    "name": "转经廊（转经筒长廊）",
+    "title": "全世界最长的转经长廊",
+    "length_km": 3.5,
+    "length_range": "3-4公里",
+    "wheel_count": "约1700-2000个",
+    "wheel_size": "大的一人多高、需两三人合围；小的周长约1米",
+    "duration_one_round": {
+      "minimum": "约1小时（仅转动经筒、不停留）",
+      "typical": "1-1.5小时",
+      "leisurely": "约2小时（边走边拍、中途参拜）"
+    },
+    "rules": [
+      "必须顺时针行走",
+      "用右手顺时针转动经筒",
+      "不可逆行"
+    ],
+    "significance": "每转一圈经筒相当于念诵一遍经文，是藏族信众积累功德、祈福的重要仪式",
+    "source": "websearch"
+  },
+  "snowman_restaurant": {
+    "name": "雪人宫藏餐",
+    "type": "藏式餐厅+民宿联合经营",
+    "location": "甘肃省甘南藏族自治州夏河县滨河西路253号（近摩尼宝唐卡展览中心）",
+    "alt_location": "夏河县拉卜楞镇风情步行街内（近布达拉宾馆）",
+    "transport": "距夏河3路「腾志桥头站」约190m，步行2分钟",
+    "hours": "09:00-22:00",
+    "average_cost": {
+      "price": 65,
+      "unit": "元/人",
+      "range": "60-80元/人"
+    },
+    "signature_dishes": [
+      {
+        "name": "藏饭",
+        "price": null,
+        "note": "牦牛肉末粉条炒制拌饭，量大味美，几乎每桌必点，其貌不扬但口感惊艳"
+      },
+      {
+        "name": "牦牛肉盖被",
+        "price": null,
+        "note": "牦牛肉与面饼一道烹制，藏式经典菜"
+      },
+      {
+        "name": "蕨麻米饭",
+        "price": null,
+        "note": "高原特色蕨麻（人参果）与米饭搭配，独特藏式主食"
+      },
+      {
+        "name": "藏式酸奶",
+        "price": null,
+        "note": "牦牛酸奶，口感纯正醇厚"
+      },
+      {
+        "name": "酥油茶",
+        "price": null,
+        "note": "质感浓郁，藏族特色（口味因人而异）"
+      },
+      {
+        "name": "糌粑（糍粑）",
+        "price": null,
+        "note": "比普通糌粑更软，店内特色"
+      },
+      {
+        "name": "藏包/牛肉包",
+        "price": 18,
+        "unit": "元/份",
+        "note": "牦牛肉馅实在，汤汁多"
+      },
+      {
+        "name": "铁板牛肉",
+        "price": 68,
+        "unit": "元/份",
+        "note": "牦牛肉切薄片，入味有嚼劲"
+      },
+      {
+        "name": "奶茶",
+        "price": null,
+        "note": "原味奶茶，纯正解腻"
+      },
+      {
+        "name": "土豆片",
+        "price": null,
+        "note": "东乡风味，受欢迎"
+      }
+    ],
+    "other_dishes": [
+      "烤羊排/生烤羊排（约150元+，评价两极分化，肉质可能偏硬）",
+      "有机油麦菜",
+      "野菜",
+      "凉拌土猪肉",
+      "萝卜牛肉汤",
+      "羊肉面片",
+      "格桑花茶（老板有时免费赠送，可缓解高反）"
+    ],
+    "special": "老板是藏族，热情实诚；与雪人宫民宿合体经营，住宿+用餐方便；入口较隐蔽，到了可以打电话让老板接应",
+    "tips": "烤羊排价格较高且评价不一，建议优先点藏饭、酸奶、酥油茶、糌粑等性价比高的招牌菜",
+    "source": "websearch"
+  },
+  "hotels": {
+    "budget_range": "300-500元/晚",
+    "recommendations": [
+      {
+        "name": "夏河玖盛国际饭店",
+        "price_range": "380-530元",
+        "features": "豪华饭店，有餐厅、茶艺、停车场，近拉卜楞寺约800米",
+        "star": "豪华",
+        "source": "websearch"
+      },
+      {
+        "name": "夏河天珠国际酒店",
+        "price_range": "350元左右",
+        "features": "大型酒店，评分4.3/5，含早餐、茶楼，近体育场",
+        "star": "四星",
+        "source": "websearch"
+      },
+      {
+        "name": "夏河拉卜楞王府饭店",
+        "price_range": "390-540元",
+        "features": "三星级，位于人民东街，交通便利",
+        "star": "三星",
+        "source": "websearch"
+      },
+      {
+        "name": "夏河金轮酒店",
+        "price_range": "318-486元",
+        "features": "近拉卜楞寺，位置方便，干净卫生",
+        "source": "websearch"
+      },
+      {
+        "name": "山禾悦Meeting·度假民宿",
+        "price_range": "310-420元",
+        "features": "2025年新开业，藏式装修，含早餐，评分高，安静舒适",
+        "type": "民宿",
+        "source": "websearch"
+      },
+      {
+        "name": "夏河拉卜楞民航大酒店",
+        "price_range": "480-680元",
+        "features": "四星级，综合评价3.9/5，含餐厅、停车场",
+        "star": "四星",
+        "note": "上限略超预算",
+        "source": "websearch"
+      },
+      {
+        "name": "夏河潘德藏家住宿",
+        "price_range": "382-532元",
+        "features": "藏式风情住宿，体验藏族文化",
+        "type": "民宿",
+        "source": "websearch"
+      }
+    ],
+    "tips": [
+      "优先选县城中心区域，靠近拉卜楞寺的酒店出行最方便",
+      "旺季（5-10月）和法事期间酒店经常爆满，务必提前预订",
+      "自驾游客优选玖盛国际、民航大酒店、天珠国际等带大型停车场的酒店",
+      "携程、Agoda、Trip.com多平台交叉比价"
+    ],
+    "source": "websearch"
+  },
+  "route_xiahe_to_xining": {
+    "from": "夏河县（甘南）",
+    "to": "西宁市区",
+    "distance_km": 245,
+    "distance_range": "233-252公里",
+    "driving_time_hours": 3.8,
+    "driving_time_range": "3.5-4小时（高速路线）",
+    "driving_time_national_road": "4-5小时（纯国道）",
+    "fuel_cost": "约140-142元",
+    "toll": "约60元",
+    "total_cost": "约200元",
+    "route_detail": {
+      "segment1": {
+        "from": "夏河",
+        "to": "同仁市",
+        "road": "杂西段 → 浪甘段（G316）",
+        "distance": "约27公里进入青海界",
+        "highlights": "经甘加镇，翻越贡乃拉合垭口（海拔3643m）",
+        "condition": "国道/省道，山路弯曲"
+      },
+      "segment2": {
+        "from": "同仁市",
+        "to": "尖扎县",
+        "road": "G213 + 张汶高速（G0611）",
+        "distance": "约59公里",
+        "highlights": "热贡艺术之乡、隆务寺、吾屯下寺、唐卡艺术村",
+        "condition": "高速+国道，路况较好；隆务峡路段弯道较多、视线受限"
+      },
+      "segment3": {
+        "from": "尖扎县",
+        "to": "海东市（化隆/平安）",
+        "road": "张汶高速 → 平阿高速",
+        "distance": "约85公里",
+        "highlights": "黄河沿岸，可远眺坎布拉丹霞地貌、李家峡水库",
+        "condition": "全高速"
+      },
+      "segment4": {
+        "from": "海东",
+        "to": "西宁市区",
+        "road": "京藏高速（G6）",
+        "distance": "约30公里",
+        "condition": "全高速"
+      }
+    },
+    "pass_through": ["同仁市", "尖扎县"],
+    "scenery": [
+      "桑科大草原",
+      "隆务峡黄河峡谷",
+      "尖扎坎布拉丹霞",
+      "黄河沿线——隆务峡一带黄河碧绿清澈"
+    ],
+    "cautions": [
+      "同仁境内隆务峡路段弯道较多、视线受限，注意减速慢行",
+      "贡乃拉合垭口海拔较高（约3643米），注意高反和天气变化",
+      "翻越垭口时可能遇雨雪，备好防寒衣物",
+      "全程纯国道约285公里，经过村庄多、弯道多"
+    ],
+    "source": "websearch"
+  }
+}

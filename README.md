@@ -69,7 +69,7 @@ tourAI 会自动：
 ```
 tourAI/
 ├── SKILL.md                    ← 主编排器（入口）
-├── agents/                     ← 4 个 Agent 定义
+├── .claude/agents/             ← 4 个 Agent 定义
 │   ├── gather-agent.md         多源数据收集
 │   ├── plan-agent.md           行程结构规划
 │   ├── enrich-agent.md         高德路线计算

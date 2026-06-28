@@ -9,10 +9,10 @@ tourAI 是一个 Claude Code Skill，通过**多 Agent 流水线**帮助用户�
 1. **数据优先** —— 所有行程数据以 `trip.json`（schemas/trip.schema.json）为中心。Agent 通过 `data/` 目录交换结构化 JSON，不通过内存传递。
 
 2. **Agent 独立性** —— 四个 Agent（gather/plan/enrich/render）各自独立，通过磁盘通信：
-   - `agents/gather-agent.md` — 多源数据收集（高德MCP + 小红书MCP + 马蜂窝 + WebSearch）
-   - `agents/plan-agent.md` — 行程结构规划（地理聚类 + 时间分配 + 预算）
-   - `agents/enrich-agent.md` — 高德路线计算（距离+时间+坐标）
-   - `agents/render-agent.md` — HTML 渲染输出
+   - `.claude/agents/gather-agent.md` — 多源数据收集（高德MCP + 小红书MCP + 马蜂窝 + WebSearch）
+   - `.claude/agents/plan-agent.md` — 行程结构规划（地理聚类 + 时间分配 + 预算）
+   - `.claude/agents/enrich-agent.md` — 高德路线计算（距离+时间+坐标）
+   - `.claude/agents/render-agent.md` — HTML 渲染输出
 
 3. **多源融合** —— 数据源优先级：高德（地理） > 小红书（体验） > 马蜂窝（排名） > WebSearch（兜底）
 

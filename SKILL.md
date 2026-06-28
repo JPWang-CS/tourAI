@@ -57,10 +57,10 @@ description: 智能旅行规划助手 —— 多源数据驱动（小红书/马�
 
 ### Phase 1: Gather（数据收集）
 
-调度 `agents/gather-agent` 收集目的地的多源数据。
+调度 `.claude/agents/gather-agent` 收集目的地的多源数据。
 
 ```
-Skill("agents/gather-agent")
+Agent(subagent_type="gather-agent", description="Collect destination data")
 ```
 
 Agent 会：
@@ -79,10 +79,10 @@ Agent 会：
 
 ### Phase 2: Plan（行程规划）
 
-调度 `agents/plan-agent` 生成结构化行程。
+调度 `.claude/agents/plan-agent` 生成结构化行程。
 
 ```
-Skill("agents/plan-agent")
+Agent(subagent_type="plan-agent", description="Plan trip structure")
 ```
 
 Agent 会：
@@ -101,10 +101,10 @@ Agent 会：
 
 ### Phase 3: Enrich（路线丰富）
 
-调度 `agents/enrich-agent` 计算真实路线。
+调度 `.claude/agents/enrich-agent` 计算真实路线。
 
 ```
-Skill("agents/enrich-agent")
+Agent(subagent_type="enrich-agent", description="Calculate routes")
 ```
 
 Agent 会：
@@ -120,10 +120,10 @@ Agent 会：
 
 ### Phase 4: Render（生成 HTML）
 
-调度 `agents/render-agent` 生成最终输出。
+调度 `.claude/agents/render-agent` 生成最终输出。
 
 ```
-Skill("agents/render-agent")
+Agent(subagent_type="render-agent", description="Render HTML output")
 ```
 
 Agent 会：
