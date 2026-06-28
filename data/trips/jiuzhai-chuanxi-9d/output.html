@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>九寨川西 · 成都至成都9天之旅</title>
+<title>九寨川西 · 成都至成都9天自驾之旅</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 
@@ -41,7 +41,7 @@ body {
 
 /* Day card collapse */
 .day-card .day-header { cursor: pointer; position: relative; }
-.day-card .day-header::after { content: '▼'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: .7em; opacity: 0.5; transition: transform 0.3s ease; color: inherit; }
+.day-card .day-header::after { content: '\25BC'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: .7em; opacity: 0.5; transition: transform 0.3s ease; color: inherit; }
 .day-card.collapsed .day-header::after { transform: translateY(-50%) rotate(-90deg); }
 .day-card .spots-wrapper { transition: max-height 0.4s ease-out; max-height: 10000px; overflow: hidden; }
 .day-card.collapsed .spots-wrapper { max-height: 0; }
@@ -106,24 +106,12 @@ body {
 .route-bar .r-item { white-space: nowrap; }
 
 /* Parking */
-.parking-info {
-  margin-top: 6px; padding: 6px 10px;
-  background: #f0fdf4; border-radius: 8px;
-  font-size: .78em; color: #166534;
-  display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;
-  border-left: 3px solid #22c55e;
-}
+.parking-info { margin-top: 6px; padding: 6px 10px; background: #f0fdf4; border-radius: 8px; font-size: .78em; color: #166534; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; border-left: 3px solid #22c55e; }
 .parking-info .pk-price { font-weight: 700; color: #15803d; }
 .parking-info .pk-tip { color: #854d0e; font-size: .92em; }
 
 /* Waypoint */
-.waypoint-bar {
-  margin: 0 24px; padding: 8px 14px;
-  background: #fffbeb; border-radius: 8px;
-  font-size: .78em; color: #92400e;
-  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
-  border: 1px dashed #fcd34d;
-}
+.waypoint-bar { margin: 0 24px; padding: 8px 14px; background: #fffbeb; border-radius: 8px; font-size: .78em; color: #92400e; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; border: 1px dashed #fcd34d; }
 .waypoint-bar .wp-facilities { color: #666; font-size: .92em; }
 
 /* Pitfall */
@@ -174,7 +162,6 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) { .quick-nav { display: none; } }
-
 @media (max-width: 768px) {
   .hero { height: auto; min-height: 280px; padding: 40px 16px 70px; }
   .hero h1 { font-size: 1.5em; padding: 0 8px; word-break: break-word; }
@@ -192,19 +179,16 @@ body {
   .parking-info { font-size: .72em; display: block; }
   .waypoint-bar { margin: 0 16px; font-size: .72em; }
 }
-
 @media (max-width: 375px) {
   .container { padding: 12px; }
   .hero h1 { font-size: 1.3em; }
   .hero .tag { font-size: .68em; padding: 2px 6px; }
   .spot-icon { width: 34px; height: 34px; font-size: 1.1em; }
 }
-
 @media (hover: none) {
   .quick-nav .nav-item { padding: 6px 0; }
   * { -webkit-tap-highlight-color: transparent; }
 }
-
 @media print {
   .quick-nav { display: none; }
   .day-card { break-inside: avoid; }
@@ -220,15 +204,9 @@ body {
 <section class="hero">
   <div class="hero-inner">
     <div class="emojis">🐼🏔️🍜🏯🚗</div>
-    <h1>九寨川西 · 成都至成都9天之旅</h1>
+    <h1>九寨川西 · 成都至成都9天自驾之旅</h1>
     <div class="subtitle">高铁入九寨 + 熊猫大道自驾 + 秘境S434 · 2人深度慢游</div>
-    <div class="tag-row">
-      <span class="tag">🏔️ 自然风光</span>
-      <span class="tag">🍜 美食之旅</span>
-      <span class="tag">🚗 川西自驾</span>
-      <span class="tag">📸 9天8晚</span>
-      <span class="tag">💑 双人浪漫</span>
-    </div>
+    <div class="tag-row"><span class="tag">🏔️ 自然风光</span><span class="tag">🍜 美食之旅</span><span class="tag">🚗 川西自驾</span><span class="tag">📸 9天8晚</span><span class="tag">💑 双人浪漫</span></div>
   </div>
 </section>
 
@@ -241,29 +219,34 @@ body {
     <div class="transport-grid">
       <div class="t-item recommend">
         <div class="badge">去程</div>
-        <div class="t-title">✈️ 航班 · 珠三角 → 成都</div>
+        <div class="t-title">✈️ 航班 · 珠三角（广州/深圳/珠海） → 成都（双流/天府）</div>
         <div class="t-detail">双流/天府机场 · 2.5-3h · D1傍晚前抵达</div>
         <div class="t-price">¥1000-1400/人</div>
       </div>
       <div class="t-item recommend">
         <div class="badge">回程</div>
-        <div class="t-title">✈️ 航班 · 成都 → 珠三角</div>
+        <div class="t-title">✈️ 航班 · 成都（双流/天府） → 珠三角（广州/深圳/珠海）</div>
         <div class="t-detail">双流/天府机场 · 2.5-3h · D9下午/晚班</div>
         <div class="t-price">¥1000-1400/人</div>
       </div>
       <div class="t-item">
         <div class="t-title">🚄 城际 · 犀浦 ↔ 离堆公园</div>
-        <div class="t-detail">18分钟 · ¥10 · D3往返都江堰</div>
+        <div class="t-detail">18分钟 · ¥10 · D2往返都江堰</div>
         <div class="t-price">¥10/人</div>
       </div>
       <div class="t-item">
-        <div class="t-title">🚄 高铁 · 成都东 ↔ 黄龙九寨</div>
-        <div class="t-detail">约2小时 · ¥140 · D4去/D5回</div>
+        <div class="t-title">🚄 高铁 · 成都东 → 黄龙九寨</div>
+        <div class="t-detail">约2小时 · ¥140 · D3去程</div>
+        <div class="t-price">¥140/人</div>
+      </div>
+      <div class="t-item">
+        <div class="t-title">🚄 高铁 · 黄龙九寨 → 成都东</div>
+        <div class="t-detail">约2h20min · ¥140 · D4回程</div>
         <div class="t-price">¥140/人</div>
       </div>
       <div class="t-item">
         <div class="t-title">🚌 直通车 · 黄龙九寨 ↔ 沟口</div>
-        <div class="t-detail">约1.5小时 · ¥51 · D4去/D5回</div>
+        <div class="t-detail">约1.5小时 · ¥51 · D3去/D4回</div>
         <div class="t-price">¥51/人</div>
       </div>
       <div class="t-item">
@@ -280,19 +263,22 @@ body {
   <div class="day-header d1">
     <div class="day-num">Day 1 · 抵达蓉城</div>
     <div class="day-title">苍蝇馆子初体验</div>
-    <div class="day-route">傍晚飞抵成都，入住春熙路附近酒店，直奔地道苍蝇馆子雨田饭店，饭后漫步春熙路感受成都夜生活</div>
+    <div class="day-route">傍晚飞抵成都，入住春熙路附近嘉立精选酒店，直奔地道苍蝇馆子雨田饭店，饭后漫步春熙路感受成都夜生活——明天D2将前往都江堰看千年水利奇迹</div>
   </div>
   <div class="spots-wrapper">
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🌃</div>
         <div>
-          <div class="spot-name">春熙路步行街 <span class="spot-price">免费</span></div>
+          <div class="spot-name">春熙路步行街 <span class="spot-price">免费</span>
+            <span class="spot-transit">🚶 嘉立精选酒店(成都春熙路太古里店) <span class="transit-time">500米/7分钟</span></span></div>
           <div class="spot-desc">成都最繁华的商业步行街，入夜后霓虹璀璨、人流如织。街头艺人弹唱、随处可见的熊猫元素装置，是感受成都烟火气的第一站。紧邻太古里、IFS，可远眺爬墙大熊猫夜景。</div>
-          <div class="spot-romance">💕 夜幕下牵手漫步春熙路，路灯把两人的影子拉得长长的，街头传来吉他弹唱的民谣声，成都的慢生活从这一刻开始——而更令人期待的是，三天后你们将踏上前往九寨沟的高铁，川西之旅才刚刚拉开序幕。</div>
+          <div class="spot-romance">💕 夜幕下牵手漫步春熙路，路灯把两人的影子拉得长长的，街头传来吉他弹唱的民谣声，成都的慢生活从这一刻开始。明天D2就去都江堰——安澜索桥和蓝眼泪在等着你们，而三天后D3的高铁将带你们直奔九寨沟。九天的川西之旅，刚刚开始。</div>
         </div>
       </div>
     </div>
+
+
     <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
       <h2>🍽️ 餐饮推荐</h2>
       <div class="food-grid">
@@ -300,7 +286,7 @@ body {
           <div class="f-name">🌙 晚餐</div>
           <div class="f-shop">雨田饭店</div>
           <div class="f-price">人均 ¥52</div>
-          <div class="f-note">1985年创立近40年，BBC纪录片取景地。荷叶粉蒸肉、藕汤、蒸蛋、火爆肥肠。米饭¥1不限量。锦江区红星路二段20号1层附9号。</div>
+          <div class="f-note">成都资历最老的私营餐馆之一，1985年创立近40年，BBC拍过纪录片。半开放式门面，苍蝇馆子风格，米饭仅¥1/人不限量。服务员多为热情大爷大妈。红烧肉+藕汤是经典搭配。 地址：成都市锦江区红星路二段20号1层附9号（华兴东街路口）</div>
         </div>
       </div>
     </div>
@@ -310,7 +296,7 @@ body {
         <div class="hr-item">
           <div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
           <div class="hr-price">💰 ¥250-380/晚</div>
-          <div class="hr-desc">春熙路/太古里商圈 · 中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务，楼下美食街丰富。步行至春熙路仅500米/7分钟。</div>
+          <div class="hr-desc">中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务，楼下美食街丰富，旺中带静。地理位置极佳，D2-D3地铁出行便利。D2都江堰一日游可地铁至犀浦站换乘城际列车。</div>
         </div>
       </div>
     </div>
@@ -319,91 +305,86 @@ body {
 
 <!-- ===== DAY 2 ===== -->
 <div class="day-card" data-nav="Day 2">
-  <div class="day-header d2">
-    <div class="day-num">Day 2 · 熊猫萌宠</div>
-    <div class="day-title">老成都慢生活</div>
-    <div class="day-route">清晨7:30大熊猫基地 → 永乐饭店午餐 → 人民公园鹤鸣茶社喝茶掏耳朵 → 傍晚太古里拍网红地标 → 明园饭店晚餐</div>
+  <div class="day-header d3">
+    <div class="day-num">Day 2 · 千年水利</div>
+    <div class="day-title">都江堰奇迹全日游</div>
+    <div class="day-route">早晨地铁至犀浦站，乘城际列车18分钟到离堆公园站，按省体力下坡路线游览都江堰景区，中午灌县古城品尝非遗小吃和兔头，傍晚南桥看蓝眼泪夜景，乘城际列车返回成都</div>
   </div>
   <div class="spots-wrapper">
     <div class="route-bar">
-      <span class="dot"></span>
-      <span class="r-item">🐼 熊猫基地</span>
-      <span>→ 🚗 35min/16km →</span>
-      <span class="r-item">🍵 鹤鸣茶社</span>
-      <span>→ 🚶 15min/1.2km →</span>
-      <span class="r-item">🏙️ 太古里</span>
+      
+<span class="dot"></span>      <span class="r-item">🏯 都江堰景区</span>      <span>→ 🚇🚄 1小时30分钟/65公里 →</span>      <span class="r-item">🏘️ 灌县古城</span>
     </div>
 
     <div class="spot">
       <div class="spot-head">
-        <div class="spot-icon">🐼</div>
+        <div class="spot-icon">🏯</div>
         <div>
-          <div class="spot-name">成都大熊猫繁育研究基地 <span class="spot-price">¥55</span>
-            <span class="spot-transit">🚗 从酒店打车 <span class="transit-time">18km/40min</span></span>
-          </div>
-          <div class="spot-desc">全球最大的大熊猫繁育研究机构。早晨7:30-10:00是大熊猫最活跃的时段，它们抱着竹子憨态可掬地啃食，幼年熊猫在树上打闹嬉戏。建议从南大门进，坐观光车（¥30）到月亮产房和太阳产房。6号别墅每周一闭馆。</div>
-          <div class="spot-romance">💕 清晨第一缕阳光洒在熊猫别墅，看着大熊猫抱着竹子憨态可掬地啃食，TA在你身边笑得像个孩子，两人相视一笑，仿佛整个世界都变慢了。</div>
+          <div class="spot-name">都江堰景区 <span class="spot-price">¥80</span>
+            <span class="spot-transit">🚇🚄 嘉立精选酒店(成都春熙路太古里店) <span class="transit-time">65公里/1小时30分钟</span></span></div>
+          <div class="spot-desc">世界文化遗产，两千多年前李冰父子修建的水利工程至今仍灌溉成都平原。推荐省体力下坡路线（不走回头路）：秦堰楼6号门进入→二王庙（祭祀李冰父子）→安澜索桥（天下第一爱情桥）→鱼嘴（岷江分水沙洲，最壮观处）→飞沙堰（泄洪排沙）→宝瓶口（伏龙观顶层俯瞰最佳）→离堆公园出。全程下坡，体力消耗最小。</div>
+          <div class="spot-romance">💕 牵手走过安澜索桥——这座被称为「天下第一爱情桥」的百年悬索桥横跨岷江，脚下江水奔涌，桥身悠悠摇晃。传说走过此桥的情侣会白头偕老，你们在桥中央停下，看远处玉垒山云雾缭绕。明天就要乘高铁去九寨沟了——今天都江堰的千年水利，是川西之旅最温柔的前奏。</div>
+        </div>
+      </div>
+    </div>
+    <div class="waypoint-bar">🚄 犀浦站（约15km处）· 地铁2号线换乘城际列车 · 💡 春熙路站乘地铁2号线至犀浦站约30分钟，同站换乘城际列车</div>
+    <div class="waypoint-bar">🚄 离堆公园站（约64km处）· 出站后步行约800米至都江堰景区秦堰楼入口 · 💡 犀浦→离堆公园城际列车约18分钟，票价¥10，建议提前在12306购票</div>
+
+    <div class="spot">
+      <div class="spot-head">
+        <div class="spot-icon">🏘️</div>
+        <div>
+          <div class="spot-name">灌县古城 <span class="spot-price">免费</span>
+            <span class="spot-transit">🚶 都江堰景区(离堆公园出口) <span class="transit-time">500米/7分钟</span></span></div>
+          <div class="spot-desc">都江堰景区出口即进入灌县古城，青石板街道、明清风格建筑、沿街小吃摊和小店。必体验：幸福路老街漫步、杨柳河畔喝茶、寻找地道小吃。西街是古城最有味道的一条街，店铺小而美。傍晚南桥亮灯后，江水呈现蒂芙尼蓝色（蓝眼泪），免费观赏，19:30后效果最佳。</div>
+          <div class="spot-romance">💕 在南桥边找一家小店坐下，一碗热气腾腾的红糖醪糟粉子蛋端上来，醪糟的酒香混着红糖的甜蜜。夜幕降临，南桥蓝眼泪亮起，碧蓝的江水映着古城灯火。今晚早点回成都休息——明天高铁出发，九寨沟在等着你们。</div>
         </div>
       </div>
     </div>
 
-    <div class="spot">
-      <div class="spot-head">
-        <div class="spot-icon">🍵</div>
-        <div>
-          <div class="spot-name">人民公园鹤鸣茶社 <span class="spot-price">免费</span>
-            <span class="spot-transit">🚗 从熊猫基地打车 <span class="transit-time">16km/35min</span></span>
-          </div>
-          <div class="spot-desc">始建于1923年的百年老茶馆，成都茶馆文化的活化石。竹椅、盖碗茶、掏耳朵、川剧变脸——最地道的成都慢生活在此浓缩。点一杯鹤鸣贡竹（¥28）或手工毛峰（¥18），每桌配一壶开水无限续杯，可以自带零食棋牌。</div>
-          <div class="spot-romance">💕 百年茶馆里，两杯盖碗茶氤氲着茉莉花香，一壶开水无限续杯。你们坐在湖边，看鹤发老人悠闲地掏耳朵，阳光透过梧桐叶洒在茶桌上，时光仿佛凝固在1930年代的成都。</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="spot">
-      <div class="spot-head">
-        <div class="spot-icon">🏙️</div>
-        <div>
-          <div class="spot-name">太古里 <span class="spot-price">免费</span>
-            <span class="spot-transit">🚶 从鹤鸣茶社步行 <span class="transit-time">1.2km/15min</span></span>
-          </div>
-          <div class="spot-desc">成都最潮商圈，千年古刹大慈寺与现代建筑群的魔幻碰撞。必打卡：IFS七楼天台拍爬墙大熊猫正面合影、3D裸眼大屏、大慈寺红墙拍古风大片、方所书店洞穴式旋转楼梯。傍晚至夜间灯光亮起后氛围感最佳。</div>
-          <div class="spot-romance">💕 夜幕降临，牵手漫步在太古里灯光璀璨的街区。在IFS爬墙大熊猫前拍下两人的合影，在方所书店的旋转楼梯上留下身影，在大慈寺红墙前许下心愿——千年古刹见证此刻的你们。</div>
-        </div>
-      </div>
-    </div>
 
     <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
       <h2>🍽️ 餐饮推荐</h2>
       <div class="food-grid">
         <div class="food-item">
           <div class="f-name">🌅 早餐</div>
-          <div class="f-shop">酒店早餐或周边面馆</div>
+          <div class="f-shop">酒店早餐或犀浦站周边</div>
           <div class="f-price">人均 ¥15</div>
-          <div class="f-note">担担面、红油抄手、钟水饺。春熙路周边，早起赶熊猫基地前快速解决。</div>
+          <div class="f-note"> 地址：犀浦站附近</div>
         </div>
         <div class="food-item">
           <div class="f-name">☀️ 午餐</div>
-          <div class="f-shop">永乐饭店</div>
-          <div class="f-price">人均 ¥50</div>
-          <div class="f-note">米其林必比登推荐，1985年开业近40年。肝腰合炒、糯米排骨、宫保鸡丁、圆子汤。地址：高新区肖家河中街32-36号。</div>
+          <div class="f-shop">老号尤兔头（幸福店/总店）</div>
+          <div class="f-price">人均 ¥40</div>
+          <div class="f-note">1990年代以街边三轮车售卖起家，二十多年老店。本地人常说「来都江堰不吃尤兔头等于白来」。麻辣兔头软糯脱骨，裹满香辣酱料花生碎白芝麻。 地址：都江堰市都江堰大道14号附1号（中国电信对面）</div>
+        </div>
+        <div class="food-item">
+          <div class="f-name">☀️ 午餐</div>
+          <div class="f-shop">太平张醪糟（灌县古城西街店）</div>
+          <div class="f-price">人均 ¥15</div>
+          <div class="f-note">百年老店，非物质文化遗产。手工现搓粉子软糯Q弹，醪糟自酿浓郁，溏心蛋是灵魂。西街店环境复古雅致。 地址：都江堰市灌县古城西街120号</div>
         </div>
         <div class="food-item">
           <div class="f-name">🌙 晚餐</div>
-          <div class="f-shop">明园饭店</div>
+          <div class="f-shop">黑竹香鸡</div>
           <div class="f-price">人均 ¥50</div>
-          <div class="f-note">主厨年过七旬，没有固定菜单直接到厨房选食材。大蒜白油肚条、鱼香茄饼、蒜苗回锅肉。地址：金牛区福德路6号。</div>
+          <div class="f-note">成都本地人私藏的苍蝇馆子，乌骨鸡配魔芋+笋子的搭配一绝，鸡肉嫩滑魔芋Q弹入味。在抚琴小区深巷中，环境简陋但味道惊艳。今晚早点吃完回去休息，明天一早高铁去九寨沟。 地址：成都市金牛区营和巷40号（抚琴小区）</div>
+        </div>
+        <div class="food-item">
+          <div class="f-name">🌙 晚餐</div>
+          <div class="f-shop">三哥田螺</div>
+          <div class="f-price">人均 ¥100</div>
+          <div class="f-note">1989年从街边大排档起家，30多年历史，成都最早一批冷淡杯（宵夜档）代表。重油重麻辣典型川式爆炒，承包两条街路边桌椅，烟火气十足。营业至凌晨4点。如回成都较晚可来这里宵夜，但建议别太晚——明天上午高铁去九寨沟。 地址：成都市锦江区北书院街与育婴堂街交叉口东行100米路北</div>
         </div>
       </div>
     </div>
-
     <div class="hotel-rec-section">
       <div class="hr-title">🏨 推荐住宿（成都第2晚 · 续住）</div>
       <div class="hr-grid">
         <div class="hr-item">
           <div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
           <div class="hr-price">💰 ¥250-380/晚</div>
-          <div class="hr-desc">续住第二晚。明天前往都江堰，酒店步行至春熙路地铁站约5分钟，2号线直达犀浦站。</div>
+          <div class="hr-desc">续住第二晚，交通便利，地铁直达犀浦站换乘城际列车。今晚从都江堰返回后好好休息——明天上午将搭乘高铁前往九寨沟，川西之旅正式启程。</div>
         </div>
       </div>
     </div>
@@ -412,118 +393,25 @@ body {
 
 <!-- ===== DAY 3 ===== -->
 <div class="day-card" data-nav="Day 3">
-  <div class="day-header d3">
-    <div class="day-num">Day 3 · 千年水利</div>
-    <div class="day-title">都江堰奇迹一日游</div>
-    <div class="day-route">地铁至犀浦站 → 城际列车18min到离堆公园站 → 秦堰楼进(全程下坡) → 灌县古城小吃 → 傍晚南桥蓝眼泪 → 城际列车返回成都</div>
-  </div>
-  <div class="spots-wrapper">
-    <div class="route-bar">
-      <span class="dot"></span>
-      <span class="r-item">🏯 都江堰景区</span>
-      <span>→ 🚶 7min/500m →</span>
-      <span class="r-item">🏘️ 灌县古城</span>
-    </div>
-
-    <div class="spot">
-      <div class="spot-head">
-        <div class="spot-icon">🏯</div>
-        <div>
-          <div class="spot-name">都江堰景区 <span class="spot-price">¥80</span>
-            <span class="spot-transit">🚇🚄 地铁+城际 <span class="transit-time">65km/约1.5h</span></span>
-          </div>
-          <div class="spot-desc">世界文化遗产，两千多年前李冰父子修建的水利工程至今仍灌溉成都平原。省体力下坡路线（不走回头路）：秦堰楼6号门进入→二王庙→安澜索桥（天下第一爱情桥）→鱼嘴（岷江分水沙洲，最壮观处）→飞沙堰→宝瓶口（伏龙观顶层俯瞰最佳）→离堆公园出。全程下坡，体力消耗最小。</div>
-          <div class="spot-romance">💕 牵手走过安澜索桥——这座被称为「天下第一爱情桥」的百年悬索桥横跨岷江，脚下江水奔涌，桥身悠悠摇晃。传说走过此桥的情侣会白头偕老，你们在桥中央停下，看远处玉垒山云雾缭绕。</div>
-        </div>
-      </div>
-    </div>
-    <div class="waypoint-bar">🚄 犀浦站（约15km处）· 地铁2号线换乘城际列车 · 💡 春熙路站乘地铁2号线至犀浦站约30分钟，同站换乘城际列车</div>
-    <div class="waypoint-bar">🚄 离堆公园站（约64km处）· 出站步行约800米至秦堰楼入口 · 💡 犀浦→离堆公园城际列车约18分钟，票价¥10</div>
-
-    <div class="spot">
-      <div class="spot-head">
-        <div class="spot-icon">🏘️</div>
-        <div>
-          <div class="spot-name">灌县古城 <span class="spot-price">免费</span>
-            <span class="spot-transit">🚶 从离堆公园出口步行 <span class="transit-time">500m/7min</span></span>
-          </div>
-          <div class="spot-desc">都江堰景区出口即进入灌县古城，青石板街道、明清风格建筑、沿街小吃。必体验：幸福路老街漫步、杨柳河畔喝茶。傍晚南桥亮灯后，江水呈现蒂芙尼蓝色（蓝眼泪），免费观赏，19:30后效果最佳。</div>
-          <div class="spot-romance">💕 在南桥边找一家小店坐下，一碗热气腾腾的红糖醪糟粉子蛋端上来，醪糟的酒香混着红糖的甜蜜。夜幕降临，南桥蓝眼泪亮起，碧蓝的江水映着古城灯火，你们并肩坐在河边。</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
-      <h2>🍽️ 餐饮推荐</h2>
-      <div class="food-grid">
-        <div class="food-item">
-          <div class="f-name">🌅 早餐</div>
-          <div class="f-shop">酒店或犀浦站周边</div>
-          <div class="f-price">人均 ¥15</div>
-          <div class="f-note">豆浆油条、包子，犀浦站附近简单解决。</div>
-        </div>
-        <div class="food-item">
-          <div class="f-name">☀️ 午餐</div>
-          <div class="f-shop">老号尤兔头（幸福店）</div>
-          <div class="f-price">人均 ¥40</div>
-          <div class="f-note">都江堰二十多年老店，麻辣兔头¥11/个软糯脱骨。地址：都江堰市都江堰大道14号附1号。</div>
-        </div>
-        <div class="food-item">
-          <div class="f-name">☀️ 午餐（小吃）</div>
-          <div class="f-shop">太平张醪糟（西街店）</div>
-          <div class="f-price">人均 ¥15</div>
-          <div class="f-note">百年非遗老店，红糖醪糟粉子蛋¥13，手工现搓粉子软糯Q弹。地址：灌县古城西街120号。</div>
-        </div>
-        <div class="food-item">
-          <div class="f-name">🌙 晚餐（二选一）</div>
-          <div class="f-shop">黑竹香鸡</div>
-          <div class="f-price">人均 ¥50</div>
-          <div class="f-note">成都本地人私藏苍蝇馆子，乌骨鸡魔芋火锅一绝。地址：金牛区营和巷40号。</div>
-        </div>
-        <div class="food-item">
-          <div class="f-name">🌙 晚餐（二选一）</div>
-          <div class="f-shop">三哥田螺</div>
-          <div class="f-price">人均 ¥100</div>
-          <div class="f-note">1989年起家的成都宵夜传奇，重油重麻辣川式爆炒，营业至凌晨4点。地址：锦江区北书院街。</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hotel-rec-section">
-      <div class="hr-title">🏨 推荐住宿（成都第3晚 · 续住）</div>
-      <div class="hr-grid">
-        <div class="hr-item">
-          <div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
-          <div class="hr-price">💰 ¥250-380/晚</div>
-          <div class="hr-desc">续住第三晚。今晚从都江堰返回成都，明天搭乘高铁前往九寨沟——川西之旅的新篇章。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== DAY 4 ===== -->
-<div class="day-card" data-nav="Day 4">
   <div class="day-header d4">
-    <div class="day-num">Day 4 · 高铁入九寨</div>
-    <div class="day-title">漳扎镇藏餐初体验</div>
-    <div class="day-route">成都东站乘高铁2h→黄龙九寨站 → 直通车1.5h至沟口 → 漳扎镇漫步适应高原 → 扎西藏餐牦牛肉火锅</div>
+    <div class="day-num">Day 3 · 高铁入九寨</div>
+    <div class="day-title">漳扎镇高原缓冲</div>
+    <div class="day-route">上午成都东站乘高铁2小时抵达黄龙九寨站，换乘景区直通车1.5小时至九寨沟口，入住藏式酒店后在漳扎镇溜达适应高原，傍晚享用扎西藏餐牦牛肉火锅，为明天九寨沟全天暴走积蓄体力</div>
   </div>
   <div class="spots-wrapper">
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🏘️</div>
         <div>
-          <div class="spot-name">漳扎镇（九寨沟口） <span class="spot-price">免费</span>
-            <span class="spot-transit">🚄🚌 高铁+直通车 <span class="transit-time">420km/约3.5h</span></span>
-          </div>
+          <div class="spot-name">漳扎镇 <span class="spot-price">免费</span>
+            <span class="spot-transit">🚄🚌 嘉立精选酒店(成都春熙路太古里店) <span class="transit-time">420公里/3小时30分钟（高铁2h+直通车1.5h）</span></span></div>
           <div class="spot-desc">九寨沟景区门口的藏族小镇，沿街藏式建筑、经幡、转经筒、藏餐馆和特产店。海拔约2000米，比沟内低，适合作为高原缓冲站。下午抵达后悠闲散步适应海拔，看看藏式建筑的彩绘门窗和白塔。镇上超市可采购明天沟内午餐的干粮（诺日朗餐厅又贵又难吃，务必自带）。</div>
-          <div class="spot-romance">💕 高铁穿过隧道群，窗外的四川盆地渐渐变成川西高原。到站那一瞬间，空气里已经有了藏地的味道——稀薄、清冽、带着酥油茶的香。漳扎镇的傍晚，经幡在晚风里飘，你们慢慢走在藏式街道上，为明天的九寨沟积蓄所有的期待。</div>
+          <div class="spot-romance">💕 高铁穿过隧道群，窗外的四川盆地渐渐变成川西高原。到站那一瞬间，空气里已经有了藏地的味道——稀薄、清冽、带着酥油茶的香。漳扎镇的傍晚，经幡在晚风里飘，你们慢慢走在藏式街道上，在超市采购明天沟内的午餐干粮。明天7:30，九寨沟Y字路线在等着你们——今晚早点休息，高原第一夜不洗澡。</div>
         </div>
       </div>
     </div>
-    <div class="waypoint-bar">🚄 成都东站（起点）· 高铁站，餐饮齐全 · 💡 酒店打车至成都东站约20分钟。高铁成都东→黄龙九寨约2h，票价¥140。务必提前在12306购票。</div>
-    <div class="waypoint-bar">🚄 黄龙九寨站（约380km处）· 出站即直通车上车点 · 💡 直通车约1.5h到沟口，票价¥51。车上可欣赏川西高原沿途风光。</div>
+    <div class="waypoint-bar">🚄 成都东站（约0km处）· 高铁站，餐饮齐全 · 💡 酒店打车至成都东站约20分钟。高铁成都东→黄龙九寨约2小时，票价¥140。务必提前在12306购票，旺季票源紧张。</div>
+    <div class="waypoint-bar">🚄 黄龙九寨站（约380km处）· 高铁站出口即景区直通车上车点 · 💡 出站后广场即有九寨沟直通车，约1.5小时到沟口，票价¥51。车上可欣赏川西高原沿途风光。</div>
 
     <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
       <h2>🍽️ 餐饮推荐</h2>
@@ -532,57 +420,57 @@ body {
           <div class="f-name">🌅 早餐</div>
           <div class="f-shop">酒店早餐或成都东站简餐</div>
           <div class="f-price">人均 ¥15</div>
-          <div class="f-note">早点出发赶高铁，可在酒店用餐或在成都东站买面包/包子带上。</div>
+          <div class="f-note">早点出发赶高铁——D3上午的高铁（建议9:00-10:00班次），酒店早餐或在成都东站买点包子带上。高铁上吃点零食，2小时到黄龙九寨站。 地址：酒店/成都东站</div>
         </div>
         <div class="food-item">
           <div class="f-name">☀️ 午餐</div>
           <div class="f-shop">黄龙九寨站或途中简餐</div>
           <div class="f-price">人均 ¥30</div>
-          <div class="f-note">牦牛肉面、藏式面片。高铁到达后在车站附近简餐，或到沟口后漳扎镇吃碗面。</div>
+          <div class="f-note">高铁到达后可在车站附近简单解决午餐，或到达沟口后在漳扎镇找个藏餐馆吃碗面。 地址：黄龙九寨站/途中</div>
         </div>
         <div class="food-item">
           <div class="f-name">🌙 晚餐</div>
           <div class="f-shop">扎西藏餐</div>
           <div class="f-price">人均 ¥100</div>
-          <div class="f-note">漳扎镇口碑最好的藏餐馆。牦牛肉火锅汤底浓郁肉软烂入味。酥油茶、糌粑、藏式酸奶。高原第一顿暖身首选。</div>
+          <div class="f-note">漳扎镇口碑最好的藏餐馆之一，牦牛肉火锅是招牌——汤底浓郁牦牛肉软烂入味。高原第一顿晚餐推荐吃热乎的汤锅暖身暖胃，少油腻以防高反。酸奶极酸需加白糖。 地址：九寨沟口漳扎镇主街</div>
         </div>
       </div>
     </div>
-
     <div class="hotel-rec-section">
       <div class="hr-title">🏨 推荐住宿（九寨沟口第1晚）</div>
       <div class="hr-grid">
         <div class="hr-item">
           <div class="hr-name">九寨沟口藏式酒店/民宿</div>
           <div class="hr-price">💰 ¥400-800/晚</div>
-          <div class="hr-desc">漳扎镇，步行至景区入口 · 藏式风格，地暖充足。D4一晚，方便D5早上7:30步行进沟。D5下午出沟后直接乘直通车去高铁站不回酒店。D4晚上在漳扎镇超市采购D5沟内干粮。</div>
+          <div class="hr-desc">藏式风格精品酒店或民宿，位置优越步行可达景区入口，地暖/电热毯供暖充足，部分房间可看到山景。仅住D3一晚，方便D4早上7:30步行进沟。D4下午出沟后直接乘直通车去高铁站不回酒店。提前网上预订，旺季价格上浮。漳扎镇超市晚上采购D4沟内干粮。</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== DAY 5 ===== -->
-<div class="day-card" data-nav="Day 5">
+<!-- ===== DAY 4 ===== -->
+<div class="day-card" data-nav="Day 4">
   <div class="day-header d5">
-    <div class="day-num">Day 5 · 人间仙境</div>
-    <div class="day-title">九寨沟精华全日+高铁返蓉</div>
-    <div class="day-route">7:30进沟 Y字精华路线：五花海→珍珠滩→诺日朗→长海→五彩池→树正群海 → 15:30出沟 → 直通车→黄龙九寨站 → 高铁C5798 18:19→20:39回成都 → 巷子肥肠</div>
+    <div class="day-num">Day 4 · 人间仙境</div>
+    <div class="day-title">九寨沟Y字精华+高铁返蓉</div>
+    <div class="day-route">7:30进沟按Y字精华路线快速打卡：五花海→珍珠滩瀑布→诺日朗→长海→五彩池→树正群海，15:30准时出沟（跳过盆景滩），沟口乘直通车1.5h至黄龙九寨站(¥51)，高铁C5798 18:19→20:39返回成都东(2h20min, ¥140)，晚上回嘉立精选酒店休整——这趟九寨沟一日暴走+高铁返蓉，紧凑但完全可行</div>
   </div>
   <div class="spots-wrapper">
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🏔️</div>
         <div>
-          <div class="spot-name">九寨沟风景名胜区 · Y字精华路线 <span class="spot-price">¥259</span>
-            <span class="spot-transit">🚶 从酒店步行 <span class="transit-time">800m/10min</span></span>
-          </div>
-          <div class="spot-desc">世界自然遗产，中国最美的水景。D5精华半日路线（7:30-15:30）——日则沟：五花海（九寨沟一绝，孔雀蓝湖水+沉木）、珍珠滩瀑布（《西游记》取景地，水流如珍珠飞溅）；诺日朗瀑布（中国最宽钙华瀑布）；则查洼沟：长海（海拔3100米，九寨最大海子）、五彩池（最小但颜色最惊艳，宝石蓝）；树正沟：树正群海（19个海子梯田般层叠）。⚠️跳过盆景滩——景色平庸不值得看，省出时间赶高铁。全程景区观光车接送，¥259门票已含观光车。</div>
-          <div class="spot-romance">💕 五花海——无法形容的蓝。湖水透明得像不存在，水底的沉木和钙华清晰可见。TA站在栈道上，水里倒映着两个人的身影。珍珠滩瀑布水声轰鸣水雾扑面，你们在瀑布前拍了一张合影——这会是这趟旅行里最蓝最清澈的一张。下午三点半出沟时回头望一眼，九寨沟在午后阳光里闪着光，但你们不觉得遗憾——因为晚上八点半就到成都了，还有一顿卤肥肠在等着。</div>
-          <div class="pitfall">⚠️ D5时间管理铁律：7:30进沟→15:30出沟！盆景滩跳过！沟口→黄龙九寨站直通车约1.5h(¥51)，赶C5798（18:19发车）最晚16:00前在沟口上直通车！诺日朗餐厅又贵又难吃，务必自带干粮。长海海拔3100米放慢节奏注意高反。高铁票务必提前在12306购买！</div>
+          <div class="spot-name">九寨沟风景名胜区-Y字路线 <span class="spot-price">¥259</span>
+            <span class="spot-transit">🚶 九寨沟口酒店 <span class="transit-time">800米/10分钟</span></span></div>
+          <div class="spot-desc">世界自然遗产，中国最美的水景。D5精华半日路线（7:30-15:30）：日则沟——五花海（九寨沟一绝，孔雀蓝湖水+沉木）、珍珠滩瀑布（《西游记》取景地，水流如珍珠飞溅）；诺日朗瀑布（中国最宽钙华瀑布）；则查洼沟——长海（海拔3100米，九寨最大海子）、五彩池（最小但颜色最惊艳，宝石蓝）；树正沟——树正群海（19个海子梯田般层叠）。⚠️跳过盆景滩——景色平庸不值得看，省出时间赶高铁。全程景区观光车接送，¥259门票已含观光车。务必7:30开门即进，15:30前必须出沟——沟口直通车1.5h到黄龙九寨站，赶18:19高铁C5798！</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 五花海上午顺光湖水颜色最蓝最透。珍珠滩瀑布慢门拍水流拉丝效果（手机用流光快门模式）。五彩池虽小但颜色最浓烈，俯拍最佳。</div>
+          <div class="spot-romance">💕 五花海——无法形容的蓝。湖水透明得像不存在，水底的沉木和钙华清晰可见。TA站在栈道上，水里倒映着两个人的身影。珍珠滩瀑布水声轰鸣水雾扑面，你们在瀑布前拍了一张合影——这会是这趟旅行里最蓝最清澈的一张。下午三点半出沟时回头望一眼，九寨沟在午后阳光里闪着光，但你们不觉得遗憾——晚上八点半就到成都了，嘉立精选的床在等着，明天还可以睡到自然醒。</div>
+          <div class="pitfall">⚠️ ⚠️ D5时间管理铁律：7:30进沟→15:30出沟！盆景滩跳过！沟口→黄龙九寨站直通车约1.5h(¥51)，务必预留充足时间。赶C5798（18:19发车）最晚16:00前在沟口上直通车！诺日朗餐厅又贵又难吃（套餐¥60-100），务必自带干粮。长海海拔3100米放慢节奏注意高反。末班景区观光车约17:00但你必须15:30走！高铁票务必提前在12306购买，黄龙九寨→成都东旺季票源紧张。</div>
         </div>
       </div>
     </div>
+
 
     <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
       <h2>🍽️ 餐饮推荐</h2>
@@ -591,36 +479,123 @@ body {
           <div class="f-name">🌅 早餐</div>
           <div class="f-shop">酒店藏式早餐</div>
           <div class="f-price">人均 ¥20</div>
-          <div class="f-note">青稞饼、酥油茶、鸡蛋、糌粑。早起吃饱——今天7:30进沟暴走到15:30，高原徒步耗体力。</div>
+          <div class="f-note">早起在酒店吃饱——今天7:30进沟暴走到15:30，早餐一定要吃好。喝酥油茶暖身暖胃。高原徒步耗体力，多吃点碳水。D3晚上在漳扎镇超市已买好沟内干粮。 地址：九寨沟口酒店</div>
         </div>
         <div class="food-item">
           <div class="f-name">☀️ 午餐</div>
-          <div class="f-shop">自带干粮（诺日朗餐厅避雷！）</div>
+          <div class="f-shop">自带干粮（诺日朗餐厅又贵又难吃）</div>
           <div class="f-price">人均 ¥25</div>
-          <div class="f-note">面包、火腿肠、巧克力、水果、自热米饭。D4晚上在漳扎镇超市采购。诺日朗中心站有免费热水。</div>
+          <div class="f-note">重要提醒：诺日朗餐厅套餐¥60-100/人且味道敷衍，强烈建议自带！D4晚上在漳扎镇超市采购好干粮和水。诺日朗中心站有免费热水可以泡面/冲自热米饭。 地址：九寨沟内（诺日朗中心站或栈道边）</div>
         </div>
         <div class="food-item">
           <div class="f-name">🌙 晚餐</div>
           <div class="f-shop">巷子肥肠</div>
           <div class="f-price">人均 ¥40</div>
-          <div class="f-note">高铁2h20min回成都正是晚饭时间！卤肥肠软糯入味，豆汤饭清鲜暖胃。九寨沟暴走一天后所有疲惫都被治愈。地址：锦江区一环路东五段附近。</div>
+          <div class="f-note">从黄龙九寨高铁2h20min回到成都东站，打车25分钟回嘉立精选酒店。巷子肥肠是成都本地人钟爱的苍蝇馆子——卤肥肠软糯入味，豆汤饭清鲜暖胃。九寨沟暴走一天后，一碗豆汤饭一碟卤肥肠把所有疲惫都治愈。如高铁晚点或太累，也可回嘉立精选酒店楼下美食街随便找家面馆吃碗担担面。 地址：成都市锦江区一环路东五段附近</div>
         </div>
         <div class="food-item">
           <div class="f-name">🌙 晚餐（备选）</div>
-          <div class="f-shop">嘉立精选楼下美食街</div>
+          <div class="f-shop">嘉立精选楼下美食街（备选）</div>
           <div class="f-price">人均 ¥30</div>
-          <div class="f-note">高铁到站太晚或太累，楼下担担面、红油抄手、钵钵鸡随便吃。不用纠结，舒服最重要。</div>
+          <div class="f-note">如果高铁到站太晚（21:00后）或太累不想跑远，嘉立精选酒店楼下美食街随便找一家就很好吃。春熙路周边遍地小吃，深夜也能找到热乎的。不用纠结，舒服最重要。明天D5是成都慢生活日——睡到自然醒再去熊猫基地也来得及。 地址：春熙路/太古里周边</div>
+        </div>
+      </div>
+    </div>
+    <div class="hotel-rec-section">
+      <div class="hr-title">🏨 推荐住宿（成都第3晚 · 续住）</div>
+      <div class="hr-grid">
+        <div class="hr-item">
+          <div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
+          <div class="hr-price">💰 ¥250-380/晚</div>
+          <div class="hr-desc">高铁回成都后继D1-D3后续住嘉立精选。中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务。D4晚从成都东站打车约25分钟到酒店。明天D5是成都慢生活一日——熊猫基地+鹤鸣茶社+太古里，不用赶路，睡到自然醒再起床。楼下美食街丰富，晚上还能出去吃宵夜。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DAY 5 ===== -->
+<div class="day-card" data-nav="Day 5">
+  <div class="day-header d2">
+    <div class="day-num">Day 5 · 熊猫萌宠</div>
+    <div class="day-title">成都慢生活恢复日</div>
+    <div class="day-route">经历了D3高铁入九寨+D4九寨沟全天暴走两天的密集行程后，今天是成都慢生活恢复日——睡到自然醒再去熊猫基地看滚滚（不必赶7:30），中午品尝老牌川菜永乐饭店，下午人民公园鹤鸣茶社喝茶掏耳朵，傍晚逛太古里拍网红地标，晚餐地道川菜明园饭店</div>
+  </div>
+  <div class="spots-wrapper">
+    <div class="route-bar">
+      
+<span class="dot"></span>      <span class="r-item">🐼 成都大熊猫繁育研究基…</span>      <span>→ 🚗 40分钟/18公里 →</span>      <span class="r-item">🍵 人民公园鹤鸣茶社</span>      <span>→ 🚗 35分钟/16公里 →</span>      <span class="r-item">🏙️ 太古里</span>
+    </div>
+
+    <div class="spot">
+      <div class="spot-head">
+        <div class="spot-icon">🐼</div>
+        <div>
+          <div class="spot-name">成都大熊猫繁育研究基地 <span class="spot-price">¥55</span>
+            <span class="spot-transit">🚗 嘉立精选酒店(成都春熙路太古里店) <span class="transit-time">18公里/40分钟</span></span></div>
+          <div class="spot-desc">全球最大的大熊猫繁育研究机构，可近距离观察大熊猫进食、玩耍、爬树。经历了九寨沟的暴走后，今天不用赶7:30——9:00-10:00到也能看到活跃的熊猫（虽然7:30-9:00最活跃，但今天的主题是「慢」）。建议从南大门进，坐观光车（¥30）到月亮产房和太阳产房。6号别墅每周一闭馆。</div>
+          <div class="spot-romance">💕 经历了九寨沟两天的高原奔波——高铁、直通车、Y字路线暴走、傍晚高铁回蓉——今天终于可以慢下来。睡到自然醒，来熊猫基地看滚滚抱着竹子憨态可掬地啃食。TA在你身边笑得像个孩子，两人相视一笑——成都的慢生活，原来这么美好。不用赶路，不用打卡，今天就是纯粹的成都时光。</div>
         </div>
       </div>
     </div>
 
+
+    <div class="spot">
+      <div class="spot-head">
+        <div class="spot-icon">🍵</div>
+        <div>
+          <div class="spot-name">人民公园鹤鸣茶社 <span class="spot-price">免费</span>
+            <span class="spot-transit">🚗 成都大熊猫繁育研究基地 <span class="transit-time">16公里/35分钟</span></span></div>
+          <div class="spot-desc">始建于1923年的百年老茶馆，成都茶馆文化的活化石。竹椅、盖碗茶、掏耳朵、川剧变脸——最地道的成都慢生活在此浓缩。点一杯鹤鸣贡竹（¥28）或手工毛峰（¥18），每桌配一壶开水无限续杯，可以自带零食棋牌。湖边观景位最抢手，周末需10点前到。</div>
+          <div class="spot-romance">💕 百年茶馆里，两杯盖碗茶氤氲着茉莉花香。你们坐在湖边，看鹤发老人悠闲地掏耳朵，阳光透过梧桐叶洒在茶桌上。刚从九寨沟的高原回到成都平原，连呼吸都变得轻松——一壶开水无限续杯，时光慢得像回到了1930年代。这就是成都的疗愈力：两天高原奔波后，一杯茶就能让一切慢下来。</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="spot">
+      <div class="spot-head">
+        <div class="spot-icon">🏙️</div>
+        <div>
+          <div class="spot-name">太古里 <span class="spot-price">免费</span>
+            <span class="spot-transit">🚶 人民公园鹤鸣茶社 <span class="transit-time">1.2公里/15分钟</span></span></div>
+          <div class="spot-desc">成都最潮商圈，千年古刹大慈寺与现代建筑群的魔幻碰撞。必打卡：IFS七楼天台拍爬墙大熊猫正面合影、3D裸眼大屏看巨型动画、大慈寺红墙拍古风大片、方所书店洞穴式旋转楼梯。傍晚至夜间灯光亮起后氛围感最佳。大慈寺免费参观并提供免费香火。</div>
+          <div class="spot-romance">💕 夜幕降临，牵手漫步在太古里灯光璀璨的街区。在IFS爬墙大熊猫前拍下两人的合影——爬墙熊猫和今天上午看到的真熊猫，是这一天最好的呼应。千年古刹大慈寺的红墙前，两人并肩许下心愿。经历了九寨沟的壮阔和震撼，成都的温柔与慢生活在今天给了你们最好的疗愈。</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
+      <h2>🍽️ 餐饮推荐</h2>
+      <div class="food-grid">
+        <div class="food-item">
+          <div class="f-name">🌅 早餐</div>
+          <div class="f-shop">酒店早餐或周边面馆</div>
+          <div class="f-price">人均 ¥15</div>
+          <div class="f-note"> 地址：春熙路周边</div>
+        </div>
+        <div class="food-item">
+          <div class="f-name">☀️ 午餐</div>
+          <div class="f-shop">永乐饭店</div>
+          <div class="f-price">人均 ¥50</div>
+          <div class="f-note">1985年开业近40年，米其林必比登推荐，被誉为成都家常菜天花板。免费续加自制泡菜。11:00-14:00午市。宫保鸡丁+糯米排骨是招牌搭配。经历了九寨沟的藏餐和干粮，今天好好犒劳一下胃。 地址：成都市高新区肖家河中街32-36号</div>
+        </div>
+        <div class="food-item">
+          <div class="f-name">🌙 晚餐</div>
+          <div class="f-shop">明园饭店</div>
+          <div class="f-price">人均 ¥50</div>
+          <div class="f-note">开了几十年的老牌川菜馆，主厨年过七旬。没有固定菜单，直接到厨房选食材，老板娘负责凉拌菜（甜辣味拿手）。门口常坐满食客，市井烟火气浓。紧凑的九寨沟行程后，今晚在成都慢慢吃一顿老川菜——不赶高铁、不赶直通车、不赶景区末班车，就是纯吃。 地址：成都市金牛区福德路6号</div>
+        </div>
+      </div>
+    </div>
     <div class="hotel-rec-section">
       <div class="hr-title">🏨 推荐住宿（成都第4晚 · 续住）</div>
       <div class="hr-grid">
         <div class="hr-item">
           <div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
           <div class="hr-price">💰 ¥250-380/晚</div>
-          <div class="hr-desc">高铁回成都后继续住嘉立精选。D5晚从成都东站打车约25分钟到酒店。明天D6在成都一嗨取车开启川西自驾——成都取成都还零异地费！</div>
+          <div class="hr-desc">续住嘉立精选。中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务。经历了九寨沟两天的高原奔波，今天在成都慢慢恢复——酒店楼下美食街丰富，春熙路步行即达。明天D6将开启川西自驾之旅——成都取车走G350熊猫大道去四姑娘山，好好享受今天在成都的慢时光。</div>
         </div>
       </div>
     </div>
@@ -631,50 +606,54 @@ body {
 <div class="day-card" data-nav="Day 6">
   <div class="day-header d1">
     <div class="day-num">Day 6 · G350熊猫大道</div>
-    <div class="day-title">成都至四姑娘山 + 双桥沟</div>
-    <div class="day-route">一嗨成都取车 → G350熊猫大道(220km/4h)：贝母坪→大雪塘→巴朗山→猫鼻梁 → 下午双桥沟(红杉林+盆景滩+人参果坪) → 见山民宿看幺妹峰日落金山</div>
+    <div class="day-title">成都至四姑娘山轻松驾驶+双桥沟初探</div>
+    <div class="day-route">成都一嗨取车（成都取→成都还零异地费），走G350熊猫大道：卧龙→贝母坪观景台→大雪塘观景台→巴朗山隧道口→猫鼻梁(四姑娘山全景)，仅220km/4h驾驶。下午游览双桥沟(红杉林+盆景滩+人参果坪)，傍晚宿四姑娘山镇见山民宿看幺妹峰日落金山</div>
   </div>
   <div class="spots-wrapper">
+    <div class="route-bar">
+      
+<span class="dot"></span>      <span class="r-item">🏔️ G350熊猫大道景观…</span>      <span>→ 🚗 4小时驾驶（含停靠约5-6小时）/220公里 →</span>      <span class="r-item">🏞️ 双桥沟</span>
+    </div>
+
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🏔️</div>
         <div>
-          <div class="spot-name">G350熊猫大道景观长廊 <span class="spot-price">全部免费</span>
-            <span class="spot-transit">🚗 自驾 <span class="transit-time">220km/4h驾驶</span></span>
-          </div>
-          <div class="spot-desc">G350熊猫大道是成都到四姑娘山最美的自驾路线，全程220km仅4小时，比走G213松潘方向（463km/8h）少开一半路程。精华停靠：贝母坪观景台——俯瞰卧龙峡谷和原始森林，云海概率高；大雪塘观景台——远眺大雪塘雪山群峰；巴朗山隧道口——穿出隧道后四姑娘山幺妹峰（6250m）正面扑来！猫鼻梁——四姑娘山四座雪峰一字排开的最佳观景台。下午抵达后光线斜射，四峰层次分明。多出一整个下午玩双桥沟！</div>
+          <div class="spot-name">G350熊猫大道景观长廊（贝母坪-大雪塘-巴朗山-猫鼻梁） <span class="spot-price">免费</span>
+            <span class="spot-transit">🚗 一嗨租车（成都取车点，春熙路/成都东站门店） <span class="transit-time">220公里/4小时驾驶（含停靠约5-6小时）</span></span></div>
+          <div class="spot-desc">G350熊猫大道是成都到四姑娘山最美的自驾路线，全程220km仅4小时驾驶，比走G213松潘方向舒适太多。精华停靠：贝母坪观景台——俯瞰卧龙峡谷和原始森林，云海概率高（免费）；大雪塘观景台——远眺大雪塘雪山群峰，视野开阔（免费）；巴朗山隧道口——穿出隧道后豁然开朗，四姑娘山幺妹峰（6250m）正面扑来！这是D6最震撼的瞬间（免费停车）；猫鼻梁——四姑娘山四座雪峰一字排开的最佳观景台，幺妹峰傲然矗立（免费）。下午抵达后光线斜射，四峰层次分明。相比旧方案走G213岷江峡谷463km/8h，新方案少开一半路程，多出一整个下午玩双桥沟！</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 贝母坪上午拍云海最佳。大雪塘远眺雪山群峰用长焦。巴朗山隧道口出隧道后立即靠边——幺妹峰的突然出现是此行最震撼的瞬间！猫鼻梁下午光线斜射拍四峰全景，雪山+经幡+公路构图。</div>
           <div class="spot-romance">💕 从成都取车出发，沿熊猫大道一路向西。贝母坪的云海、大雪塘的雪峰、巴朗山穿出隧道后扑面而来的幺妹峰——每一段窗外都是不同的风景。到猫鼻梁停车，下车那一瞬间四姑娘山四座雪峰一字排开，TA指着最高那座问「那是幺妹吗」——是的，那是幺妹。才开了4个小时，整个川西已经为你们展开了。</div>
-          <div class="pitfall">⚠️ G350巴朗山段弯多路窄但路况良好。巴朗山隧道口海拔约3850米，下车拍照注意高反，勿剧烈运动。全程220km仅4h驾驶，比旧方案轻松一半——8:00-9:00出发即可。成都一嗨取车提前App确认网点（春熙路/成都东站门店）。</div>
+          <div class="pitfall">⚠️ G350巴朗山段弯多路窄但路况良好，比G213松潘段安全得多。巴朗山隧道口海拔约3850米，下车拍照注意高反，勿剧烈运动。全程220km仅4h驾驶，比旧方案轻松一半——不用6:00起床，8:00-9:00出发即可。成都一嗨取车提前App确认网点位置（建议选春熙路/火车东站门店）。</div>
         </div>
       </div>
     </div>
-    <div class="waypoint-bar">🏔️ 贝母坪观景台（约80km处）· 免费停车、观景台 · 💡 俯瞰卧龙峡谷+原始森林，云海概率高。拍照15-20分钟。海拔约2800米。</div>
-    <div class="waypoint-bar">🏔️ 大雪塘观景台（约120km处）· 免费停车、观景台 · 💡 远眺大雪塘雪山群峰，视野开阔。拍照10-15分钟。</div>
-    <div class="waypoint-bar">🏔️ 巴朗山隧道口（约180km处）· 隧道口停车区 · 💡 穿出隧道后幺妹峰扑面而来！此行最震撼瞬间。路边停车注意安全，海拔约3850米，注意高反。</div>
-    <div class="waypoint-bar">🏔️ 猫鼻梁（约210km处）· 免费停车、经幡 · 💡 四峰一字排开最佳观景台。下午斜射光四峰层次分明。拍照20-30分钟。明天D7早上再来拍晨光。</div>
+    <div class="waypoint-bar">🏔️ 贝母坪观景台（约80km处）· 免费停车、观景台 · 💡 俯瞰卧龙峡谷+原始森林，云海概率高。免费停车拍照15-20分钟。海拔约2800米。</div>
+    <div class="waypoint-bar">🏔️ 大雪塘观景台（约120km处）· 免费停车、观景台 · 💡 远眺大雪塘雪山群峰，视野开阔。免费停车拍照10-15分钟。</div>
+    <div class="waypoint-bar">🏔️ 巴朗山隧道口（约180km处）· 隧道口停车区 · 💡 穿出隧道后豁然开朗——四姑娘山幺妹峰（6250m）正面扑来！这是D6最震撼的瞬间。路边停车注意安全，拍照10分钟。海拔约3850米，注意高反勿剧烈运动。</div>
+    <div class="waypoint-bar">🏔️ 猫鼻梁（四姑娘山全景）（约210km处）· 免费停车、观景台、经幡 · 💡 四姑娘山四座雪峰一字排开的最佳观景台。下午斜射光四峰层次分明。停车拍照20-30分钟。明天D7早上还可再来拍晨光——上午顺光效果更佳。</div>
     <div class="parking-info">
       🅿️ 沿途各观景台免费停车 · 即到即停 · <span class="pk-price">全部免费</span>
-      <span class="pk-tip">💡 贝母坪、大雪塘、巴朗山隧道口、猫鼻梁均有免费停车区。猫鼻梁车位最多。</span>
+      <span class="pk-tip">💡 贝母坪、大雪塘、巴朗山隧道口、猫鼻梁均有免费停车区。猫鼻梁车位最多。隧道口停车注意安全勿久留。</span>
     </div>
-
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🏞️</div>
         <div>
           <div class="spot-name">双桥沟 <span class="spot-price">¥150</span>
-            <span class="spot-transit">🚗 从猫鼻梁/四姑娘山镇 <span class="transit-time">12km/15min</span></span>
-          </div>
-          <div class="spot-desc">四姑娘山三条沟中最美最轻松的一条，全程景区观光车接送无需爬山。D6下午精华游（约3.5h）：红杉林（海拔3840米，原始森林+雪山环绕）→ 盆景滩（钙华滩流+枯树造景，光影绝美）→ 人参果坪（开阔草甸+牦牛+幺妹峰远景）。观光车从沟口直达红杉林（约40分钟），从上往下一站一站游览，体力零负担。</div>
-          <div class="spot-romance">💕 红杉林——海拔3840米的原始森林里，雪山环绕四周。你们在木栈道上慢慢走，空气稀薄但心跳清晰可闻。盆景滩的钙华滩流在午后阳光里闪着金光，枯树造型像天然的盆景艺术。人参果坪的草甸已经金黄，牦牛悠闲吃草，幺妹峰在远处做背景——这是D6最好的礼物。</div>
-          <div class="pitfall">⚠️ 双桥沟末班景区车约17:00-17:30从红杉林发出！务必提前确认当天末班车时间！红杉林海拔3840米慢慢走不要跑。错过末班车需步行十几公里出沟！建议14:00前到达游客中心。</div>
+            <span class="spot-transit">🚗 猫鼻梁/四姑娘山镇 <span class="transit-time">12公里/15分钟</span></span></div>
+          <div class="spot-desc">四姑娘山三条沟中最美最轻松的一条，全程景区观光车接送无需爬山。D6下午精华游（约3.5小时）：红杉林（海拔3840米，原始森林+雪山环绕）→ 盆景滩（钙华滩流+枯树造景，光影绝美）→ 人参果坪（开阔草甸+牦牛+幺妹峰远景）。观光车从沟口直达红杉林（约40分钟），从上往下一站一站游览，体力零负担。D6下午光线斜射时盆景滩和人参果坪层次最丰富。</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 盆景滩下午光线斜射时钙华滩流层次最丰富。人参果坪下午光影极美，草甸金黄+雪山做背景。红杉林拍原始森林+雪山环绕的纵深感。观光车从上往下游览，每个点停20-30分钟。</div>
+          <div class="spot-romance">💕 红杉林——海拔3840米的原始森林里，雪山环绕四周。你们在木栈道上慢慢走，空气稀薄但心跳清晰可闻。盆景滩的钙华滩流在午后阳光里闪着金光，枯树造型像天然的盆景艺术。人参果坪的草甸已经金黄，牦牛悠闲吃草，幺妹峰在远处做背景——这是D6最好的礼物：不用赶463公里路，悠闲地在双桥沟待一个下午。</div>
+          <div class="pitfall">⚠️ 双桥沟末班景区车约17:00-17:30从红杉林发出，务必提前确认当天末班车时间！红杉林海拔3840米，慢慢走不要跑。错过末班车需步行十几公里出沟！D6下午进沟时间较紧，建议14:00前到达游客中心。如果D6抵达四姑娘山镇较晚（16:00后），可把双桥沟移到D7上午，但D7行程会变紧——优先D6下午完成。</div>
         </div>
       </div>
     </div>
+
     <div class="parking-info">
       🅿️ 双桥沟景区停车场 · 步行3分钟 · <span class="pk-price">¥10-20/次</span>
-      <span class="pk-tip">💡 淡季车位充足，旺季需早到。景区门口有餐厅。</span>
+      <span class="pk-tip">💡 淡季车位充足，旺季（国庆）需早到。景区门口有餐厅。从见山民宿开车约10分钟。</span>
     </div>
-
     <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
       <h2>🍽️ 餐饮推荐</h2>
       <div class="food-grid">
@@ -682,30 +661,29 @@ body {
           <div class="f-name">🌅 早餐</div>
           <div class="f-shop">嘉立精选酒店早餐或周边面馆</div>
           <div class="f-price">人均 ¥15</div>
-          <div class="f-note">今天不用赶早——成都出发只开220km/4h，8:00-9:00起床都来得及。吃完去一嗨取车。</div>
+          <div class="f-note">今天不用赶早——成都出发只开220km/4h，8:00-9:00起床都来得及。在酒店吃个悠闲早餐或去楼下吃碗热气腾腾的担担面，然后去一嗨门店取车（春熙路/成都东站门店，提前App确认位置和营业时间）。 地址：春熙路周边</div>
         </div>
         <div class="food-item">
           <div class="f-name">☀️ 午餐</div>
           <div class="f-shop">卧龙镇/路边简餐</div>
           <div class="f-price">人均 ¥35</div>
-          <div class="f-note">卧龙镇是G350最理想的午餐补给站，川味盖饭、牦牛肉面。吃完可在超市补充零食和水。</div>
+          <div class="f-note">卧龙镇是G350熊猫大道上最理想的午餐补给站，有川菜馆和简餐店，价格实惠。吃完可在超市补充零食和水。如果路上不饿也可到四姑娘山镇再吃。比旧方案茂县午餐近了一半路程——今天不用赶路，慢慢吃。 地址：卧龙镇或G350沿途</div>
         </div>
         <div class="food-item">
           <div class="f-name">🌙 晚餐</div>
           <div class="f-shop">四姑娘山镇藏餐/川菜</div>
           <div class="f-price">人均 ¥70</div>
-          <div class="f-note">牦牛肉汤锅、藏式酸奶、酥油茶。镇上餐馆集中在主街，步行可达。吃完早点休息看幺妹峰日落金山。高原第一晚不要洗澡洗头。</div>
+          <div class="f-note">四姑娘山镇海拔3200米，D6轻松驾驶后（只开了4h不是8h！）吃热乎汤锅暖身暖胃。镇上餐馆集中在主街，步行可达。少油腻防高反。吃完早点休息——躺天台看幺妹峰日落金山是D6的终极浪漫。高原第一晚不要洗澡洗头。 地址：四姑娘山镇主街</div>
         </div>
       </div>
     </div>
-
     <div class="hotel-rec-section">
       <div class="hr-title">🏨 推荐住宿（四姑娘山第1晚）</div>
       <div class="hr-grid">
         <div class="hr-item">
           <div class="hr-name">见山民宿</div>
           <div class="hr-price">💰 ¥400-500/晚</div>
-          <div class="hr-desc">四姑娘山镇，近双桥沟景区 · 直面幺妹峰雪山景观，藏式风格，地暖+供氧。天台看幺妹峰日落金山最佳位置。今天只开了220km/4h，还有精力瘫在天台看落日。高原第一晚不要洗澡洗头。</div>
+          <div class="hr-desc">直面四姑娘山雪山景观，藏式风格客房，地暖充足，供氧设备。部分房间窗外即是幺妹峰，早起看日照金山。天台是看幺妹峰日落金山的最佳位置。今天只开了220km/4h，到民宿还有精力瘫在天台看幺妹峰被最后的日光照成金色。高原第一晚注意休息，不要洗澡洗头。</div>
         </div>
       </div>
     </div>
@@ -715,50 +693,56 @@ body {
 <!-- ===== DAY 7 ===== -->
 <div class="day-card" data-nav="Day 7">
   <div class="day-header d2">
-    <div class="day-num">Day 7 · 藏寨与雪山</div>
-    <div class="day-title">猫鼻梁晨光至新都桥</div>
-    <div class="day-route">清晨猫鼻梁拍四姑娘山晨光(上午顺光！) → 丹巴甲居藏寨 → 牦牛河谷 → 雅拉雪山观景台 → 疙瘩梁子垭口 → 塔公草原路边 → 新都桥(260km/4.5h)</div>
+    <div class="day-num">Day 7 · 藏寨碉楼</div>
+    <div class="day-title">猫鼻梁晨光至新都桥的雪山长廊</div>
+    <div class="day-route">清晨重返猫鼻梁拍四姑娘山晨光（上午顺光比D6下午更美！），随后经丹巴甲居藏寨、牦牛河谷、雅拉雪山观景台、疙瘩梁子垭口、塔公草原路边，全程约260km/4.5h驾驶，傍晚抵达摄影天堂新都桥。双桥沟已D6下午游览完毕，今天直奔川西腹地</div>
   </div>
   <div class="spots-wrapper">
+    <div class="route-bar">
+      
+<span class="dot"></span>      <span class="r-item">🏔️ 猫鼻梁（四姑娘山全景…</span>      <span>→ 🚗 10分钟/8公里 →</span>      <span class="r-item">🏔️ 甲居藏寨-雅拉雪山-…</span>
+    </div>
+
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🏔️</div>
         <div>
-          <div class="spot-name">猫鼻梁 · 四姑娘山晨光 <span class="spot-price">免费</span>
-            <span class="spot-transit">🚗 从见山民宿 <span class="transit-time">8km/10min</span></span>
-          </div>
-          <div class="spot-desc">清晨重返猫鼻梁——上午顺光！四座雪峰蓝天白雪层次分明，比D6下午逆光好太多。大峰（5025m）、二峰（5276m）、三峰（5355m）、幺妹峰（6250m）一字排开。晨光刚照到山顶，雪峰变成金色。D6下午是「到达」，D7早晨才是「正式见面」。猫鼻梁距离四姑娘山镇仅10分钟车程，晨拍后回民宿吃早餐再出发去丹巴。</div>
+          <div class="spot-name">猫鼻梁（四姑娘山全景） <span class="spot-price">免费</span>
+            <span class="spot-transit">🚗 见山民宿（四姑娘山镇） <span class="transit-time">8公里/10分钟</span></span></div>
+          <div class="spot-desc">四姑娘山四座雪峰一字排开的最佳观景台。幺妹峰海拔6250米傲然矗立——大峰（5025m）、二峰（5276m）、三峰（5355m）、幺妹峰（6250m）。D7清晨重返猫鼻梁——上午顺光！四座雪峰蓝天白雪层次分明，比D6下午的光线好太多。晨光刚照到山顶，雪峰变成金色。D6下午是「到达」，D7早晨才是「正式见面」。猫鼻梁距离四姑娘山镇仅10分钟车程，晨拍后直接出发前往丹巴，完美顺路。</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 猫鼻梁上午顺光拍摄最佳，下午会逆光发暗。雪山+经幡+公路构图，人站路边以小见大。用手机0.5x超广角可拍下四峰全景。</div>
           <div class="spot-romance">💕 清晨重返猫鼻梁——这次是顺光。晨光刚照到幺妹峰顶，雪峰变成金色。四座雪峰一字排开，比昨天下午更清晰、更震撼。TA说「原来早上看是这样的——值了」。拍完这张晨光照，你们正式告别四姑娘山，继续向西——丹巴藏寨和塔公草原在前方等着。</div>
-          <div class="pitfall">⚠️ 猫鼻梁上午顺光拍摄最佳！D6下午已看过逆光版，D7早上来拍「正式版」。四姑娘山四峰朝东，上午顺光才能拍到蓝天+白雪+绿色山体的完美层次。</div>
+          <div class="pitfall">⚠️ 猫鼻梁上午顺光拍摄最佳！D6下午已看过逆光版，D7早上来拍「正式版」。距四姑娘山镇仅10分钟车程，拍完回来吃早餐再出发。四姑娘山四峰朝东，上午顺光才能拍到蓝天+白雪+绿色山体的完美层次。</div>
         </div>
       </div>
     </div>
+
     <div class="parking-info">
       🅿️ 猫鼻梁观景台停车场 · 即到即停 · <span class="pk-price">免费</span>
+      <span class="pk-tip">💡 路边免费停车，下车即观景台，无需步行</span>
     </div>
-
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🏔️</div>
         <div>
-          <div class="spot-name">甲居藏寨-雅拉雪山-疙瘩梁子-塔公草原景观带 <span class="spot-price">甲居¥50 其余免费</span>
-            <span class="spot-transit">🚗 自驾 <span class="transit-time">260km/4.5h驾驶</span></span>
-          </div>
-          <div class="spot-desc">D7全天精华景观长廊（驾驶约260km、含游览约6-7h）。串联六大精华——甲居藏寨（¥50，200余栋嘉绒藏族碉楼半山错落，中国最美乡村）；牦牛河谷/东谷盆景（免费，红石滩+溪流+秋季彩林）；雅拉雪山观景台（免费，5820米雅拉雪山正面全景，经幡猎猎）；疙瘩梁子垭口（免费，3900米360°环视雪山群峰，「宗格天椅」网红打卡点）；塔公草原路边（免费，不进收费区¥35/人，路边即可拍木雅金塔与雅拉雪山同框）。双桥沟已D6下午游览完毕，今天直奔川西腹地。</div>
+          <div class="spot-name">甲居藏寨-雅拉雪山-疙瘩梁子-塔公草原景观带 <span class="spot-price">免费</span>
+            <span class="spot-transit">🚗 猫鼻梁/四姑娘山镇 <span class="transit-time">260公里/4.5小时驾驶（含停靠约6-7小时）</span></span></div>
+          <div class="spot-desc">D7全天精华景观长廊（驾驶约260km、含游览约6-7小时）。串联六大免费/收费精华：甲居藏寨（¥50，200余栋嘉绒藏族碉楼嵌在半山腰，中国最美乡村）；牦牛河谷/东谷盆景（免费，红石滩+溪流+秋季彩林）；雅拉雪山观景台（免费，5820米雅拉雪山正面全景，经幡猎猎）；疙瘩梁子垭口（免费，3900米360°环视雪山群峰，「宗格天椅」网红打卡点）；塔公草原路边（免费，不进收费区¥35/人，路边即可拍木雅金塔与雅拉雪山同框）。D7从四姑娘山镇出发（双桥沟已D6下午完成），直奔川西腹地——驾驶约4.5小时不含景区时间。</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 甲居藏寨1号观景台上午顺光拍全景。雅拉雪山观景台正面顺光拍雪山+经幡。疙瘩梁子垭口360°全景下午光线最佳。塔公草原路边拍木雅金塔+雅拉雪山同框，不进收费区就能出大片。</div>
           <div class="spot-romance">💕 疙瘩梁子垭口，风很大，经幡被吹得猎猎响。360度都是雪山——背后是雅拉，远处是贡嘎方向。TA坐在「宗格天椅」上，你按下快门，然后发现照片里TA的头发被风吹成了一个笑话，两个人在海拔四千米笑到缺氧。</div>
-          <div class="pitfall">⚠️ 疙瘩梁子垭口海拔3900米风大低温，厕所条件极差（旱厕）！丹巴→八美段中途无餐馆，务必在丹巴县城吃饱出发。塔公草原收费区¥35/人不值得进——路边免费位置拍木雅金塔+雅拉雪山角度完全一样。雅拉雪山观景台风大穿好防风外套。</div>
+          <div class="pitfall">⚠️ 疙瘩梁子垭口海拔3900米风大低温，厕所条件极差（旱厕）！自带纸巾零钱。丹巴→八美段中途无餐馆，务必在丹巴县城吃饱出发。塔公草原收费区¥35/人不值得进——路边免费位置拍木雅金塔+雅拉雪山角度完全一样。雅拉雪山观景台风大，穿好防风外套。全天驾驶260km比旧D6的463km轻松太多。</div>
         </div>
       </div>
     </div>
-    <div class="waypoint-bar">🏘️ 丹巴甲居藏寨（约60km处）· 景区停车场、卫生间、餐饮 · 💡 ¥50门票，200余栋嘉绒藏族碉楼半山错落。1号观景台拍全景最佳。游览1-1.5h。</div>
-    <div class="waypoint-bar">🌊 牦牛河谷/东谷盆景（约90km处）· 路边停车、溪流 · 💡 红石滩+高山溪流+秋季彩林，全部免费。拍照15-20min。溪边石头湿滑注意安全。</div>
-    <div class="waypoint-bar">🏔️ 雅拉雪山观景台（约110km处）· 观景台、经幡、停车区 · 💡 5820米雅拉雪山正面全景！免费。经幡做前景拍人像极出片。</div>
-    <div class="waypoint-bar">🏔️ 疙瘩梁子垭口（约125km处）· 停车区、经幡、「宗格天椅」 · 💡 海拔3900米，360°环视雪山群峰。风大温度低。厕所旱厕极差！自带纸巾零钱。</div>
-    <div class="waypoint-bar">🏔️ 塔公草原路边（约155km处）· 路边停车 · 💡 不进收费区¥35/人！路边免费位置即可拍到木雅金塔+雅拉雪山同框。</div>
+    <div class="waypoint-bar">🏔️ 丹巴甲居藏寨（约60km处）· 景区停车场、卫生间、餐饮 · 💡 ¥50门票，200余栋嘉绒藏族碉楼半山错落。中国最美乡村。1号观景台拍全景最佳，3号观景台近拍藏寨细节。游览1-1.5小时。</div>
+    <div class="waypoint-bar">🏔️ 牦牛河谷/东谷盆景（约90km处）· 路边停车、溪流 · 💡 红石滩+高山溪流+秋季彩林，全部免费。停车拍照15-20分钟。溪边石头湿滑注意安全。</div>
+    <div class="waypoint-bar">🏔️ 雅拉雪山观景台（约110km处）· 观景台、经幡、停车区 · 💡 5820米雅拉雪山正面全景！免费。经幡做前景拍人像极出片。此处为雅拉雪山最佳观赏角度。</div>
+    <div class="waypoint-bar">🏔️ 疙瘩梁子垭口（约125km处）· 停车区、经幡、「宗格天椅」打卡点 · 💡 海拔3900米，360°环视雅拉雪山群峰。风大温度低穿好外套。「宗格天椅」免费拍照。厕所条件极差（旱厕），在此前村镇解决。</div>
+    <div class="waypoint-bar">🏔️ 塔公草原路边（约155km处）· 路边停车 · 💡 不进收费区¥35/人！路边免费位置即可拍到木雅金塔+雅拉雪山同框。下午光线最佳。收费区内和路边看到的雪山角度完全一样。</div>
     <div class="parking-info">
-      🅿️ 沿途各观景台路边停车 · 即到即停 · <span class="pk-price">甲居含门票内，其余免费</span>
+      🅿️ 沿途各观景台路边停车 · 即到即停 · <span class="pk-price">甲居藏寨含门票内，其余免费</span>
+      <span class="pk-tip">💡 每个观景台均有小型停车区，免费使用。甲居藏寨自驾车可入寨内。疙瘩梁子垭口停车区最大可休整。</span>
     </div>
-
     <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
       <h2>🍽️ 餐饮推荐</h2>
       <div class="food-grid">
@@ -766,30 +750,29 @@ body {
           <div class="f-name">🌅 早餐</div>
           <div class="f-shop">见山民宿藏式早餐</div>
           <div class="f-price">人均 ¥20</div>
-          <div class="f-note">青稞饼、酥油茶、鸡蛋、糌粑、粥。早起先开车到猫鼻梁（10分钟）拍晨光，回民宿吃早餐后出发。</div>
+          <div class="f-note">早起先开车到猫鼻梁（10分钟）拍晨光中的四姑娘山全景——上午顺光比D6下午效果好太多。回见山民宿吃藏式早餐后出发。今天直奔丹巴，不用在双桥沟停留（已D6下午游完）。 地址：四姑娘山镇见山民宿</div>
         </div>
         <div class="food-item">
           <div class="f-name">☀️ 午餐</div>
           <div class="f-shop">丹巴县城藏餐</div>
           <div class="f-price">人均 ¥45</div>
-          <div class="f-note">藏式面片、牦牛肉包子、糌粑、酥油茶。丹巴县城是D7唯一有餐馆的中转点！务必吃饱并买好干粮——丹巴→八美→塔公段中途无餐馆。</div>
+          <div class="f-note">丹巴县城是D7出双桥沟后唯一有餐馆的中转点。建议在丹巴吃饱并买好干粮——丹巴→八美→塔公段中途无餐馆，只能靠车上干粮。 地址：丹巴县城</div>
         </div>
         <div class="food-item">
           <div class="f-name">🌙 晚餐</div>
           <div class="f-shop">新都桥藏餐馆/川菜馆</div>
           <div class="f-price">人均 ¥70</div>
-          <div class="f-note">牦牛肉汤锅、藏式烤饼、酥油茶、手抓牦牛肉。新都桥海拔3460米，汤锅暖身首选。明天需早起拍杨树长廊，早点吃完休息。</div>
+          <div class="f-note">新都桥海拔3460米，高原适应第三天应该已基本无恙。汤锅暖身首选。镇上有藏餐和川菜可选，川菜更易适应高原胃。部分客栈可提前预约晚餐。明天需要早起拍杨树长廊，早点吃完休息。 地址：新都桥镇主街</div>
         </div>
       </div>
     </div>
-
     <div class="hotel-rec-section">
       <div class="hr-title">🏨 推荐住宿（新都桥第1晚）</div>
       <div class="hr-grid">
         <div class="hr-item">
           <div class="hr-name">贡嘎宗庄园/等枫来客栈</div>
           <div class="hr-price">💰 ¥400-500/晚</div>
-          <div class="hr-desc">新都桥镇，近十里杨树长廊 · 藏式庄园风格，庭院可远眺贡嘎雪山。房间供暖充足（地暖/电热毯）。明天清晨步行即到杨树长廊拍金色光影。</div>
+          <div class="hr-desc">新都桥品质住宿标杆，藏式庄园风格，庭院可远眺贡嘎雪山。房间供暖充足（地暖/电热毯），高原夜晚必备。部分房型直面杨树长廊，秋色入窗。明天清晨步行即到杨树长廊拍金色光影。</div>
         </div>
       </div>
     </div>
@@ -801,63 +784,69 @@ body {
   <div class="day-header d3">
     <div class="day-num">Day 8 · 秘境S434</div>
     <div class="day-title">红海子雪山倒影与归途</div>
-    <div class="day-route">清晨新都桥杨树长廊拍金色光影 → S434秘境省道：红海子→雅拉山口→康定机场路→斯丁措→折多塘 → 泸定桥 → 雅安→成都还车</div>
+    <div class="day-route">清晨新都桥杨树长廊拍摄金色光影，不走G318改走S434秘境省道，途经红海子雪山倒影、雅拉山口4400米垭口、康定机场路公路大片、斯丁措、折多塘观景台，经泸定桥后经雅安返回成都还车</div>
   </div>
   <div class="spots-wrapper">
+    <div class="route-bar">
+      
+<span class="dot"></span>      <span class="r-item">🍂 新都桥杨树长廊晨拍</span>      <span>→ 🚗 10分钟/5公里 →</span>      <span class="r-item">🏔️ S434秘境省道（红…</span>      <span>→ 🚗 3-4小时（含停靠）/110公里 →</span>      <span class="r-item">🌉 泸定桥</span>
+    </div>
+
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🍂</div>
         <div>
           <div class="spot-name">新都桥杨树长廊晨拍 <span class="spot-price">免费</span>
-            <span class="spot-transit">🚗 从客栈 <span class="transit-time">5km/10min</span></span>
-          </div>
-          <div class="spot-desc">新都桥被誉为「摄影家的天堂」，十里杨树长廊是核心景观带。9月底杨树开始变金黄，清晨8点前阳光斜射穿过杨树林，光影斑驳如金色隧道。最佳拍摄段在新都桥镇至塔公方向3-10公里处。公路两旁杨树夹道，远处雅拉雪山和贡嘎山系做背景——川西最经典的公路大片机位。</div>
+            <span class="spot-transit">🚗 贡嘎宗庄园/等枫来客栈 <span class="transit-time">5公里/10分钟</span></span></div>
+          <div class="spot-desc">新都桥被誉为「摄影家的天堂」，十里杨树长廊是核心景观带。9月底杨树开始变金黄，清晨8点前阳光斜射穿过杨树林，光影斑驳如金色隧道。最佳拍摄段在新都桥镇至塔公方向3-10公里处。公路两旁杨树夹道，远处雅拉雪山和贡嘎山系做背景。公路S弯+杨树+雪山——川西最经典的公路大片机位。</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 8点前金色光影最浓，9点后光线变硬效果大减。S弯+杨树+雪山背景最佳。公路两侧皆可拍，注意来往车辆。</div>
           <div class="spot-romance">💕 清晨八点前，阳光斜穿过杨树长廊，在地面画出金色栅栏。你和TA走在光影斑驳的公路上，远方的雪山若隐若现。这一刻，新都桥的十里杨树只属于你们两个人——「摄影家的天堂」原来不需要相机，用心就能记住。</div>
-          <div class="pitfall">⚠️ 新都桥最佳拍摄时间仅早上8点前约1小时！9点后光线变硬效果大减。D8务必早起，清晨先拍完杨树长廊再出发上S434。</div>
+          <div class="pitfall">⚠️ 新都桥最佳拍摄时间仅8点前约1小时！9点后光线变硬效果大打折扣。务必早起。10月国庆期间杨树最黄。</div>
         </div>
       </div>
     </div>
+
 
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🏔️</div>
         <div>
-          <div class="spot-name">S434秘境省道 · 红海子-雅拉山口-康定机场路 <span class="spot-price">红海子¥10清洁费 其余免费</span>
-            <span class="spot-transit">🚗 自驾 <span class="transit-time">110km/3-4h含停靠</span></span>
-          </div>
-          <div class="spot-desc">S434省道是G318之外的另一条康定通道，车少景美，是资深自驾玩家私藏的秘境公路。全程约110km、3-4h（含停靠）。五大停靠点：红海子/加呷腊——笔架雪山倒映在湖面，湖边有秋千（清洁费¥10，只收现金！）；雅拉山口——海拔4400米经幡垭口，雪山环绕（免费）；康定机场路——远眺贡嘎群峰，公路照大片机位（免费）；斯丁措——晴天贡嘎倒影绝美，阴天直接跳过（免费）；折多塘观景台——下山看雪峰+秋季彩林（免费）。走S434不走G318——货车少90%，海子多100%！</div>
+          <div class="spot-name">S434秘境省道（红海子-雅拉山口-康定机场路-斯丁措-折多塘） <span class="spot-price">免费</span>
+            <span class="spot-transit">🚗 新都桥杨树长廊 <span class="transit-time">110公里/3-4小时（含停靠）</span></span></div>
+          <div class="spot-desc">S434省道是G318之外的另一条康定通道，车少景美，是资深自驾玩家私藏的秘境公路。全程约110公里、3-4小时（含停靠）。五大停靠点：红海子/加呷腊——笔架雪山倒映在湖面，湖边有秋千（清洁费¥10，下午顺光）；雅拉山口——海拔4400米经幡垭口，雪山环绕（免费）；康定机场路——远眺贡嘎群峰，公路照大片机位（免费）；斯丁措——晴天贡嘎倒影绝美，阴天直接跳过（免费）；折多塘观景台——下山看雪峰+秋季彩林（免费）。走S434不走G318——货车少90%，海子多100%！</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 红海子下午顺光拍雪山倒影最佳。秋千是红海子标志打卡点。康定机场路拍公路大片需注意安全，靠边停车开双闪。斯丁措阴天效果差直接跳过。雅拉山口经幡+雪山人像。</div>
           <div class="spot-romance">💕 红海子——湖面如镜，笔架山雪峰倒过来，湖边有个秋千。TA坐上去，背后是蓝天雪山。你推了一把，风大到手抖，照片糊了。但这张糊掉的照片后来成了TA最喜欢的屏保——「因为看不清表情的照片最真实」。</div>
-          <div class="pitfall">⚠️ 红海子清洁费¥10/人只收现金！手机可能没信号。斯丁措阴天看不到倒影，直接跳过不纠结。折多塘附近为禁飞区，严禁飞无人机！雅拉山口海拔4400米风极大注意保暖。</div>
+          <div class="pitfall">⚠️ 红海子清洁费¥10/人只收现金！务必备好零钱，手机可能没信号。斯丁措阴天看不到倒影，直接跳过不纠结。折多塘附近为禁飞区，严禁飞无人机！雅拉山口海拔4400米风极大，注意保暖。</div>
         </div>
       </div>
     </div>
-    <div class="waypoint-bar">🏔️ 红海子/加呷腊（约30km处）· 停车区、湖边秋千 · 💡 笔架雪山倒映湖中，下午顺光。清洁费¥10/人只收现金！手机可能没信号。海拔约4200米。</div>
-    <div class="waypoint-bar">🏔️ 雅拉山口（约45km处）· 停车区、经幡 · 💡 海拔4400米垭口，此行最高点。风极大温度低，拍照10-15min勿久待。经幡猎猎雪山环绕。</div>
-    <div class="waypoint-bar">🏔️ 康定机场路（约60km处）· 路边停车 · 💡 远眺贡嘎群峰最佳路段。公路在高原上笔直延伸，川西经典公路大片机位。靠边停车开双闪。</div>
-    <div class="waypoint-bar">🏔️ 斯丁措（约70km处）· 停车区 · 💡 晴天贡嘎倒影绝美，阴天直接跳过。免费。海拔约4200米。如已在红海子拍够倒影可跳过。</div>
-    <div class="waypoint-bar">🏔️ 折多塘观景台（约90km处）· 观景台、停车区 · 💡 下行方向看雪峰+秋季彩林。禁飞区严禁无人机！下午光线斜射彩林层次最佳。</div>
+    <div class="waypoint-bar">🏔️ 红海子/加呷腊（约30km处）· 停车区、湖边秋千、简易厕所 · 💡 笔架雪山倒映湖中，下午顺光。清洁费¥10/人只收现金！手机可能没信号。湖边秋千是标志打卡点。湖面如镜时倒影最完美。海拔约4200米。</div>
+    <div class="waypoint-bar">🏔️ 雅拉山口（约45km处）· 停车区、经幡 · 💡 海拔4400米垭口，经幡猎猎，雪山环绕。风极大温度低，穿好防风外套。停车拍照10-15分钟，不要久待。这里是此行海拔最高点。</div>
+    <div class="waypoint-bar">🏔️ 康定机场路（约60km处）· 路边停车 · 💡 远眺贡嘎群峰最佳路段。公路在高原上笔直延伸，雪山做背景——川西经典公路大片机位。靠边停车开双闪，注意来往车辆。阴天效果打折。</div>
+    <div class="waypoint-bar">🏔️ 斯丁措（约70km处）· 停车区 · 💡 晴天贡嘎倒影绝美，阴天湖面无倒影直接跳过。免费。海拔约4200米。如已在红海子拍够倒影可跳过。</div>
+    <div class="waypoint-bar">🏔️ 折多塘观景台（约90km处）· 观景台、停车区 · 💡 下行方向看雪峰+秋季彩林。免费。此处为禁飞区严禁无人机！下午光线斜射彩林层次最佳。</div>
     <div class="parking-info">
       🅿️ 沿途各观景台停车区 · 即到即停 · <span class="pk-price">红海子¥10/人清洁费（只收现金），其余免费</span>
+      <span class="pk-tip">💡 红海子有收费停车+清洁费¥10/人（只收现金）。其余观景台免费停车。康定机场路停车注意安全开双闪。</span>
     </div>
-
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">🌉</div>
         <div>
           <div class="spot-name">泸定桥 <span class="spot-price">¥10</span>
-            <span class="spot-transit">🚗 从康定（折多塘） <span class="transit-time">50km/1h</span></span>
-          </div>
-          <div class="spot-desc">横跨大渡河的铁索桥，全长103米，始建于清康熙年间，因红军飞夺泸定桥闻名。桥面铺设木板，行走时桥身摇晃，脚下大渡河咆哮奔涌，极为震撼。游览约30-45分钟。泸定至雅安全程高速（雅康高速），约1小时即可上高速。</div>
+            <span class="spot-transit">🚗 康定（折多塘） <span class="transit-time">50公里/1小时</span></span></div>
+          <div class="spot-desc">横跨大渡河的铁索桥，全长103米，始建于清康熙年间，因红军飞夺泸定桥闻名。桥面铺设木板，行走时桥身摇晃，脚下大渡河咆哮奔涌，极为震撼。上桥体验红军当年的惊心动魄——走在晃动的铁索桥上，双手紧抓铁链，脚下河水翻腾。游览约30-45分钟。泸定县城有简单的餐馆可补充能量。泸定至雅安全程高速（雅康高速），约1小时即可上高速。</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 桥上拍大渡河奔涌+铁索细节。桥头康熙御碑可拍人文打卡照。过桥后对岸回拍全貌。</div>
           <div class="spot-romance">💕 牵手走过泸定桥的铁索，脚下大渡河咆哮奔涌。桥身每晃一下TA就把你的手握得更紧一些——不是因为害怕，是因为这趟川西自驾走到了最后一站，而你们还不想让它结束。过了这座桥，就是回成都的路。</div>
-          <div class="pitfall">⚠️ 节假日泸定桥排队可能超1小时！如赶时间可远观不进场。泸定→雅安→成都约280公里需3.5-4小时高速，预留充足回程时间。雅康高速隧道群密集测速摄像头多，按限速行驶。</div>
+          <div class="pitfall">⚠️ 节假日泸定桥排队可能超1小时！如赶时间可远观不进场。泸定→雅安→成都约280公里需3.5-4小时高速，预留充足回程时间。D8康定到雅安全程高速，注意限速。</div>
         </div>
       </div>
     </div>
+
     <div class="parking-info">
       🅿️ 泸定桥景区停车场 · 步行2分钟 · <span class="pk-price">¥10-20/次</span>
-      <span class="pk-tip">💡 节假日车位紧张，可停稍远居民区路边再步行过来。</span>
+      <span class="pk-tip">💡 节假日车位紧张，可停稍远的居民区路边再步行过来</span>
     </div>
-
     <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
       <h2>🍽️ 餐饮推荐</h2>
       <div class="food-grid">
@@ -865,30 +854,29 @@ body {
           <div class="f-name">🌅 早餐</div>
           <div class="f-shop">客栈早餐或新都桥镇上早餐</div>
           <div class="f-price">人均 ¥20</div>
-          <div class="f-note">藏式饼、酥油茶、鸡蛋、粥。拍完杨树长廊后回客栈用餐或在镇上找早餐。</div>
+          <div class="f-note">早起拍完杨树长廊后回客栈用餐或在镇上找早餐。新都桥早餐以藏餐和简餐为主。 地址：新都桥镇</div>
         </div>
         <div class="food-item">
           <div class="f-name">☀️ 午餐</div>
           <div class="f-shop">康定/泸定简餐</div>
           <div class="f-price">人均 ¥35</div>
-          <div class="f-note">牦牛肉面、藏式面片、川味盖饭、抄手。泸定桥附近小吃店多。赶时间可车上吃干粮。</div>
+          <div class="f-note">康定和泸定县城有简餐馆，价格实惠。泸定桥附近小吃店多。如果赶时间可以在车上吃干粮，雅安服务区也有餐饮。 地址：康定或泸定县城</div>
         </div>
         <div class="food-item">
           <div class="f-name">🌙 晚餐</div>
           <div class="f-shop">巷子肥肠</div>
           <div class="f-price">人均 ¥40</div>
-          <div class="f-note">三天川西自驾归来再来一顿——卤肥肠软糯+豆汤饭暖胃。所有疲惫都被治愈。如还车较晚可在还车点附近就近解决。</div>
+          <div class="f-note">成都本地人钟爱的肥肠专门店，卤肥肠软糯入味，豆汤饭清鲜暖胃。三天川西自驾的最后一顿——一碗豆汤饭一碟卤肥肠，把高原的风雪和垭口的经幡都消化在成都的烟火气里。如还车较晚可在还车点附近就近解决。 地址：成都市锦江区一环路东五段附近</div>
         </div>
       </div>
     </div>
-
     <div class="hotel-rec-section">
       <div class="hr-title">🏨 推荐住宿（成都第5晚 · 续住）</div>
       <div class="hr-grid">
         <div class="hr-item">
           <div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
           <div class="hr-price">💰 ¥250-350/晚</div>
-          <div class="hr-desc">成都春熙路 · 自驾归来最后一天。一嗨成都门店还车后打车回酒店。D9退房赶机。还车前确认加满油。</div>
+          <div class="hr-desc">川西自驾归来最后一晚。一嗨成都门店还车后打车回嘉立精选。D8晚回到成都，楼下美食街丰富——可以再去吃一顿巷子肥肠或来碗担担面。明天D9飞回，如果上午有时间还可以去宽窄巷子拍拍照。</div>
         </div>
       </div>
     </div>
@@ -900,22 +888,23 @@ body {
   <div class="day-header d4">
     <div class="day-num">Day 9 · 收官蓉城</div>
     <div class="day-title">最后一顿川味与告别</div>
-    <div class="day-route">上午成都最后一顿地道美食 → 宽窄巷子只逛不买 → 下午整理行李前往机场 → 晚班飞回珠三角</div>
+    <div class="day-route">上午成都最后一顿地道美食补足，有时间可去宽窄巷子只逛不买拍拍照，下午整理行李前往机场，晚班飞回珠三角</div>
   </div>
   <div class="spots-wrapper">
     <div class="spot">
       <div class="spot-head">
         <div class="spot-icon">📸</div>
         <div>
-          <div class="spot-name">宽窄巷子 · 只逛不消费 <span class="spot-price">免费</span>
-            <span class="spot-transit">🚗 从酒店打车 <span class="transit-time">5km/15min</span></span>
-          </div>
-          <div class="spot-desc">成都必打卡地标，由宽巷子、窄巷子、井巷子三条平行古街组成。青砖黛瓦、四合院落、盖碗茶、川剧变脸——成都最后的慢生活缩影。只逛不买：拍照打卡建筑+街头艺人表演+熊猫周边橱窗，吃和购物都不在景区内——外面便宜且好吃得多。逛街30-60分钟即可。</div>
-          <div class="spot-romance">💕 最后一天在宽窄巷子，青砖黛瓦的四合院前，你们最后一次拍了张合影。九天的九寨川西之旅——高铁入九寨、Y字路线的蓝、G350熊猫大道的雪山长廊、双桥沟的红杉林、疙瘩梁子的风、红海子的秋千、巷子肥肠的卤肥肠——都在这张照片里。不是结束，是下一次出发的起点。</div>
-          <div class="pitfall">⚠️ 宽窄巷子/锦里吃饭和购物价格是外面的2-3倍！只逛不买，拍照打卡即可。伴手礼（火锅底料/兔头/张飞牛肉）去红旗连锁超市买比景区便宜30-50%。</div>
+          <div class="spot-name">宽窄巷子（只逛不消费） <span class="spot-price">免费</span>
+            <span class="spot-transit">🚗 嘉立精选酒店(成都春熙路太古里店) <span class="transit-time">5公里/15分钟</span></span></div>
+          <div class="spot-desc">成都必打卡地标，由宽巷子、窄巷子、井巷子三条平行古街组成。青砖黛瓦、四合院落、盖碗茶、川剧变脸——成都最后的慢生活缩影。只逛不买：拍照打卡建筑+街头艺人表演+熊猫周边橱窗，吃和购物都不在景区内——外面便宜且好吃得多。逛街30-60分钟即可。如有时间可顺便采购伴手礼（火锅底料、张飞牛肉、兔头真空装），但不深逛。</div>
+          <div class="parking-info" style="background:#fff7ed;border-left-color:#f97316;color:#9a3412;">📷 宽巷子砖墙+窄巷子木门+井巷子老井，三巷各有特色。早晨人少拍照最佳。</div>
+          <div class="spot-romance">💕 最后一天在宽窄巷子，青砖黛瓦的四合院前，你们最后一次拍了张合影。九天的九寨川西之旅——D3高铁入九寨、D4 Y字路线的蓝、D2都江堰的安澜索桥、D5熊猫+茶社的慢成都、D6 G350熊猫大道的雪山长廊、D7疙瘩梁子的风、D8红海子的秋千——都在这张照片里。不是结束，是下一次出发的起点。</div>
+          <div class="pitfall">⚠️ 宽窄巷子/锦里吃饭和购物价格是外面的2-3倍！只逛不买，拍照打卡即可。吃饭去真正的苍蝇馆子。伴手礼可买但比外面贵30-50%，不如去附近红旗连锁超市采购。</div>
         </div>
       </div>
     </div>
+
 
     <div class="food-section" style="margin: 16px 24px; padding: 16px 20px; box-shadow: none;">
       <h2>🍽️ 餐饮推荐</h2>
@@ -924,16 +913,17 @@ body {
           <div class="f-name">🌅 早餐</div>
           <div class="f-shop">酒店早餐或周边小吃</div>
           <div class="f-price">人均 ¥15</div>
-          <div class="f-note">担担面、红油抄手、豆浆油条。</div>
+          <div class="f-note"> 地址：酒店周边</div>
         </div>
         <div class="food-item">
           <div class="f-name">☀️ 午餐</div>
           <div class="f-shop">雨田饭店（再吃一顿）</div>
           <div class="f-price">人均 ¥52</div>
-          <div class="f-note">出发前再来一顿雨田——荷叶粉蒸肉、藕汤、蒸蛋、红烧肉。D1和D9首尾呼应，九寨川西之旅最完美的句号。地址：锦江区红星路二段20号1层附9号。</div>
+          <div class="f-note">如果时间充裕，出发前再来一顿雨田——红烧肉的酱香+藕汤的清甜，是九寨川西之旅最完美的句号。或者去附近买伴手礼（火锅底料/张飞牛肉/兔头），只买不深逛。 地址：成都市锦江区红星路二段20号1层附9号</div>
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -946,61 +936,61 @@ body {
         <div class="f-name">🥢 雨田饭店</div>
         <div class="f-shop">川菜·苍蝇馆子 · websearch</div>
         <div class="f-price">人均 ¥52</div>
-        <div class="f-note">推荐：荷叶粉蒸肉、藕汤、蒸蛋、红烧肉、火爆肥肠。1985年创立，BBC纪录片取景地。D1和D9首尾呼应。</div>
+        <div class="f-note">推荐：荷叶粉蒸肉, 藕汤, 蒸蛋, 红烧肉。成都资历最老的私营餐馆之一，1985年创立近40年。BBC纪录片取景地。红烧肉+藕汤经典搭配¥52/人，米饭¥1不限量。D1和D9首尾呼应。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 永乐饭店</div>
         <div class="f-shop">川菜·家常菜 · websearch</div>
         <div class="f-price">人均 ¥50</div>
-        <div class="f-note">推荐：宫保鸡丁、糯米排骨、肝腰合炒、圆子汤。米其林必比登推荐，成都家常菜天花板。</div>
+        <div class="f-note">推荐：宫保鸡丁, 糯米排骨, 肝腰合炒, 圆子汤。米其林必比登推荐，1985年开业近40年。成都家常菜天花板，宫保鸡丁+糯米排骨招牌搭配¥50/人。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 明园饭店</div>
         <div class="f-shop">川菜·老馆子 · websearch</div>
         <div class="f-price">人均 ¥50</div>
-        <div class="f-note">推荐：大蒜白油肚条、鱼香茄饼、肝腰合炒、蒜苗回锅肉。主厨年过七旬，没有固定菜单。</div>
+        <div class="f-note">推荐：大蒜白油肚条, 鱼香茄饼, 肝腰合炒, 蒜苗回锅肉。主厨年过七旬的老牌川菜馆，没有固定菜单直接到厨房选食材。老板娘凉拌菜甜辣味拿手。市井烟火气浓。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 老号尤兔头</div>
         <div class="f-shop">川菜·小吃 · websearch</div>
         <div class="f-price">人均 ¥40</div>
-        <div class="f-note">推荐：麻辣兔头（¥11/个）、五香兔头、鲜锅兔、清波水饺。都江堰二十多年老店。</div>
+        <div class="f-note">推荐：麻辣兔头（¥11/个）, 五香兔头, 鲜锅兔, 清波水饺。都江堰二十多年老店，本地人说「来都江堰不吃尤兔头等于白来」。麻辣兔头软糯脱骨，裹满香辣酱料花生碎白芝麻。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 太平张醪糟</div>
         <div class="f-shop">川味小吃·非遗 · websearch</div>
         <div class="f-price">人均 ¥15</div>
-        <div class="f-note">推荐：红糖醪糟粉子蛋、红糖糍粑、冰醪糟。百年非遗老店，手工现搓粉子软糯Q弹。</div>
+        <div class="f-note">推荐：红糖醪糟粉子蛋, 红糖糍粑, 冰醪糟。百年非遗老店，手工现搓粉子软糯Q弹，醪糟自酿浓郁，溏心蛋是灵魂。¥15/人。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 黑竹香鸡</div>
         <div class="f-shop">川菜·火锅 · websearch</div>
         <div class="f-price">人均 ¥50</div>
-        <div class="f-note">推荐：乌骨鸡魔芋火锅、芋儿鸡。成都本地人私藏苍蝇馆子，深巷中的惊艳味道。</div>
+        <div class="f-note">推荐：乌骨鸡魔芋火锅, 芋儿鸡, 魔芋。成都本地人私藏苍蝇馆子，乌骨鸡配魔芋+笋子一绝，深巷中的惊艳味道。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 三哥田螺</div>
         <div class="f-shop">川菜·宵夜档 · websearch</div>
         <div class="f-price">人均 ¥100</div>
-        <div class="f-note">推荐：香辣大田螺、火爆黄喉、鱼香虾仁、干烧鲫鱼。1989年起家，营业至凌晨4点。</div>
+        <div class="f-note">推荐：香辣大田螺, 火爆黄喉, 鱼香虾仁, 干烧鲫鱼。1989年起家的成都宵夜传奇，重油重麻辣川式爆炒，承包两条街烟火气。凌晨4点才打烊。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 扎西藏餐</div>
         <div class="f-shop">藏餐 · websearch</div>
         <div class="f-price">人均 ¥100</div>
-        <div class="f-note">推荐：牦牛肉火锅、酥油茶、糌粑、藏式酸奶。九寨沟口漳扎镇口碑最好，高原第一晚暖身首选。</div>
+        <div class="f-note">推荐：牦牛肉火锅, 酥油茶, 糌粑, 藏式酸奶。九寨沟口漳扎镇口碑最好的藏餐馆之一，牦牛肉火锅汤底浓郁肉软烂入味。高原第一晚暖身首选。¥80-120/人。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 阿布氇孜藏餐厅</div>
         <div class="f-shop">藏餐 · websearch</div>
         <div class="f-price">人均 ¥90</div>
-        <div class="f-note">推荐：牦牛肉汤锅、藏式烤羊排、酥油茶、藏式酸奶。九寨沟口漳扎镇人气藏餐厅。</div>
+        <div class="f-note">推荐：牦牛肉汤锅, 藏式烤羊排, 酥油茶, 藏式酸奶。九寨沟口漳扎镇人气藏餐厅，牦牛肉汤锅和烤羊排招牌，浓郁不膻。暴走一天九寨沟后的最美妙慰藉。¥80-100/人。</div>
       </div>
       <div class="food-item">
         <div class="f-name">🥢 巷子肥肠</div>
         <div class="f-shop">川菜·肥肠 · websearch</div>
         <div class="f-price">人均 ¥40</div>
-        <div class="f-note">推荐：卤肥肠、豆汤饭、肥肠粉、粉蒸肥肠。D5高铁返蓉和D8自驾归来最佳慰藉。</div>
+        <div class="f-note">推荐：卤肥肠, 豆汤饭, 肥肠粉, 粉蒸肥肠。D4高铁返蓉后的最佳慰藉——卤肥肠软糯+豆汤饭暖胃。九寨沟暴走一天后坐2h20min高铁回到成都，一碗豆汤饭一碟卤肥肠把所有疲惫都治愈。¥40/人。D8自驾归来也可再来一顿。</div>
       </div>
     </div>
   </div>
@@ -1011,31 +1001,31 @@ body {
   <h2>⚠️ 避坑清单（26条 · 必看） <span class="collapse-icon">▼</span></h2>
   <div class="collapse-content">
     <div class="avoid-list">
-      <div class="avoid-item"><div class="a-num">1</div><div style="flex:1;"><span class="a-wrong">❌ 在九寨沟诺日朗餐厅吃午餐</span><br><span class="a-right">✅ 诺日朗餐厅又贵又难吃（套餐¥60-100/人，味道敷衍）！D4晚上在漳扎镇超市采购面包、火腿肠、巧克力、自热米饭和水。诺日朗中心站有免费热水可以泡面。</span></div></div>
-      <div class="avoid-item"><div class="a-num">2</div><div style="flex:1;"><span class="a-wrong">❌ D8走G318国道而不是S434省道</span><br><span class="a-right">✅ 从新都桥到康定走S434省道而非G318！G318大货车多90%、堵车频繁、风景一般。S434车少景美——红海子+雅拉山口+康定机场路+斯丁措+折多塘五大免费景点都在S434上。</span></div></div>
+      <div class="avoid-item"><div class="a-num">1</div><div style="flex:1;"><span class="a-wrong">❌ 在九寨沟诺日朗餐厅吃午餐</span><br><span class="a-right">✅ 诺日朗餐厅又贵又难吃（套餐¥60-100/人，味道敷衍）！D3晚上在漳扎镇超市采购面包、火腿肠、巧克力、自热米饭和水。诺日朗中心站有免费热水可以泡面。</span></div></div>
+      <div class="avoid-item"><div class="a-num">2</div><div style="flex:1;"><span class="a-wrong">❌ D8走G318国道而不是S434省道</span><br><span class="a-right">✅ 从新都桥到康定走S434省道而非G318！G318大货车多90%、堵车频繁、风景一般。S434车少景美——红海子+雅拉山口+康定机场路+斯丁措+折多塘五大免费景点都在S434上。G318什么都看不到。</span></div></div>
       <div class="avoid-item"><div class="a-num">3</div><div style="flex:1;"><span class="a-wrong">❌ 红海子不带现金</span><br><span class="a-right">✅ 红海子清洁费¥10/人只收现金！手机可能没信号无法扫码。出发前备好¥1000-2000现金（尤其是¥5/¥10/¥20小面额），川西沿途加油站、路边小店、牧民收费都只收现金。</span></div></div>
       <div class="avoid-item"><div class="a-num">4</div><div style="flex:1;"><span class="a-wrong">❌ 阴天还去斯丁措</span><br><span class="a-right">✅ 斯丁措的看点是贡嘎雪山在湖面的倒影。阴天湖面灰暗无倒影，直接跳过！不要因为「来都来了」浪费半小时。D8沿途红海子+康定机场路+折多塘已足够精彩。</span></div></div>
-      <div class="avoid-item"><div class="a-num">5</div><div style="flex:1;"><span class="a-wrong">❌ 下午到猫鼻梁拍四姑娘山</span><br><span class="a-right">✅ 猫鼻梁下午逆光！D6下午到达时光线已偏斜。D7上午重返猫鼻梁——上午顺光四座雪峰蓝天白雪层次分明。四姑娘山四峰朝东，上午顺光才能拍到完美层次。</span></div></div>
-      <div class="avoid-item"><div class="a-num">6</div><div style="flex:1;"><span class="a-wrong">❌ 依赖疙瘩梁子垭口的厕所</span><br><span class="a-right">✅ 疙瘩梁子垭口海拔3900米，厕所是旱厕且极其简陋（无冲水、无洗手池、气味大）。出发前在丹巴县城或惠远寺提前解决。自带纸巾和零钱。</span></div></div>
+      <div class="avoid-item"><div class="a-num">5</div><div style="flex:1;"><span class="a-wrong">❌ 下午到猫鼻梁拍四姑娘山</span><br><span class="a-right">✅ 猫鼻梁下午逆光！D6下午到达时光线已偏斜，效果一般。D7上午重返猫鼻梁——上午顺光四座雪峰蓝天白雪层次分明。四姑娘山四峰朝东，上午顺光才能拍到完美层次。D7从见山民宿出发仅10分钟车程，拍完晨光再回民宿吃早餐出发去丹巴。</span></div></div>
+      <div class="avoid-item"><div class="a-num">6</div><div style="flex:1;"><span class="a-wrong">❌ 依赖疙瘩梁子垭口的厕所</span><br><span class="a-right">✅ 疙瘩梁子垭口海拔3900米，厕所是旱厕且极其简陋（无冲水、无洗手池、气味大）。出发前在丹巴县城或惠远寺提前解决。自带纸巾和零钱。女性游客尤其要有心理准备——川西高原厕所条件普遍较差。</span></div></div>
       <div class="avoid-item"><div class="a-num">7</div><div style="flex:1;"><span class="a-wrong">❌ 进塔公草原收费景区（¥35/人）</span><br><span class="a-right">✅ 塔公草原收费区¥35/人完全不值得进！路边免费位置就能拍到木雅金塔和雅拉雪山完美同框，视角和收费区完全一样。省下¥70（两人）够一顿牦牛肉汤锅。</span></div></div>
       <div class="avoid-item"><div class="a-num">8</div><div style="flex:1;"><span class="a-wrong">❌ 巴朗山隧道前后路段不减速</span><br><span class="a-right">✅ 巴朗山段海拔超4000米，秋冬清晨隧道口附近路面可能有暗冰！务必减速慢行（建议≤40km/h），尤其是弯道和背阴路段。9月底一般没有暗冰但仍需保持警惕。</span></div></div>
-      <div class="avoid-item"><div class="a-num">9</div><div style="flex:1;"><span class="a-wrong">❌ 折多塘观景台飞无人机</span><br><span class="a-right">✅ 折多塘附近为禁飞区！康定机场就在附近，严禁飞无人机！违规轻则没收重则罚款拘留。出发前务必在DJI Fly APP确认飞行区域是否在限飞/禁飞范围。</span></div></div>
+      <div class="avoid-item"><div class="a-num">9</div><div style="flex:1;"><span class="a-wrong">❌ 折多塘观景台飞无人机</span><br><span class="a-right">✅ 折多塘附近为禁飞区！康定机场就在附近，严禁飞无人机！违规轻则没收重则罚款拘留。出发前务必在DJI Fly APP确认飞行区域是否在限飞/禁飞范围。雅拉山口和机场路同样谨慎。</span></div></div>
       <div class="avoid-item"><div class="a-num">10</div><div style="flex:1;"><span class="a-wrong">❌ 丹巴到八美/塔公段不备干粮</span><br><span class="a-right">✅ 丹巴→八美→塔公段中途无餐馆！牦牛河谷、雅拉雪山观景台、疙瘩梁子沿途都是纯粹的公路+风景，没有任何餐饮。在丹巴县城吃饱并买好干粮再出发。</span></div></div>
       <div class="avoid-item"><div class="a-num">11</div><div style="flex:1;"><span class="a-wrong">❌ 高原不涂防晒霜</span><br><span class="a-right">✅ 川西高原紫外线是平原的5-10倍！即使阴天也要涂SPF50+防晒霜，墨镜+遮阳帽必备。半天不涂就会晒伤脱皮。D5-D8海拔全程2000-4400米，暴露在外的皮肤半小时就晒红。润唇膏同样必备。</span></div></div>
       <div class="avoid-item"><div class="a-num">12</div><div style="flex:1;"><span class="a-wrong">❌ 九寨沟门票当天现场买</span><br><span class="a-right">✅ 九寨沟门票需提前网上预约！旺季（国庆）票源紧张可能提前售罄。在「阿坝旅游网」或携程/美团提前购票并预约入园时间段。门票¥259含观光车，刷身份证入园。</span></div></div>
-      <div class="avoid-item"><div class="a-num">13</div><div style="flex:1;"><span class="a-wrong">❌ 川西自驾不下载离线地图</span><br><span class="a-right">✅ G350巴朗山段、丹巴至八美山区、S434部分路段均无手机信号！出发前在高德/百度地图下载「阿坝藏族羌族自治州」+「甘孜藏族自治州」离线地图包。D6-D8三天完全依赖离线导航。</span></div></div>
-      <div class="avoid-item"><div class="a-num">14</div><div style="flex:1;"><span class="a-wrong">❌ 康定到雅安高速超速行驶</span><br><span class="a-right">✅ D8康定到雅安全程高速（雅康高速），虽然路面平坦但限速严格（隧道多限80km/h）。雅康高速隧道群密集且测速摄像头多，务必按限速行驶。</span></div></div>
+      <div class="avoid-item"><div class="a-num">13</div><div style="flex:1;"><span class="a-wrong">❌ 川西自驾不下载离线地图</span><br><span class="a-right">✅ G350巴朗山段、丹巴至八美山区、S434部分路段均无手机信号！出发前在高德/百度地图下载「阿坝藏族羌族自治州」+「甘孜藏族自治州」离线地图包。D6-D8三天完全依赖离线导航。成都出发前确认离线地图已下载完毕。</span></div></div>
+      <div class="avoid-item"><div class="a-num">14</div><div style="flex:1;"><span class="a-wrong">❌ 康定到雅安高速超速行驶</span><br><span class="a-right">✅ D8康定到雅安全程高速（雅康高速），虽然路面平坦但限速严格（隧道多限80km/h）。雅康高速隧道群密集且测速摄像头多，务必按限速行驶。泸定到雅安约1.5小时，雅安到成都约1.5小时。</span></div></div>
       <div class="avoid-item"><div class="a-num">15</div><div style="flex:1;"><span class="a-wrong">❌ 双桥沟错过末班景区车</span><br><span class="a-right">✅ 双桥沟末班景区车约17:00-17:30从红杉林发出（具体以当天公告为准）。错过末班车需步行十几公里出沟！务必在第一个停靠点时确认末班车时间并至少提前30分钟到达最后一个乘车点。</span></div></div>
-      <div class="avoid-item"><div class="a-num">16</div><div style="flex:1;"><span class="a-wrong">❌ 四姑娘山镇到达当晚洗澡洗头</span><br><span class="a-right">✅ 四姑娘山镇海拔3200米，高原第一晚不要洗澡洗头！热水促进血液循环会加剧高反。用湿毛巾擦身即可，第二天适应后再洗澡。同时避免饮酒、剧烈运动。</span></div></div>
+      <div class="avoid-item"><div class="a-num">16</div><div style="flex:1;"><span class="a-wrong">❌ 四姑娘山镇到达当晚洗澡洗头</span><br><span class="a-right">✅ 四姑娘山镇海拔3200米，D6虽然只开了220km/4h（比旧方案轻松一半），但高原第一晚仍建议不要洗澡洗头！热水促进血液循环会加剧高反。用湿毛巾擦身即可，第二天适应后再洗澡。同时避免饮酒、剧烈运动。</span></div></div>
       <div class="avoid-item"><div class="a-num">17</div><div style="flex:1;"><span class="a-wrong">❌ 新都桥中午或下午去拍杨树长廊</span><br><span class="a-right">✅ 新都桥最佳拍摄时间仅早上8点前约1小时！阳光斜射穿过杨树形成金色光影隧道。9点后光线变硬效果大减。D8务必早起，清晨先拍完杨树长廊再出发上S434。</span></div></div>
       <div class="avoid-item"><div class="a-num">18</div><div style="flex:1;"><span class="a-wrong">❌ 宽窄巷子/锦里吃饭和购物</span><br><span class="a-right">✅ 只逛不消费，拍照打卡即可。吃饭去真正的苍蝇馆子（明园饭店、雨田饭店、巷子肥肠等），价格只有景区一半，味道好十倍。伴手礼（火锅底料/兔头/张飞牛肉）去红旗连锁超市买比景区便宜30-50%。</span></div></div>
-      <div class="avoid-item"><div class="a-num">19</div><div style="flex:1;"><span class="a-wrong">❌ 熊猫基地10点以后才到</span><br><span class="a-right">✅ 7:30开门就进！大熊猫9点前最活跃（进食+玩耍），10点后多数开始睡觉，下午只能看到熊猫屁股。D2把熊猫基地安排在最前面，看完熊猫再去茶馆才是完美节奏。</span></div></div>
+      <div class="avoid-item"><div class="a-num">19</div><div style="flex:1;"><span class="a-wrong">❌ 熊猫基地10点以后才到</span><br><span class="a-right">✅ D5不用赶7:30——经历了九寨沟两天高原奔波后，今天是成都慢生活恢复日。9:00-10:00到也能看到活跃的熊猫，睡到自然醒再去完全OK。鹤鸣茶社和太古里就在市区，时间充裕。</span></div></div>
       <div class="avoid-item"><div class="a-num">20</div><div style="flex:1;"><span class="a-wrong">❌ 垭口和观景台长时间逗留不穿衣</span><br><span class="a-right">✅ 雅拉山口4400米、巴朗山4487米、疙瘩梁子3900米——垭口风极大、温度常年比山下低10-15°C。下车前穿好冲锋衣+抓绒+薄羽绒，戴好帽子和手套。拍照10-15分钟即回车内，控制停留时间防高反。</span></div></div>
-      <div class="avoid-item"><div class="a-num">21</div><div style="flex:1;"><span class="a-wrong">❌ 都江堰景区走常规路线上坡</span><br><span class="a-right">✅ 走省体力下坡路线：秦堰楼6号门进→二王庙→安澜索桥→鱼嘴→飞沙堰→宝瓶口→离堆公园出。全程下坡不走回头路。如果从离堆公园正门进入则全程上坡，走到秦堰楼腿已废。</span></div></div>
-      <div class="avoid-item"><div class="a-num">22</div><div style="flex:1;"><span class="a-wrong">❌ D5在九寨沟贪玩错过出沟时间</span><br><span class="a-right">✅ D5铁律：15:30必须出沟！盆景滩跳过不值得看。沟口直通车到黄龙九寨站需1.5h，C5798高铁18:19发车不等人。最晚16:00在沟口上直通车。错过这趟高铁下一班可能很晚甚至没票——那就只能在九寨沟口多住一晚，打乱全部后续行程。</span></div></div>
-      <div class="avoid-item"><div class="a-num">23</div><div style="flex:1;"><span class="a-wrong">❌ D5高铁票不提前买</span><br><span class="a-right">✅ 黄龙九寨→成都东高铁票务必提前在12306购买！C5798（18:19→20:39）是黄金时段，旺季票源极紧张可能提前售罄。¥140/人，2h20min到成都。如果这班售罄，备选C5796（17:15→19:46）但出沟时间更赶。</span></div></div>
-      <div class="avoid-item"><div class="a-num">24</div><div style="flex:1;"><span class="a-wrong">❌ D6还走G213松潘方向去四姑娘山</span><br><span class="a-right">✅ 新方案走G350熊猫大道！成都→卧龙→巴朗山→四姑娘山仅220km/4h，而旧方案走G213松潘方向需463km/8h。G350路况更好、风景更美、四大免费观景台全在线上。8:00-9:00出发即可，多出一整个下午玩双桥沟。</span></div></div>
-      <div class="avoid-item"><div class="a-num">25</div><div style="flex:1;"><span class="a-wrong">❌ 川主寺取车而不是成都取还</span><br><span class="a-right">✅ 成都取还一嗨租车零异地费！成都门店多（春熙路/东站/机场）、营业时间长、车型选择多。川主寺网点小且偏远，从九寨沟口到川主寺还需额外1.5h接驳（打车¥150+）。成都取还：D5晚高铁到成都，D6早上悠闲取车出发，全程无忧。省¥500+异地费+¥150接驳费。</span></div></div>
+      <div class="avoid-item"><div class="a-num">21</div><div style="flex:1;"><span class="a-wrong">❌ 都江堰景区走常规路线上坡</span><br><span class="a-right">✅ 走省体力下坡路线：秦堰楼6号门进→二王庙→安澜索桥→鱼嘴→飞沙堰→宝瓶口→离堆公园出。全程下坡不走回头路，体力消耗最小。如果从离堆公园正门进入则全程上坡，走到秦堰楼腿已废。</span></div></div>
+      <div class="avoid-item"><div class="a-num">22</div><div style="flex:1;"><span class="a-wrong">❌ D5在九寨沟贪玩错过出沟时间</span><br><span class="a-right">✅ D4铁律：15:30必须出沟！盆景滩跳过不值得看。沟口直通车到黄龙九寨站需1.5h，C5798高铁18:19发车不等人。最晚16:00在沟口上直通车。错过这趟高铁下一班可能很晚甚至没票——那就只能在九寨沟口多住一晚，打乱全部后续行程。提前一天在漳扎镇超市买好干粮，沟内不浪费时间在诺日朗餐厅排队。</span></div></div>
+      <div class="avoid-item"><div class="a-num">23</div><div style="flex:1;"><span class="a-wrong">❌ D5高铁票不提前买</span><br><span class="a-right">✅ 黄龙九寨→成都东高铁票务必提前在12306购买！C5798（18:19→20:39）是黄金时段，旺季（国庆）票源极紧张可能提前售罄。D4晚上在九寨沟口就可以在手机上买好。¥140/人，2h20min到成都。如果这班售罄，备选C5796（17:15→19:46）但出沟时间更赶。</span></div></div>
+      <div class="avoid-item"><div class="a-num">24</div><div style="flex:1;"><span class="a-wrong">❌ D6还走G213松潘方向去四姑娘山</span><br><span class="a-right">✅ 新方案走G350熊猫大道！成都→卧龙→巴朗山→四姑娘山仅220km/4h，而旧方案走G213松潘方向需463km/8h。G350路况更好、风景更美（熊猫大道名副其实）、距离不到一半。贝母坪、大雪塘、巴朗山隧道口、猫鼻梁四大免费观景台全在G350上。D6不用6:00起床，8:00-9:00出发即可，多出一整个下午玩双桥沟。</span></div></div>
+      <div class="avoid-item"><div class="a-num">25</div><div style="flex:1;"><span class="a-wrong">❌ 川主寺取车而不是成都取还</span><br><span class="a-right">✅ 成都取还一嗨租车零异地费！比川主寺取车稳妥太多——成都门店多（春熙路/东站/机场）、营业时间长、车型选择多。川主寺网点小且偏远，未必有你想要的SUV车型，且从九寨沟口到川主寺还需额外1.5h接驳（打车¥150+）。成都取还：D5晚高铁到成都，D6早上悠闲取车出发，全程无忧。</span></div></div>
       <div class="avoid-item"><div class="a-num">26</div><div style="flex:1;"><span class="a-wrong">❌ D7早上不拍猫鼻梁直接出发</span><br><span class="a-right">✅ D7清晨重返猫鼻梁拍晨光版四姑娘山全景！上午顺光——四峰蓝天白雪层次分明。D6下午是逆光，D7早晨才是「正式版」。猫鼻梁距见山民宿仅10分钟车程，拍完回民宿吃早餐再出发去丹巴，完全不绕路。上午顺光的四姑娘山比下午美十倍。</span></div></div>
     </div>
   </div>
@@ -1044,19 +1034,19 @@ body {
 <!-- ===== BUDGET ===== -->
 <div class="budget-card" data-nav="预算估算">
   <h2>💰 预算估算（2人 · 9天8晚）</h2>
-  <div class="budget-row"><span>✈️ 往返机票</span><span>¥2,000 - 2,800</span></div>
+  <div class="budget-row"><span>✈️ 往返机票</span><span>¥2000-2800</span></div>
   <div class="budget-row"><span>🚄🚌 高铁+直通车</span><span>¥600 + 204 = ¥804</span></div>
-  <div class="budget-row"><span>🚗 租车3天（含油费+过路费）</span><span>¥1,500 - 2,100</span></div>
-  <div class="budget-row"><span>🏨 住宿8晚（成都5+九寨1+四姑娘山1+新都桥1）</span><span>¥2,550 - 3,870</span></div>
-  <div class="budget-row"><span>🎫 门票</span><span>¥1,416</span></div>
-  <div class="budget-row" style="border:none;"><span>🍜 餐饮</span><span>¥2,500 - 3,000</span></div>
-  <div class="budget-total">总计 ¥10,814 - 14,434 · 人均 ¥5,407 - 7,217</div>
+  <div class="budget-row"><span>🚗 租车3天（含油费+过路费）</span><span>¥1500-2100</span></div>
+  <div class="budget-row"><span>🏨 住宿8晚（成都5+九寨1+四姑娘山1+新都桥1）</span><span>¥2550-3870</span></div>
+  <div class="budget-row"><span>🎫 门票</span><span>¥1416</span></div>
+  <div class="budget-row" style="border:none;"><span>🍜 餐饮</span><span>¥2500-3000</span></div>
+  <div class="budget-total">总计 ¥10814-14434 · 人均 ¥5407-7217</div>
   <div style="margin-top:12px; font-size:.78em; opacity:.8;">
-    <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>高铁明细：D3犀浦↔离堆公园¥20×2 + D4成都东→黄龙九寨¥140×2 + D5黄龙九寨→成都东¥140×2 = ¥600</span></div>
-    <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>直通车明细：D4黄龙九寨站→沟口¥51×2 + D5沟口→黄龙九寨站¥51×2 = ¥204</span></div>
-    <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>门票明细：熊猫基地¥110 + 都江堰¥160 + 九寨沟¥518 + 双桥沟¥300 + 甲居藏寨¥100 + 泸定桥¥20 + 红海子¥20 = ¥1,228（预算¥1,416含备用）</span></div>
+    <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>高铁明细：D2犀浦↔离堆公园¥20×2 + D3成都东→黄龙九寨¥140×2 + D4黄龙九寨→成都东¥140×2 = ¥600</span></div>
+    <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>直通车明细：D3黄龙九寨站→沟口¥51×2 + D4沟口→黄龙九寨站¥51×2 = ¥204</span></div>
+    <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>门票明细：熊猫基地¥110 + 都江堰¥160 + 九寨沟¥518 + 双桥沟¥300 + 甲居藏寨¥100 + 泸定桥¥20 + 红海子¥20 = ¥1,228</span></div>
     <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>住宿明细：成都5晚(¥1,250-1,870) + 九寨1晚(¥400-800) + 四姑娘山1晚(¥400-500) + 新都桥1晚(¥400-500) = ¥2,450-3,670</span></div>
-    <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>新方案优势：成都取还零异地费(省¥500+) + 少开200km(省¥100) + 九寨沟口少住一晚(省¥400-800)但多出D5高铁票(+¥280)和直通车(+¥102)，净省约¥400-700</span></div>
+    <div style="display:flex; justify-content:space-between; padding:2px 0;"><span>新方案优势：成都取还零异地费(省¥500+) + 少开200km(省¥100) + 九寨沟口少住一晚(省¥400-800)但多出D4高铁票(+¥280)和直通车(+¥102)，净省约¥400-700</span></div>
   </div>
 </div>
 
@@ -1064,23 +1054,23 @@ body {
 <div class="tips-card" data-nav="出行Tips">
   <h2>💕 浪漫自驾出行Tips</h2>
   <div style="margin-bottom:12px; font-size:.88em; color:#666;">
-    🌤️ 秋（9月底） · 成都18-28°C / 九寨沟口白天15-22°C夜间3-10°C / 川西高原白天10-20°C夜间0-8°C / 垭口-5-5°C · 冲锋衣+抓绒+薄羽绒服（洋葱式叠穿），防水徒步鞋，墨镜，遮阳帽，SPF50防晒霜
+    🌤️ 秋（9月底） · 成都18-28°C，九寨沟沟口白天15-22°C/夜间3-10°C，川西高原白天10-20°C/夜间0-8°C，垭口-5-5°C · 冲锋衣+抓绒+薄羽绒服（洋葱式叠穿），防水徒步鞋，墨镜，遮阳帽，SPF50防晒霜
   </div>
   <div class="tip-item">✨ 衣物：洋葱式叠穿——长袖速干T恤+抓绒衣+三合一冲锋衣/轻薄羽绒服。9月底川西白天15-22°C、夜间0-8°C，垭口（雅拉山口4400m、巴朗山4487m）可能下雪。薄羽绒服+防风外套+防水徒步鞋必备。</div>
   <div class="tip-item">✨ 鞋子：带两双——防水徒步鞋（九寨沟栈道和双桥沟可能湿滑）+一双舒适的日常鞋。红海子湖边可能泥泞，防水鞋很关键。</div>
-  <div class="tip-item">✨ 防晒三件套：墨镜+遮阳帽+SPF50+防晒霜。川西高原2000-4400米紫外线是平原的5-10倍，即使阴天也要涂！半天不涂必晒伤。润唇膏同样必备。</div>
+  <div class="tip-item">✨ 防晒三件套：墨镜+遮阳帽+SPF50+防晒霜。川西高原2000-4400米紫外线是平原的5-10倍，即使阴天也要涂！半天不涂必晒伤。润唇膏同样必备（高原极度干燥）。</div>
   <div class="tip-item">✨ 抗高反：提前一周吃红景天（效果因人而异）。备好便携氧气瓶（成都药店¥20-30/罐，景区¥60-80/罐）。海拔超过3000米后放慢节奏，多喝热水。四姑娘山D6第一晚不洗澡。巴朗山垭口和雅拉山口不要跑跳，控制停留时间在15分钟内。</div>
   <div class="tip-item">✨ 晕车药必备：G350巴朗山段山路蜿蜒、丹巴至八美山区弯道密集、S434红海子前后山路多。容易晕车的务必提前半小时吃晕车药。驾驶者避免吃含嗜睡成分的晕车药。</div>
-  <div class="tip-item">✨ 下载离线地图：G350巴朗山段、丹巴至八美山区、S434部分路段均无手机信号！出发前在高德/百度地图下载「阿坝藏族羌族自治州」+「甘孜藏族自治州」离线地图包。包含G350+S434+G318备用路线。D6-D8三天完全依赖离线导航。</div>
+  <div class="tip-item">✨ 下载离线地图：G350巴朗山段、丹巴至八美山区、S434部分路段均无手机信号！出发前在高德/百度地图下载「阿坝藏族羌族自治州」+「甘孜藏族自治州」离线地图包。包含G350+S434+G318备用路线。D6-D8三天完全依赖离线导航。成都出发前务必确认已下载。</div>
   <div class="tip-item">✨ 现金准备：川西沿途牧民收费（红海子清洁费¥10、路边停车费）、部分加油站和小店只收现金。建议备¥1000-2000零钱，尤其¥5/¥10/¥20小面额。九寨沟口漳扎镇可刷卡/扫码但备现金更稳妥。</div>
-  <div class="tip-item">✨ 肠胃药+保湿：高原饮食偏牛羊肉和麻辣，备好肠胃药（黄连素/蒙脱石散）。高原极度干燥，带润唇膏+保湿霜+护手霜+保湿面膜。</div>
-  <div class="tip-item">✨ 一嗨成都取还确认：成都门店多——春熙路、成都东站、双流机场均有网点。提前App确认取车门店位置、营业时间和车型（坦克300等SUV热门需提前1-2周预订）。零异地费——比川主寺取车省¥500+异地费+¥150接驳费。D6早上8:00-9:00悠闲取车。D8还车时加满油，部分门店18:00后下班需自助还车。九寨沟门票在「阿坝旅游网」提前预约。热门酒店提前1-2周预订。高铁票提前在12306购买。</div>
+  <div class="tip-item">✨ 肠胃药+保湿：高原饮食偏牛羊肉和麻辣，备好肠胃药（黄连素/蒙脱石散）。高原极度干燥，带润唇膏+保湿霜+护手霜+保湿面膜。鼻腔干燥可使用红霉素软膏涂抹。</div>
+  <div class="tip-item">✨ 一嗨成都取还确认：成都门店多——春熙路、成都东站、双流机场均有网点。提前在App确认取车门店位置、营业时间和车型（坦克300等SUV热门需提前1-2周预订）。成都取成都还零异地费——比川主寺取车省¥500+异地费+¥150接驳费，车型选择也更多。D6早上8:00-9:00悠闲取车不用赶。D8还车时加满油，部分门店18:00后下班需自助还车。九寨沟门票在「阿坝旅游网」提前预约。热门酒店提前1-2周预订。高铁票提前在12306购买。</div>
   <div class="tip-item">✨ 景区无人机禁令：折多塘（康定机场附近）为严格禁飞区。九寨沟景区内全面禁飞。双桥沟、甲居藏寨等景区也大多禁飞。出发前在DJI Fly APP确认飞行区域是否在限飞/禁飞范围。违规轻则没收重则罚款。</div>
   <div class="tip-item">✨ 拍照穿搭建议：穿亮色系（橙色、黄色、红色、白色）在雪山和草原前最出片，避免蓝黑色与天空/雪山融合。红海子秋千和猫鼻梁经幡前，鲜艳颜色最跳。九寨沟五花海前白色/红色最出片（与水色形成对比）。风大时长发扎起来。</div>
-  <div class="tip-item">✨ 自驾安全：川西山路弯多路窄，不熟悉山路建议白天驾驶、不赶夜路。新方案D6仅220km/4h非常轻松，D7约260km/4.5h也不算长——三天自驾约580km，D6-D8日均193km节奏合理。巴朗山段和疙瘩梁子段尤其谨慎。SUV优先，轿车可行但部分路段需慢行。还车前加满油。</div>
+  <div class="tip-item">✨ 自驾安全：川西山路弯多路窄，不熟悉山路建议白天驾驶、不赶夜路。新方案D6仅220km/4h非常轻松，D7约260km/4.5h也不算长——三天自驾约580km，D6-D8日均193km节奏合理。巴朗山段和疙瘩梁子段尤其谨慎。SUV优先，轿车可行但部分路段需慢行。成都取还车零异地费，还车前加满油。</div>
   <div class="tip-item">✨ 高原反应警惕：头痛+恶心+乏力是轻度高反，休息+喝热水+吸氧可缓解。如出现剧烈头痛+呕吐+意识模糊立即下撤到低海拔！D6巴朗山（4487m）和D8雅拉山口（4400m）是海拔最高点，控制停留时间。九寨沟沟口海拔仅2000米相对安全。</div>
-  <div class="tip-item">✨ D5高铁时间管理：黄龙九寨→成都东C5798（18:19→20:39）是黄金班次。15:30出沟→16:00沟口上直通车→17:30到黄龙九寨站→18:19发车。每段衔接紧凑但可行。务必提前在12306购票！如果C5798售罄，备选C5796（17:15→19:46）但出沟时间需提前到14:30。</div>
-  <div class="tip-item">✨ G350熊猫大道优势：成都→四姑娘山仅220km/4h（vs G213松潘方向463km/8h）。路况更好、风景更美、贝母坪+大雪塘+巴朗山+猫鼻梁四大免费观景台全在沿线。D6不用再6:00起床赶路，8:00-9:00出发足够——多出一整个下午玩双桥沟！</div>
+  <div class="tip-item">✨ D4高铁时间管理：黄龙九寨→成都东C5798（18:19→20:39）是黄金班次。15:30出沟→16:00沟口上直通车→17:30到黄龙九寨站→18:19发车。每段衔接紧凑但可行。务必提前在12306购票（D3晚上在九寨沟口就可以买好）！如果C5798售罄，备选C5796（17:15→19:46）但出沟时间需提前到14:30。</div>
+  <div class="tip-item">✨ G350熊猫大道优势：成都→四姑娘山仅220km/4h（vs G213松潘方向463km/8h）。路况更好、风景更美、贝母坪+大雪塘+巴朗山+猫鼻梁四大免费观景台全在沿线。D6不用再6:00起床赶路，8:00-9:00出发足够——多出一整个下午玩双桥沟。</div>
 </div>
 
 <!-- ===== FOOTER ===== -->
@@ -1092,6 +1082,7 @@ body {
 </footer>
 
 </div><!-- /container -->
+
 
 <script>
 // === Quick Nav: Auto-generate from sections ===
