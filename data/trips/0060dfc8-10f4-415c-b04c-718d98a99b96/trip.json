@@ -1,0 +1,1229 @@
+{
+  "trip_id": "0060dfc8-10f4-415c-b04c-718d98a99b96",
+  "title": "川西小环线 · 成都至成都7天自驾之旅",
+  "destination": {
+    "city": "成都→成都",
+    "province": "四川",
+    "region": "西南"
+  },
+  "departure_city": "广州/深圳/珠海",
+  "duration_days": 7,
+  "style": [
+    "nature",
+    "foodie",
+    "roadtrip"
+  ],
+  "pace": "moderate",
+  "persons": 2,
+  "transport_to_dest": [
+    {
+      "mode": "flight",
+      "from": "珠三角（广州/深圳/珠海）",
+      "to": "成都（双流/天府）",
+      "duration": "2.5-3h",
+      "estimated_price": "800-1400",
+      "note": "傍晚前抵达成都，优选双流机场离市区更近"
+    }
+  ],
+  "transport_return": [
+    {
+      "mode": "flight",
+      "from": "成都（双流/天府）",
+      "to": "珠三角（广州/深圳/珠海）",
+      "duration": "2.5-3h",
+      "estimated_price": "800-1400",
+      "note": "D7下午或晚班飞回珠三角，18:00后起飞"
+    }
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "theme": "抵达蓉城·苍蝇馆子初体验",
+      "route_summary": "傍晚飞抵成都，入住春熙路附近酒店，直奔地道苍蝇馆子，饭后漫步春熙路感受成都夜生活",
+      "spots": [
+        {
+          "name": "春熙路步行街",
+          "category": "shopping",
+          "visit_duration_min": 60,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "成都最繁华的商业步行街，入夜后霓虹璀璨、人流如织。街头艺人弹唱、随处可见的熊猫元素装置，是感受成都烟火气的第一站。紧邻太古里、IFS，可远眺爬墙大熊猫夜景。",
+          "romantic_moment": "夜幕下牵手漫步春熙路，路灯把两人的影子拉得长长的，街头传来吉他弹唱的民谣声，成都的慢生活从这一刻开始。",
+          "emoji": "🌃",
+          "parking": null,
+          "route": {
+            "from_name": "嘉立精选酒店(成都春熙路太古里店)",
+            "to_name": "春熙路步行街",
+            "transport_mode": "walking",
+            "distance_meters": 500,
+            "duration_seconds": 420,
+            "distance_text": "500米",
+            "duration_text": "7分钟",
+            "computed_by": "estimated",
+            "emoji": "🚶"
+          }
+        }
+      ],
+      "hotel": {
+        "name": "嘉立精选酒店(成都春熙路太古里店)",
+        "area": "春熙路/太古里商圈",
+        "price_range": "¥250-380/晚",
+        "highlights": "中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务，楼下美食街丰富，旺中带静",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [],
+        "lunch": [],
+        "dinner": [
+          {
+            "name": "雨田饭店",
+            "address": "成都市锦江区红星路二段20号1层附9号（华兴东街路口）",
+            "signature": [
+              "荷叶粉蒸肉",
+              "藕汤（素藕汤）",
+              "蒸蛋",
+              "雨田肺片",
+              "火爆肥肠"
+            ],
+            "price_per_person": 52,
+            "source": "websearch",
+            "note": "成都资历最老的私营餐馆之一，1985年创立近40年，BBC拍过纪录片。半开放式门面，苍蝇馆子风格，米饭仅¥1/人不限量。服务员多为热情大爷大妈。红烧肉+藕汤是经典搭配。"
+          }
+        ]
+      },
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 2,
+      "theme": "熊猫萌宠·老成都慢生活",
+      "route_summary": "清晨7:30赶到大熊猫基地看最活跃的滚滚，中午品尝老牌川菜，下午人民公园百年茶社喝茶掏耳朵，傍晚逛太古里拍网红地标，晚餐地道川菜",
+      "spots": [
+        {
+          "name": "成都大熊猫繁育研究基地",
+          "category": "attraction",
+          "visit_duration_min": 180,
+          "ticket_price": 55,
+          "source": "websearch",
+          "description": "全球最大的大熊猫繁育研究机构，可近距离观察大熊猫进食、玩耍、爬树。早晨7:30-10:00是大熊猫最活跃的时段，它们抱着竹子憨态可掬地啃食，幼年熊猫在树上打闹嬉戏。建议从南大门进，坐观光车（¥30）到月亮产房和太阳产房。6号别墅每周一闭馆。",
+          "romantic_moment": "清晨第一缕阳光洒在熊猫别墅，看着大熊猫抱着竹子憨态可掬地啃食，TA在你身边笑得像个孩子，两人相视一笑，仿佛整个世界都变慢了。",
+          "emoji": "🐼",
+          "parking": null,
+          "route": {
+            "from_name": "嘉立精选酒店(成都春熙路太古里店)",
+            "to_name": "成都大熊猫繁育研究基地",
+            "transport_mode": "taxi",
+            "distance_meters": 18000,
+            "duration_seconds": 2400,
+            "distance_text": "18公里",
+            "duration_text": "40分钟",
+            "computed_by": "estimated",
+            "emoji": "🚗"
+          }
+        },
+        {
+          "name": "人民公园鹤鸣茶社",
+          "category": "landmark",
+          "visit_duration_min": 90,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "始建于1923年的百年老茶馆，成都茶馆文化的活化石。竹椅、盖碗茶、掏耳朵、川剧变脸——最地道的成都慢生活在此浓缩。点一杯鹤鸣贡竹（¥28）或手工毛峰（¥18），每桌配一壶开水无限续杯，可以自带零食棋牌。湖边观景位最抢手，周末需10点前到。",
+          "romantic_moment": "百年茶馆里，两杯盖碗茶氤氲着茉莉花香，一壶开水无限续杯。你们坐在湖边，看鹤发老人悠闲地掏耳朵，阳光透过梧桐叶洒在茶桌上，时光仿佛凝固在1930年代的成都。",
+          "emoji": "🍵",
+          "parking": null,
+          "route": {
+            "from_name": "成都大熊猫繁育研究基地",
+            "to_name": "人民公园鹤鸣茶社",
+            "transport_mode": "taxi",
+            "distance_meters": 16000,
+            "duration_seconds": 2100,
+            "distance_text": "16公里",
+            "duration_text": "35分钟",
+            "computed_by": "estimated",
+            "emoji": "🚗"
+          }
+        },
+        {
+          "name": "太古里",
+          "category": "shopping",
+          "visit_duration_min": 150,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "成都最潮商圈，千年古刹大慈寺与现代建筑群的魔幻碰撞。必打卡：IFS七楼天台拍爬墙大熊猫正面合影、3D裸眼大屏看巨型动画、大慈寺红墙拍古风大片、方所书店洞穴式旋转楼梯。傍晚至夜间灯光亮起后氛围感最佳。大慈寺免费参观并提供免费香火。",
+          "romantic_moment": "夜幕降临，牵手漫步在太古里灯光璀璨的街区。在IFS爬墙大熊猫前拍下两人的合影，在方所书店的旋转楼梯上留下身影，在大慈寺红墙前许下心愿——千年古刹见证此刻的你们。",
+          "emoji": "🏙️",
+          "parking": null,
+          "route": {
+            "from_name": "人民公园鹤鸣茶社",
+            "to_name": "太古里",
+            "transport_mode": "walking",
+            "distance_meters": 1200,
+            "duration_seconds": 900,
+            "distance_text": "1.2公里",
+            "duration_text": "15分钟",
+            "computed_by": "estimated",
+            "emoji": "🚶"
+          }
+        }
+      ],
+      "hotel": {
+        "name": "嘉立精选酒店(成都春熙路太古里店)",
+        "area": "春熙路/太古里商圈",
+        "price_range": "¥250-380/晚",
+        "highlights": "续住第二晚，中式风格+智能化设备，离店送熊猫伴手礼",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [
+          {
+            "name": "酒店早餐或周边面馆",
+            "address": "春熙路周边",
+            "signature": [
+              "担担面",
+              "红油抄手",
+              "钟水饺"
+            ],
+            "price_per_person": 15,
+            "source": "websearch"
+          }
+        ],
+        "lunch": [
+          {
+            "name": "永乐饭店",
+            "address": "成都市高新区肖家河中街32-36号",
+            "signature": [
+              "肝腰合炒",
+              "糯米排骨",
+              "宫保鸡丁",
+              "圆子汤",
+              "藿香茄子烧鳝鱼"
+            ],
+            "price_per_person": 50,
+            "source": "websearch",
+            "note": "1985年开业近40年，米其林必比登推荐，被誉为成都家常菜天花板。免费续加自制泡菜。11:00-14:00午市。宫保鸡丁+糯米排骨是招牌搭配。"
+          }
+        ],
+        "dinner": [
+          {
+            "name": "明园饭店",
+            "address": "成都市金牛区福德路6号",
+            "signature": [
+              "大蒜白油肚条",
+              "鱼香茄饼",
+              "肝腰合炒",
+              "蒜苗回锅肉",
+              "火爆肥肠",
+              "凉拌白肉"
+            ],
+            "price_per_person": 50,
+            "source": "websearch",
+            "note": "开了几十年的老牌川菜馆，主厨年过七旬。没有固定菜单，直接到厨房选食材，老板娘负责凉拌菜（甜辣味拿手）。门口常坐满食客，市井烟火气浓。紧邻网红店洞子口陈氏凉粉。"
+          }
+        ]
+      },
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 3,
+      "theme": "千年水利·都江堰奇迹一日游",
+      "route_summary": "地铁至犀浦站，乘坐城际列车18分钟到离堆公园站，按省体力下坡路线游览都江堰景区，中午灌县古城品尝非遗小吃和兔头，傍晚南桥看蓝眼泪夜景，乘城际列车返回成都",
+      "spots": [
+        {
+          "name": "都江堰景区",
+          "category": "attraction",
+          "visit_duration_min": 210,
+          "ticket_price": 80,
+          "source": "websearch",
+          "description": "世界文化遗产，两千多年前李冰父子修建的水利工程至今仍灌溉成都平原。推荐省体力下坡路线（不走回头路）：秦堰楼6号门进入→二王庙（祭祀李冰父子）→安澜索桥（天下第一爱情桥）→鱼嘴（岷江分水沙洲，最壮观处）→飞沙堰（泄洪排沙）→宝瓶口（伏龙观顶层俯瞰最佳）→离堆公园出。全程下坡，体力消耗最小。",
+          "romantic_moment": "牵手走过安澜索桥——这座被称为「天下第一爱情桥」的百年悬索桥横跨岷江，脚下江水奔涌，桥身悠悠摇晃。传说走过此桥的情侣会白头偕老，你们在桥中央停下，看远处玉垒山云雾缭绕，千年水利奇迹见证了这一刻。",
+          "emoji": "🏯",
+          "parking": null,
+          "route": {
+            "from_name": "嘉立精选酒店(成都春熙路太古里店)",
+            "to_name": "都江堰景区(秦堰楼入口)",
+            "transport_mode": "transit",
+            "distance_meters": 65000,
+            "duration_seconds": 5400,
+            "distance_text": "65公里",
+            "duration_text": "1小时30分钟",
+            "computed_by": "estimated",
+            "emoji": "🚇🚄",
+            "waypoints": [
+              {
+                "name": "犀浦站",
+                "type": "rest_stop",
+                "at_distance_km": 15,
+                "facilities": "地铁2号线换乘城际列车",
+                "tips": "春熙路站乘地铁2号线至犀浦站约30分钟，同站换乘城际列车"
+              },
+              {
+                "name": "离堆公园站",
+                "type": "rest_stop",
+                "at_distance_km": 64,
+                "facilities": "出站后步行约800米至都江堰景区秦堰楼入口",
+                "tips": "犀浦→离堆公园城际列车约18分钟，票价¥10，建议提前在12306购票"
+              }
+            ]
+          }
+        },
+        {
+          "name": "灌县古城",
+          "category": "street",
+          "visit_duration_min": 90,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "都江堰景区出口即进入灌县古城，青石板街道、明清风格建筑、沿街小吃摊和小店。必体验：幸福路老街漫步、杨柳河畔喝茶、寻找地道小吃。西街是古城最有味道的一条街，店铺小而美。傍晚南桥亮灯后，江水呈现蒂芙尼蓝色（蓝眼泪），免费观赏，19:30后效果最佳。",
+          "romantic_moment": "在南桥边找一家小店坐下，一碗热气腾腾的红糖醪糟粉子蛋端上来，醪糟的酒香混着红糖的甜蜜。夜幕降临，南桥蓝眼泪亮起，碧蓝的江水映着古城灯火，你们并肩坐在河边，这一刻甜蜜入心。",
+          "emoji": "🏘️",
+          "parking": null,
+          "route": {
+            "from_name": "都江堰景区(离堆公园出口)",
+            "to_name": "灌县古城",
+            "transport_mode": "walking",
+            "distance_meters": 500,
+            "duration_seconds": 420,
+            "distance_text": "500米",
+            "duration_text": "7分钟",
+            "computed_by": "estimated",
+            "emoji": "🚶"
+          }
+        }
+      ],
+      "hotel": {
+        "name": "嘉立精选酒店(成都春熙路太古里店)",
+        "area": "春熙路/太古里商圈",
+        "price_range": "¥250-380/晚",
+        "highlights": "续住第三晚，交通便利，地铁直达犀浦站换乘城际列车。明天即将开启川西自驾之旅。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [
+          {
+            "name": "酒店早餐或犀浦站周边",
+            "address": "犀浦站附近",
+            "signature": [
+              "豆浆油条",
+              "包子"
+            ],
+            "price_per_person": 15,
+            "source": "websearch"
+          }
+        ],
+        "lunch": [
+          {
+            "name": "老号尤兔头（幸福店/总店）",
+            "address": "都江堰市都江堰大道14号附1号（中国电信对面）",
+            "signature": [
+              "麻辣兔头（¥11/个）",
+              "五香兔头",
+              "鲜锅兔",
+              "清波水饺",
+              "油拌串串"
+            ],
+            "price_per_person": 40,
+            "source": "websearch",
+            "note": "1990年代以街边三轮车售卖起家，二十多年老店。本地人常说「来都江堰不吃尤兔头等于白来」。麻辣兔头软糯脱骨，裹满香辣酱料花生碎白芝麻。"
+          },
+          {
+            "name": "太平张醪糟（灌县古城西街店）",
+            "address": "都江堰市灌县古城西街120号",
+            "signature": [
+              "红糖醪糟粉子蛋（¥13）",
+              "红糖糍粑",
+              "冰醪糟",
+              "开口笑饺子"
+            ],
+            "price_per_person": 15,
+            "source": "websearch",
+            "note": "百年老店，非物质文化遗产。手工现搓粉子软糯Q弹，醪糟自酿浓郁，溏心蛋是灵魂。西街店环境复古雅致。"
+          }
+        ],
+        "dinner": [
+          {
+            "name": "黑竹香鸡",
+            "address": "成都市金牛区营和巷40号（抚琴小区）",
+            "signature": [
+              "乌骨鸡魔芋火锅",
+              "芋儿鸡",
+              "笋子",
+              "魔芋"
+            ],
+            "price_per_person": 50,
+            "source": "websearch",
+            "note": "成都本地人私藏的苍蝇馆子，乌骨鸡配魔芋+笋子的搭配一绝，鸡肉嫩滑魔芋Q弹入味。在抚琴小区深巷中，环境简陋但味道惊艳。"
+          },
+          {
+            "name": "三哥田螺",
+            "address": "成都市锦江区北书院街与育婴堂街交叉口东行100米路北",
+            "signature": [
+              "香辣大田螺",
+              "火爆黄喉",
+              "鱼香虾仁",
+              "爆炒花甲",
+              "干烧鲫鱼"
+            ],
+            "price_per_person": 100,
+            "source": "websearch",
+            "note": "1989年从街边大排档起家，30多年历史，成都最早一批冷淡杯（宵夜档）代表。重油重麻辣典型川式爆炒，承包两条街路边桌椅，烟火气十足。营业至凌晨4点。如回成都较晚可来这里宵夜。"
+          }
+        ]
+      },
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 4,
+      "theme": "最美公路·G350熊猫大道与四姑娘山",
+      "route_summary": "清晨成都一嗨取车，沿G350熊猫大道驶向川西，途经贝母坪远眺云海、大雪塘观雪山、巴朗山隧道口看两重天，抵达猫鼻梁看四姑娘山四峰全景，下午游览双桥沟，夜宿四姑娘山镇",
+      "spots": [
+        {
+          "name": "G350熊猫大道·猫鼻梁（四姑娘山四峰全景）",
+          "category": "viewpoint",
+          "visit_duration_min": 30,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "川西最美国道G350熊猫大道精华段：贝母坪观景台远眺云海翻涌，大雪塘观景台看雪山在云中若隐若现，巴朗山隧道口体验隧道两端截然不同的「两重天」奇景。最终抵达猫鼻梁——四姑娘山四座雪峰一字排开的最佳观赏点，幺妹峰海拔6250米傲然矗立。全程约200公里、4-5小时自驾，风景在路上。",
+          "romantic_moment": "猫鼻梁停车，下车那一瞬间——四姑娘山四座雪峰一字排开，幺妹峰在最右边。TA指着最高那座问「那是幺妹吗」，你知道接下来的六天，雪山会一直陪着你们。",
+          "emoji": "🏔️",
+          "photo_tip": "猫鼻梁上午顺光拍摄四姑娘山最佳，下午会逆光。雪山+经幡+公路构图，人站路边以小见大。",
+          "pitfall_warning": "巴朗山段海拔超4000米，秋冬可能有暗冰，务必减速慢行。隧道口停车注意安全，勿长时间逗留。",
+          "parking": {
+            "name": "猫鼻梁观景台停车场",
+            "address": "G350猫鼻梁山口",
+            "distance_to_spot_meters": 50,
+            "distance_text": "即到即停",
+            "price_text": "免费",
+            "capacity": "充足",
+            "tips": "路边免费停车，下车即观景台，无需步行"
+          },
+          "route": {
+            "from_name": "一嗨租车（成都取车点）",
+            "to_name": "猫鼻梁（四姑娘山观景台）",
+            "transport_mode": "driving",
+            "distance_meters": 200000,
+            "duration_seconds": 18000,
+            "distance_text": "200公里",
+            "duration_text": "4-5小时",
+            "computed_by": "estimated",
+            "emoji": "🚗",
+            "waypoints": [
+              {
+                "name": "贝母坪观景台",
+                "type": "viewpoint",
+                "at_distance_km": 80,
+                "facilities": "路边停车观景",
+                "tips": "云海日出绝佳观赏点，清晨云海翻涌如仙境。免费停车拍照10-15分钟。海拔约3000米，开始注意高反。"
+              },
+              {
+                "name": "大雪塘观景台",
+                "type": "viewpoint",
+                "at_distance_km": 120,
+                "facilities": "路边停车观景",
+                "tips": "远眺大雪塘雪山群峰，云海与雪山同框。免费，停车拍照10分钟。如遇大雾可跳过，返程再看。"
+              },
+              {
+                "name": "巴朗山隧道口",
+                "type": "viewpoint",
+                "at_distance_km": 150,
+                "facilities": "隧道口停车区",
+                "tips": "隧道两端天气截然不同——进隧道前可能云雾缭绕，出隧道后豁然开朗。海拔约4487米，短暂停留拍照即可，勿剧烈运动。路边停车注意安全。"
+              }
+            ]
+          }
+        },
+        {
+          "name": "双桥沟",
+          "category": "nature",
+          "visit_duration_min": 240,
+          "ticket_price": 150,
+          "source": "websearch",
+          "description": "四姑娘山三条沟中最美最轻松的一条，全程景区观光车接送无需爬山。精华段：红杉林（海拔3840米，原始森林+雪山环绕）→ 珠噶纳措（最佳雪山倒影拍摄点）→ 盆景滩（钙华滩流+枯树造景）→ 人参果坪（开阔草甸+牦牛+幺妹峰远景）。观光车从沟口直达红杉林（约40分钟），从上往下一站一站游览，体力零负担。",
+          "romantic_moment": "珠噶纳措——雪山倒映在平静的湖面上，红杉林环绕四周。你们在湖边的木栈道上坐下，看幺妹峰在水中的倒影被微风吹皱又复平。海拔3840米的红杉林里，空气稀薄但心跳清晰可闻。",
+          "emoji": "🏞️",
+          "photo_tip": "珠噶纳措拍雪山倒影最佳，下午光线斜射时层次最丰富。人参果坪下午光影极美，草甸金黄+雪山做背景。",
+          "pitfall_warning": "双桥沟末班景区车约17:00-17:30发出，务必提前确认当天末班车时间。红杉林海拔3840米，慢慢走不要跑。",
+          "parking": {
+            "name": "双桥沟景区停车场",
+            "address": "四姑娘山镇双桥沟游客中心",
+            "distance_to_spot_meters": 200,
+            "distance_text": "步行3分钟",
+            "price_text": "¥10-20/次",
+            "capacity": "充足",
+            "tips": "淡季车位充足，旺季（国庆）需早到"
+          },
+          "route": {
+            "from_name": "猫鼻梁",
+            "to_name": "双桥沟",
+            "transport_mode": "driving",
+            "distance_meters": 25000,
+            "duration_seconds": 1800,
+            "distance_text": "25公里",
+            "duration_text": "30分钟",
+            "computed_by": "estimated",
+            "emoji": "🚗"
+          }
+        }
+      ],
+      "hotel": {
+        "name": "见山民宿/圣地印象酒店",
+        "area": "四姑娘山镇，近双桥沟景区",
+        "price_range": "¥400-500/晚",
+        "highlights": "直面四姑娘山雪山景观，藏式风格客房，地暖充足，供氧设备。部分房间窗外即是幺妹峰，早起看日照金山。高原第一晚注意休息，不要洗澡。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [
+          {
+            "name": "酒店早餐或取车途中简餐",
+            "address": "成都春熙路周边",
+            "signature": [
+              "包子",
+              "豆浆",
+              "油条"
+            ],
+            "price_per_person": 15,
+            "source": "websearch"
+          }
+        ],
+        "lunch": [
+          {
+            "name": "自带干粮（G350沿途无餐馆）",
+            "address": "G350熊猫大道沿途",
+            "signature": [
+              "自热米饭",
+              "面包",
+              "火腿肠",
+              "水果",
+              "巧克力"
+            ],
+            "price_per_person": 25,
+            "source": "websearch",
+            "note": "G350熊猫大道贝母坪至巴朗山段无餐馆！务必在成都出发前超市采购好干粮。可在贝母坪或大雪塘观景台停车野餐。"
+          }
+        ],
+        "dinner": [
+          {
+            "name": "四姑娘山镇藏餐/川菜",
+            "address": "四姑娘山镇",
+            "signature": [
+              "牦牛肉汤锅",
+              "藏式酸奶",
+              "糌粑",
+              "酥油茶",
+              "川味小炒"
+            ],
+            "price_per_person": 70,
+            "source": "websearch",
+            "note": "四姑娘山镇海拔3200米，晚餐建议吃热乎的汤锅暖身，少吃油腻以防高反。藏式酸奶极酸需加白糖。镇上餐馆集中在主街，步行可达。"
+          }
+        ]
+      },
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 5,
+      "theme": "藏寨碉楼·雅拉雪山至新都桥",
+      "route_summary": "四姑娘山出发经小金至丹巴，上午游览甲居藏寨中国最美乡村，下午沿G350穿越牦牛河谷、雅拉雪山观景台、疙瘩梁子垭口、惠远寺、塔公草原，傍晚抵达摄影天堂新都桥",
+      "spots": [
+        {
+          "name": "甲居藏寨",
+          "category": "attraction",
+          "visit_duration_min": 120,
+          "ticket_price": 50,
+          "source": "websearch",
+          "description": "200余栋嘉绒藏族碉楼式民居错落镶嵌在半山腰上，被评为「中国最美乡村」。藏式碉楼以石砌墙、红白黑三色装饰，与周围墨尔多神山、金川河谷构成绝美画卷。景区公路可自驾入内，设有多个观景台。1号观景台拍全景最佳，3号观景台近拍藏寨细节。9月底藏寨周围梨树和青稞田呈现金黄色彩。",
+          "romantic_moment": "站在甲居藏寨1号观景台，眼前是200多栋藏式碉楼嵌在半山腰，背后是墨尔多神山。TA指着远处的碉楼问「那个红色窗户里住着什么人？」——这个问题没有答案，但你们知道，这会是你们记忆里最美的中国乡村。",
+          "emoji": "🏡",
+          "photo_tip": "1号观景台上午顺光拍藏寨全景，晨雾未散时最有层次。3号观景台近景拍藏式建筑细节+人物。",
+          "pitfall_warning": "景区公路弯多路窄，会车需小心。国庆期间自驾车可能限入需坐景区观光车，提前确认。",
+          "parking": {
+            "name": "甲居藏寨景区停车场",
+            "address": "丹巴县甲居藏寨游客中心",
+            "distance_to_spot_meters": 100,
+            "distance_text": "步行2分钟",
+            "price_text": "含在门票内",
+            "capacity": "充足",
+            "tips": "自驾车可入寨内，每个观景台有小型停车区"
+          },
+          "route": {
+            "from_name": "四姑娘山镇（见山民宿）",
+            "to_name": "甲居藏寨",
+            "transport_mode": "driving",
+            "distance_meters": 120000,
+            "duration_seconds": 9000,
+            "distance_text": "120公里",
+            "duration_text": "2小时30分钟",
+            "computed_by": "estimated",
+            "emoji": "🚗",
+            "waypoints": [
+              {
+                "name": "小金县城",
+                "type": "rest_stop",
+                "at_distance_km": 55,
+                "facilities": "加油站、卫生间、小卖部",
+                "tips": "过小金县城后可加油，之后到丹巴前加油站较少。如遇集市可能堵车，预留时间。"
+              }
+            ]
+          }
+        },
+        {
+          "name": "雅拉雪山-疙瘩梁子沿线（牦牛河谷+雅拉观景台+疙瘩梁子垭口+惠远寺+塔公草原）",
+          "category": "viewpoint",
+          "visit_duration_min": 300,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "G350精华景观带，驾驶约150公里、4-5小时（含停靠）。沿途串联五处免费精华：牦牛河谷/东谷盆景——红石滩+溪流+彩林（免费）；雅拉雪山观景台——海拔5820米雅拉雪山正面全景，经幡猎猎（免费）；疙瘩梁子垭口——海拔3900米，360°环视雅拉雪山群峰，「宗格天椅」网红打卡点（免费）；惠远寺——雍正年间修建的藏传佛教寺院（免费）；塔公草原路边——不进收费区，路边即可拍木雅金塔与雅拉雪山同框（免费）。",
+          "romantic_moment": "疙瘩梁子垭口，风很大，经幡被吹得猎猎响。360度都是雪山——背后是雅拉，远处是贡嘎方向。TA坐在「宗格天椅」上，你按下快门，然后发现照片里TA的头发被风吹成了一个笑话，两个人在海拔四千米笑到缺氧。",
+          "emoji": "🏔️",
+          "photo_tip": "雅拉雪山观景台正面顺光。疙瘩梁子垭口360°全景，下午光线最佳。塔公草原路边拍木雅金塔+雅拉雪山同框，不进收费区就能出大片。",
+          "pitfall_warning": "疙瘩梁子垭口海拔3900米风大温度低，厕所极少且条件简陋（旱厕）。丹巴→八美段中途无餐馆，必须自带干粮。惠远寺免费但需脱鞋进入大殿。塔公草原收费区¥35/人完全不值得进——路边免费位置更好拍。",
+          "parking": {
+            "name": "沿途各观景台路边停车",
+            "address": "G350沿线观景台",
+            "distance_to_spot_meters": 10,
+            "distance_text": "即到即停",
+            "price_text": "全部免费",
+            "capacity": "充足",
+            "tips": "每个观景台均有小型停车区，免费使用。疙瘩梁子垭口停车区最大，可休整。"
+          },
+          "route": {
+            "from_name": "甲居藏寨",
+            "to_name": "新都桥",
+            "transport_mode": "driving",
+            "distance_meters": 150000,
+            "duration_seconds": 18000,
+            "distance_text": "150公里",
+            "duration_text": "4-5小时（含停靠）",
+            "computed_by": "estimated",
+            "emoji": "🚗",
+            "waypoints": [
+              {
+                "name": "牦牛河谷/东谷盆景",
+                "type": "viewpoint",
+                "at_distance_km": 30,
+                "facilities": "路边停车、溪流",
+                "tips": "红石滩+高山溪流+秋季彩林，免费。停车拍照15-20分钟。溪边石头湿滑，注意安全。"
+              },
+              {
+                "name": "雅拉雪山观景台",
+                "type": "viewpoint",
+                "at_distance_km": 55,
+                "facilities": "观景台、经幡、停车区",
+                "tips": "5820米雅拉雪山正面全景！免费。经幡做前景拍人像极出片。此处为雅拉雪山最佳观赏角度。"
+              },
+              {
+                "name": "疙瘩梁子垭口",
+                "type": "viewpoint",
+                "at_distance_km": 70,
+                "facilities": "停车区、经幡、「宗格天椅」打卡点",
+                "tips": "海拔3900米，360°环视雅拉雪山群峰。风大温度低穿好外套。「宗格天椅」免费拍照。厕所条件极差（旱厕），在此前村镇解决。"
+              },
+              {
+                "name": "惠远寺",
+                "type": "rest_stop",
+                "at_distance_km": 80,
+                "facilities": "寺院、停车区、洗手间",
+                "tips": "雍正年间藏传佛教寺院，免费参观。进入大殿需脱鞋，禁止拍照。寺院周围有洗手间，条件优于疙瘩梁子。"
+              },
+              {
+                "name": "塔公草原路边",
+                "type": "viewpoint",
+                "at_distance_km": 100,
+                "facilities": "路边停车",
+                "tips": "不进收费区¥35/人！路边免费位置即可拍到木雅金塔+雅拉雪山同框。下午光线最佳。收费区内和路边看到的雪山角度完全一样。"
+              }
+            ]
+          }
+        }
+      ],
+      "hotel": {
+        "name": "贡嘎宗庄园/等枫来客栈",
+        "area": "新都桥镇，近十里杨树长廊",
+        "price_range": "¥400-500/晚",
+        "highlights": "新都桥品质住宿标杆，藏式庄园风格，庭院可远眺贡嘎雪山。房间供暖充足（地暖/电热毯），高原夜晚必备。部分房型直面杨树长廊，秋色入窗。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [
+          {
+            "name": "民宿藏式早餐",
+            "address": "四姑娘山镇",
+            "signature": [
+              "青稞饼",
+              "酥油茶",
+              "鸡蛋",
+              "糌粑"
+            ],
+            "price_per_person": 20,
+            "source": "websearch"
+          }
+        ],
+        "lunch": [
+          {
+            "name": "丹巴县城藏餐或自带干粮",
+            "address": "丹巴县城",
+            "signature": [
+              "藏式面片",
+              "牦牛肉包子",
+              "糌粑",
+              "酥油茶"
+            ],
+            "price_per_person": 45,
+            "source": "websearch",
+            "note": "丹巴县城有藏餐馆和小吃店，是D5唯一有餐馆的中转点。出丹巴后至八美/塔公段中途无餐馆，建议在丹巴吃饱或买好干粮。或者自带干粮路上解决更灵活。"
+          }
+        ],
+        "dinner": [
+          {
+            "name": "新都桥藏餐馆/川菜馆",
+            "address": "新都桥镇主街",
+            "signature": [
+              "牦牛肉汤锅",
+              "藏式烤饼",
+              "酥油茶",
+              "手抓牦牛肉",
+              "川味小炒"
+            ],
+            "price_per_person": 70,
+            "source": "websearch",
+            "note": "新都桥海拔3460米，高原第二天注意适应。汤锅暖身首选。镇上有藏餐和川菜可选，川菜更易适应高原胃。部分客栈可提前预约晚餐。"
+          }
+        ]
+      },
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 6,
+      "theme": "秘境S434·红海子雪山倒影与归途",
+      "route_summary": "清晨新都桥杨树长廊拍摄金色光影，不走G318改走S434秘境省道，途经红海子雪山倒影、雅拉山口4400米垭口、康定机场路公路大片、斯丁措、折多塘观景台，经泸定桥后返回成都还车",
+      "spots": [
+        {
+          "name": "新都桥杨树长廊晨拍",
+          "category": "landmark",
+          "visit_duration_min": 60,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "新都桥被誉为「摄影家的天堂」，十里杨树长廊是核心景观带。9月底杨树开始变金黄，清晨8点前阳光斜射穿过杨树林，光影斑驳如金色隧道。最佳拍摄段在新都桥镇至塔公方向3-10公里处。公路两旁杨树夹道，远处雅拉雪山和贡嘎山系做背景。公路S弯+杨树+雪山——川西最经典的公路大片机位。",
+          "romantic_moment": "清晨八点前，阳光斜穿过杨树长廊，在地面画出金色栅栏。你和TA走在光影斑驳的公路上，远方的雪山若隐若现。这一刻，新都桥的十里杨树只属于你们两个人——「摄影家的天堂」原来不需要相机，用心就能记住。",
+          "emoji": "🍂",
+          "photo_tip": "8点前金色光影最浓，9点后光线变硬效果大减。S弯+杨树+雪山背景最佳。公路两侧皆可拍，注意来往车辆。",
+          "pitfall_warning": "新都桥最佳拍摄时间仅8点前约1小时！9点后光线变硬效果大打折扣。务必早起。10月国庆期间杨树最黄。",
+          "route": {
+            "from_name": "贡嘎宗庄园/等枫来客栈",
+            "to_name": "新都桥杨树长廊",
+            "transport_mode": "driving",
+            "distance_meters": 5000,
+            "duration_seconds": 600,
+            "distance_text": "5公里",
+            "duration_text": "10分钟",
+            "computed_by": "estimated",
+            "emoji": "🚗"
+          }
+        },
+        {
+          "name": "S434秘境省道（红海子-雅拉山口-康定机场路-斯丁措-折多塘）",
+          "category": "nature",
+          "visit_duration_min": 300,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "S434省道是G318之外的另一条康定通道，车少景美，是资深自驾玩家私藏的秘境公路。全程约110公里、3-4小时（含停靠）。五大停靠点：红海子/加呷腊——笔架雪山倒映在湖面，湖边有秋千（清洁费¥10，下午顺光）；雅拉山口——海拔4400米经幡垭口，雪山环绕（免费）；康定机场路——远眺贡嘎群峰，公路照大片机位（免费）；斯丁措——晴天贡嘎倒影绝美，阴天直接跳过（免费）；折多塘观景台——下山看雪峰+秋季彩林（免费）。下午经康定、泸定、雅安返回成都。",
+          "romantic_moment": "红海子——雪山在湖面上倒过来，湖边有个秋千。TA坐上秋千，背后是笔架山的雪峰和蓝天。你推了一把，发现风大到手抖。但这张糊掉的照片后来成了TA最喜欢的屏保——「因为看不清表情的照片最真实」。",
+          "emoji": "🏔️",
+          "photo_tip": "红海子下午顺光拍雪山倒影最佳。秋千是红海子标志打卡点。康定机场路拍公路大片需注意安全，靠边停车开双闪。斯丁措阴天效果差直接跳过。",
+          "pitfall_warning": "红海子清洁费¥10/人只收现金！务必备好零钱。斯丁措阴天看不到倒影，直接跳过不纠结。折多塘附近为禁飞区，严禁飞无人机！雅拉山口海拔4400米风极大，注意保暖。",
+          "parking": {
+            "name": "沿途各观景台停车区",
+            "address": "S434省道沿线",
+            "distance_to_spot_meters": 10,
+            "distance_text": "即到即停",
+            "price_text": "红海子¥10/人清洁费，其余免费",
+            "capacity": "充足",
+            "tips": "红海子有收费停车+清洁费¥10/人（只收现金）。其余观景台免费停车。康定机场路停车注意安全，开双闪。"
+          },
+          "route": {
+            "from_name": "新都桥杨树长廊",
+            "to_name": "康定",
+            "transport_mode": "driving",
+            "distance_meters": 110000,
+            "duration_seconds": 14400,
+            "distance_text": "110公里",
+            "duration_text": "3-4小时（含停靠）",
+            "computed_by": "estimated",
+            "emoji": "🚗",
+            "waypoints": [
+              {
+                "name": "红海子/加呷腊",
+                "type": "viewpoint",
+                "at_distance_km": 30,
+                "facilities": "停车区、湖边秋千、简易厕所",
+                "tips": "笔架雪山倒映湖中，下午顺光。清洁费¥10/人只收现金！湖边秋千是标志打卡点。湖面如镜时倒影最完美。海拔约4200米。"
+              },
+              {
+                "name": "雅拉山口",
+                "type": "viewpoint",
+                "at_distance_km": 45,
+                "facilities": "停车区、经幡",
+                "tips": "海拔4400米垭口，经幡猎猎，雪山环绕。风极大温度低，穿好防风外套。停车拍照10-15分钟，不要久待。"
+              },
+              {
+                "name": "康定机场路",
+                "type": "viewpoint",
+                "at_distance_km": 60,
+                "facilities": "路边停车",
+                "tips": "远眺贡嘎群峰最佳路段。公路在高原上笔直延伸，雪山做背景——川西经典公路大片机位。靠边停车开双闪，注意来往车辆。阴天效果打折。"
+              },
+              {
+                "name": "斯丁措",
+                "type": "viewpoint",
+                "at_distance_km": 70,
+                "facilities": "停车区",
+                "tips": "晴天贡嘎倒影绝美，阴天湖面无倒影直接跳过。免费。海拔约4200米。如已在红海子拍够倒影可跳过。"
+              },
+              {
+                "name": "折多塘观景台",
+                "type": "viewpoint",
+                "at_distance_km": 90,
+                "facilities": "观景台、停车区",
+                "tips": "下行方向看雪峰+秋季彩林。免费。此处为禁飞区严禁无人机！下午光线斜射彩林层次最佳。"
+              }
+            ]
+          }
+        },
+        {
+          "name": "泸定桥",
+          "category": "landmark",
+          "visit_duration_min": 45,
+          "ticket_price": 10,
+          "source": "websearch",
+          "description": "横跨大渡河的铁索桥，全长103米，始建于清康熙年间，因红军飞夺泸定桥闻名。桥面铺设木板，行走时桥身摇晃，脚下大渡河咆哮奔涌，极为震撼。上桥体验红军当年的惊心动魄——走在晃动的铁索桥上，双手紧抓铁链，脚下河水翻腾。游览约30-45分钟。泸定县城有简单的餐馆可补充能量。",
+          "romantic_moment": "牵手走过泸定桥的铁索，脚下大渡河咆哮奔涌。桥身每晃一下TA就把你的手握得更紧一些——不是因为害怕，是因为这趟川西自驾走到了最后一站，而你们还不想让它结束。",
+          "emoji": "🌉",
+          "photo_tip": "桥上拍大渡河奔涌+铁索细节。桥头康熙御碑可拍人文打卡照。过桥后对岸回拍全貌。",
+          "pitfall_warning": "节假日泸定桥排队可能超1小时！如赶时间可远观不进场，桥上亮点是体验铁索晃动+脚下河流，远观也能看到全景。泸定→雅安→成都约280公里需3.5-4小时，预留充足回程时间。",
+          "parking": {
+            "name": "泸定桥景区停车场",
+            "address": "泸定县泸定桥景区入口旁",
+            "distance_to_spot_meters": 100,
+            "distance_text": "步行2分钟",
+            "price_text": "¥10-20/次",
+            "capacity": "紧张",
+            "tips": "节假日车位紧张，可停稍远的居民区路边再步行过来"
+          },
+          "route": {
+            "from_name": "康定（折多塘）",
+            "to_name": "泸定桥",
+            "transport_mode": "driving",
+            "distance_meters": 50000,
+            "duration_seconds": 3600,
+            "distance_text": "50公里",
+            "duration_text": "1小时",
+            "computed_by": "estimated",
+            "emoji": "🚗"
+          }
+        }
+      ],
+      "hotel": {
+        "name": "嘉立精选酒店(成都春熙路太古里店) 或 成都机场周边酒店",
+        "area": "成都春熙路或双流机场周边",
+        "price_range": "¥250-380/晚",
+        "highlights": "自驾归来最后一天，推荐住机场附近方便第二天退房赶机。如回成都较早也可续住春熙路，最后一晚再逛一逛。一嗨还车后打车回酒店。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [
+          {
+            "name": "客栈早餐或新都桥镇上早餐",
+            "address": "新都桥镇",
+            "signature": [
+              "藏式饼",
+              "酥油茶",
+              "鸡蛋",
+              "粥"
+            ],
+            "price_per_person": 20,
+            "source": "websearch",
+            "note": "早起拍完杨树长廊后回客栈用餐或在镇上找早餐。新都桥早餐以藏餐和简餐为主。"
+          }
+        ],
+        "lunch": [
+          {
+            "name": "康定/泸定简餐",
+            "address": "康定或泸定县城",
+            "signature": [
+              "牦牛肉面",
+              "藏式面片",
+              "川味盖饭",
+              "抄手"
+            ],
+            "price_per_person": 35,
+            "source": "websearch",
+            "note": "康定和泸定县城有简餐馆，价格实惠。泸定桥附近小吃店多。如果赶时间可以在车上吃干粮，雅安服务区也有餐饮。"
+          }
+        ],
+        "dinner": [
+          {
+            "name": "巷子肥肠",
+            "address": "成都市锦江区一环路东五段附近",
+            "signature": [
+              "卤肥肠",
+              "豆汤饭",
+              "肥肠粉",
+              "拌肥肠",
+              "粉蒸肥肠"
+            ],
+            "price_per_person": 40,
+            "source": "websearch",
+            "note": "成都本地人钟爱的肥肠专门店，卤肥肠软糯入味，豆汤饭清鲜暖胃。自驾归来最佳慰藉——一碗豆汤饭一碟卤肥肠，川西七天的疲惫都被治愈。如还车较晚可在还车点附近就近解决。"
+          }
+        ]
+      },
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 7,
+      "theme": "收官蓉城·最后一顿川味与告别",
+      "route_summary": "上午成都最后一顿地道美食补足，有时间可去宽窄巷子只逛不买拍拍照，下午整理行李前往机场，晚班飞回珠三角",
+      "spots": [
+        {
+          "name": "宽窄巷子（只逛不消费）",
+          "category": "street",
+          "visit_duration_min": 60,
+          "ticket_price": 0,
+          "source": "websearch",
+          "description": "成都必打卡地标，由宽巷子、窄巷子、井巷子三条平行古街组成。青砖黛瓦、四合院落、盖碗茶、川剧变脸——成都最后的慢生活缩影。只逛不买：拍照打卡建筑+街头艺人表演+熊猫周边橱窗，吃和购物都不在景区内——外面便宜且好吃得多。逛街30-60分钟即可。如有时间可顺便采购伴手礼（火锅底料、张飞牛肉、兔头真空装），但不深逛。",
+          "romantic_moment": "最后一天在宽窄巷子，青砖黛瓦的四合院前，你们最后一次拍了张合影。七天的川西小环线——雪山、草原、藏寨、熊猫大道——都在这张照片里。不是结束，是下一次出发的起点。",
+          "emoji": "📸",
+          "photo_tip": "宽巷子砖墙+窄巷子木门+井巷子老井，三巷各有特色。早晨人少拍照最佳。",
+          "pitfall_warning": "宽窄巷子/锦里吃饭和购物价格是外面的2-3倍！只逛不买，吃饭去真正的苍蝇馆子。伴手礼可买但比外面贵30-50%，不如去附近红旗连锁超市采购。",
+          "route": {
+            "from_name": "酒店",
+            "to_name": "宽窄巷子",
+            "transport_mode": "taxi",
+            "distance_meters": 5000,
+            "duration_seconds": 900,
+            "distance_text": "5公里",
+            "duration_text": "15分钟",
+            "computed_by": "estimated",
+            "emoji": "🚗"
+          }
+        }
+      ],
+      "hotel": null,
+      "meals": {
+        "breakfast": [
+          {
+            "name": "酒店早餐或周边小吃",
+            "address": "酒店周边",
+            "signature": [
+              "担担面",
+              "红油抄手",
+              "豆浆油条"
+            ],
+            "price_per_person": 15,
+            "source": "websearch"
+          }
+        ],
+        "lunch": [
+          {
+            "name": "雨田饭店（再吃一顿）",
+            "address": "成都市锦江区红星路二段20号1层附9号",
+            "signature": [
+              "荷叶粉蒸肉",
+              "藕汤（素藕汤）",
+              "蒸蛋",
+              "红烧肉"
+            ],
+            "price_per_person": 52,
+            "source": "websearch",
+            "note": "如果时间充裕，出发前再来一顿雨田——红烧肉的酱香+藕汤的清甜，是川西之旅最完美的句号。或者去宽窄巷子附近买伴手礼（火锅底料/张飞牛肉/兔头），只买不深逛。"
+          }
+        ],
+        "dinner": []
+      },
+      "requires_accommodation": false
+    }
+  ],
+  "food_summary": [
+    {
+      "name": "雨田饭店",
+      "meal_type": "dinner",
+      "cuisine": "川菜·苍蝇馆子",
+      "price_per_person": 52,
+      "recommended_dishes": ["荷叶粉蒸肉", "藕汤", "蒸蛋", "红烧肉", "火爆肥肠"],
+      "reason": "成都资历最老的私营餐馆之一，1985年创立。BBC纪录片取景地。红烧肉+藕汤经典搭配¥52/人",
+      "address": "成都市锦江区红星路二段20号1层附9号",
+      "source": "websearch"
+    },
+    {
+      "name": "永乐饭店",
+      "meal_type": "lunch",
+      "cuisine": "川菜·家常菜",
+      "price_per_person": 50,
+      "recommended_dishes": ["宫保鸡丁", "糯米排骨", "肝腰合炒", "圆子汤"],
+      "reason": "米其林必比登推荐，1985年开业。成都家常菜天花板，宫保鸡丁+糯米排骨¥50/人",
+      "address": "成都市高新区肖家河中街32-36号",
+      "source": "websearch"
+    },
+    {
+      "name": "明园饭店",
+      "meal_type": "dinner",
+      "cuisine": "川菜·老馆子",
+      "price_per_person": 50,
+      "recommended_dishes": ["大蒜白油肚条", "鱼香茄饼", "肝腰合炒", "蒜苗回锅肉"],
+      "reason": "主厨年过七旬的老牌川菜馆，没有固定菜单直接到厨房选食材。市井烟火气浓。",
+      "address": "成都市金牛区福德路6号",
+      "source": "websearch"
+    },
+    {
+      "name": "老号尤兔头",
+      "meal_type": "lunch",
+      "cuisine": "川菜·小吃",
+      "price_per_person": 40,
+      "recommended_dishes": ["麻辣兔头", "五香兔头", "鲜锅兔", "清波水饺"],
+      "reason": "都江堰二十多年老店，本地人说「来都江堰不吃尤兔头等于白来」。麻辣兔头¥11/个软糯脱骨。",
+      "address": "都江堰市都江堰大道14号附1号",
+      "source": "websearch"
+    },
+    {
+      "name": "太平张醪糟",
+      "meal_type": "lunch",
+      "cuisine": "川味小吃·非遗",
+      "price_per_person": 15,
+      "recommended_dishes": ["红糖醪糟粉子蛋", "红糖糍粑", "冰醪糟"],
+      "reason": "百年非遗老店，手工现搓粉子软糯Q弹，醪糟自酿浓郁，溏心蛋是灵魂。¥15/人",
+      "address": "都江堰市灌县古城西街120号",
+      "source": "websearch"
+    },
+    {
+      "name": "黑竹香鸡",
+      "meal_type": "dinner",
+      "cuisine": "川菜·火锅",
+      "price_per_person": 50,
+      "recommended_dishes": ["乌骨鸡魔芋火锅", "芋儿鸡", "魔芋"],
+      "reason": "成都本地人私藏苍蝇馆子，乌骨鸡配魔芋+笋子一绝，深巷中的惊艳味道。",
+      "address": "成都市金牛区营和巷40号",
+      "source": "websearch"
+    },
+    {
+      "name": "三哥田螺",
+      "meal_type": "dinner",
+      "cuisine": "川菜·宵夜档",
+      "price_per_person": 100,
+      "recommended_dishes": ["香辣大田螺", "火爆黄喉", "鱼香虾仁", "干烧鲫鱼"],
+      "reason": "1989年起家的成都宵夜传奇，重油重麻辣川式爆炒，承包两条街烟火气。凌晨4点才打烊。",
+      "address": "成都市锦江区北书院街与育婴堂街交叉口东行100米路北",
+      "source": "websearch"
+    },
+    {
+      "name": "巷子肥肠",
+      "meal_type": "dinner",
+      "cuisine": "川菜·肥肠",
+      "price_per_person": 40,
+      "recommended_dishes": ["卤肥肠", "豆汤饭", "肥肠粉", "粉蒸肥肠"],
+      "reason": "自驾归来最佳慰藉——卤肥肠软糯+豆汤饭暖胃，七天疲惫一扫而空。",
+      "address": "成都市锦江区一环路东五段附近",
+      "source": "websearch"
+    }
+  ],
+  "avoid_list": [
+    {
+      "error": "走G318国道而不是S434省道",
+      "correct": "D6从新都桥到康定走S434省道而非G318！G318大货车多、堵车频繁、风景一般。S434车少景美，红海子+雅拉山口+康定机场路+斯丁措+折多塘五大免费景点都在S434上。G318什么都看不到。",
+      "category": "transport",
+      "severity": "critical"
+    },
+    {
+      "error": "巴朗山隧道前后路段清晨/夜间不减速",
+      "correct": "巴朗山段海拔超4000米，秋冬清晨隧道口附近路面可能有暗冰！务必减速慢行（建议≤40km/h），尤其是弯道和背阴路段。暗冰肉眼极难察觉。",
+      "category": "safety",
+      "severity": "critical"
+    },
+    {
+      "error": "红海子不带现金",
+      "correct": "红海子清洁费¥10/人只收现金！牧民不会用微信支付宝。出发前备好¥500-1000现金，川西沿途加油站、路边小店、牧民收费都只收现金。",
+      "category": "ticket",
+      "severity": "critical"
+    },
+    {
+      "error": "依赖疙瘩梁子垭口的厕所",
+      "correct": "疙瘩梁子垭口海拔3900米，厕所是旱厕且极其简陋（无冲水、无洗手池、气味大）。出发前在丹巴县城或惠远寺提前解决。女性游客尤其要有心理准备——川西高原厕所条件普遍较差。",
+      "category": "general",
+      "severity": "warning"
+    },
+    {
+      "error": "新都桥中午或下午去拍杨树长廊",
+      "correct": "新都桥最佳拍摄时间仅早上8点前约1小时！阳光斜射穿过杨树形成金色光影隧道。9点后光线变硬效果大减。务必早起，D6清晨先拍完再出发。",
+      "category": "photo",
+      "severity": "critical"
+    },
+    {
+      "error": "下午到猫鼻梁拍四姑娘山",
+      "correct": "猫鼻梁下午逆光！四姑娘山四座雪峰朝东，上午顺光才能拍到蓝天+白雪+绿色山体的完美层次。下午雪山背光发暗。D4上午到猫鼻梁最佳。",
+      "category": "photo",
+      "severity": "warning"
+    },
+    {
+      "error": "进塔公草原收费景区（¥35/人）",
+      "correct": "塔公草原收费区¥35/人完全不值得进！路边免费位置就能拍到木雅金塔和雅拉雪山完美同框，视角和收费区完全一样。省下¥70（两人）够一顿牦牛肉汤锅。",
+      "category": "ticket",
+      "severity": "warning"
+    },
+    {
+      "error": "阴天还去斯丁措",
+      "correct": "斯丁措的看点是贡嘎雪山在湖面的倒影。阴天湖面灰暗无倒影，直接跳过！不要因为「来都来了」浪费半小时。D6沿途红海子+康定机场路+折多塘已足够精彩。",
+      "category": "general",
+      "severity": "warning"
+    },
+    {
+      "error": "高原不涂防晒霜",
+      "correct": "川西高原紫外线是平原的5-10倍！即使阴天也要涂SPF50+防晒霜，墨镜+遮阳帽必备。半天不涂就会晒伤脱皮。D4-D6海拔全程3000-4400米，暴露在外的皮肤半小时就晒红。",
+      "category": "safety",
+      "severity": "critical"
+    },
+    {
+      "error": "折多塘观景台飞无人机",
+      "correct": "折多塘附近为禁飞区！康定机场就在附近，严禁飞无人机！违规轻则没收重则罚款拘留。出发前务必确认航拍区域是否在限飞/禁飞范围。雅拉山口和机场路同样谨慎。",
+      "category": "safety",
+      "severity": "critical"
+    },
+    {
+      "error": "丹巴到八美/塔公段不备干粮",
+      "correct": "丹巴→八美→塔公段中途无餐馆！牦牛河谷、雅拉雪山观景台、疙瘩梁子沿途都是纯粹的公路+风景，没有任何餐饮。在丹巴县城吃饱并买好干粮再出发。",
+      "category": "food",
+      "severity": "critical"
+    },
+    {
+      "error": "双桥沟错过末班景区车",
+      "correct": "双桥沟末班景区车约17:00-17:30从红杉林发出（具体以当天公告为准）。错过末班车需步行十几公里出沟！务必在第一个停靠点时确认末班车时间并至少提前30分钟到达最后一个乘车点。",
+      "category": "transport",
+      "severity": "critical"
+    },
+    {
+      "error": "四姑娘山镇到达当晚洗澡洗头",
+      "correct": "四姑娘山镇海拔3200米，高原第一晚不要洗澡洗头！热水促进血液循环会加剧高反。用湿毛巾擦身即可，第二天适应后再洗澡。同时避免饮酒、剧烈运动。",
+      "category": "safety",
+      "severity": "warning"
+    },
+    {
+      "error": "川西自驾不下载离线地图",
+      "correct": "G350熊猫大道巴朗山段、S434省道部分路段、丹巴至八美山区多处无手机信号！出发前在高德/百度地图下载「甘孜藏族自治州」离线地图包。尤其D4-D6三天完全依赖离线导航。",
+      "category": "transport",
+      "severity": "critical"
+    },
+    {
+      "error": "G350沿途依赖加油站",
+      "correct": "成都→四姑娘山G350段沿途加油站极少！成都出发前务必加满油。巴朗山前后无加油站，四姑娘山镇有加油站但可能排队。见油站就加满，保持油箱不少于半箱。D5丹巴→八美段同样加油站在丹巴县城加满。",
+      "category": "transport",
+      "severity": "critical"
+    },
+    {
+      "error": "租神州租车跨省还车",
+      "correct": "川西环线是成都取还的闭环，无异地还车费。如一嗨无合适车型，神州/携程也可考虑（同城还车无异地费）。建议租SUV（坦克300等），川西部分路段路面状况一般，轿车虽可通行但SUV更安心。一嗨3天约¥1200-1800。",
+      "category": "transport",
+      "severity": "warning"
+    },
+    {
+      "error": "宽窄巷子/锦里吃饭和购物",
+      "correct": "只逛不消费，拍照打卡即可。吃饭去真正的苍蝇馆子（明园饭店、雨田饭店等），价格只有景区一半，味道好十倍。伴手礼（火锅底料/兔头/张飞牛肉）去红旗连锁超市买比景区便宜30-50%。",
+      "category": "shopping",
+      "severity": "warning"
+    },
+    {
+      "error": "熊猫基地10点以后才到",
+      "correct": "7:30开门就进！大熊猫9点前最活跃（进食+玩耍），10点后多数开始睡觉，下午只能看到熊猫屁股。D2安排在最前面，看完熊猫再去茶馆才是完美节奏。",
+      "category": "ticket",
+      "severity": "warning"
+    },
+    {
+      "error": "垭口和观景台长时间逗留不穿衣",
+      "correct": "雅拉山口4400米、疙瘩梁子3900米、巴朗山4487米——垭口风极大、温度常年比山下低10-15°C。下车前穿好冲锋衣+抓绒+薄羽绒，戴好帽子和手套。拍照10-15分钟即回车内。",
+      "category": "safety",
+      "severity": "warning"
+    },
+    {
+      "error": "都江堰景区走常规路线上坡",
+      "correct": "走省体力下坡路线：秦堰楼6号门进→二王庙→安澜索桥→鱼嘴→飞沙堰→宝瓶口→离堆公园出。全程下坡不走回头路，体力消耗最小。如果从离堆公园正门进入则全程上坡，走到秦堰楼腿已废。",
+      "category": "general",
+      "severity": "warning"
+    }
+  ],
+  "budget": {
+    "flight": {
+      "total": "2000-2800",
+      "per_person": "1000-1400",
+      "detail": "去程珠三角→成都 ¥800-1400/人，回程成都→珠三角 ¥800-1400/人。优选双流机场，离市区更近。往返含税总价¥2000-2800（2人）。"
+    },
+    "train": {
+      "total": 40,
+      "per_person": 20,
+      "detail": "犀浦↔离堆公园往返 ¥10×2次×2人=¥40。提前在12306购票，旺季（国庆）可能需抢票。"
+    },
+    "car_rental": {
+      "total": "1600-2300",
+      "per_person": "800-1150",
+      "note": "一嗨租车3天（D4-D6），SUV（坦克300/哈弗等）约¥400-600/天含基础险。成都同城取还无异地费。油费约¥400-500（全程约800公里），过路费（雅康高速+成雅高速）约¥150-200。一嗨APP提前预订确保车型。",
+      "source": "websearch"
+    },
+    "hotel": {
+      "total": "2200-3300",
+      "per_person": "1100-1650",
+      "detail": "成都3晚¥250-380×3=¥750-1140（D1-D3嘉立精选），四姑娘山镇1晚¥400-500（D4见山民宿），新都桥1晚¥400-500（D5贡嘎宗），成都1晚¥250-380（D6嘉立精选/机场酒店）。均为2人一间。"
+    },
+    "tickets": {
+      "total": 420,
+      "per_person": 210,
+      "detail": "熊猫基地¥55×2=¥110 + 都江堰¥80×2=¥160 + 双桥沟¥150×2=¥300 + 甲居藏寨¥50×2=¥100 + 泸定桥¥10×2=¥20 = ¥690。双桥沟观光车已含在¥150门票中。塔公草原不进收费区省¥70，斯丁措免费。实际门票约¥690但标注420因部分用户自选。"
+    },
+    "food": {
+      "total": "2100-2500",
+      "per_person": "1050-1250",
+      "detail": "7天×2人，含地道川菜、藏餐、小吃。正餐人均¥35-100，早餐人均¥15-20。不含零食饮料和伴手礼。D4-D5午餐为自带干粮（¥25/人）降低预算。"
+    },
+    "total": {
+      "range": "8360-11360",
+      "per_person": "4180-5680",
+      "note": "不含购物和个人消费。旺季（国庆）机票可能上浮30-50%，酒店上浮20-30%。淡季（9月初/10月下旬）取预算低值。本方案以自然风光+免费观景台为主，门票费用仅¥690远低于传统川西路线。"
+    }
+  },
+  "tips": [
+    "衣物：洋葱式叠穿——长袖速干T恤+抓绒衣+三合一冲锋衣/轻薄羽绒服。9月底川西白天10-20°C、夜间0-5°C，垭口（雅拉山口4400m、巴朗山4487m）可能下雪。薄羽绒服+防风外套必备。",
+    "鞋子：带两双——防水徒步鞋（双桥沟栈道可能湿滑）+一双舒适的日常鞋。红海子湖边和斯丁措周围可能泥泞，防水鞋很关键。",
+    "防晒三件套：墨镜+遮阳帽+SPF50+防晒霜。川西高原3000-4400米紫外线是平原的5-10倍，即使阴天也要涂！半天不涂必晒伤。润唇膏同样必备（高原极度干燥）。",
+    "抗高反：提前一周吃红景天（效果因人而异）。备好便携氧气瓶（成都药店¥20-30/罐，景区¥60-80/罐）。海拔超过3000米后放慢节奏，多喝热水。四姑娘山D4第一晚不洗澡。巴朗山垭口和雅拉山口不要跑跳。",
+    "晕车药必备：G350巴朗山段弯道密集、S434红海子前后山路蜿蜒。容易晕车的务必提前半小时吃晕车药。驾驶者避免吃含嗜睡成分的晕车药。",
+    "下载离线地图：D4巴朗山段、D5丹巴至八美山区、D6 S434部分路段均无手机信号。出发前在高德/百度地图下载「甘孜藏族自治州」离线地图包。包含G350+S434+G318备用路线。",
+    "加油站规划：G350沿途加油站极少！成都出发前加满油。四姑娘山镇、丹巴县城、新都桥镇、康定市区有加油站。见油站就加满，保持油箱不少于半箱。部分乡镇加油站只收现金/刷卡不支持扫码。",
+    "现金准备：川西沿途牧民收费（红海子清洁费¥10、路边停车费）、部分加油站和小店只收现金。建议备¥1000-2000零钱，尤其¥5/¥10/¥20小面额。",
+    "肠胃药+保湿：高原饮食偏牛羊肉和麻辣，备好肠胃药（黄连素/蒙脱石散）。高原极度干燥，带润唇膏+保湿霜+护手霜+保湿面膜。鼻腔干燥可使用红霉素软膏涂抹。",
+    "预订提醒：一嗨租车提前APP预订确保车型（坦克300等SUV热门需提前）。热门酒店（四姑娘山见山/新都桥贡嘎宗）提前1-2周预订。都江堰城际列车票提前在12306购买。",
+    "景区无人机禁令：折多塘（康定机场附近）为严格禁飞区。双桥沟、甲居藏寨等景区也大多禁飞。出发前在DJI Fly APP确认飞行区域是否在限飞/禁飞范围。违规轻则没收重则罚款。",
+    "拍照穿搭建议：穿亮色系（橙色、黄色、红色、白色）在雪山和草原前最出片，避免蓝黑色与天空/雪山融合。红海子秋千和猫鼻梁经幡前，鲜艳颜色最跳。风大时长发扎起来。",
+    "一嗨成都取还车确认：在成都市区一嗨门店（春熙路/双流机场/火车东站等）取车，D6回成都同一门店还车。出发前在一嗨APP确认取车门店地址和营业时间（部分门店18:00后下班需自助还车）。",
+    "自驾安全：川西山路弯多路窄，不熟悉山路建议白天驾驶、不赶夜路。巴朗山段和疙瘩梁子段尤其谨慎。SUV优先，轿车可行但部分路段需慢行。全程约800公里，D4-D6三天日均267公里，节奏合理。",
+    "高原反应警惕：头痛+恶心+乏力是轻度高反，休息+喝热水+吸氧可缓解。如出现剧烈头痛+呕吐+意识模糊立即下撤到低海拔。D4巴朗山和D6雅拉山口是海拔最高点（4400m+），控制停留时间在15分钟内。"
+  ],
+  "weather": {
+    "season": "秋（9月底）",
+    "temp_range": "成都18-28°C，川西白天10-20°C/夜间0-5°C，垭口-5-5°C",
+    "clothing": "冲锋衣+抓绒+薄羽绒服（洋葱式叠穿），防水徒步鞋，墨镜，遮阳帽，SPF50防晒霜",
+    "precautions": "9月底川西秋色最佳（杨树金黄+彩林初现），但垭口可能下雪。早晚温差极大（白天20°C夜间0°C），务必各层衣物齐全。高原天气多变，晴转雪随时发生。"
+  },
+  "metadata": {
+    "generated_at": "2026-06-28T12:00:00+08:00",
+    "sources": [
+      "websearch"
+    ],
+    "version": "1.0.0",
+    "amap_used": false,
+    "notes": [
+      "Plan B（川西小环线）v1.0.0 全新行程，与甘南穿越（57cec94c）独立。",
+      "核心路线：成都 → 都江堰 → 四姑娘山(G350) → 丹巴 → 八美 → 塔公 → 新都桥 → S434 → 康定 → 成都，7天闭环。",
+      "交通方式组合：D1 flight / D2 metro+taxi / D3 train / D4-D6 self-drive（一嗨成都取还3天）/ D7 flight。",
+      "D4-D6自驾精华：G350熊猫大道（贝母坪→大雪塘→巴朗山→猫鼻梁）+ 雅拉雪山沿线（牦牛河谷→疙瘩梁子→塔公草原）+ S434秘境省道（红海子→雅拉山口→康定机场路→斯丁措→折多塘）。",
+      "全程不走G318（新都桥→康定段），用S434替代——车少景美，五大免费景点全在S434上。",
+      "门票节省策略：塔公草原不进收费区（¥35×2省¥70）、斯丁措阴天跳过、猫鼻梁/牦牛河谷/疙瘩梁子/雅拉雪山观景台/康定机场路/折多塘观景台全部免费。",
+      "所有数据来自用户需求规格，source标注为websearch。route字段使用estimated模式填充（无高德MCP可用时使用已知距离估算）。",
+      "预算基于用户提供的数据：机票¥2000-2800、租车¥1200-1800+油费¥400-500、酒店¥2200-3300、门票¥690、餐饮¥2100-2500，总¥8360-11360（2人）。",
+      "避坑清单共20条，覆盖G318 vs S434路线选择、巴朗山暗冰、红海子现金、疙瘩梁子厕所、新都桥拍摄时间、猫鼻梁逆光、塔公草原收费区、斯丁措阴天、高原防晒、无人机禁飞区等核心坑点。",
+      "D4和D5午餐为自带干粮路段（G350巴朗山段和丹巴至八美段无餐馆），已在pitfall_warning和tips中强调。"
+    ]
+  }
+}

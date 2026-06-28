@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>九寨川西 · 成都至成都9天自驾之旅</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* === Reset === */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* === Quick Navigation === */
+.quick-nav {
+  position: fixed; right: 16px; top: 50%;
+  transform: translateY(-50%); z-index: 100;
+  display: flex; flex-direction: column; gap: 8px;
+  opacity: 0.65; transition: opacity 0.3s ease;
+}
+.quick-nav:hover { opacity: 1; }
+.quick-nav .nav-item { display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.2s ease; padding: 2px 0; }
+.quick-nav .nav-dot { width: 6px; height: 6px; border-radius: 50%; background: #888; transition: all 0.2s ease; flex-shrink: 0; }
+.quick-nav .nav-item:hover .nav-dot { background: #555; }
+.quick-nav .nav-item.active .nav-dot { background: #7c6ef0; }
+.quick-nav .nav-label { font-size: 11px; color: #666; white-space: nowrap; transition: color 0.2s ease; }
+.quick-nav .nav-item:hover .nav-label { color: #333; }
+.quick-nav .nav-item.active .nav-label { color: #7c6ef0; font-weight: 500; }
+
+/* === Collapsible === */
+.collapsible { cursor: pointer; user-select: none; }
+.collapsible .collapse-icon { display: inline-block; margin-left: 8px; font-size: .7em; transition: transform 0.3s ease; opacity: 0.5; }
+.collapsible.collapsed .collapse-icon { transform: rotate(-90deg); }
+.collapse-content { max-height: 50000px; overflow: hidden; transition: max-height 0.5s ease-out; }
+.collapse-content.collapsed { max-height: 0; }
+
+/* Day card collapse */
+.day-card .day-header { cursor: pointer; position: relative; }
+.day-card .day-header::after { content: '▼'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: .7em; opacity: 0.5; transition: transform 0.3s ease; }
+.day-card.collapsed .day-header::after { transform: translateY(-50%) rotate(-90deg); }
+.day-card .spots-wrapper { transition: max-height 0.5s ease-out; max-height: 20000px; overflow: hidden; }
+.day-card.collapsed .spots-wrapper { max-height: 0; }
+
+/* === Hero === */
+.hero {
+  position: relative; min-height: 420px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 50px 24px 80px;
+}
+.hero::before { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 60px; background: #f5f5f5; clip-path: ellipse(55% 100% at 50% 100%); }
+.hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
+.hero-inner { position: relative; z-index: 1; max-width: 700px; }
+.hero h1 { font-size: 2.4em; font-weight: 700; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,.2); margin-bottom: 6px; letter-spacing: 2px; }
+.hero .subtitle { font-size: 1.15em; color: rgba(255,255,255,.9); font-weight: 300; margin-bottom: 4px; }
+.hero .tag-row { margin-top: 16px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.hero .tag { background: rgba(255,255,255,.2); backdrop-filter: blur(6px); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: .84em; font-weight: 400; }
+.hero .emojis { font-size: 3.2em; margin-bottom: 10px; }
+
+/* === Container === */
+.container { max-width: 780px; margin: 0 auto; padding: 20px 16px 60px; }
+
+/* === Transport Card === */
+.transport-card { background: #fff; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.transport-card h2 { font-size: 1.2em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.transport-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.t-item { background: #f8f9ff; border-radius: 12px; padding: 16px; position: relative; }
+.t-item .t-title { font-weight: 700; font-size: .95em; margin-bottom: 6px; }
+.t-item .t-detail { font-size: .82em; color: #888; line-height: 1.5; }
+.t-item .t-price { font-size: 1.15em; font-weight: 700; color: #e05a3a; margin-top: 8px; }
+.t-item .t-note { font-size: .78em; color: #999; margin-top: 6px; line-height: 1.5; }
+
+/* === Day Cards === */
+.day-card { background: #fff; border-radius: 16px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.day-header { padding: 22px 28px 18px; color: #fff; position: relative; }
+.day-header.d4, .day-header.d6 { color: #444; }
+.day-header .day-num { font-size: 1.7em; font-weight: 700; }
+.day-header .day-title { font-size: 1.15em; font-weight: 500; margin-top: 4px; }
+.day-header .day-route { font-size: .84em; opacity: .85; margin-top: 8px; line-height: 1.6; }
+
+/* === Route Bars === */
+.route-bar { display: flex; align-items: center; gap: 4px; padding: 10px 28px; background: linear-gradient(90deg, #e8f0ff, #f0e6ff); font-size: .82em; color: #5b7fdb; overflow-x: auto; flex-wrap: wrap; border-left: 4px solid #7c6ef0; font-weight: 500; }
+.route-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: #7c6ef0; flex-shrink: 0; }
+.route-bar .r-item { white-space: nowrap; font-weight: 600; }
+
+/* Hotel→Spot Route Bar */
+.hotel-route-bar { display: flex; align-items: center; gap: 4px; padding: 8px 28px; background: linear-gradient(90deg, #fff0f5, #fff5f0); font-size: .8em; color: #d06; overflow-x: auto; flex-wrap: wrap; border-left: 4px solid #f2719c; font-weight: 500; }
+.hotel-route-bar .hdot { width: 8px; height: 8px; border-radius: 50%; background: #f2719c; flex-shrink: 0; }
+.hotel-route-bar .hroute-item { white-space: nowrap; }
+
+/* === Spots === */
+.spot { padding: 20px 28px; border-bottom: 1px solid #f0f0f0; position: relative; }
+.spot:last-child { border-bottom: none; }
+.spot-head { display: flex; align-items: flex-start; gap: 14px; }
+.spot-icon { width: 48px; height: 48px; min-width: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; flex-shrink: 0; }
+.spot-icon.c1 { background: #fff0f0; }
+.spot-icon.c2 { background: #f0f4ff; }
+.spot-icon.c3 { background: #f0fff4; }
+.spot-icon.c4 { background: #fff8f0; }
+.spot-name { font-weight: 700; font-size: 1.08em; margin-bottom: 4px; }
+.spot-price { display: inline-block; background: #fff3e0; color: #e65100; font-size: .75em; padding: 2px 10px; border-radius: 8px; margin-left: 6px; font-weight: 500; }
+.spot-transit { display: inline-flex; align-items: center; gap: 4px; background: linear-gradient(135deg, #e8f0ff, #f0e6ff); color: #5b7fdb; font-size: .72em; padding: 3px 10px; border-radius: 8px; margin-left: 6px; font-weight: 500; white-space: nowrap; }
+.spot-desc { font-size: .88em; color: #666; margin-top: 8px; line-height: 1.7; }
+.spot-romance { margin-top: 10px; padding: 10px 14px; background: linear-gradient(90deg, #fff5f5, #fff0fb); border-radius: 10px; font-size: .84em; color: #c06; border-left: 3px solid #f2719c; line-height: 1.6; }
+.spot-photo { margin-top: 6px; padding: 6px 10px; background: #f0f9ff; border-radius: 8px; font-size: .78em; color: #0369a1; }
+.spot-avoid { margin-top: 8px; padding: 8px 12px; background: #fffbe6; border-radius: 10px; font-size: .82em; color: #ad6800; border-left: 3px solid #faad14; line-height: 1.5; }
+
+/* === Parking === */
+.parking-info {
+  margin-top: 8px; padding: 8px 12px;
+  background: #f0fdf4; border-radius: 8px;
+  font-size: .78em; color: #166534;
+  display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  border-left: 3px solid #22c55e;
+}
+.parking-info .pk-price { font-weight: 700; color: #15803d; }
+
+/* === Waypoint === */
+.waypoint-bar {
+  margin: 4px 28px; padding: 10px 16px;
+  background: #fffbeb; border-radius: 10px;
+  font-size: .8em; color: #92400e;
+  display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;
+  border: 1px dashed #fcd34d; line-height: 1.6;
+}
+.waypoint-bar .wp-icon { font-size: 1.1em; flex-shrink: 0; }
+.waypoint-bar .wp-name { font-weight: 700; white-space: nowrap; }
+.waypoint-bar .wp-detail { color: #78716c; font-size: .92em; }
+.waypoint-bar .wp-tip { color: #0f766e; font-size: .92em; }
+
+/* === Food in Day === */
+.food-section-inline { margin: 16px 28px; padding: 18px 20px; background: linear-gradient(135deg, #fef9f0, #fff8f5); border-radius: 12px; }
+.food-section-inline h3 { font-size: 1em; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.food-grid-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.food-item-mini { background: #fff; border-radius: 10px; padding: 12px; }
+.food-item-mini .fm-name { font-weight: 700; font-size: .88em; color: #333; }
+.food-item-mini .fm-addr { font-size: .72em; color: #aaa; margin-top: 2px; }
+.food-item-mini .fm-sig { font-size: .76em; color: #888; margin-top: 4px; line-height: 1.5; }
+.food-item-mini .fm-price { color: #e05a3a; font-weight: 700; font-size: .88em; margin-top: 6px; }
+.food-item-mini .fm-note { font-size: .72em; color: #999; margin-top: 4px; line-height: 1.4; }
+.fm-label { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .7em; font-weight: 600; margin-bottom: 4px; }
+.fm-label.bf { background: #fff7e6; color: #d46b08; }
+.fm-label.lu { background: #e6fffb; color: #08979c; }
+.fm-label.dn { background: #f9f0ff; color: #7c3aed; }
+
+/* === Hotel in Day === */
+.hotel-rec-section { margin: 16px 28px 20px; padding: 18px 20px; background: linear-gradient(135deg, #f8f9ff, #f0f4ff); border-radius: 12px; }
+.hotel-rec-section .hr-title { font-weight: 700; font-size: 1em; margin-bottom: 10px; }
+.hotel-rec-section .hr-name { font-weight: 700; font-size: .92em; color: #333; }
+.hotel-rec-section .hr-area { font-size: .78em; color: #999; margin-top: 2px; }
+.hotel-rec-section .hr-price { font-size: .82em; color: #e05a3a; font-weight: 600; margin-top: 4px; }
+.hotel-rec-section .hr-desc { font-size: .8em; color: #666; margin-top: 6px; line-height: 1.6; }
+
+/* === Food Summary === */
+.food-section { background: #fff; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.food-section h2 { font-size: 1.2em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.food-city-group { margin-bottom: 18px; }
+.food-city-group:last-child { margin-bottom: 0; }
+.food-city-title { font-size: .95em; font-weight: 700; color: #555; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #f0f0f0; display: flex; align-items: center; gap: 6px; }
+.food-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.food-item { background: #fef9f0; border-radius: 12px; padding: 14px; }
+.food-item .f-name { font-weight: 700; font-size: .92em; }
+.food-item .f-cuisine { font-size: .72em; color: #aaa; margin-top: 2px; }
+.food-item .f-dishes { font-size: .78em; color: #888; margin-top: 4px; line-height: 1.5; }
+.food-item .f-price { color: #e05a3a; font-weight: 700; font-size: .92em; margin-top: 6px; }
+.food-item .f-reason { font-size: .76em; color: #999; margin-top: 4px; line-height: 1.4; }
+
+/* === Avoid List === */
+.avoid-section { background: #fff; border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.avoid-section h2 { font-size: 1.2em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.avoid-list { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.avoid-item { display: flex; gap: 10px; padding: 12px 16px; border-radius: 10px; background: #fff5f5; font-size: .86em; line-height: 1.6; }
+.avoid-item .a-num { background: #ff4d4f; color: #fff; min-width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75em; font-weight: 700; flex-shrink: 0; }
+.avoid-item .a-wrong { color: #ff4d4f; font-weight: 700; text-decoration: line-through; }
+.avoid-item .a-right { color: #52c41a; font-weight: 500; }
+.avoid-item .a-cat { display: inline-block; font-size: .7em; padding: 1px 8px; border-radius: 4px; margin-left: 6px; font-weight: 500; }
+.avoid-item .a-cat.critical { background: #fff1f0; color: #cf1322; }
+.avoid-item .a-cat.warning { background: #fffbe6; color: #d48806; }
+
+/* === Budget === */
+.budget-card { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 16px; padding: 24px; margin-bottom: 20px; color: #fff; }
+.budget-card h2 { font-size: 1.2em; margin-bottom: 16px; }
+.budget-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: .92em; border-bottom: 1px solid rgba(255,255,255,.15); align-items: center; }
+.budget-row .br-item { font-weight: 500; }
+.budget-row .br-amount { font-weight: 700; font-size: 1.05em; }
+.budget-row .br-detail { font-size: .72em; opacity: .75; }
+.budget-row-sub { display: flex; justify-content: space-between; padding: 4px 0 4px 16px; font-size: .78em; opacity: .75; }
+.budget-total { text-align: center; margin-top: 16px; padding-top: 16px; border-top: 2px solid rgba(255,255,255,.3); font-size: 1.4em; font-weight: 700; }
+.budget-total .bt-sub { font-size: .65em; opacity: .75; margin-top: 4px; font-weight: 400; }
+
+/* === Tips === */
+.tips-card { background: linear-gradient(135deg, #fff0f5, #fff5f0); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+.tips-card h2 { font-size: 1.2em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.tips-weather { margin-bottom: 14px; padding: 12px 16px; background: #fff; border-radius: 10px; font-size: .86em; color: #666; line-height: 1.6; }
+.tips-weather strong { color: #333; }
+.tips-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.tip-item { padding: 10px 14px; font-size: .88em; display: flex; gap: 10px; background: #fff; border-radius: 10px; line-height: 1.6; }
+.tip-item .tip-num { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; min-width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8em; font-weight: 700; flex-shrink: 0; }
+.tip-item .tip-text { color: #555; }
+
+/* === Footer === */
+.footer { text-align: center; padding: 30px 0 20px; color: #bbb; font-size: .84em; line-height: 1.8; }
+.footer .footer-title { font-size: 1em; font-weight: 500; color: #999; }
+.footer .footer-desc { font-size: .8em; color: #ccc; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 1024px) { .quick-nav { display: none; } }
+
+@media (max-width: 768px) {
+  .hero { min-height: 320px; padding: 40px 16px 70px; }
+  .hero h1 { font-size: 1.6em; word-break: break-word; }
+  .hero .subtitle { font-size: .9em; }
+  .hero .emojis { font-size: 2.2em; }
+  .hero .tag { font-size: .72em; padding: 4px 10px; }
+  .container { padding: 16px 12px 40px; }
+  .transport-grid, .food-grid-inline, .food-grid, .hotel-grid { grid-template-columns: 1fr; }
+  .day-header { padding: 16px 18px 14px; }
+  .day-header .day-num { font-size: 1.3em; }
+  .spot { padding: 14px 18px; }
+  .spot-icon { width: 40px; height: 40px; min-width: 40px; font-size: 1.2em; border-radius: 10px; }
+  .spot-name { font-size: .95em; }
+  .spot-transit { font-size: .68em; }
+  .route-bar { padding: 8px 18px; font-size: .76em; }
+  .hotel-route-bar { padding: 6px 18px; font-size: .74em; }
+  .parking-info { font-size: .72em; display: block; }
+  .waypoint-bar { margin: 4px 18px; font-size: .74em; }
+  .food-section-inline { margin: 12px 18px; padding: 14px 16px; }
+  .hotel-rec-section { margin: 12px 18px 16px; padding: 14px 16px; }
+}
+
+@media (max-width: 375px) {
+  .container { padding: 12px; }
+  .hero h1 { font-size: 1.35em; }
+  .hero .tag { font-size: .68em; padding: 3px 8px; }
+  .hero .tag-row { gap: 6px; }
+  .spot-icon { width: 36px; height: 36px; min-width: 36px; font-size: 1.1em; border-radius: 8px; }
+}
+
+@media (hover: none) {
+  .quick-nav .nav-item { padding: 6px 0; }
+  * { -webkit-tap-highlight-color: transparent; }
+}
+
+@media print {
+  .quick-nav { display: none; }
+  .day-card { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<nav class="quick-nav" id="quickNav">
+<div class="nav-item" data-target="Day 1"><span class="nav-dot"></span><span class="nav-label">Day 1</span></div>
+<div class="nav-item" data-target="Day 2"><span class="nav-dot"></span><span class="nav-label">Day 2</span></div>
+<div class="nav-item" data-target="Day 3"><span class="nav-dot"></span><span class="nav-label">Day 3</span></div>
+<div class="nav-item" data-target="Day 4"><span class="nav-dot"></span><span class="nav-label">Day 4</span></div>
+<div class="nav-item" data-target="Day 5"><span class="nav-dot"></span><span class="nav-label">Day 5</span></div>
+<div class="nav-item" data-target="Day 6"><span class="nav-dot"></span><span class="nav-label">Day 6</span></div>
+<div class="nav-item" data-target="Day 7"><span class="nav-dot"></span><span class="nav-label">Day 7</span></div>
+<div class="nav-item" data-target="Day 8"><span class="nav-dot"></span><span class="nav-label">Day 8</span></div>
+<div class="nav-item" data-target="Day 9"><span class="nav-dot"></span><span class="nav-label">Day 9</span></div>
+<div class="nav-item" data-target="🍜 美食推荐"><span class="nav-dot"></span><span class="nav-label">🍜 美食推荐</span></div>
+<div class="nav-item" data-target="⚠️ 避坑清单 (25条)"><span class="nav-dot"></span><span class="nav-label">⚠️ 避坑清单 (25条)</span></div>
+<div class="nav-item" data-target="💰 预算估算"><span class="nav-dot"></span><span class="nav-label">💰 预算估算</span></div>
+<div class="nav-item" data-target="💕 出行Tips"><span class="nav-dot"></span><span class="nav-label">💕 出行Tips</span></div>
+</nav>
+<section class="hero">
+<div class="hero-inner">
+<div class="emojis">🏔️🚗🍜🐼🌊</div>
+<h1>九寨川西 · 成都至成都9天自驾之旅</h1>
+<div class="subtitle">9天自驾之旅 · 成都→九寨沟→川西大环线→成都</div>
+<div class="tag-row">
+<span class="tag">🏔️ 自然风光</span>
+<span class="tag">🚗 自驾</span>
+<span class="tag">🍜 美食</span>
+<span class="tag">🐼 熊猫</span>
+<span class="tag">🌊 九寨沟</span>
+<span class="tag">🏘️ 藏寨碉楼</span>
+<span class="tag">📸 摄影天堂</span>
+</div>
+</div>
+</section>
+<div class="container">
+<div class="transport-card collapsible" data-nav="🚄 交通信息">
+<h2>✈️ 往返交通 <span class="collapse-icon">▼</span></h2>
+<div class="collapse-content">
+<div class="transport-grid">
+<div class="t-item">
+<div class="t-title">✈️ flight · 珠三角（广州/深圳/珠海） → 成都（双流/天府）</div>
+<div class="t-detail">⏱️ 2.5-3h · 优选双流机场离市区更近</div>
+<div class="t-price">¥1000-1400 /人</div>
+<div class="t-note">D1傍晚前抵达成都，优选双流机场离市区更近。出机场后地铁/打车至春熙路酒店约40分钟。</div>
+</div>
+<div class="t-item">
+<div class="t-title">✈️ flight · 成都（双流/天府） → 珠三角（广州/深圳/珠海）</div>
+<div class="t-detail">⏱️ 2.5-3h · 优选18:00后起飞</div>
+<div class="t-price">¥1000-1400 /人</div>
+<div class="t-note">D9下午或晚班飞回珠三角，优选18:00后起飞，上午还有时间吃最后一顿苍蝇馆子或买伴手礼。</div>
+</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 1">
+<div class="day-header d1" style="background:linear-gradient(135deg, #f6a085, #f2719c);color:#fff;">
+<div class="day-num">Day 1 · 抵达蓉城·苍蝇馆子初体验</div>
+<div class="day-route">傍晚飞抵成都，入住春熙路附近酒店，直奔地道苍蝇馆子雨田饭店，饭后漫步春熙路感受成都夜生活</div>
+</div>
+<div class="spots-wrapper">
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">🌃 春熙路步行街</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">🌃</div>
+<div style="flex:1;">
+<div class="spot-name">春熙路步行街
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚶 从 嘉立精选酒店(成都春熙路太古里店) · 步行 · 500米 / 7分钟
+</span>
+</div>
+<div class="spot-desc">成都最繁华的商业步行街，入夜后霓虹璀璨、人流如织。街头艺人弹唱、随处可见的熊猫元素装置，是感受成都烟火气的第一站。紧邻太古里、IFS，可远眺爬墙大熊猫夜景。</div>
+</div>
+</div>
+<div class="spot-romance">💕 浪漫时刻：夜幕下牵手漫步春熙路，路灯把两人的影子拉得长长的，街头传来吉他弹唱的民谣声，成都的慢生活从这一刻开始——而更令人期待的是，三天后你们将踏上前往九寨沟的高铁，川西之旅才刚刚拉开序幕。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">雨田饭店</div>
+<div class="fm-addr">📍 成都市锦江区红星路二段20号1层附9号（华兴东街路口）</div>
+<div class="fm-sig">🔥 招牌：荷叶粉蒸肉、藕汤（素藕汤）、蒸蛋、雨田肺片、火爆肥肠</div>
+<div class="fm-price">人均 ¥52</div>
+<div class="fm-note">💡 成都资历最老的私营餐馆之一，1985年创立近40年，BBC拍过纪录片。半开放式门面，苍蝇馆子风格，米饭仅¥1/人不限量。服务员多为热情大爷大妈。红烧肉+藕汤是经典搭配。</div>
+</div>
+</div>
+</div>
+<div class="hotel-rec-section">
+<div class="hr-title">🏨 推荐酒店住宿地</div>
+<div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
+<div class="hr-area">📍 春熙路/太古里商圈</div>
+<div class="hr-price">💰 ¥250-380/晚</div>
+<div class="hr-desc">中式风格+智能化设备，离店送熊猫伴手礼，微信管家服务，楼下美食街丰富，旺中带静。地理位置极佳，D2-D3地铁出行便利。</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 2">
+<div class="day-header d2" style="background:linear-gradient(135deg, #4facfe, #00f2fe);color:#fff;">
+<div class="day-num">Day 2 · 熊猫萌宠·老成都慢生活</div>
+<div class="day-route">清晨7:30赶到大熊猫基地看最活跃的滚滚，中午品尝老牌川菜永乐饭店，下午人民公园百年茶社喝茶掏耳朵，傍晚逛太古里拍网红地标，晚餐地道川菜明园饭店</div>
+</div>
+<div class="spots-wrapper">
+<div class="hotel-route-bar">
+<span class="hdot"></span>
+<span class="hroute-item">🏨 嘉立精选酒店(成都春熙路太古里店)</span>
+<span>→ 🚗 18公里 / 40分钟 →</span>
+<span class="hroute-item">📍 成都大熊猫繁育研究基地</span>
+</div>
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">🐼 成都大熊猫繁育研究基地</span>
+<span>→ 🚗 16公里 / 35分钟 →</span>
+<span class="r-item">🍵 人民公园鹤鸣茶社</span>
+<span>→ 🚶 1.2公里 / 15分钟 →</span>
+<span class="r-item">🏙️ 太古里</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">🐼</div>
+<div style="flex:1;">
+<div class="spot-name">成都大熊猫繁育研究基地
+<span class="spot-price">¥55</span>
+<span class="spot-transit">
+🚗 从 嘉立精选酒店(成都春熙路太古里店) · 打车 · 18公里 / 40分钟
+</span>
+</div>
+<div class="spot-desc">全球最大的大熊猫繁育研究机构，可近距离观察大熊猫进食、玩耍、爬树。早晨7:30-10:00是大熊猫最活跃的时段，它们抱着竹子憨态可掬地啃食，幼年熊猫在树上打闹嬉戏。建议从南大门进，坐观光车（¥30）到月亮产房和太阳产房。6号别墅每周一闭馆。</div>
+</div>
+</div>
+<div class="spot-romance">💕 浪漫时刻：清晨第一缕阳光洒在熊猫别墅，看着大熊猫抱着竹子憨态可掬地啃食，TA在你身边笑得像个孩子，两人相视一笑，仿佛整个世界都变慢了。</div>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c2">🍵</div>
+<div style="flex:1;">
+<div class="spot-name">人民公园鹤鸣茶社
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚗 从 成都大熊猫繁育研究基地 · 打车 · 16公里 / 35分钟
+</span>
+</div>
+<div class="spot-desc">始建于1923年的百年老茶馆，成都茶馆文化的活化石。竹椅、盖碗茶、掏耳朵、川剧变脸——最地道的成都慢生活在此浓缩。点一杯鹤鸣贡竹（¥28）或手工毛峰（¥18），每桌配一壶开水无限续杯，可以自带零食棋牌。湖边观景位最抢手，周末需10点前到。</div>
+</div>
+</div>
+<div class="spot-romance">💕 浪漫时刻：百年茶馆里，两杯盖碗茶氤氲着茉莉花香，一壶开水无限续杯。你们坐在湖边，看鹤发老人悠闲地掏耳朵，阳光透过梧桐叶洒在茶桌上，时光仿佛凝固在1930年代的成都。</div>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c3">🏙️</div>
+<div style="flex:1;">
+<div class="spot-name">太古里
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚶 从 人民公园鹤鸣茶社 · 步行 · 1.2公里 / 15分钟
+</span>
+</div>
+<div class="spot-desc">成都最潮商圈，千年古刹大慈寺与现代建筑群的魔幻碰撞。必打卡：IFS七楼天台拍爬墙大熊猫正面合影、3D裸眼大屏看巨型动画、大慈寺红墙拍古风大片、方所书店洞穴式旋转楼梯。傍晚至夜间灯光亮起后氛围感最佳。大慈寺免费参观并提供免费香火。</div>
+</div>
+</div>
+<div class="spot-romance">💕 浪漫时刻：夜幕降临，牵手漫步在太古里灯光璀璨的街区。在IFS爬墙大熊猫前拍下两人的合影，在方所书店的旋转楼梯上留下身影，在大慈寺红墙前许下心愿——千年古刹见证此刻的你们。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label bf">🌅 早餐</span>
+<div class="fm-name">酒店早餐或周边面馆</div>
+<div class="fm-addr">📍 春熙路周边</div>
+<div class="fm-sig">🔥 招牌：担担面、红油抄手、钟水饺</div>
+<div class="fm-price">人均 ¥15</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">永乐饭店</div>
+<div class="fm-addr">📍 成都市高新区肖家河中街32-36号</div>
+<div class="fm-sig">🔥 招牌：肝腰合炒、糯米排骨、宫保鸡丁、圆子汤、藿香茄子烧鳝鱼</div>
+<div class="fm-price">人均 ¥50</div>
+<div class="fm-note">💡 1985年开业近40年，米其林必比登推荐，被誉为成都家常菜天花板。免费续加自制泡菜。11:00-14:00午市。宫保鸡丁+糯米排骨是招牌搭配。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">明园饭店</div>
+<div class="fm-addr">📍 成都市金牛区福德路6号</div>
+<div class="fm-sig">🔥 招牌：大蒜白油肚条、鱼香茄饼、肝腰合炒、蒜苗回锅肉、火爆肥肠</div>
+<div class="fm-price">人均 ¥50</div>
+<div class="fm-note">💡 开了几十年的老牌川菜馆，主厨年过七旬。没有固定菜单，直接到厨房选食材，老板娘负责凉拌菜（甜辣味拿手）。门口常坐满食客，市井烟火气浓。紧邻网红店洞子口陈氏凉粉。</div>
+</div>
+</div>
+</div>
+<div class="hotel-rec-section">
+<div class="hr-title">🏨 推荐酒店住宿地</div>
+<div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
+<div class="hr-area">📍 春熙路/太古里商圈</div>
+<div class="hr-price">💰 ¥250-380/晚</div>
+<div class="hr-desc">续住第二晚，中式风格+智能化设备，离店送熊猫伴手礼。明天前往都江堰，酒店步行至春熙路地铁站约5分钟，2号线直达犀浦站。</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 3">
+<div class="day-header d3" style="background:linear-gradient(135deg, #a18cd1, #fbc2eb);color:#fff;">
+<div class="day-num">Day 3 · 千年水利·都江堰奇迹一日游</div>
+<div class="day-route">地铁至犀浦站，乘坐城际列车18分钟到离堆公园站，按省体力下坡路线游览都江堰景区，中午灌县古城品尝非遗小吃和兔头，傍晚南桥看蓝眼泪夜景，乘城际列车返回成都</div>
+</div>
+<div class="spots-wrapper">
+<div class="hotel-route-bar">
+<span class="hdot"></span>
+<span class="hroute-item">🏨 嘉立精选酒店(成都春熙路太古里店)</span>
+<span>→ 🚇🚄 65公里 / 1小时30分钟 →</span>
+<span class="hroute-item">📍 都江堰景区</span>
+</div>
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">🏯 都江堰景区</span>
+<span>→ 🚶 500米 / 7分钟 →</span>
+<span class="r-item">🏘️ 灌县古城</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">🏯</div>
+<div style="flex:1;">
+<div class="spot-name">都江堰景区
+<span class="spot-price">¥80</span>
+<span class="spot-transit">
+🚇🚄 从 嘉立精选酒店(成都春熙路太古里店) · 地铁+城际 · 65公里 / 1小时30分钟
+</span>
+</div>
+<div class="spot-desc">世界文化遗产，两千多年前李冰父子修建的水利工程至今仍灌溉成都平原。推荐省体力下坡路线（不走回头路）：秦堰楼6号门进入→二王庙（祭祀李冰父子）→安澜索桥（天下第一爱情桥）→鱼嘴（岷江分水沙洲，最壮观处）→飞沙堰（泄洪排沙）→宝瓶口（伏龙观顶层俯瞰最佳）→离堆公园出。全程下坡，体力消耗最小。</div>
+</div>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">犀浦站</span>
+<span class="wp-detail">（约15km处）· 地铁2号线换乘城际列车</span>
+<br><span class="wp-tip">💡 春熙路站乘地铁2号线至犀浦站约30分钟，同站换乘城际列车</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">离堆公园站</span>
+<span class="wp-detail">（约64km处）· 出站后步行约800米至都江堰景区秦堰楼入口</span>
+<br><span class="wp-tip">💡 犀浦→离堆公园城际列车约18分钟，票价¥10，建议提前在12306购票</span>
+</div>
+<div class="spot-romance">💕 浪漫时刻：牵手走过安澜索桥——这座被称为「天下第一爱情桥」的百年悬索桥横跨岷江，脚下江水奔涌，桥身悠悠摇晃。传说走过此桥的情侣会白头偕老，你们在桥中央停下，看远处玉垒山云雾缭绕，千年水利奇迹见证了这一刻。</div>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c2">🏘️</div>
+<div style="flex:1;">
+<div class="spot-name">灌县古城
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚶 从 都江堰景区(离堆公园出口) · 步行 · 500米 / 7分钟
+</span>
+</div>
+<div class="spot-desc">都江堰景区出口即进入灌县古城，青石板街道、明清风格建筑、沿街小吃摊和小店。必体验：幸福路老街漫步、杨柳河畔喝茶、寻找地道小吃。西街是古城最有味道的一条街，店铺小而美。傍晚南桥亮灯后，江水呈现蒂芙尼蓝色（蓝眼泪），免费观赏，19:30后效果最佳。</div>
+</div>
+</div>
+<div class="spot-romance">💕 浪漫时刻：在南桥边找一家小店坐下，一碗热气腾腾的红糖醪糟粉子蛋端上来，醪糟的酒香混着红糖的甜蜜。夜幕降临，南桥蓝眼泪亮起，碧蓝的江水映着古城灯火，你们并肩坐在河边，这一刻甜蜜入心。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label bf">🌅 早餐</span>
+<div class="fm-name">酒店早餐或犀浦站周边</div>
+<div class="fm-addr">📍 犀浦站附近</div>
+<div class="fm-sig">🔥 招牌：豆浆油条、包子</div>
+<div class="fm-price">人均 ¥15</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">老号尤兔头（幸福店/总店）</div>
+<div class="fm-addr">📍 都江堰市都江堰大道14号附1号（中国电信对面）</div>
+<div class="fm-sig">🔥 招牌：麻辣兔头（¥11/个）、五香兔头、鲜锅兔、清波水饺、油拌串串</div>
+<div class="fm-price">人均 ¥40</div>
+<div class="fm-note">💡 1990年代以街边三轮车售卖起家，二十多年老店。本地人常说「来都江堰不吃尤兔头等于白来」。麻辣兔头软糯脱骨，裹满香辣酱料花生碎白芝麻。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">太平张醪糟（灌县古城西街店）</div>
+<div class="fm-addr">📍 都江堰市灌县古城西街120号</div>
+<div class="fm-sig">🔥 招牌：红糖醪糟粉子蛋（¥13）、红糖糍粑、冰醪糟、开口笑饺子</div>
+<div class="fm-price">人均 ¥15</div>
+<div class="fm-note">💡 百年老店，非物质文化遗产。手工现搓粉子软糯Q弹，醪糟自酿浓郁，溏心蛋是灵魂。西街店环境复古雅致。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">黑竹香鸡</div>
+<div class="fm-addr">📍 成都市金牛区营和巷40号（抚琴小区）</div>
+<div class="fm-sig">🔥 招牌：乌骨鸡魔芋火锅、芋儿鸡、笋子、魔芋</div>
+<div class="fm-price">人均 ¥50</div>
+<div class="fm-note">💡 成都本地人私藏的苍蝇馆子，乌骨鸡配魔芋+笋子的搭配一绝，鸡肉嫩滑魔芋Q弹入味。在抚琴小区深巷中，环境简陋但味道惊艳。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">三哥田螺</div>
+<div class="fm-addr">📍 成都市锦江区北书院街与育婴堂街交叉口东行100米路北</div>
+<div class="fm-sig">🔥 招牌：香辣大田螺、火爆黄喉、鱼香虾仁、爆炒花甲、干烧鲫鱼</div>
+<div class="fm-price">人均 ¥100</div>
+<div class="fm-note">💡 1989年从街边大排档起家，30多年历史，成都最早一批冷淡杯（宵夜档）代表。重油重麻辣典型川式爆炒，承包两条街路边桌椅，烟火气十足。营业至凌晨4点。如回成都较晚可来这里宵夜。</div>
+</div>
+</div>
+</div>
+<div class="hotel-rec-section">
+<div class="hr-title">🏨 推荐酒店住宿地</div>
+<div class="hr-name">嘉立精选酒店(成都春熙路太古里店)</div>
+<div class="hr-area">📍 春熙路/太古里商圈</div>
+<div class="hr-price">💰 ¥250-380/晚</div>
+<div class="hr-desc">续住第三晚，交通便利，地铁直达犀浦站换乘城际列车。明天即将搭乘高铁前往九寨沟——川西之旅的新篇章。</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 4">
+<div class="day-header d4" style="background:linear-gradient(135deg, #fddb92, #d1fdff);color:#666;">
+<div class="day-num">Day 4 · 高铁入九寨·漳扎镇藏餐初体验</div>
+<div class="day-route">清晨成都东站乘高铁2小时抵达黄龙九寨站，换乘景区直通车1.5小时至九寨沟口，入住酒店后在漳扎镇溜达适应高原，傍晚享用扎西藏餐牦牛肉火锅</div>
+</div>
+<div class="spots-wrapper">
+<div class="hotel-route-bar">
+<span class="hdot"></span>
+<span class="hroute-item">🏨 嘉立精选酒店(成都春熙路太古里店)</span>
+<span>→ 🚇🚄 420公里 / 3小时30分钟（高铁2h+直通车1.5h） →</span>
+<span class="hroute-item">📍 漳扎镇</span>
+</div>
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">🏘️ 漳扎镇</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">🏘️</div>
+<div style="flex:1;">
+<div class="spot-name">漳扎镇
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚇🚄 从 嘉立精选酒店(成都春熙路太古里店) · 地铁+城际 · 420公里 / 3小时30分钟（高铁2h+直通车1.5h）
+</span>
+</div>
+<div class="spot-desc">九寨沟景区门口的藏族小镇，沿街藏式建筑、经幡、转经筒、藏餐馆和特产店。海拔约2000米，比沟内低，适合作为高原缓冲站。下午抵达后悠闲散步适应海拔，看看藏式建筑的彩绘门窗和白塔。镇上超市可采购明天沟内午餐的干粮（诺日朗餐厅又贵又难吃，务必自带）。</div>
+</div>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">成都东站</span>
+<span class="wp-detail">（约0km处）· 高铁站，餐饮齐全</span>
+<br><span class="wp-tip">💡 酒店打车至成都东站约20分钟。高铁成都东→黄龙九寨约2小时，票价¥140。务必提前在12306购票，旺季票源紧张。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">黄龙九寨站</span>
+<span class="wp-detail">（约380km处）· 高铁站出口即景区直通车上车点</span>
+<br><span class="wp-tip">💡 出站后广场即有九寨沟直通车，约1.5小时到沟口，票价¥51。车上可欣赏川西高原沿途风光。</span>
+</div>
+<div class="spot-romance">💕 浪漫时刻：高铁穿过隧道群，窗外的四川盆地渐渐变成川西高原。到站那一瞬间，空气里已经有了藏地的味道——稀薄、清冽、带着酥油茶的香。漳扎镇的傍晚，经幡在晚风里飘，你们慢慢走在藏式街道上，为明天的九寨沟积蓄所有的期待。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label bf">🌅 早餐</span>
+<div class="fm-name">酒店早餐或成都东站简餐</div>
+<div class="fm-addr">📍 酒店/成都东站</div>
+<div class="fm-sig">🔥 招牌：包子、豆浆、鸡蛋</div>
+<div class="fm-price">人均 ¥15</div>
+<div class="fm-note">💡 早点出发赶高铁，可在酒店用早餐或在成都东站买点面包/包子带上。高铁上也可吃点零食。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">黄龙九寨站或途中简餐</div>
+<div class="fm-addr">📍 黄龙九寨站/途中</div>
+<div class="fm-sig">🔥 招牌：牦牛肉面、藏式面片、简餐</div>
+<div class="fm-price">人均 ¥30</div>
+<div class="fm-note">💡 高铁到达后可在车站附近简单解决午餐，或到达沟口后在漳扎镇找个藏餐馆吃碗面。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">扎西藏餐</div>
+<div class="fm-addr">📍 九寨沟口漳扎镇主街</div>
+<div class="fm-sig">🔥 招牌：牦牛肉火锅、酥油茶、糌粑、藏式酸奶、青稞饼</div>
+<div class="fm-price">人均 ¥100</div>
+<div class="fm-note">💡 漳扎镇口碑最好的藏餐馆之一，牦牛肉火锅是招牌——汤底浓郁牦牛肉软烂入味。高原第一顿晚餐推荐吃热乎的汤锅暖身暖胃，少油腻以防高反。酸奶极酸需加白糖。</div>
+</div>
+</div>
+</div>
+<div class="hotel-rec-section">
+<div class="hr-title">🏨 推荐酒店住宿地</div>
+<div class="hr-name">九寨沟口藏式酒店/民宿</div>
+<div class="hr-area">📍 九寨沟口漳扎镇，步行至景区入口</div>
+<div class="hr-price">💰 ¥400-800/晚</div>
+<div class="hr-desc">藏式风格精品酒店或民宿，位置优越步行可达景区入口，地暖/电热毯供暖充足，部分房间可看到山景。D4-D5连住两晚，方便D5全天游览九寨沟。提前网上预订，旺季价格上浮。</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 5">
+<div class="day-header d5" style="background:linear-gradient(135deg, #11998e, #38ef7d);color:#fff;">
+<div class="day-num">Day 5 · 人间仙境·九寨沟Y字路线全天</div>
+<div class="day-route">全天游览九寨沟，按Y字路线：上午日则沟（五花海→珍珠滩瀑布），中午则查洼沟（长海→五彩池），下午树正沟（树正群海→火花海→盆景滩）。自带干粮午餐，诺日朗餐厅又贵又难吃</div>
+</div>
+<div class="spots-wrapper">
+<div class="hotel-route-bar">
+<span class="hdot"></span>
+<span class="hroute-item">🏨 九寨沟口藏式酒店/民宿</span>
+<span>→ 🚶 800米 / 10分钟 →</span>
+<span class="hroute-item">📍 九寨沟风景名胜区-Y字路线</span>
+</div>
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">🏔️ 九寨沟风景名胜区-Y字路线</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">🏔️</div>
+<div style="flex:1;">
+<div class="spot-name">九寨沟风景名胜区-Y字路线
+<span class="spot-price">¥259</span>
+<span class="spot-transit">
+🚶 从 九寨沟口酒店 · 步行 · 800米 / 10分钟
+</span>
+</div>
+<div class="spot-desc">世界自然遗产，中国最美的水景。Y字路线精华：日则沟——五花海（九寨沟一绝，孔雀蓝湖水+沉木）、珍珠滩瀑布（《西游记》取景地，水流如珍珠飞溅）；则查洼沟——长海（海拔3100米，九寨最大海子）、五彩池（最小但颜色最惊艳，宝石蓝）；树正沟——树正群海（19个海子梯田般层叠）、火花海（阳光下水波如火花闪烁）。全程景区观光车接送，¥259门票已含观光车。建议7:30开门即进，赶在人潮前到五花海。</div>
+</div>
+</div>
+<div class="spot-romance">💕 浪漫时刻：五花海——无法形容的蓝。湖水透明得像不存在，水底的沉木和钙华清晰可见。TA站在栈道上，水里倒映着两个人的身影和背后的彩林。珍珠滩瀑布水声轰鸣，水雾扑面，你们在瀑布前拍了一张合影——这会是这次旅行里最蓝最清澈的一张。</div>
+<div class="spot-photo">📸 拍照建议：五花海上午顺光湖水颜色最蓝最透。珍珠滩瀑布慢门拍水流拉丝效果（手机用流光快门模式）。五彩池虽小但颜色最浓烈，俯拍最佳。</div>
+<div class="spot-avoid">⚠️ 避坑：诺日朗餐厅又贵又难吃（套餐¥60-100，味道敷衍），务必自带干粮！漳扎镇超市出发前买好面包、火腿肠、巧克力、水果和水。沟内只有诺日朗中心站有餐饮。长海海拔3100米，放慢节奏注意高反。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label bf">🌅 早餐</span>
+<div class="fm-name">酒店藏式早餐</div>
+<div class="fm-addr">📍 九寨沟口酒店</div>
+<div class="fm-sig">🔥 招牌：青稞饼、酥油茶、鸡蛋、糌粑</div>
+<div class="fm-price">人均 ¥20</div>
+<div class="fm-note">💡 早起在酒店吃饱——今天全天在沟内暴走，早餐一定要吃好。喝酥油茶暖身暖胃。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">自带干粮（诺日朗餐厅又贵又难吃）</div>
+<div class="fm-addr">📍 九寨沟内（诺日朗中心站或栈道边）</div>
+<div class="fm-sig">🔥 招牌：面包、火腿肠、巧克力、水果、矿泉水</div>
+<div class="fm-price">人均 ¥25</div>
+<div class="fm-note">💡 重要提醒：诺日朗餐厅套餐¥60-100/人且味道敷衍，强烈建议自带！D4晚上在漳扎镇超市采购好干粮和水。诺日朗中心站有免费热水可以泡面/冲自热米饭。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">阿布氇孜藏餐厅</div>
+<div class="fm-addr">📍 九寨沟口漳扎镇</div>
+<div class="fm-sig">🔥 招牌：牦牛肉汤锅、藏式烤羊排、酥油茶、糌粑、藏式酸奶</div>
+<div class="fm-price">人均 ¥90</div>
+<div class="fm-note">💡 漳扎镇口碑藏餐厅，和阿布氇孜是同一家族经营的不同风格藏餐。牦牛肉汤锅和烤羊排是招牌，浓郁不膻。暴走一天九寨沟后来一碗热汤锅，是高原最美妙的慰藉。记得提前让酒店帮忙预约，旺季可能排队。</div>
+</div>
+</div>
+</div>
+<div class="hotel-rec-section">
+<div class="hr-title">🏨 推荐酒店住宿地</div>
+<div class="hr-name">九寨沟口藏式酒店/民宿</div>
+<div class="hr-area">📍 九寨沟口漳扎镇</div>
+<div class="hr-price">💰 ¥400-800/晚</div>
+<div class="hr-desc">续住第二晚，九寨沟全天游览后无需奔波。晚上在镇上找一家藏餐馆庆祝——你们刚刚见过了中国最美的水。明天即将开启川西自驾之旅，川主寺取车。</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 6">
+<div class="day-header d6" style="background:linear-gradient(135deg, #f7971e, #ffd200);color:#333;">
+<div class="day-num">Day 6 · 最长驾驶日·G213岷江峡谷穿越至四姑娘山</div>
+<div class="day-route">川主寺一嗨取车，沿G213岷江峡谷走廊一路向南：松潘古城→叠溪海子→茂县午餐→汶川→映秀→卧龙→巴朗山隧道，全程463公里7-8小时驾驶，傍晚抵达四姑娘山镇。这是全线最长驾驶日，早起出发不赶夜路</div>
+</div>
+<div class="spots-wrapper">
+<div class="hotel-route-bar">
+<span class="hdot"></span>
+<span class="hroute-item">🏨 九寨沟口藏式酒店/民宿</span>
+<span>→ 🚗 463公里 / 7-8小时驾驶（含停靠约10-11小时） →</span>
+<span class="hroute-item">📍 G213岷江峡谷走廊（松潘古城-叠溪海子-茂县-汶川-巴朗山）</span>
+</div>
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">🏔️ G213岷江峡谷走廊（松潘古城-叠溪海子-茂县-汶川-巴朗山）</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">🏔️</div>
+<div style="flex:1;">
+<div class="spot-name">G213岷江峡谷走廊（松潘古城-叠溪海子-茂县-汶川-巴朗山）
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚗 从 一嗨租车（川主寺取车点） · 自驾 · 463公里 / 7-8小时驾驶（含停靠约10-11小时）
+</span>
+</div>
+<div class="spot-desc">川西最壮美的峡谷公路之一，全程463公里沿岷江而行。精华停靠：松潘古城——唐代城墙遗址，松赞干布迎娶文成公主的历史古城，停车30分钟（免费）；叠溪海子——1933年大地震形成的堰塞湖，湖水碧绿如翡翠（免费）；茂县——羌族聚居的县城，午餐补给站；汶川地震遗址纪念馆——可选停靠，请保持安静和尊重（免费）；映秀→卧龙→巴朗山隧道——穿出隧道后豁然开朗，四姑娘山幺妹峰扑面而来。全程7-8小时净驾驶时间，加上停靠约10-11小时，务必早起出发。</div>
+</div>
+</div>
+<div class="parking-info">
+🅿️ 沿途各观景台/城镇停车 · 即到即停 · 
+<span class="pk-price">全部免费</span>
+ · 💡 松潘古城路边停车，叠溪海子有小型停车区，茂县/汶川县城有正规停车场。巴朗山隧道口停车注意安全勿久留。
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">松潘古城</span>
+<span class="wp-detail">（约20km处）· 古城停车场、卫生间、餐馆</span>
+<br><span class="wp-tip">💡 唐代城墙遗址，松赞干布迎娶文成公主的历史古城。停车30分钟拍照打卡。城墙免费，登城楼收费（¥30可跳过）。古城内有早餐和补给。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">叠溪海子</span>
+<span class="wp-detail">（约120km处）· 路边停车观景、简易厕所</span>
+<br><span class="wp-tip">💡 1933年大地震形成的堰塞湖，湖水碧绿如翡翠。免费停车拍照15-20分钟。此处为历史灾难遗址，请保持尊重。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">茂县</span>
+<span class="wp-detail">（约180km处）· 加油站、餐馆、卫生间、超市</span>
+<br><span class="wp-tip">💡 羌族聚居县城，D6唯一理想的午餐补给站。有加油站可补充油量。餐馆以川菜和羌族简餐为主。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">汶川地震遗址纪念馆</span>
+<span class="wp-detail">（约240km处）· 停车场、纪念馆、卫生间</span>
+<br><span class="wp-tip">💡 可选停靠。免费参观。请保持安静和尊重——这里埋葬着数万同胞。禁止嬉笑打闹和剪刀手拍照。如情绪难以承受可以跳过。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">映秀镇</span>
+<span class="wp-detail">（约300km处）· 加油站、餐馆、卫生间</span>
+<br><span class="wp-tip">💡 映秀至卧龙段进入山区，弯道增多。可在映秀稍作休息上厕所，之后到四姑娘山镇前无大的补给点。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">巴朗山隧道口</span>
+<span class="wp-detail">（约440km处）· 隧道口停车区</span>
+<br><span class="wp-tip">💡 穿出隧道后豁然开朗——四姑娘山幺妹峰（6250m）正面扑来！这是D6最震撼的瞬间。路边停车注意安全，拍照5-10分钟。海拔约3850米，注意高反，勿剧烈运动。</span>
+</div>
+<div class="spot-romance">💕 浪漫时刻：从松潘的唐代城墙到叠溪海子的碧绿水，从汶川的峡谷到巴朗山穿出隧道后扑面而来的四姑娘山——这一天开了七个小时，但每一段窗外都是不同的风景。到民宿把行李一扔，两个人谁也不想动，躺在天台上看幺妹峰被最后的日光照成金色。</div>
+<div class="spot-photo">📸 拍照建议：叠溪海子碧绿色水面顺光拍摄最佳。松潘古城墙上午光线好。巴朗山隧道口出隧道后立即靠边——幺妹峰的突然出现是此行最震撼的瞬间。汶川地震遗址请保持安静，禁止喧哗和嬉笑拍照。</div>
+<div class="spot-avoid">⚠️ 避坑：D6是全线最长驾驶日（463km/7-8h驾驶+停靠共10-11h），务必6:00-7:00出发！不赶夜路——巴朗山段弯多路窄，夜间无路灯非常危险。松潘加油后再出发，后面加油站少。巴朗山隧道口可能暗冰（9月底一般没有但注意）。川主寺一嗨取车提前App确认网点位置和营业时间。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label bf">🌅 早餐</span>
+<div class="fm-name">酒店早餐或川主寺简餐</div>
+<div class="fm-addr">📍 九寨沟口酒店/川主寺镇</div>
+<div class="fm-sig">🔥 招牌：青稞饼、酥油茶、鸡蛋</div>
+<div class="fm-price">人均 ¥20</div>
+<div class="fm-note">💡 早起是关键——今天463公里+停靠耗时10-11小时。5:30-6:00起床，6:00-6:30出发。酒店早餐如没开始就自带干粮。从九寨沟口到川主寺约1.5小时车程（可让酒店安排送车或打车）。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">茂县简餐</div>
+<div class="fm-addr">📍 茂县县城</div>
+<div class="fm-sig">🔥 招牌：川味盖饭、牦牛肉面、羌族土豆糍粑、炒菜</div>
+<div class="fm-price">人均 ¥35</div>
+<div class="fm-note">💡 茂县是D6全程唯一理想的午餐补给站。县城有川菜馆和简餐店，价格实惠。建议吃饱——下午还有巴朗山翻山路等着你。吃完可在超市补充零食和水。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">四姑娘山镇藏餐</div>
+<div class="fm-addr">📍 四姑娘山镇主街</div>
+<div class="fm-sig">🔥 招牌：牦牛肉汤锅、藏式酸奶、糌粑、酥油茶、川味小炒</div>
+<div class="fm-price">人均 ¥70</div>
+<div class="fm-note">💡 四姑娘山镇海拔3200米，D6长途驾驶后吃热乎汤锅暖身暖胃。镇上餐馆集中在主街，步行可达。少油腻防高反。吃完早点休息——躺天台看幺妹峰日落金山是D6的终极浪漫。</div>
+</div>
+</div>
+</div>
+<div class="hotel-rec-section">
+<div class="hr-title">🏨 推荐酒店住宿地</div>
+<div class="hr-name">见山民宿</div>
+<div class="hr-area">📍 四姑娘山镇，近双桥沟景区入口</div>
+<div class="hr-price">💰 ¥400-500/晚</div>
+<div class="hr-desc">直面四姑娘山雪山景观，藏式风格客房，地暖充足，供氧设备。部分房间窗外即是幺妹峰，早起看日照金山。天台是看幺妹峰日落金山的最佳位置。高原第一晚注意休息，不要洗澡洗头。D6长途驾驶后在这里瘫着就是最好的享受。</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 7">
+<div class="day-header d7" style="background:linear-gradient(135deg, #0c3483, #a2b6df);color:#fff;">
+<div class="day-num">Day 7 · 藏寨碉楼·从四姑娘山到新都桥的雪山长廊</div>
+<div class="day-route">清晨猫鼻梁晨拍四姑娘山全景，上午游览双桥沟，下午经丹巴甲居藏寨、牦牛河谷、雅拉雪山观景台、疙瘩梁子垭口、塔公草原路边，傍晚抵达摄影天堂新都桥</div>
+</div>
+<div class="spots-wrapper">
+<div class="hotel-route-bar">
+<span class="hdot"></span>
+<span class="hroute-item">🏨 见山民宿</span>
+<span>→ 🚗 8公里 / 10分钟 →</span>
+<span class="hroute-item">📍 猫鼻梁（四姑娘山全景）</span>
+</div>
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">🏔️ 猫鼻梁（四姑娘山全景）</span>
+<span>→ 🚗 25公里 / 30分钟 →</span>
+<span class="r-item">🏞️ 双桥沟</span>
+<span>→ 🚗 200公里 / 3.5小时驾驶（含停靠约5-6小时） →</span>
+<span class="r-item">🏔️ 甲居藏寨-雅拉雪山-疙瘩梁子-塔公草原景观带</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">🏔️</div>
+<div style="flex:1;">
+<div class="spot-name">猫鼻梁（四姑娘山全景）
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚗 从 见山民宿（四姑娘山镇） · 自驾 · 8公里 / 10分钟
+</span>
+</div>
+<div class="spot-desc">四姑娘山四座雪峰一字排开的最佳观景台。幺妹峰海拔6250米傲然矗立——大峰（5025m）、二峰（5276m）、三峰（5355m）、幺妹峰（6250m）。上午顺光，四座雪峰蓝天白雪层次分明。猫鼻梁距离四姑娘山镇仅10分钟车程，晨拍后回镇上吃早餐再进双桥沟。</div>
+</div>
+</div>
+<div class="parking-info">
+🅿️ 猫鼻梁观景台停车场 · 即到即停 · 
+<span class="pk-price">免费</span>
+ · 💡 路边免费停车，下车即观景台，无需步行
+</div>
+<div class="spot-romance">💕 浪漫时刻：猫鼻梁停车，下车那一瞬间——四姑娘山四座雪峰一字排开，幺妹峰在最右边。晨光刚照到山顶，雪峰变成金色。TA指着最高那座问「那是幺妹吗」——是的，那是幺妹。接下来的两天，雪山会一直陪着你们。</div>
+<div class="spot-photo">📸 拍照建议：猫鼻梁上午顺光拍摄最佳，下午会逆光发暗。雪山+经幡+公路构图，人站路边以小见大。用手机0.5x超广角可拍下四峰全景。</div>
+<div class="spot-avoid">⚠️ 避坑：猫鼻梁下午逆光！务必上午到达拍摄。四姑娘山四峰朝东，下午背光发暗层次全无。距四姑娘山镇仅10分钟车程，D7安排为第一站。</div>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c2">🏞️</div>
+<div style="flex:1;">
+<div class="spot-name">双桥沟
+<span class="spot-price">¥150</span>
+<span class="spot-transit">
+🚗 从 猫鼻梁 · 自驾 · 25公里 / 30分钟
+</span>
+</div>
+<div class="spot-desc">四姑娘山三条沟中最美最轻松的一条，全程景区观光车接送无需爬山。精华段：红杉林（海拔3840米，原始森林+雪山环绕）→ 珠噶纳措（最佳雪山倒影拍摄点）→ 盆景滩（钙华滩流+枯树造景）→ 人参果坪（开阔草甸+牦牛+幺妹峰远景）。观光车从沟口直达红杉林（约40分钟），从上往下一站一站游览，体力零负担。</div>
+</div>
+</div>
+<div class="parking-info">
+🅿️ 双桥沟景区停车场 · 步行3分钟 · 
+<span class="pk-price">¥10-20/次</span>
+ · 💡 淡季车位充足，旺季（国庆）需早到。景区门口有餐厅可吃早餐。
+</div>
+<div class="spot-romance">💕 浪漫时刻：珠噶纳措——雪山倒映在平静的湖面上，红杉林环绕四周。你们在湖边的木栈道上坐下，看幺妹峰在水中的倒影被微风吹皱又复平。海拔3840米的红杉林里，空气稀薄但心跳清晰可闻。</div>
+<div class="spot-photo">📸 拍照建议：珠噶纳措拍雪山倒影最佳，下午光线斜射时层次最丰富。人参果坪下午光影极美，草甸金黄+雪山做背景。观光车从上往下游览，每个点停20-30分钟。</div>
+<div class="spot-avoid">⚠️ 避坑：双桥沟末班景区车约17:00-17:30发出，务必提前确认当天末班车时间。红杉林海拔3840米，慢慢走不要跑。错过末班车需步行十几公里出沟！</div>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c3">🏔️</div>
+<div style="flex:1;">
+<div class="spot-name">甲居藏寨-雅拉雪山-疙瘩梁子-塔公草原景观带
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚗 从 双桥沟 · 自驾 · 200公里 / 3.5小时驾驶（含停靠约5-6小时）
+</span>
+</div>
+<div class="spot-desc">D7下午的精华景观长廊（驾驶约200公里、含游览约5-6小时）。串联六大免费/收费精华：甲居藏寨（¥50，200余栋嘉绒藏族碉楼嵌在半山腰，中国最美乡村）；牦牛河谷/东谷盆景（免费，红石滩+溪流+秋季彩林）；雅拉雪山观景台（免费，5820米雅拉雪山正面全景，经幡猎猎）；疙瘩梁子垭口（免费，3900米360°环视雪山群峰，「宗格天椅」网红打卡点）；塔公草原路边（免费，不进收费区¥35/人，路边即可拍木雅金塔与雅拉雪山同框）。驾驶约3.5小时不含景区时间。</div>
+</div>
+</div>
+<div class="parking-info">
+🅿️ 沿途各观景台路边停车 · 即到即停 · 
+<span class="pk-price">甲居藏寨含门票内，其余免费</span>
+ · 💡 每个观景台均有小型停车区，免费使用。甲居藏寨自驾车可入寨内。疙瘩梁子垭口停车区最大可休整。
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">丹巴甲居藏寨</span>
+<span class="wp-detail">（约70km处）· 景区停车场、卫生间、餐饮</span>
+<br><span class="wp-tip">💡 ¥50门票，200余栋嘉绒藏族碉楼半山错落。中国最美乡村。1号观景台拍全景最佳，3号观景台近拍藏寨细节。游览1-1.5小时。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">牦牛河谷/东谷盆景</span>
+<span class="wp-detail">（约100km处）· 路边停车、溪流</span>
+<br><span class="wp-tip">💡 红石滩+高山溪流+秋季彩林，全部免费。停车拍照15-20分钟。溪边石头湿滑注意安全。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">雅拉雪山观景台</span>
+<span class="wp-detail">（约120km处）· 观景台、经幡、停车区</span>
+<br><span class="wp-tip">💡 5820米雅拉雪山正面全景！免费。经幡做前景拍人像极出片。此处为雅拉雪山最佳观赏角度。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">疙瘩梁子垭口</span>
+<span class="wp-detail">（约135km处）· 停车区、经幡、「宗格天椅」打卡点</span>
+<br><span class="wp-tip">💡 海拔3900米，360°环视雅拉雪山群峰。风大温度低穿好外套。「宗格天椅」免费拍照。厕所条件极差（旱厕），在此前村镇解决。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">塔公草原路边</span>
+<span class="wp-detail">（约165km处）· 路边停车</span>
+<br><span class="wp-tip">💡 不进收费区¥35/人！路边免费位置即可拍到木雅金塔+雅拉雪山同框。下午光线最佳。收费区内和路边看到的雪山角度完全一样。</span>
+</div>
+<div class="spot-romance">💕 浪漫时刻：疙瘩梁子垭口，风很大，经幡被吹得猎猎响。360度都是雪山——背后是雅拉，远处是贡嘎方向。TA坐在「宗格天椅」上，你按下快门，然后发现照片里TA的头发被风吹成了一个笑话，两个人在海拔四千米笑到缺氧。</div>
+<div class="spot-photo">📸 拍照建议：甲居藏寨1号观景台上午顺光拍全景。雅拉雪山观景台正面顺光拍雪山+经幡。疙瘩梁子垭口360°全景下午光线最佳。塔公草原路边拍木雅金塔+雅拉雪山同框，不进收费区就能出大片。</div>
+<div class="spot-avoid">⚠️ 避坑：疙瘩梁子垭口海拔3900米风大低温，厕所条件极差（旱厕）！自带纸巾零钱。丹巴→八美段中途无餐馆，务必自带干粮或在丹巴县城吃饱出发。塔公草原收费区¥35/人完全不值得进——路边免费位置拍木雅金塔+雅拉雪山角度完全一样。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label bf">🌅 早餐</span>
+<div class="fm-name">见山民宿藏式早餐</div>
+<div class="fm-addr">📍 四姑娘山镇见山民宿</div>
+<div class="fm-sig">🔥 招牌：青稞饼、酥油茶、鸡蛋、糌粑、粥</div>
+<div class="fm-price">人均 ¥20</div>
+<div class="fm-note">💡 早起先开车到猫鼻梁（10分钟）拍晨光中的四姑娘山全景，回民宿吃早餐后再去双桥沟。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">丹巴县城藏餐</div>
+<div class="fm-addr">📍 丹巴县城</div>
+<div class="fm-sig">🔥 招牌：藏式面片、牦牛肉包子、糌粑、酥油茶、川味小炒</div>
+<div class="fm-price">人均 ¥45</div>
+<div class="fm-note">💡 丹巴县城是D7出双桥沟后唯一有餐馆的中转点。建议在丹巴吃饱并买好干粮——丹巴→八美→塔公段中途无餐馆，只能靠车上干粮。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">新都桥藏餐馆/川菜馆</div>
+<div class="fm-addr">📍 新都桥镇主街</div>
+<div class="fm-sig">🔥 招牌：牦牛肉汤锅、藏式烤饼、酥油茶、手抓牦牛肉、川味小炒</div>
+<div class="fm-price">人均 ¥70</div>
+<div class="fm-note">💡 新都桥海拔3460米，高原适应第三天应该已基本无恙。汤锅暖身首选。镇上有藏餐和川菜可选，川菜更易适应高原胃。部分客栈可提前预约晚餐。明天需要早起拍杨树长廊，早点吃完休息。</div>
+</div>
+</div>
+</div>
+<div class="hotel-rec-section">
+<div class="hr-title">🏨 推荐酒店住宿地</div>
+<div class="hr-name">贡嘎宗庄园/等枫来客栈</div>
+<div class="hr-area">📍 新都桥镇，近十里杨树长廊</div>
+<div class="hr-price">💰 ¥400-500/晚</div>
+<div class="hr-desc">新都桥品质住宿标杆，藏式庄园风格，庭院可远眺贡嘎雪山。房间供暖充足（地暖/电热毯），高原夜晚必备。部分房型直面杨树长廊，秋色入窗。明天清晨步行即到杨树长廊拍金色光影。</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 8">
+<div class="day-header d8" style="background:linear-gradient(135deg, #667eea, #764ba2);color:#fff;">
+<div class="day-num">Day 8 · 秘境S434·红海子雪山倒影与归途</div>
+<div class="day-route">清晨新都桥杨树长廊拍摄金色光影，不走G318改走S434秘境省道，途经红海子雪山倒影、雅拉山口4400米垭口、康定机场路公路大片、斯丁措、折多塘观景台，经泸定桥后经雅安返回成都还车</div>
+</div>
+<div class="spots-wrapper">
+<div class="hotel-route-bar">
+<span class="hdot"></span>
+<span class="hroute-item">🏨 贡嘎宗庄园/等枫来客栈</span>
+<span>→ 🚗 5公里 / 10分钟 →</span>
+<span class="hroute-item">📍 新都桥杨树长廊晨拍</span>
+</div>
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">🍂 新都桥杨树长廊晨拍</span>
+<span>→ 🚗 110公里 / 3-4小时（含停靠） →</span>
+<span class="r-item">🏔️ S434秘境省道（红海子-雅拉山口-康定机场路-斯丁措-折多塘）</span>
+<span>→ 🚗 50公里 / 1小时 →</span>
+<span class="r-item">🌉 泸定桥</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">🍂</div>
+<div style="flex:1;">
+<div class="spot-name">新都桥杨树长廊晨拍
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚗 从 贡嘎宗庄园/等枫来客栈 · 自驾 · 5公里 / 10分钟
+</span>
+</div>
+<div class="spot-desc">新都桥被誉为「摄影家的天堂」，十里杨树长廊是核心景观带。9月底杨树开始变金黄，清晨8点前阳光斜射穿过杨树林，光影斑驳如金色隧道。最佳拍摄段在新都桥镇至塔公方向3-10公里处。公路两旁杨树夹道，远处雅拉雪山和贡嘎山系做背景。公路S弯+杨树+雪山——川西最经典的公路大片机位。</div>
+</div>
+</div>
+<div class="spot-romance">💕 浪漫时刻：清晨八点前，阳光斜穿过杨树长廊，在地面画出金色栅栏。你和TA走在光影斑驳的公路上，远方的雪山若隐若现。这一刻，新都桥的十里杨树只属于你们两个人——「摄影家的天堂」原来不需要相机，用心就能记住。</div>
+<div class="spot-photo">📸 拍照建议：8点前金色光影最浓，9点后光线变硬效果大减。S弯+杨树+雪山背景最佳。公路两侧皆可拍，注意来往车辆。</div>
+<div class="spot-avoid">⚠️ 避坑：新都桥最佳拍摄时间仅8点前约1小时！9点后光线变硬效果大打折扣。务必早起。10月国庆期间杨树最黄。</div>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c2">🏔️</div>
+<div style="flex:1;">
+<div class="spot-name">S434秘境省道（红海子-雅拉山口-康定机场路-斯丁措-折多塘）
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚗 从 新都桥杨树长廊 · 自驾 · 110公里 / 3-4小时（含停靠）
+</span>
+</div>
+<div class="spot-desc">S434省道是G318之外的另一条康定通道，车少景美，是资深自驾玩家私藏的秘境公路。全程约110公里、3-4小时（含停靠）。五大停靠点：红海子/加呷腊——笔架雪山倒映在湖面，湖边有秋千（清洁费¥10，下午顺光）；雅拉山口——海拔4400米经幡垭口，雪山环绕（免费）；康定机场路——远眺贡嘎群峰，公路照大片机位（免费）；斯丁措——晴天贡嘎倒影绝美，阴天直接跳过（免费）；折多塘观景台——下山看雪峰+秋季彩林（免费）。走S434不走G318——货车少90%，海子多100%！</div>
+</div>
+</div>
+<div class="parking-info">
+🅿️ 沿途各观景台停车区 · 即到即停 · 
+<span class="pk-price">红海子¥10/人清洁费（只收现金），其余免费</span>
+ · 💡 红海子有收费停车+清洁费¥10/人（只收现金）。其余观景台免费停车。康定机场路停车注意安全开双闪。
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">红海子/加呷腊</span>
+<span class="wp-detail">（约30km处）· 停车区、湖边秋千、简易厕所</span>
+<br><span class="wp-tip">💡 笔架雪山倒映湖中，下午顺光。清洁费¥10/人只收现金！手机可能没信号。湖边秋千是标志打卡点。湖面如镜时倒影最完美。海拔约4200米。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">雅拉山口</span>
+<span class="wp-detail">（约45km处）· 停车区、经幡</span>
+<br><span class="wp-tip">💡 海拔4400米垭口，经幡猎猎，雪山环绕。风极大温度低，穿好防风外套。停车拍照10-15分钟，不要久待。这里是此行海拔最高点。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">康定机场路</span>
+<span class="wp-detail">（约60km处）· 路边停车</span>
+<br><span class="wp-tip">💡 远眺贡嘎群峰最佳路段。公路在高原上笔直延伸，雪山做背景——川西经典公路大片机位。靠边停车开双闪，注意来往车辆。阴天效果打折。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">斯丁措</span>
+<span class="wp-detail">（约70km处）· 停车区</span>
+<br><span class="wp-tip">💡 晴天贡嘎倒影绝美，阴天湖面无倒影直接跳过。免费。海拔约4200米。如已在红海子拍够倒影可跳过。</span>
+</div>
+<div class="waypoint-bar">
+<span class="wp-icon">🛣️</span>
+<span class="wp-name">折多塘观景台</span>
+<span class="wp-detail">（约90km处）· 观景台、停车区</span>
+<br><span class="wp-tip">💡 下行方向看雪峰+秋季彩林。免费。此处为禁飞区严禁无人机！下午光线斜射彩林层次最佳。</span>
+</div>
+<div class="spot-romance">💕 浪漫时刻：红海子——湖面如镜，笔架山雪峰倒过来，湖边有个秋千。TA坐上去，背后是蓝天雪山。你推了一把，风大到手抖，照片糊了。但这张糊掉的照片后来成了TA最喜欢的屏保——「因为看不清表情的照片最真实」。</div>
+<div class="spot-photo">📸 拍照建议：红海子下午顺光拍雪山倒影最佳。秋千是红海子标志打卡点。康定机场路拍公路大片需注意安全，靠边停车开双闪。斯丁措阴天效果差直接跳过。雅拉山口经幡+雪山人像。</div>
+<div class="spot-avoid">⚠️ 避坑：红海子清洁费¥10/人只收现金！务必备好零钱，手机可能没信号。斯丁措阴天看不到倒影，直接跳过不纠结。折多塘附近为禁飞区，严禁飞无人机！雅拉山口海拔4400米风极大，注意保暖。</div>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c3">🌉</div>
+<div style="flex:1;">
+<div class="spot-name">泸定桥
+<span class="spot-price">¥10</span>
+<span class="spot-transit">
+🚗 从 康定（折多塘） · 自驾 · 50公里 / 1小时
+</span>
+</div>
+<div class="spot-desc">横跨大渡河的铁索桥，全长103米，始建于清康熙年间，因红军飞夺泸定桥闻名。桥面铺设木板，行走时桥身摇晃，脚下大渡河咆哮奔涌，极为震撼。上桥体验红军当年的惊心动魄——走在晃动的铁索桥上，双手紧抓铁链，脚下河水翻腾。游览约30-45分钟。泸定县城有简单的餐馆可补充能量。泸定至雅安全程高速（雅康高速），约1小时即可上高速。</div>
+</div>
+</div>
+<div class="parking-info">
+🅿️ 泸定桥景区停车场 · 步行2分钟 · 
+<span class="pk-price">¥10-20/次</span>
+ · 💡 节假日车位紧张，可停稍远的居民区路边再步行过来
+</div>
+<div class="spot-romance">💕 浪漫时刻：牵手走过泸定桥的铁索，脚下大渡河咆哮奔涌。桥身每晃一下TA就把你的手握得更紧一些——不是因为害怕，是因为这趟川西自驾走到了最后一站，而你们还不想让它结束。过了这座桥，就是回成都的路。</div>
+<div class="spot-photo">📸 拍照建议：桥上拍大渡河奔涌+铁索细节。桥头康熙御碑可拍人文打卡照。过桥后对岸回拍全貌。</div>
+<div class="spot-avoid">⚠️ 避坑：节假日泸定桥排队可能超1小时！如赶时间可远观不进场。泸定→雅安→成都约280公里需3.5-4小时高速，预留充足回程时间。D8康定到雅安全程高速，注意限速。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label bf">🌅 早餐</span>
+<div class="fm-name">客栈早餐或新都桥镇上早餐</div>
+<div class="fm-addr">📍 新都桥镇</div>
+<div class="fm-sig">🔥 招牌：藏式饼、酥油茶、鸡蛋、粥</div>
+<div class="fm-price">人均 ¥20</div>
+<div class="fm-note">💡 早起拍完杨树长廊后回客栈用餐或在镇上找早餐。新都桥早餐以藏餐和简餐为主。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">康定/泸定简餐</div>
+<div class="fm-addr">📍 康定或泸定县城</div>
+<div class="fm-sig">🔥 招牌：牦牛肉面、藏式面片、川味盖饭、抄手</div>
+<div class="fm-price">人均 ¥35</div>
+<div class="fm-note">💡 康定和泸定县城有简餐馆，价格实惠。泸定桥附近小吃店多。如果赶时间可以在车上吃干粮，雅安服务区也有餐饮。</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label dn">🌙 晚餐</span>
+<div class="fm-name">巷子肥肠</div>
+<div class="fm-addr">📍 成都市锦江区一环路东五段附近</div>
+<div class="fm-sig">🔥 招牌：卤肥肠、豆汤饭、肥肠粉、拌肥肠、粉蒸肥肠</div>
+<div class="fm-price">人均 ¥40</div>
+<div class="fm-note">💡 成都本地人钟爱的肥肠专门店，卤肥肠软糯入味，豆汤饭清鲜暖胃。三天的川西自驾+两天的九寨沟——一碗豆汤饭一碟卤肥肠，所有疲惫都被治愈。如还车较晚可在还车点附近就近解决。</div>
+</div>
+</div>
+</div>
+<div class="hotel-rec-section">
+<div class="hr-title">🏨 推荐酒店住宿地</div>
+<div class="hr-name">成都嘉立精选或机场周边酒店</div>
+<div class="hr-area">📍 成都春熙路或双流机场周边</div>
+<div class="hr-price">💰 ¥250-350/晚</div>
+<div class="hr-desc">自驾归来最后一天。一嗨成都门店还车后打车回酒店。推荐住机场附近方便D9退房赶机，也可续住春熙路最后一晚再逛一逛。还车前确认附近有加油站加满油。</div>
+</div>
+</div>
+</div>
+<div class="day-card" data-nav="Day 9">
+<div class="day-header d9" style="background:linear-gradient(135deg, #c31432, #240b36);color:#fff;">
+<div class="day-num">Day 9 · 收官蓉城·最后一顿川味与告别</div>
+<div class="day-route">上午成都最后一顿地道美食补足，有时间可去宽窄巷子只逛不买拍拍照，下午整理行李前往机场，晚班飞回珠三角</div>
+</div>
+<div class="spots-wrapper">
+<div class="hotel-route-bar">
+<span class="hdot"></span>
+<span class="hroute-item">🏨 成都嘉立精选或机场周边酒店</span>
+<span>→ 🚗 5公里 / 15分钟 →</span>
+<span class="hroute-item">📍 宽窄巷子（只逛不消费）</span>
+</div>
+<div class="route-bar">
+<span class="dot"></span>
+<span class="r-item">📸 宽窄巷子（只逛不消费）</span>
+</div>
+<div class="spot">
+<div class="spot-head">
+<div class="spot-icon c1">📸</div>
+<div style="flex:1;">
+<div class="spot-name">宽窄巷子（只逛不消费）
+<span class="spot-price">免费</span>
+<span class="spot-transit">
+🚗 从 酒店 · 打车 · 5公里 / 15分钟
+</span>
+</div>
+<div class="spot-desc">成都必打卡地标，由宽巷子、窄巷子、井巷子三条平行古街组成。青砖黛瓦、四合院落、盖碗茶、川剧变脸——成都最后的慢生活缩影。只逛不买：拍照打卡建筑+街头艺人表演+熊猫周边橱窗，吃和购物都不在景区内——外面便宜且好吃得多。逛街30-60分钟即可。如有时间可顺便采购伴手礼（火锅底料、张飞牛肉、兔头真空装），但不深逛。</div>
+</div>
+</div>
+<div class="spot-romance">💕 浪漫时刻：最后一天在宽窄巷子，青砖黛瓦的四合院前，你们最后一次拍了张合影。九天的九寨川西之旅——高铁入九寨、Y字路线的蓝、463公里的驾驶日、疙瘩梁子的风、红海子的秋千——都在这张照片里。不是结束，是下一次出发的起点。</div>
+<div class="spot-photo">📸 拍照建议：宽巷子砖墙+窄巷子木门+井巷子老井，三巷各有特色。早晨人少拍照最佳。</div>
+<div class="spot-avoid">⚠️ 避坑：宽窄巷子/锦里吃饭和购物价格是外面的2-3倍！只逛不买，拍照打卡即可。吃饭去真正的苍蝇馆子。伴手礼可买但比外面贵30-50%，不如去附近红旗连锁超市采购。</div>
+</div>
+<div class="food-section-inline">
+<h3>🍽️ 当日餐饮推荐</h3>
+<div class="food-grid-inline">
+<div class="food-item-mini">
+<span class="fm-label bf">🌅 早餐</span>
+<div class="fm-name">酒店早餐或周边小吃</div>
+<div class="fm-addr">📍 酒店周边</div>
+<div class="fm-sig">🔥 招牌：担担面、红油抄手、豆浆油条</div>
+<div class="fm-price">人均 ¥15</div>
+</div>
+<div class="food-item-mini">
+<span class="fm-label lu">☀️ 午餐</span>
+<div class="fm-name">雨田饭店（再吃一顿）</div>
+<div class="fm-addr">📍 成都市锦江区红星路二段20号1层附9号</div>
+<div class="fm-sig">🔥 招牌：荷叶粉蒸肉、藕汤（素藕汤）、蒸蛋、红烧肉</div>
+<div class="fm-price">人均 ¥52</div>
+<div class="fm-note">💡 如果时间充裕，出发前再来一顿雨田——红烧肉的酱香+藕汤的清甜，是九寨川西之旅最完美的句号。或者去附近买伴手礼（火锅底料/张飞牛肉/兔头），只买不深逛。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="food-section collapsible" data-nav="🍜 美食推荐">
+<h2>🍜 美食推荐汇总（11家） <span class="collapse-icon">▼</span></h2>
+<div class="collapse-content">
+<div class="food-city-group">
+<div class="food-city-title">🐼 成都（6家）</div>
+<div class="food-grid">
+<div class="food-item">
+<div class="f-name">🍽️ 雨田饭店</div>
+<div class="f-cuisine">川菜·苍蝇馆子</div>
+<div class="f-dishes">🔥 推荐：荷叶粉蒸肉、藕汤、蒸蛋、红烧肉</div>
+<div class="f-price">人均 ¥52</div>
+<div class="f-reason">💡 成都资历最老的私营餐馆之一，1985年创立近40年。BBC纪录片取景地。红烧肉+藕汤经典搭配¥52/人，米饭¥1不限量。D1和D9首尾呼应。</div>
+</div>
+<div class="food-item">
+<div class="f-name">🍽️ 永乐饭店</div>
+<div class="f-cuisine">川菜·家常菜</div>
+<div class="f-dishes">🔥 推荐：宫保鸡丁、糯米排骨、肝腰合炒、圆子汤</div>
+<div class="f-price">人均 ¥50</div>
+<div class="f-reason">💡 米其林必比登推荐，1985年开业近40年。成都家常菜天花板，宫保鸡丁+糯米排骨招牌搭配¥50/人。</div>
+</div>
+<div class="food-item">
+<div class="f-name">🍽️ 明园饭店</div>
+<div class="f-cuisine">川菜·老馆子</div>
+<div class="f-dishes">🔥 推荐：大蒜白油肚条、鱼香茄饼、肝腰合炒、蒜苗回锅肉</div>
+<div class="f-price">人均 ¥50</div>
+<div class="f-reason">💡 主厨年过七旬的老牌川菜馆，没有固定菜单直接到厨房选食材。老板娘凉拌菜甜辣味拿手。市井烟火气浓。</div>
+</div>
+<div class="food-item">
+<div class="f-name">🍽️ 黑竹香鸡</div>
+<div class="f-cuisine">川菜·火锅</div>
+<div class="f-dishes">🔥 推荐：乌骨鸡魔芋火锅、芋儿鸡、魔芋</div>
+<div class="f-price">人均 ¥50</div>
+<div class="f-reason">💡 成都本地人私藏苍蝇馆子，乌骨鸡配魔芋+笋子一绝，深巷中的惊艳味道。</div>
+</div>
+<div class="food-item">
+<div class="f-name">🍽️ 三哥田螺</div>
+<div class="f-cuisine">川菜·宵夜档</div>
+<div class="f-dishes">🔥 推荐：香辣大田螺、火爆黄喉、鱼香虾仁、干烧鲫鱼</div>
+<div class="f-price">人均 ¥100</div>
+<div class="f-reason">💡 1989年起家的成都宵夜传奇，重油重麻辣川式爆炒，承包两条街烟火气。凌晨4点才打烊。</div>
+</div>
+<div class="food-item">
+<div class="f-name">🍽️ 巷子肥肠</div>
+<div class="f-cuisine">川菜·肥肠</div>
+<div class="f-dishes">🔥 推荐：卤肥肠、豆汤饭、肥肠粉、粉蒸肥肠</div>
+<div class="f-price">人均 ¥40</div>
+<div class="f-reason">💡 自驾归来最佳慰藉——卤肥肠软糯+豆汤饭暖胃，三天川西自驾+两天九寨沟的疲惫一扫而空。</div>
+</div>
+</div>
+</div>
+<div class="food-city-group">
+<div class="food-city-title">🏯 都江堰（2家）</div>
+<div class="food-grid">
+<div class="food-item">
+<div class="f-name">🍽️ 老号尤兔头</div>
+<div class="f-cuisine">川菜·小吃</div>
+<div class="f-dishes">🔥 推荐：麻辣兔头（¥11/个）、五香兔头、鲜锅兔、清波水饺</div>
+<div class="f-price">人均 ¥40</div>
+<div class="f-reason">💡 都江堰二十多年老店，本地人说「来都江堰不吃尤兔头等于白来」。麻辣兔头软糯脱骨，裹满香辣酱料花生碎白芝麻。</div>
+</div>
+<div class="food-item">
+<div class="f-name">🍽️ 太平张醪糟</div>
+<div class="f-cuisine">川味小吃·非遗</div>
+<div class="f-dishes">🔥 推荐：红糖醪糟粉子蛋、红糖糍粑、冰醪糟</div>
+<div class="f-price">人均 ¥15</div>
+<div class="f-reason">💡 百年非遗老店，手工现搓粉子软糯Q弹，醪糟自酿浓郁，溏心蛋是灵魂。¥15/人。</div>
+</div>
+</div>
+</div>
+<div class="food-city-group">
+<div class="food-city-title">🏔️ 九寨沟口（2家）</div>
+<div class="food-grid">
+<div class="food-item">
+<div class="f-name">🍽️ 扎西藏餐</div>
+<div class="f-cuisine">藏餐</div>
+<div class="f-dishes">🔥 推荐：牦牛肉火锅、酥油茶、糌粑、藏式酸奶</div>
+<div class="f-price">人均 ¥100</div>
+<div class="f-reason">💡 九寨沟口漳扎镇口碑最好的藏餐馆之一，牦牛肉火锅汤底浓郁肉软烂入味。高原第一晚暖身首选。¥80-120/人。</div>
+</div>
+<div class="food-item">
+<div class="f-name">🍽️ 阿布氇孜藏餐厅</div>
+<div class="f-cuisine">藏餐</div>
+<div class="f-dishes">🔥 推荐：牦牛肉汤锅、藏式烤羊排、酥油茶、藏式酸奶</div>
+<div class="f-price">人均 ¥90</div>
+<div class="f-reason">💡 九寨沟口漳扎镇人气藏餐厅，牦牛肉汤锅和烤羊排招牌，浓郁不膻。暴走一天九寨沟后的最美妙慰藉。¥80-100/人。</div>
+</div>
+</div>
+</div>
+<div class="food-city-group">
+<div class="food-city-title">🚗 茂县（川西路途）（1家）</div>
+<div class="food-grid">
+<div class="food-item">
+<div class="f-name">🍽️ 茂县简餐（川菜/羌族简餐）</div>
+<div class="f-cuisine">川菜·羌族简餐</div>
+<div class="f-dishes">🔥 推荐：川味盖饭、牦牛肉面、羌族土豆糍粑</div>
+<div class="f-price">人均 ¥35</div>
+<div class="f-reason">💡 D6全程唯一理想的午餐补给站。茂县是羌族聚居县城，有川菜馆和简餐店。吃完可补充零食和水，下午翻巴朗山。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="avoid-section collapsible" data-nav="⚠️ 避坑清单 (25条)">
+<h2>⚠️ 避坑清单 <span style="font-size:.7em;color:#999;">25条 · 避一个坑省1000元</span> <span class="collapse-icon">▼</span></h2>
+<div class="collapse-content">
+<div class="avoid-list">
+<div class="avoid-item">
+<div class="a-num">1</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ D6睡到自然醒再出发</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ D6是全线最长驾驶日（463km/7-8h驾驶+停靠共10-11h），务必6:00-7:00出发！巴朗山段弯多路窄，夜间无路灯非常危险，不赶夜路是铁律。早起才能在天黑前到达四姑娘山镇，还能赶上幺妹峰日落金山。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">2</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 在九寨沟诺日朗餐厅吃午餐</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 诺日朗餐厅又贵又难吃（套餐¥60-100/人，味道敷衍）！D4晚上在漳扎镇超市采购面包、火腿肠、巧克力、自热米饭和水。诺日朗中心站有免费热水可以泡面。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">3</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ D8走G318国道而不是S434省道</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 从新都桥到康定走S434省道而非G318！G318大货车多90%、堵车频繁、风景一般。S434车少景美——红海子+雅拉山口+康定机场路+斯丁措+折多塘五大免费景点都在S434上。G318什么都看不到。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">4</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 红海子不带现金</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 红海子清洁费¥10/人只收现金！手机可能没信号无法扫码。出发前备好¥1000-2000现金（尤其是¥5/¥10/¥20小面额），川西沿途加油站、路边小店、牧民收费都只收现金。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">5</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 阴天还去斯丁措</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 斯丁措的看点是贡嘎雪山在湖面的倒影。阴天湖面灰暗无倒影，直接跳过！不要因为「来都来了」浪费半小时。D8沿途红海子+康定机场路+折多塘已足够精彩。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">6</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 下午到猫鼻梁拍四姑娘山</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 猫鼻梁下午逆光！四姑娘山四座雪峰朝东，上午顺光才能拍到蓝天+白雪+绿色山体的完美层次。下午雪山背光发暗。D7上午从四姑娘山镇出发第一站就到这里，10分钟车程。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">7</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 依赖疙瘩梁子垭口的厕所</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 疙瘩梁子垭口海拔3900米，厕所是旱厕且极其简陋（无冲水、无洗手池、气味大）。出发前在丹巴县城或惠远寺提前解决。自带纸巾和零钱。女性游客尤其要有心理准备——川西高原厕所条件普遍较差。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">8</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 进塔公草原收费景区（¥35/人）</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 塔公草原收费区¥35/人完全不值得进！路边免费位置就能拍到木雅金塔和雅拉雪山完美同框，视角和收费区完全一样。省下¥70（两人）够一顿牦牛肉汤锅。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">9</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 巴朗山隧道前后路段不减速</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 巴朗山段海拔超4000米，秋冬清晨隧道口附近路面可能有暗冰！务必减速慢行（建议≤40km/h），尤其是弯道和背阴路段。9月底一般没有暗冰但仍需保持警惕。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">10</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 折多塘观景台飞无人机</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 折多塘附近为禁飞区！康定机场就在附近，严禁飞无人机！违规轻则没收重则罚款拘留。出发前务必在DJI Fly APP确认飞行区域是否在限飞/禁飞范围。雅拉山口和机场路同样谨慎。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">11</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 丹巴到八美/塔公段不备干粮</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 丹巴→八美→塔公段中途无餐馆！牦牛河谷、雅拉雪山观景台、疙瘩梁子沿途都是纯粹的公路+风景，没有任何餐饮。在丹巴县城吃饱并买好干粮再出发。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">12</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 高原不涂防晒霜</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 川西高原紫外线是平原的5-10倍！即使阴天也要涂SPF50+防晒霜，墨镜+遮阳帽必备。半天不涂就会晒伤脱皮。D5-D8海拔全程2000-4400米，暴露在外的皮肤半小时就晒红。润唇膏同样必备。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">13</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 川主寺一嗨取车不提前App确认</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 川主寺一嗨网点不像大城市门店随时有人。提前在一嗨App确认网点地址、营业时间、联系方式。必要时提前一天电话确认取车时间和车型（SUV如坦克300等热门车型需提前预订）。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">14</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 九寨沟门票当天现场买</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 九寨沟门票需提前网上预约！旺季（国庆）票源紧张可能提前售罄。在「阿坝旅游网」或携程/美团提前购票并预约入园时间段。门票¥259含观光车，刷身份证入园。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">15</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 川西自驾不下载离线地图</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ G213松潘至茂县段、G350巴朗山段、丹巴至八美山区、S434部分路段均无手机信号！出发前在高德/百度地图下载「阿坝藏族羌族自治州」+「甘孜藏族自治州」离线地图包。D6-D8三天完全依赖离线导航。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">16</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 松潘出发前不加油</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 松潘加油站是川主寺取车后第一个加油保障点。后面G213岷江峡谷段加油站稀少！松潘加满油再出发，保持油箱不少于半箱。茂县、丹巴县城、新都桥镇、康定市区各有加油站——见油站就加满。部分乡镇加油站只收现金/刷卡不支持扫码。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">17</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 汶川地震遗址嬉笑拍照</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 汶川地震遗址纪念馆如去，请保持安静和尊重——这里埋葬着数万同胞。禁止嬉笑打闹、禁止剪刀手拍照。如情绪难以承受可以选择跳过。映秀镇也是地震重灾区，同样保持肃穆。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">18</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 康定到雅安高速超速行驶</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ D8康定到雅安全程高速（雅康高速），虽然路面平坦但限速严格（隧道多限80km/h）。雅康高速隧道群密集且测速摄像头多，务必按限速行驶。泸定到雅安约1.5小时，雅安到成都约1.5小时。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">19</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 双桥沟错过末班景区车</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 双桥沟末班景区车约17:00-17:30从红杉林发出（具体以当天公告为准）。错过末班车需步行十几公里出沟！务必在第一个停靠点时确认末班车时间并至少提前30分钟到达最后一个乘车点。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">20</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 四姑娘山镇到达当晚洗澡洗头</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 四姑娘山镇海拔3200米，且D6是463公里长途驾驶日身体疲劳——高原第一晚不要洗澡洗头！热水促进血液循环会加剧高反。用湿毛巾擦身即可，第二天适应后再洗澡。同时避免饮酒、剧烈运动。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">21</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 新都桥中午或下午去拍杨树长廊</span> <span class="a-cat critical">🔴 严重</span>
+<br><span class="a-right">✅ 新都桥最佳拍摄时间仅早上8点前约1小时！阳光斜射穿过杨树形成金色光影隧道。9点后光线变硬效果大减。D8务必早起，清晨先拍完杨树长廊再出发上S434。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">22</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 宽窄巷子/锦里吃饭和购物</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 只逛不消费，拍照打卡即可。吃饭去真正的苍蝇馆子（明园饭店、雨田饭店、巷子肥肠等），价格只有景区一半，味道好十倍。伴手礼（火锅底料/兔头/张飞牛肉）去红旗连锁超市买比景区便宜30-50%。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">23</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 熊猫基地10点以后才到</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 7:30开门就进！大熊猫9点前最活跃（进食+玩耍），10点后多数开始睡觉，下午只能看到熊猫屁股。D2把熊猫基地安排在最前面，看完熊猫再去茶馆才是完美节奏。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">24</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 垭口和观景台长时间逗留不穿衣</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 雅拉山口4400米、巴朗山4487米、疙瘩梁子3900米——垭口风极大、温度常年比山下低10-15°C。下车前穿好冲锋衣+抓绒+薄羽绒，戴好帽子和手套。拍照10-15分钟即回车内，控制停留时间防高反。</span>
+</div>
+</div>
+<div class="avoid-item">
+<div class="a-num">25</div>
+<div style="flex:1;">
+<span class="a-wrong">❌ 都江堰景区走常规路线上坡</span> <span class="a-cat warning">🟡 注意</span>
+<br><span class="a-right">✅ 走省体力下坡路线：秦堰楼6号门进→二王庙→安澜索桥→鱼嘴→飞沙堰→宝瓶口→离堆公园出。全程下坡不走回头路，体力消耗最小。如果从离堆公园正门进入则全程上坡，走到秦堰楼腿已废。</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="budget-card" data-nav="💰 预算估算">
+<h2>💰 预算估算（2人）</h2>
+<div class="budget-row">
+<span class="br-item">✈️ 往返机票</span>
+<span class="br-amount">¥2000-2800</span>
+</div>
+<div class="budget-row-sub"><span>去程+回程 · ¥1000-1400/人</span><span></span></div>
+<div class="budget-row">
+<span class="br-item">🚄 高铁/城际列车</span>
+<span class="br-amount">¥320</span>
+</div>
+<div class="budget-row-sub"><span>犀浦↔离堆公园 + 成都东→黄龙九寨 · ¥160/人</span><span></span></div>
+<div class="budget-row">
+<span class="br-item">🚌 景区直通车</span>
+<span class="br-amount">¥102</span>
+</div>
+<div class="budget-row-sub"><span>黄龙九寨站→九寨沟口 · ¥51/人</span><span></span></div>
+<div class="budget-row">
+<span class="br-item">🚗 租车+油费+过路费</span>
+<span class="br-amount">¥1700-2400</span>
+</div>
+<div class="budget-row-sub"><span>3天（D6-D8）SUV · ¥850-1200/人</span><span></span></div>
+<div class="budget-row">
+<span class="br-item">🏨 酒店住宿（8晚）</span>
+<span class="br-amount">¥3100-5000</span>
+</div>
+<div class="budget-row-sub"><span>成都3晚+九寨沟2晚+四姑娘山1晚+新都桥1晚+成都1晚 · ¥1550-2500/人</span><span></span></div>
+<div class="budget-row">
+<span class="br-item">🎫 景区门票</span>
+<span class="br-amount">¥1416</span>
+</div>
+<div class="budget-row-sub"><span>¥708/人</span><span></span></div>
+<div class="budget-row">
+<span class="br-item">🍜 餐饮美食</span>
+<span class="br-amount">¥2500-3000</span>
+</div>
+<div class="budget-row-sub"><span>9天×2人 · ¥1250-1500/人</span><span></span></div>
+<div class="budget-total">
+总计 ¥11138-15038
+<div class="bt-sub">人均 ¥5569-7519（不含购物和个人消费）</div>
+</div>
+<div style="margin-top:10px; font-size:.76em; opacity:.7; text-align:center; line-height:1.5;">💡 不含购物和个人消费。旺季（国庆）机票可能上浮30-50%，酒店上浮20-30%。淡季（9月初/10月下旬）取预算低值。本方案以自然风光+免费观景台为主，门票费用仅约¥1228。川主寺取成都还的省内租车大概率免异地费是重要节省点。</div>
+</div>
+<div class="tips-card" data-nav="💕 出行Tips">
+<h2>💕 出行Tips（15条）</h2>
+<div class="tips-weather">
+🌤️ <strong>天气参考：</strong>秋（9月底） · 成都18-28°C，九寨沟沟口白天15-22°C/夜间3-10°C，川西高原白天10-20°C/夜间0-8°C，垭口-5-5°C<br>
+👔 <strong>穿衣建议：</strong>冲锋衣+抓绒+薄羽绒服（洋葱式叠穿），防水徒步鞋，墨镜，遮阳帽，SPF50防晒霜<br>
+⚠️ <strong>注意事项：</strong>9月底川西秋色最佳（九寨沟彩林初现+杨树金黄+草甸金黄），但垭口可能下雪。早晚温差极大（白天20°C夜间0°C），务必各层衣物齐全。高原天气多变，晴转雪随时发生。九寨沟沟内比沟口温度低3-5°C。
+</div>
+<div class="tips-grid">
+<div class="tip-item">
+<div class="tip-num">1</div>
+<div class="tip-text">衣物：洋葱式叠穿——长袖速干T恤+抓绒衣+三合一冲锋衣/轻薄羽绒服。9月底川西白天15-22°C、夜间0-8°C，垭口（雅拉山口4400m、巴朗山4487m）可能下雪。薄羽绒服+防风外套+防水徒步鞋必备。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">2</div>
+<div class="tip-text">鞋子：带两双——防水徒步鞋（九寨沟栈道和双桥沟可能湿滑）+一双舒适的日常鞋。红海子湖边可能泥泞，防水鞋很关键。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">3</div>
+<div class="tip-text">防晒三件套：墨镜+遮阳帽+SPF50+防晒霜。川西高原2000-4400米紫外线是平原的5-10倍，即使阴天也要涂！半天不涂必晒伤。润唇膏同样必备（高原极度干燥）。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">4</div>
+<div class="tip-text">抗高反：提前一周吃红景天（效果因人而异）。备好便携氧气瓶（成都药店¥20-30/罐，景区¥60-80/罐）。海拔超过3000米后放慢节奏，多喝热水。四姑娘山D6第一晚不洗澡。巴朗山垭口和雅拉山口不要跑跳，控制停留时间在15分钟内。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">5</div>
+<div class="tip-text">晕车药必备：G213岷江峡谷弯道密集、G350巴朗山段山路蜿蜒、S434红海子前后山路多。容易晕车的务必提前半小时吃晕车药。驾驶者避免吃含嗜睡成分的晕车药。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">6</div>
+<div class="tip-text">下载离线地图：D6 G213松潘至茂县段、巴朗山段，D7丹巴至八美山区，D8 S434部分路段均无手机信号。出发前在高德/百度地图下载「阿坝藏族羌族自治州」+「甘孜藏族自治州」离线地图包。包含G213+G350+S434+G318备用路线。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">7</div>
+<div class="tip-text">加油站规划：G213松潘→茂县段加油站稀少！川主寺取车后在松潘加满油。茂县、丹巴县城、新都桥镇、康定市区有加油站。见油站就加满，保持油箱不少于半箱。部分乡镇加油站只收现金/刷卡不支持扫码。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">8</div>
+<div class="tip-text">现金准备：川西沿途牧民收费（红海子清洁费¥10、路边停车费）、部分加油站和小店只收现金。建议备¥1000-2000零钱，尤其¥5/¥10/¥20小面额。九寨沟口漳扎镇可刷卡/扫码但备现金更稳妥。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">9</div>
+<div class="tip-text">肠胃药+保湿：高原饮食偏牛羊肉和麻辣，备好肠胃药（黄连素/蒙脱石散）。高原极度干燥，带润唇膏+保湿霜+护手霜+保湿面膜。鼻腔干燥可使用红霉素软膏涂抹。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">10</div>
+<div class="tip-text">预订提醒：一嗨租车提前APP预订确保车型（坦克300等SUV热门需提前1-2周）。九寨沟门票在「阿坝旅游网」提前预约。热门酒店（九寨沟口藏式酒店、四姑娘山见山、新都桥贡嘎宗）提前1-2周预订。都江堰城际列车票和高铁票提前在12306购买。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">11</div>
+<div class="tip-text">景区无人机禁令：折多塘（康定机场附近）为严格禁飞区。九寨沟景区内全面禁飞。双桥沟、甲居藏寨等景区也大多禁飞。出发前在DJI Fly APP确认飞行区域是否在限飞/禁飞范围。违规轻则没收重则罚款。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">12</div>
+<div class="tip-text">拍照穿搭建议：穿亮色系（橙色、黄色、红色、白色）在雪山和草原前最出片，避免蓝黑色与天空/雪山融合。红海子秋千和猫鼻梁经幡前，鲜艳颜色最跳。九寨沟五花海前白色/红色最出片（与水色形成对比）。风大时长发扎起来。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">13</div>
+<div class="tip-text">一嗨川主寺取成都还确认：川主寺网点不像大城市门店随时有人，提前在App确认网点地址、营业时间和联系方式。成都还车在一嗨成都门店（春熙路/双流机场/火车东站等），省内异地大概率免异地费是省内租车的重要优势。部分门店18:00后下班需自助还车。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">14</div>
+<div class="tip-text">自驾安全：川西山路弯多路窄，不熟悉山路建议白天驾驶、不赶夜路。D6是全线最长驾驶日（463km），务必早起。巴朗山段和疙瘩梁子段尤其谨慎。SUV优先，轿车可行但部分路段需慢行。三天自驾约800公里，D6-D8日均267公里节奏合理。</div>
+</div>
+<div class="tip-item">
+<div class="tip-num">15</div>
+<div class="tip-text">高原反应警惕：头痛+恶心+乏力是轻度高反，休息+喝热水+吸氧可缓解。如出现剧烈头痛+呕吐+意识模糊立即下撤到低海拔！D6巴朗山（4487m）和D8雅拉山口（4400m）是海拔最高点，控制停留时间。九寨沟沟口海拔仅2000米相对安全。</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<div class="footer-title">九寨川西 · 成都至成都9天自驾之旅</div>
+<div class="footer-desc">9天 · 成都→九寨沟→四姑娘山→新都桥→康定→成都 · 自驾约800公里</div>
+<div class="footer-desc">数据来源：WebSearch + 本地知识库 · 生成时间：2026-06-29T12:00:00+08:00</div>
+<div class="footer-desc" style="margin-top:8px;">🏔️ 愿你走遍川西山河，归来仍是少年 🏔️</div>
+</div>
+</div>
+
+<script>
+// === Quick Nav: Generate and scroll-spy ===
+(function() {
+  var nav = document.getElementById('quickNav');
+  if (!nav) return;
+
+  // Map of nav items -> DOM sections
+  var navItems = nav.querySelectorAll('.nav-item');
+  var sections = [];
+
+  navItems.forEach(function(item) {
+    var target = item.getAttribute('data-target');
+    // Find corresponding section
+    var section = document.querySelector('[data-nav="' + target + '"]');
+    if (section) {
+      sections.push({ el: section, navItem: item, label: target });
+    }
+  });
+
+  // Scroll spy
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        var current = '';
+        sections.forEach(function(s) {
+          if (window.scrollY >= s.el.offsetTop - 120) {
+            current = s.label;
+          }
+        });
+        navItems.forEach(function(item) {
+          var label = item.getAttribute('data-target');
+          if (label === current) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Click to scroll
+  navItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var target = item.getAttribute('data-target');
+      var section = document.querySelector('[data-nav="' + target + '"]');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+})();
+
+// === Day Card Collapse ===
+document.querySelectorAll('.day-card .day-header').forEach(function(header) {
+  header.addEventListener('click', function() {
+    header.parentElement.classList.toggle('collapsed');
+  });
+});
+
+// === Section Collapse ===
+document.querySelectorAll('.collapsible').forEach(function(el) {
+  el.addEventListener('click', function() {
+    el.classList.toggle('collapsed');
+    var content = el.querySelector('.collapse-content');
+    if (content) {
+      content.classList.toggle('collapsed');
+    }
+  });
+});
+
+// === Initial state: first day open, others collapsed ===
+// (keep all open by default for better first impression)
+</script>
+</body>
+</html>
