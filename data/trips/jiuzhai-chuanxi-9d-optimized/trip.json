@@ -1,0 +1,382 @@
+{
+  "trip_id": "jiuzhai-chuanxi-9d-optimized",
+  "title": "九寨沟·四姑娘山双核心 9天8晚优化版",
+  "subtitle": "九寨沟只住一晚＋补回四姑娘山—丹巴—八美—塔公—新都桥—S434完整川西小环线",
+  "destination": {
+    "city": "成都→都江堰→九寨沟→四姑娘山→丹巴→八美→塔公→新都桥→康定/泸定→成都",
+    "province": "四川",
+    "region": "西南"
+  },
+  "departure_city": "以已购航班为准",
+  "dates": {
+    "start": "2026-09-26",
+    "end": "2026-10-04"
+  },
+  "duration_days": 9,
+  "style": ["nature", "photography", "foodie", "roadtrip", "relaxing"],
+  "pace": "moderate",
+  "persons": 2,
+  "transport_to_dest": [
+    {
+      "mode": "flight",
+      "from": "已购出发地",
+      "to": "成都双流国际机场",
+      "duration": "以航班为准",
+      "estimated_price": "已购",
+      "note": "去程按双流机场落地；机场可优先考虑地铁10号线或网约车，D1只安排抵达和轻松晚餐，不再叠加景点。"
+    }
+  ],
+  "transport_return": [
+    {
+      "mode": "flight",
+      "from": "成都",
+      "to": "成都天府国际机场→已购返程地",
+      "duration": "以航班为准",
+      "estimated_price": "已购",
+      "note": "回程按天府机场起飞；D8完成还车并住机场/成都东站方向，D9预留前往天府机场的时间，不要把高原返程压到航班当天。"
+    }
+  ],
+  "itinerary": [
+    {
+      "day_number": 1,
+      "date": "2026-09-26",
+      "theme": "抵达成都·只做城市缓冲",
+      "route_summary": "机场→酒店→春熙路/太古里；若航班晚点，直接休息，不补景点。",
+      "spots": [
+        {
+          "name": "春熙路/太古里",
+          "category": "shopping",
+          "description": "作为抵达后的轻量活动，适合吃饭、买补给和确认后续交通。",
+          "visit_duration_min": 90,
+          "ticket_price": 0,
+          "opening_hours": "全天",
+          "emoji": "🌃",
+          "source": "websearch"
+        }
+      ],
+      "hotel": {
+        "name": "成都春熙路或成都东站附近酒店",
+        "area": "春熙路/太古里或成都东站",
+        "price_range": "国庆前后约¥250-450/晚",
+        "highlights": "优先选择距离地铁站近、可寄存行李、方便D3前往成都东站的酒店。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [],
+        "lunch": [],
+        "dinner": [
+          {
+            "name": "钟水饺/成都老字号就近择一",
+            "address": "春熙路/太古里或酒店附近门店",
+            "signature": ["红油水饺", "甜水面", "担担面/红油抄手"],
+            "price_per_person": 60,
+            "source": "official_old_brand_websearch"
+          }
+        ]
+      },
+      "notes": "不安排熊猫基地、都江堰或远距离Citywalk，给航班延误留空间。",
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 2,
+      "date": "2026-09-27",
+      "theme": "都江堰·古城夜景",
+      "route_summary": "成都→都江堰景区→灌县古城→南桥→成都。",
+      "spots": [
+        {
+          "name": "都江堰景区",
+          "category": "attraction",
+          "description": "按秦堰楼进、离堆公园出的下坡路线游览，减少回头路和体力消耗。",
+          "visit_duration_min": 240,
+          "ticket_price": 80,
+          "opening_hours": "旺季参考8:00-18:00，17:30停售；以景区当日公告为准",
+          "emoji": "🏯",
+          "photo_tip": "安澜索桥、鱼嘴和宝瓶口优先。",
+          "pitfall_warning": "不要从离堆公园入口一路上坡到秦堰楼。",
+          "source": "websearch"
+        },
+        {
+          "name": "灌县古城与南桥",
+          "category": "street",
+          "description": "景区出来后步行逛古城，晚间看南桥灯光，不再安排额外远距离移动。",
+          "visit_duration_min": 120,
+          "ticket_price": 0,
+          "opening_hours": "全天",
+          "emoji": "🌉",
+          "source": "websearch"
+        }
+      ],
+      "hotel": {
+        "name": "续住成都同一酒店",
+        "area": "春熙路/太古里或成都东站",
+        "price_range": "约¥250-450/晚",
+        "highlights": "不换酒店，减少行李搬运。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [{"name": "酒店或地铁站早餐", "price_per_person": 20, "source": "websearch"}],
+        "lunch": [{"name": "老号尤兔头（都江堰大道店）", "address": "都江堰大道；以地图实时营业为准", "signature": ["兔头", "冷吃兔", "家常川菜"], "price_per_person": 70, "source": "official_tourism_websearch"}],
+        "dinner": [{"name": "成都老字号就近择一", "address": "成都酒店附近", "signature": ["盘飧市卤味", "钟水饺", "龙抄手"], "price_per_person": 70, "source": "official_old_brand_websearch"}]
+      },
+      "notes": "D2是低风险城市周边日，不能为了多塞熊猫基地而压缩都江堰。",
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 3,
+      "date": "2026-09-28",
+      "theme": "动车入九寨·只住一晚",
+      "route_summary": "成都东→黄龙九寨站→接驳车→九寨沟口漳扎镇；抵达后只散步、采购干粮，第二天游完直接返成都。",
+      "spots": [
+        {
+          "name": "漳扎镇",
+          "category": "street",
+          "description": "抵达后适应海拔、确认第二天入沟安排，采购水和简易午餐。",
+          "visit_duration_min": 90,
+          "ticket_price": 0,
+          "opening_hours": "全天",
+          "emoji": "🏘️",
+          "pitfall_warning": "不要把抵达日安排成黄龙或九寨沟游览日。",
+          "source": "websearch"
+        }
+      ],
+      "hotel": {
+        "name": "九寨沟沟口酒店",
+        "area": "漳扎镇/九寨沟游客中心附近",
+        "price_range": "约¥400-800/晚",
+        "highlights": "优先步行可到游客中心、可寄存行李、支持早出发的酒店。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [{"name": "成都酒店早餐", "price_per_person": 20, "source": "websearch"}],
+        "lunch": [{"name": "动车站简餐", "address": "成都东站/黄龙九寨站", "signature": ["面食", "盖饭", "零食补给"], "price_per_person": 35, "source": "websearch"}],
+        "dinner": [{"name": "源湘味·鲜牦牛肉汤锅；满座则选沟口普通藏餐", "address": "漳扎镇漳扎村二组18号附1号或游客中心周边", "signature": ["清汤牦牛肉", "菌类/时蔬", "藏式面食"], "price_per_person": 80, "source": "amap_plus_local_food_websearch"}]
+      },
+      "notes": "只预订D3一晚沟口住宿；优先购买早班动车，并提前确认D4返成都动车或包车方案。",
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 4,
+      "date": "2026-09-29",
+      "theme": "九寨沟精华·当晚返成都",
+      "route_summary": "早入沟→九寨沟Y字精华→15:00左右出沟→预订接驳车/包车到黄龙九寨站→晚间返回成都。",
+      "spots": [
+        {
+          "name": "九寨沟风景区",
+          "category": "nature",
+          "description": "只住一晚时采用精华版：优先五花海、珍珠滩瀑布、诺日朗、长海和五彩池；树正群海视当天排队和返程时间决定是否补充。",
+          "visit_duration_min": 360,
+          "ticket_price": 280,
+          "opening_hours": "旺季入园8:00-14:00，18:00闭园",
+          "emoji": "🌊",
+          "photo_tip": "上午优先五花海和珍珠滩，下午根据体力补树正群海。",
+          "pitfall_warning": "必须提前锁定返程车票和接驳/包车；15:00左右出沟，任何一个环节不确定就删减景点，不要赌18:19末班衔接。",
+          "source": "websearch"
+        }
+      ],
+      "hotel": {
+        "name": "成都东站或春熙路酒店",
+        "area": "成都东站/春熙路",
+        "price_range": "约¥250-450/晚",
+        "highlights": "D4晚返回成都，D5不再换酒店；优先选择靠近D6取车点的酒店。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [{"name": "酒店打包早餐", "price_per_person": 25, "source": "websearch"}],
+        "lunch": [{"name": "自带干粮，不把景区餐厅作为主餐", "address": "D3晚在沟口采购，D4随身携带", "signature": ["面包", "坚果", "能量棒", "温水"], "price_per_person": 25, "source": "official_notice_plus_route_planning"}],
+        "dinner": [{"name": "成都东站/酒店附近简餐", "address": "成都东站或春熙路附近", "signature": ["面食", "盖饭", "热汤"], "price_per_person": 45, "source": "websearch"}]
+      },
+      "notes": "九寨沟门票与观光车合计约280元/人，保险按需购买；实名预约以官方平台为准。",
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 5,
+      "date": "2026-09-30",
+      "theme": "成都熊猫基地·下午取车与川西补给",
+      "route_summary": "早上从成都酒店出发→成都大熊猫繁育研究基地上午票→午餐→返回酒店取行李→下午成都取车→采购干粮/水/药品/车载物资→检查车辆和离线地图；晚上早点休息。",
+      "spots": [
+        {
+          "name": "成都大熊猫繁育研究基地",
+          "category": "park",
+          "description": "D4九寨沟返成都后，D5上午安排熊猫基地最合理。3—10月上午票入园时间为7:30—12:00，成人票约55元，必须线上实名预约；游览重点是太阳产房、幼年大熊猫活动区、熊猫塔和熊猫博物馆，按园区观光车和当天人流取舍。",
+          "visit_duration_min": 240,
+          "ticket_price": 55,
+          "opening_hours": "3—10月上午票7:30-12:00，17:00停止售/验票，18:00清园",
+          "emoji": "🐼",
+          "photo_tip": "上午动物活动度通常更高；先看产房和活动区，再根据时间选择熊猫塔，不能把熊猫基地拖到下午影响取车。",
+          "pitfall_warning": "提前14日预约；上午票12:00后不能继续入园。D5下午还有取车、采购和车辆检查，不能临时改成全天慢游。",
+          "source": "official_notice"
+        },
+        {
+          "name": "成都城市补充项目（可选）",
+          "category": "street",
+          "description": "如果熊猫基地提前结束、车辆手续顺利且不需要采购，可在取车门店附近就近选择人民公园、宽窄巷子、春熙路或太古里；不建议跨城去三星堆，也不建议为了一个景点绕路。",
+          "visit_duration_min": 60,
+          "ticket_price": 0,
+          "opening_hours": "按项目当日开放时间",
+          "emoji": "🏙️",
+          "photo_tip": "把城市项目作为机动项，不要提前买不可退的下午票。",
+          "pitfall_warning": "采购、取车和车辆检查优先级高于城市打卡；任何一项延误就取消本项。",
+          "source": "websearch"
+        },
+        {
+          "name": "川西进山补给与车辆检查",
+          "category": "shopping",
+          "description": "下午完成取车、加油/充电、检查轮胎和备胎、确认保险与救援电话；采购水、能量棒、面包、晕车药、氧气备用、防晒和纸巾，并下载阿坝州与甘孜州离线地图。",
+          "visit_duration_min": 120,
+          "ticket_price": 0,
+          "opening_hours": "按租车门店和商超营业时间",
+          "emoji": "🛒",
+          "photo_tip": "无",
+          "pitfall_warning": "不要把采购拖到D6清晨；D6要走G350并争取14:00前到双桥沟游客中心。",
+          "source": "local_trip_data"
+        }
+      ],
+      "hotel": {
+        "name": "成都东站或春熙路酒店",
+        "area": "成都东站/春熙路",
+        "price_range": "约¥250-450/晚",
+        "highlights": "建议住靠近取车点或成都东站的位置。",
+        "source": "websearch"
+      },
+      "meals": {
+        "breakfast": [{"name": "酒店早餐", "price_per_person": 20, "source": "websearch"}],
+        "lunch": [{"name": "熊猫基地/返酒店沿线清淡简餐", "address": "熊猫大道或返回酒店沿线", "signature": ["面食", "豆花", "青菜", "热汤"], "price_per_person": 45, "source": "official_hours_plus_route_planning"}],
+        "dinner": [{"name": "取车点附近成都老字号或家常川菜", "address": "成都东站/春熙路或租车门店附近", "signature": ["盘飧市卤味", "钟水饺", "小份川菜"], "price_per_person": 70, "source": "official_old_brand_websearch"}]
+      },
+      "notes": "D5不再安排黄龙。熊猫基地必须线上实名预约；下午完成成都取车、采购和车辆检查，为D6 G350进山及双桥沟精华争取时间。若D4返成都晚点，D5仍保留熊猫基地上午＋下午取车，不增加其他项目。",
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 6,
+      "date": "2026-10-01",
+      "theme": "G350熊猫大道·成都→四姑娘山＋双桥沟精华",
+      "route_summary": "成都取车→映秀→卧龙→贝母坪/大雪塘观景点→巴朗山隧道→猫鼻梁→双桥沟红杉林/盆景滩/人参果坪→四姑娘山镇；若14:00后仍未到游客中心则取消进沟。",
+      "spots": [
+        {"name": "G350中国熊猫大道景观带", "category": "scenic_drive", "description": "成都经映秀、卧龙、巴朗山隧道前往四姑娘山，官方路线信息将成都—卧龙—四姑娘山列为主要自驾抵达线路。沿线贝母坪、大雪塘和隧道口视天气、停车和车流短停。", "visit_duration_min": 90, "ticket_price": 0, "opening_hours": "全天，按道路和现场停车条件", "emoji": "🚗", "photo_tip": "只在正规停车区拍峡谷、森林和雪山，不为观景在弯道路肩停车。", "pitfall_warning": "国庆拥堵会压缩双桥沟入园时间；预计14:00后才到游客中心，直接取消进沟。", "source": "official_guide"},
+        {"name": "猫鼻梁观景台", "category": "viewpoint", "description": "四姑娘山镇前的经典全景点，天气通透时可看四座雪峰；D6下午只作到达日短停，D7早晨再拍顺光正式版。", "visit_duration_min": 30, "ticket_price": 0, "opening_hours": "全天", "emoji": "🏔️", "photo_tip": "停车后快速拍摄，开双闪并避让车辆；下午光线不理想也不要停留过久。", "pitfall_warning": "如果已经明显晚点，猫鼻梁直接跳过，优先白天到镇并完成入住。", "source": "websearch"},
+        {"name": "双桥沟精华段", "category": "nature", "description": "确认预约后乘观光车到高处，再按红杉林、盆景滩、人参果坪等站点自上而下游览；D6下午只做精华，不追求完整慢游。", "visit_duration_min": 210, "ticket_price": 150, "opening_hours": "2026年4月起8:00-15:00入园", "emoji": "🏞️", "photo_tip": "下午优先红杉林、盆景滩、人参果坪，按当天末班观光车时间倒推。", "pitfall_warning": "必须提前预约；错过末班观光车、天气恶化或体力下降时，立即收缩路线。", "source": "official_notice"}
+      ],
+      "hotel": {"name": "四姑娘山镇带供氧/地暖酒店", "area": "四姑娘山镇", "price_range": "约¥500-900/晚", "highlights": "选择可停车、供氧、地暖或电热毯齐全的住宿；D7早上出发不换酒店。", "source": "websearch"},
+      "meals": {"breakfast": [{"name": "成都酒店早餐", "price_per_person": 20, "source": "hotel_breakfast"}], "lunch": [{"name": "卧龙/小金沿途乡镇面馆或小炒", "address": "G350沿线正规停车点", "signature": ["面", "蛋炒饭", "番茄蛋汤"], "price_per_person": 45, "source": "official_traffic_plus_route_planning"}], "dinner": [{"name": "四姑娘山镇客流稳定的牦牛肉汤锅/菌汤", "address": "四姑娘山镇主街酒店步行范围", "signature": ["清汤牦牛肉", "菌汤", "土豆/萝卜"], "price_per_person": 85, "source": "onsite_screening_websearch"}]},
+      "notes": "四姑娘山双桥沟2026年官方入园时间为8:00-15:00；D6下午进沟属于高强度执行，若时间不够不补到D7，D7留给丹巴—八美—塔公—新都桥小环线。高原第一晚不饮酒、不剧烈运动、不强求洗澡。",
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 7,
+      "date": "2026-10-02",
+      "theme": "完整川西小环线·四姑娘山→丹巴→八美→塔公→新都桥",
+      "route_summary": "猫鼻梁晨光→小金/牦牛河谷→丹巴甲居藏寨→丹巴县城补给→雅拉雪山观景台→疙瘩梁子→八美/塔公草原路边→新都桥；约250-280公里，含停靠全天高强度。",
+      "spots": [
+        {"name": "猫鼻梁晨光", "category": "viewpoint", "description": "D7早晨重返猫鼻梁，利用上午顺光拍四姑娘山四峰；拍完回镇吃早餐，再正式向丹巴方向出发。", "visit_duration_min": 40, "ticket_price": 0, "opening_hours": "全天", "emoji": "🌄", "photo_tip": "建议日出后尽早到达，拍完即走，不把晨光等待拖成半小时以上。", "pitfall_warning": "遇到云雾或道路拥堵，最多等待一轮光线，不能影响D7后半程。", "source": "websearch"},
+        {"name": "丹巴甲居藏寨", "category": "culture", "description": "嘉绒藏寨与古碉群景观，作为小环线的人文核心；观景台拍全景，游览约1-1.5小时，不做深度村内徒步。", "visit_duration_min": 90, "ticket_price": 50, "opening_hours": "全天参考；售票、观光车和景区管理以当日公告为准", "emoji": "🏘️", "photo_tip": "优先1号观景台拍藏寨全景，秋季看彩林、藏房和山谷层次。", "pitfall_warning": "甲居之后到八美/塔公段补给点少，必须在丹巴县城吃饭、加水、买干粮。", "source": "official_local"},
+        {"name": "牦牛河谷与雅拉雪山观景台", "category": "scenic_drive", "description": "丹巴向八美方向的景观长廊，沿途看河谷、红石、秋色和雅拉雪山；观景台以短停为主，不追求所有支线。", "visit_duration_min": 60, "ticket_price": 0, "opening_hours": "全天，按道路和天气", "emoji": "🏔️", "photo_tip": "雅拉雪山观景台拍雪山、经幡与公路线条；风大时保护相机和手机。", "pitfall_warning": "中途餐饮不稳定，所有人吃饱后再出丹巴；遇落石、施工或浓雾按现场管制绕行。", "source": "websearch"},
+        {"name": "疙瘩梁子垭口", "category": "viewpoint", "description": "约3900米高点，视野开阔但风大、温度低、厕所条件有限；只作短停，不把垭口停留变成高原徒步。", "visit_duration_min": 20, "ticket_price": 0, "opening_hours": "按天气和道路通行", "emoji": "🪨", "photo_tip": "拍经幡、垭口和远山即可，准备纸巾、零钱和防风衣。", "pitfall_warning": "如果车流、风雪或高反明显，直接跳过；D7最应该删的是垭口停留，而不是安全驾驶。", "source": "websearch"},
+        {"name": "塔公草原路边与新都桥", "category": "grassland", "description": "塔公路边短停拍木雅金塔、草原和雅拉雪山同框，随后经八美方向前往新都桥入住；不把塔公收费区作为必进景点。", "visit_duration_min": 45, "ticket_price": 0, "opening_hours": "全天", "emoji": "🌾", "photo_tip": "路边正规停车点即可拍摄，傍晚光线好；新都桥入住后不再夜间跑鱼子西支线。", "pitfall_warning": "D7必须在日落前抵达新都桥；若前段延误，塔公只停车拍照，不进收费区。", "source": "official_local"}
+      ],
+      "hotel": {"name": "新都桥山景/供氧酒店", "area": "新都桥镇", "price_range": "约¥500-1000/晚", "highlights": "优先选有地暖、供氧、停车和早餐的酒店；住镇中心方便晚餐，住镇外更看重风景。", "source": "websearch"},
+      "meals": {"breakfast": [{"name": "四姑娘山镇酒店早餐", "price_per_person": 25, "source": "hotel_breakfast"}], "lunch": [{"name": "罕额林卡藏餐厅（先核对营业）", "address": "丹巴县城", "signature": ["火烧子馍馍", "牦牛肉汤锅", "贡椒鱼/野生菌牦牛杂汤锅"], "price_per_person": 70, "source": "official_sichuan_food_list"}], "dinner": [{"name": "新都桥本地藏餐或牦牛汤锅，现场择店", "address": "新都桥镇主街/住宿附近", "signature": ["牦牛肉汤锅", "青稞饼", "酥油茶", "牦牛酸奶"], "price_per_person": 90, "source": "local_food_crosscheck_with_ad_filter"}]},
+      "notes": "这一天补回完整川西小环线的丹巴、八美、雅拉、塔公、新都桥段；不是轻松日，所有景点都按短停设计。若国庆拥堵或天气恶化，优先保留甲居藏寨和雅拉观景台，删疙瘩梁子、塔公收费区或延后拍摄。",
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 8,
+      "date": "2026-10-03",
+      "theme": "川西小环线收束·新都桥→S434→康定→泸定→成都",
+      "route_summary": "新都桥杨树长廊晨拍→S434/塔北路→红海子（晴天可选）→雅拉山口/康定机场路→斯丁措（晴天可选）→折多塘→康定/泸定→雅康高速→成都还车；观景点随道路和天气取舍。",
+      "spots": [
+        {"name": "新都桥十里杨树长廊", "category": "photography", "description": "新都桥晨间公路、杨树、草原和远山组成小环线收官的经典摄影段，建议早上8点前完成。", "visit_duration_min": 45, "ticket_price": 0, "opening_hours": "全天，最佳为清晨", "emoji": "🍂", "photo_tip": "早晨斜射光比中午更好；只在正规停车点拍公路线条，拍完立刻出发。", "pitfall_warning": "不能为了等日照金山把S434和成都返程压到下午；阴天也不要长时间等待。", "source": "websearch"},
+        {"name": "S434景观段：红海子/雅拉山口/康定机场路/斯丁措", "category": "scenic_drive", "description": "新都桥向康定方向的高原景观道路，红海子和斯丁措看天气，雅拉山口和康定机场路以短停拍摄为主；施工或管制时服从现场指挥。", "visit_duration_min": 150, "ticket_price": 0, "opening_hours": "按道路通行、天气和现场管理", "emoji": "🛣️", "photo_tip": "晴天优先红海子/斯丁措倒影；阴天直接跳过湖泊，保留安全可停的公路和山口。", "pitfall_warning": "S434存在施工、限速或临时交通组织可能，出发前和当天复核；机场周边不随意放飞无人机。", "source": "road_notice"},
+        {"name": "康定/泸定桥收束段", "category": "history", "description": "下山后按时间选择康定或泸定简餐；泸定桥只在排队可控时进入，否则远观或跳过，沿雅康高速返成都。", "visit_duration_min": 45, "ticket_price": 10, "opening_hours": "夏秋参考7:00-19:00，提前15分钟停止售票；以官网和现场公告为准", "emoji": "🌉", "photo_tip": "泸定桥不作为必打卡，返程安全优先；高速隧道多，按限速行驶。", "pitfall_warning": "国庆排队可能显著延长；预计天黑前不能到成都就取消景区入内，直接返程。", "source": "official_notice"}
+      ],
+      "hotel": {"name": "机场或成都东站附近酒店", "area": "按D9航班选择", "price_range": "约¥250-500/晚", "highlights": "D8完成成都还车；早航班住机场，晚航班可住成都东站/春熙路。", "source": "websearch"},
+      "meals": {"breakfast": [{"name": "新都桥酒店早餐或打包早餐", "price_per_person": 25, "source": "hotel_breakfast"}], "lunch": [{"name": "王凉粉/丁三哥老字号择一；时间紧则泸定简餐", "address": "康定市区或泸定县城", "signature": ["康定凉粉", "锅盔", "牦牛杂汤/牦牛肉汤"], "price_per_person": 50, "source": "local_guide_plus_map_recheck"}], "dinner": [{"name": "成都老字号收官餐，就近选择盘飧市/钟水饺/龙抄手", "address": "还车酒店附近", "signature": ["卤味", "水饺", "抄手", "小份川菜"], "price_per_person": 90, "source": "official_old_brand_websearch"}]},
+      "notes": "D8完成川西小环线闭环，不再直接从四姑娘山返成都。S434当前可能存在施工或临时交通组织，必须以出发前和当天路况为准；若无法安全通行，改走现场推荐路线，不能强行穿越。",
+      "requires_accommodation": true
+    },
+    {
+      "day_number": 9,
+      "date": "2026-10-04",
+      "theme": "成都·按航班返程",
+      "route_summary": "机场或成都东站附近酒店→成都天府国际机场；若返程航班在15:00后，可安排熊猫基地上午票，否则直接机场。",
+      "spots": [
+        {
+          "name": "成都大熊猫繁育研究基地（可选）",
+          "category": "park",
+          "description": "仅在飞天府机场的航班时间宽裕时安排，3—10月上午票入园时间为7:30—12:00，需线上实名预约；熊猫基地结束后直接前往天府机场。",
+          "visit_duration_min": 180,
+          "ticket_price": 55,
+          "opening_hours": "3—10月上午票7:30-12:00，下午票12:00-17:00",
+          "emoji": "🐼",
+          "pitfall_warning": "航班前至少预留3小时机场交通和安检时间；不确定就直接放弃。",
+          "source": "websearch"
+        }
+      ],
+      "hotel": null,
+      "meals": {
+        "breakfast": [{"name": "酒店早餐或天府机场早餐", "price_per_person": 25, "source": "airport_transport_planning"}],
+        "lunch": [],
+        "dinner": []
+      },
+      "notes": "D9按天府机场起飞倒推时间，不再安排宽窄巷子、购物或跨城移动；从成都东站/市区前往天府机场可优先核对地铁18号线快线，最终以当天成都轨道交通公告和航班值机时间为准。",
+      "requires_accommodation": false
+    }
+  ],
+  "food_summary": [
+    {"name": "成都本地川菜", "meal_type": "dinner", "cuisine": "川菜", "price_per_person": 70, "recommended_dishes": ["回锅肉", "鱼香茄子", "钟水饺"], "reason": "抵达和返程日优先选择酒店附近，减少交通风险。", "address": "成都城区", "source": "websearch"},
+    {"name": "沟口藏餐/牦牛肉汤锅", "meal_type": "dinner", "cuisine": "藏餐", "price_per_person": 80, "recommended_dishes": ["牦牛肉", "酥油茶", "藏式面食"], "reason": "D3抵达后只安排一顿热食，第二天早起进沟。", "address": "漳扎镇", "source": "websearch"},
+    {"name": "四姑娘山镇汤锅", "meal_type": "dinner", "cuisine": "川西汤锅", "price_per_person": 85, "recommended_dishes": ["牦牛肉汤锅", "菌汤", "蔬菜"], "reason": "高原晚餐清淡、热食优先。", "address": "四姑娘山镇", "source": "websearch"}
+  ],
+  "avoid_list": [
+    {"wrong": "没有锁定返程交通就进九寨沟", "right": "D3提前确认D4动车/包车；D4 15:00左右出沟，时间不够就删减景点", "category": "transport", "severity": "critical"},
+    {"wrong": "D6下午抵达太晚还硬进双桥沟", "right": "14:00前到游客中心才进D6精华；否则取消进沟，把D7留给丹巴—八美—塔公—新都桥小环线", "category": "ticket", "severity": "critical"},
+    {"wrong": "把川西小环线景点全部深度游一遍", "right": "完整经过四姑娘山、丹巴、八美、塔公、新都桥、S434和康定，但每站短停；遇堵车优先保留甲居和雅拉", "category": "transport", "severity": "critical"},
+    {"wrong": "高原第一晚饮酒、洗澡、剧烈运动", "right": "保暖、清淡饮食、早点休息", "category": "safety", "severity": "warning"},
+    {"wrong": "把黄龙临时塞进D5", "right": "只有确认专车、预约和后续车票后才加入", "category": "transport", "severity": "warning"},
+    {"wrong": "把熊猫基地放在航班前且没有缓冲", "right": "仅在15:00后航班时安排上午票", "category": "ticket", "severity": "warning"}
+  ],
+  "budget": {
+    "transport": 4200,
+    "hotel": 4800,
+    "food": 3000,
+    "tickets": 1500,
+    "shopping": 500,
+    "total": 14000,
+    "per_person": 7000,
+    "persons": 2,
+    "details": [
+      {"category": "交通", "item": "已购机票不计入；动车、接驳车、D6-D8三天租车、油费、过路费和机场交通", "amount": 4200, "note": "去程双流、回程天府；租车按成都取成都还，最终以订单和道路管制为准。"},
+      {"category": "住宿", "item": "成都5晚、九寨沟1晚、四姑娘山1晚、新都桥1晚", "amount": 4800, "note": "按两人一间、国庆前后中档酒店估算；只住一晚沟口，把住宿重心转移到完整小环线。"},
+      {"category": "门票", "item": "都江堰、九寨沟、双桥沟、甲居藏寨、泸定桥、熊猫基地可选", "amount": 1500, "note": "九寨沟、双桥沟和熊猫基地按官方预约/实时价格核对；甲居、泸定桥和沿途点以当天公告为准。"},
+      {"category": "餐饮", "item": "9天两人正餐、早餐、川西沿途干粮和补给", "amount": 3000, "note": "不含酒水、伴手礼；D7丹巴必须补足干粮。"}
+    ]
+  },
+  "tips": [
+    "九寨沟、双桥沟和熊猫基地均要关注实名预约；不要把现场买票作为备选方案。",
+    "预约清单：都江堰按国庆必须预约处理；九寨沟、熊猫基地、双桥沟必须提前锁定；甲居藏寨和泸定桥提前核对票务；猫鼻梁、雅拉观景台、垭口、塔公路边、新都桥杨树林和S434不需要景区预约，但受道路和现场管控。",
+    "D4九寨沟游览结束后当晚返成都，必须提前锁定动车或包车；时间不足时以安全和不误车为先。",
+    "D6国庆进入四姑娘山必须早出发，车上准备水、零食和晕车药。",
+    "四姑娘山景区官方提示高原天气多变，准备冲锋衣、抓绒、薄羽绒和防晒用品。",
+    "高原驾驶不走夜路；如果导航预计到达时间超过天黑，立即删减观景点。",
+    "出发前7天重新核对九寨沟、双桥沟、动车和道路管制信息。",
+    "天气预报目前无法精确覆盖9月26日至10月4日，现阶段只按季节准备衣物，不把天气当成确定条件。"
+  ],
+  "weather": {
+    "season": "9月底至10月初秋季高原",
+    "temp_range": "成都较温和；九寨沟、四姑娘山早晚明显偏冷，垭口可能低温和大风",
+    "clothing": "速干长袖+抓绒+冲锋衣/轻薄羽绒，防滑徒步鞋，墨镜和SPF50防晒",
+    "precautions": "高原天气变化快，景区和山路以当日公告、交通管制和现场安全为准。"
+  },
+  "metadata": {
+    "generated_at": "2026-08-18T00:00:00+08:00",
+    "sources": ["websearch", "official_notice", "local_trip_data"],
+    "version": "optimized-2.0.0-full-loop",
+    "amap_used": false,
+    "editable": true,
+    "notes": [
+      "基于原 jiuzhai-chuanxi-9d 行程优化，原文件保留不覆盖。",
+      "优化目标：九寨沟只住一晚，同时补回完整川西小环线：四姑娘山—丹巴—八美—塔公—新都桥—S434—康定/泸定—成都；通过景点短停和天气/路况取舍控制风险。",
+      "按用户要求，九寨沟改为只住D3一晚；D4游览后返成都，返程交通必须提前锁定。",
+      "路线距离和时间仍需在出发前用高德实时路线复核。"
+    ]
+  }
+}
