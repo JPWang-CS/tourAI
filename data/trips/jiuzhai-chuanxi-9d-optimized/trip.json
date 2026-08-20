@@ -256,7 +256,7 @@
         {"name": "猫鼻梁观景台", "category": "viewpoint", "description": "四姑娘山镇前的经典全景点，天气通透时可看四座雪峰；D6下午只作到达日短停，D7早晨再拍顺光正式版。", "visit_duration_min": 30, "ticket_price": 0, "opening_hours": "全天", "emoji": "🏔️", "photo_tip": "停车后快速拍摄，开双闪并避让车辆；下午光线不理想也不要停留过久。", "pitfall_warning": "如果已经明显晚点，猫鼻梁直接跳过，优先白天到镇并完成入住。", "source": "websearch"},
         {"name": "双桥沟精华段", "category": "nature", "description": "确认预约后乘观光车到高处，再按红杉林、盆景滩、人参果坪等站点自上而下游览；D6下午只做精华，不追求完整慢游。", "visit_duration_min": 210, "ticket_price": 150, "opening_hours": "2026年4月起8:00-15:00入园", "emoji": "🏞️", "photo_tip": "下午优先红杉林、盆景滩、人参果坪，按当天末班观光车时间倒推。", "pitfall_warning": "必须提前预约；错过末班观光车、天气恶化或体力下降时，立即收缩路线。", "source": "official_notice"}
       ],
-      "hotel": {"name": "四姑娘山镇带供氧/地暖酒店", "area": "四姑娘山镇", "price_range": "约¥500-900/晚", "highlights": "选择可停车、供氧、地暖或电热毯齐全的住宿；D7早上出发不换酒店。", "source": "websearch"},
+      "hotel": {"name": "四姑娘山镇双桥沟/双碉村方向民宿或酒店", "area": "四姑娘山镇", "price_range": "国庆以实时订单为准，民宿约¥500-1400/晚", "highlights": "D6若进双桥沟，优先住双桥沟/双碉村/沙坝村方向；必须逐房型确认全夜暖气、独立或弥散供氧、热水、停车、晚到接待和到双桥沟游客中心车程。长坪沟方向不作D6主推荐。", "source": "official_route_plus_hotel_crosscheck"},
       "meals": {"breakfast": [{"name": "成都酒店早餐", "price_per_person": 20, "source": "hotel_breakfast"}], "lunch": [{"name": "卧龙/小金沿途乡镇面馆或小炒", "address": "G350沿线正规停车点", "signature": ["面", "蛋炒饭", "番茄蛋汤"], "price_per_person": 45, "source": "official_traffic_plus_route_planning"}], "dinner": [{"name": "四姑娘山镇客流稳定的牦牛肉汤锅/菌汤", "address": "四姑娘山镇主街酒店步行范围", "signature": ["清汤牦牛肉", "菌汤", "土豆/萝卜"], "price_per_person": 85, "source": "onsite_screening_websearch"}]},
       "notes": "四姑娘山双桥沟2026年官方入园时间为8:00-15:00；D6下午进沟属于高强度执行，若时间不够不补到D7，D7留给丹巴—八美—塔公—新都桥小环线。高原第一晚不饮酒、不剧烈运动、不强求洗澡。",
       "requires_accommodation": true
